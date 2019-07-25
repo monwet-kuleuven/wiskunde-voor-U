@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[numbers]{ximera}
 
 \input{../preamble.tex}
 
@@ -10,16 +10,207 @@
 \end{abstract}
 \maketitle
 
+\section{Definitie en betekenis}\label{basisaw}
+
 \begin{definition}
 	Voor een reëel getal $a\in\R$ definiëren we de \textit{absolute waarde} van $a$, genoteerd $|a|$, als
 	\[
 		|a| \overset{def}{=}\displaystyle\ 
 		          \left\{
 			\begin{array}{rll  } 
-				a  & \mbox{als} & a \geqslant 0, \\
+				a  & \mbox{als} & a \geq 0 \\
 				-a & \mbox{als} & a<0.
 			\end{array}\right.
 	\]
 \end{definition}
+
+\begin{example} Eenvoudige voorbeelden van absolute waardes
+	
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $|5|=5$ en $|-5|=5$
+			\item $|\sqrt{2}-1|=\sqrt{2} - 1$
+			\item $|1-\sqrt{2}| = \sqrt{2} - 1$
+			\item $|2-\sqrt{2}| = 2 - \sqrt{2}$
+			\item $|2 + 1| = |2| + | 1| (=3)$
+			\item $|2 + (-1)| \neq |2| + | -1|$
+			\item $|x^2| = x^2$ (want $x^2 \geq 0$)
+			\item $|-x|= ....$ \\ (er is GEEN algemene formule! En ZEER ZEKER NIET \\ $|-x|=x$, want dat is fout zodra $x<0$ !!!)
+			\item $|x^2 + 1| = x^2 + 1$
+			\item $|x^2 - 1| = ....$ \\(er is GEEN algemene formule!)
+		\end{enumerate}
+	\end{multicols}
+\end{example}
+
+Als we het getal $a$ voorstellen op de getallenas, zien we onmiddelijk volgende
+\begin{proposition} 
+	De absolute waarde van een getal is zijn afstand tot de oorsprong (op de getallenas)
+\end{proposition}
+\begin{enumerate}
+\item als $a \geq 0$
+%
+% Gecopieerd van Zomercursus: to be done in Tikz !!!
+\begin{picture}(240,30)
+\put(100,0){\vector(1,0){240}}
+\put(340,-10){\makebox(0,0){$\R$}}
+\put(220,0){\makebox(0,0){$\bullet$}}
+\put(320,0){\makebox(0,0){$\bullet$}}
+\put(220,10){\makebox(0,0){$0$}} \put(320,10){\makebox(0,0){$a$}}
+\put(270,-20){\makebox(0,0){$|a|=a$}}
+\put(250,-20){\vector(-1,0){30}}
+\put(290,-20){\vector(1,0){30}}
+\end{picture}
+\\
+\item als $a<0$
+\begin{picture}(240,30)
+\put(100,0){\vector(1,0){240}}
+\put(340,-10){\makebox(0,0){$\R$}}
+\put(120,0){\makebox(0,0){$\bullet$}}
+\put(220,0){\makebox(0,0){$\bullet$}}
+\put(120,10){\makebox(0,0){$a$}} \put(220,10){\makebox(0,0){$0$}}
+\put(170,-20){\makebox(0,0){$|a|=-a$}}
+\put(147,-20){\vector(-1,0){28}}
+\put(193,-20){\vector(1,0){28}}
+\end{picture}
+\\
+\end{enumerate}
+Deze (triviale) eigenschap, die op het eerste zicht is toegevoegd door overijverige wiskundigen die hun cursussen wat langer wilden maken, leidt nochtans onmiddellijk tot volgend (echt!) interessant inzicht: 
+\begin{proposition}
+	Zij $a,b\in\R$ Dan geldt\\
+	$|x-y|$ is de afstand tussen $x$ en $y$ (op de getallenas)
+\end{proposition}
+Het is ERG BELANGRIJK om bij 'de absolute waarde van een verschil' ALTIJD minstens even te denken aan 'afstand tussen de twee termen'. Merk op dat je elke som gemakkelijk kan schrijven als een verschil, en dat dus ook $|x+y| = |x+(-y)|$ gelijk is aan de afstand tussen $x$ en $-y$. Dit is een ERG BELANGRIJK inzicht om de meeste van volgende oefeningen snel en eenvoudig te kunnen oplossen.
+
+De betekenis en geldigheid van volgende veel gebruikte eigenschappen kunnen eenvoudig worden nagegaan op de getallenas:
+\begin{proposition}
+	Als $x,a \in \R$ en $r\in\R^+_0$, dan is 
+	\begin{enumerate} 
+		\item \label{aw<r}		$|x|<r\qquad	\Leftrightarrow \qquad -r<x<r$ 
+		\item \label{aw>r} 		$|x|>r\qquad	\Leftrightarrow \qquad x<-r\;$ of $\;r<x$ 
+		\item \label{aw	x-a<r}	$|x-a|<r\qquad 	\Leftrightarrow \qquad a-r<x<a+r$ 
+		\item \label{aw x-a>r}	$|x-a|>r\qquad 	\Leftrightarrow \qquad x<a-r\;$ of $\;a+r<x.$
+	\end{enumerate}  
+\end{proposition}
+
+% Uit Zomercursus
+
+Voor verdere referentie volgen hier nog enkele eigenschappen van de absolute waarde
+(zonder bewijs):
+\begin{proposition}\label{eig: aw}
+	Als $x,y,z\in \R$, dan is
+	\begin{enumerate}
+		\item \label{aw tss}$-|x| \leqslant x \leqslant |x|$ \item
+		\label{aw 0}$|x|=0 \qquad\Leftrightarrow \qquad x=0$ \item
+		\label{aw x -x} $|x|=|-x|$
+		\item \label{aw
+			kwadr}$|x|^2=x^2=|x^2|$
+		\item \label{wortel
+			kwadr}$\sqrt{x^2}=|x|$
+		\item \label{kwadr
+			wortel}$(\sqrt{x})^2=x$ \textit{maar hier is $x \geqslant o$
+			anders bestaat de wortel niet!}
+		\item \label{aw
+			product}$|x\;y|=|x||y|,$ \textit{de absolute waarde van het
+			product is het product van de absolute waarden.}
+		\item \label{aw
+			quotient}$\displaystyle \left|\frac{x}{y}\right|=\frac{|x|}{|y|}$
+		met $y\neq 0,$ \textit{de absolute waarde van het quoti\"ent is
+			het quoti\"ent van de absolute waarden.}
+		\item \label{aw1edrieh}$|x+y| \leqslant|x|+|y|\qquad$ {\bf eerste
+			drie\-hoeks\-on\-ge\-lijk\-heid}
+		\item \label{aw1e drieh2}$|x-y|
+		\leqslant|x-z|+|z-y|\;\;$ {\bf eerste
+			drie\-hoeks\-on\-ge\-lijk\-heid} (\textit{equivalente vorm})
+		\item \label{aw 2e drieh} $\ds |\;|x|-|y|\;| \leqslant|x-y|\qquad$
+		{\bf tweede driehoeksongelijkheid}
+	\end{enumerate}
+\end{proposition}
+
+\begin{remark}
+Uit \ref{aw1edrieh} volgt ook onmiddellijk dat $|x-y| \leq |x|+|y|$ (want $x-y=x+(-y)$ en $|y|=|-y|$), maar natuurlijk geldt NIET dat $\cancel{|x-y| \leq |x| - |y|}$. We weten dan weer WEL dat $|\;|x|-|y|\;|\leq|x-y|$ (dat is \ref{aw 2e drieh}).
+\end{remark}
+
+
+\begin{problem} Onderzoek welke $x\in \R$ voldoen aan $|x-5|<9.$
+		\begin{oplossing} 
+			\begin{eqnarray*}
+				|x-5|&<&9 \qquad \textit{de afstand tussen $x$ en $5$ is kleiner dan $9$}\\
+				&\Updownarrow &\textit{eig. \ref{basisaw}(\ref{aw x-a<r})}\\
+				5-9<&x&<5+9\\
+				&\Updownarrow &\\
+				-4<&x&<14
+			\end{eqnarray*}
+			De oplossingsverzameling is dus $V=]-4,14\,[.$
+		\end{oplossing}
+	\end{problem}
+\begin{problem}	Onderzoek welke $x\in \R$ voldoen aan $|x+3|>5$
+		\begin{oplossing} 
+			\begin{eqnarray*}
+				|x+3|&>&5 \qquad \textit{de afstand tussen $x$ en $-3$ is groter dan $5$}\\
+				&\Updownarrow &\textit{eig. \ref{basisaw}(\ref{aw x-a>r})}
+				\\x<-3-5&\mbox{of}&-3+5<x\\
+				&\Updownarrow &\\
+				x<-8&\mbox{of}&2<x
+			\end{eqnarray*}
+			De oplossingsverzameling is dus $V=\left]-\infty,-8\right[
+			\;\cup\;\left]2, +\infty\right[.$
+		\end{oplossing}
+\end{problem}
+\begin{problem}	Onderzoek welke $x\in \R$ voldoen aan $|x^2-3|<9$.
+		\begin{oplossing}
+			\begin{eqnarray*}|x^2-3|&<&9 \qquad \textit{de afstand tussen $x^2$ en $3$ is
+					kleiner dan $9$}\\&\Updownarrow &\textit{eig.
+					\ref{basisaw}(\ref{aw x-a<r})}
+				\\3-9<&x^2&<3+9\\&\Updownarrow
+				&\\-6<&x^2&<12\\&\Updownarrow&\textit{$-6<x^2$ is automatisch
+					voldaan en is dus geen
+					voorwaarde}\\x^2&<&12\\&\Updownarrow&\textit{beide leden pos.,
+					worteltrekken mag, behoudt de ongelijkheid (eig. \ref{eig:
+						ongelijkheden}
+					(\ref{wortel}))}\\\sqrt{x^2}&<&\sqrt{12}=2\sqrt{3}\\&\Updownarrow
+				&\qquad \sqrt{x^2}=|x| \;\textit{eig. ~\ref{eig: aw}(\ref{wortel
+						kwadr})}\\|x|&<&2\sqrt{3}
+				\\&\Updownarrow &\textit{eig. \ref{basisaw}(\ref{aw x-a<r})}\\-2\sqrt{3}<&x&<2\sqrt{3}.
+			\end{eqnarray*}
+			De oplossingsverzameling is dus $\displaystyle
+			V=\left]-2\sqrt{3},2\sqrt{3}\right[.$
+		\end{oplossing}
+\end{problem}
+
+\begin{problem} Onderzoek welke $x\in \R$ voldoet aan $\displaystyle \left|\frac{2x}{3}\right|<1$.
+		\begin{oplossing}
+			\begin{eqnarray*}
+				\displaystyle \left|\frac{2x}{3}\right|&<&1 \\&\Updownarrow
+				&\textit{eigenschap \ref{eig: aw}(\ref{aw product}) en (\ref{aw
+						quotient})} \\ \displaystyle \frac{|2||x|}{|3|}&<&1
+				\\&\Updownarrow &\\\displaystyle \frac{2|x|}{3}&<&1\\&\Updownarrow
+				&\textit{beide
+					leden vermenigvuldigen met de positieve factor $\frac{3}{2}$ (eig.~\ref{eig: ongelijkheden}(\ref{factor}))}\\
+				|x|&<&\displaystyle\frac{3}{2}\\&\Updownarrow &\textit{eigenschap
+					\ref{basisaw}(\ref{aw<r})}\\\displaystyle-\frac{3}{2}<&x&<\displaystyle\frac{3}{2}
+			\end{eqnarray*}
+			De oplossingsverzameling is dus $\displaystyle
+			V=\left]-\frac{3}{2},\frac{3}{2}\right[$.
+		\end{oplossing}
+\end{problem}
+\begin{problem}	 Als $x,y \in\R$, $\varepsilon\in \R_0^+$ en er geldt dat
+		$|x-y|<\varepsilon,$ kan je dan een waarde vinden voor
+		$\varepsilon$ waarvoor $\displaystyle \frac{|y|}{2}<|x|$?
+		\begin{oplossing}
+			\textit{De tweede driehoeksongelijkheid legt een verband tussen
+				$|x|,|y|$ en $|x-y|$. We zullen daarmee aan de slag gaan.}
+			\\We weten dat $\displaystyle |\;|x|-|y|\;| \leqslant|x-y|$ en verder
+			dat $|x-y|<\varepsilon$ zodat door de transitiviteit geldt dat
+			\begin{eqnarray*}\displaystyle |\;|x|-|y|\;|&<&\varepsilon\\&\Updownarrow& \textit{eigenschap \ref{basisaw}(\ref{aw<r})}\\-\varepsilon<&|x|-|y|&<\varepsilon\\
+				&\Updownarrow&\textit{als een term van lid verandert, verandert
+					hij van teken (eig. \ref{eig:
+						ongelijkheden}(\ref{opt}))}\\|y|-\varepsilon<&|x|&<|y|+\varepsilon\end{eqnarray*}
+			Als we bijvoorbeeld $\ds\varepsilon=\frac{|y|}{2}$ kiezen geeft de
+			linkse ongelijkheid het gevraagde $\ds \frac{|y|}{2}<|x|$.
+		\end{oplossing}
+\end{problem}
+
+\section{Oefeningen}
+%\practice{awbasisrekenen}
 
 \end{document}

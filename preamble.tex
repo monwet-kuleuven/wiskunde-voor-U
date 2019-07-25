@@ -1,7 +1,6 @@
-%
-% copied from https://github.com/mooculus/calculus
-%
+
 \usepackage[utf8]{inputenc}
+\usepackage{multicol}
 
 
 \graphicspath{
@@ -9,6 +8,79 @@
 	{goniometrie/}
 }
 
+% we willen (bijna) altijd \geqslant ipv \geq ...!
+\newcommand{\geqnoslant}{\geq}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\leqnoslant}{\leq}
+\renewcommand{\leq}{\leqslant}
+
+
+\newtheorem{oplossing}[theorem]{Oplossing}
+
+%definities nieuwe commando's - afkortingen veel gebruikte symbolen
+\newcommand{\ds}{\displaystyle}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Rnul}{\ensuremath{\mathbb{R}_0}}
+\newcommand{\Reen}{\ensuremath{\mathbb{R}\setminus\{1\}}}
+\newcommand{\Rnuleen}{\ensuremath{\mathbb{R}\setminus\{0,1\}}}
+\newcommand{\Rplus}{\ensuremath{\mathbb{R}^+}}
+\newcommand{\Rmin}{\ensuremath{\mathbb{R}^-}}
+\newcommand{\Rnulplus}{\ensuremath{\mathbb{R}_0^+}}
+\newcommand{\Rnulmin}{\ensuremath{\mathbb{R}_0^-}}
+\newcommand{\Rnuleenplus}{\ensuremath{\mathbb{R}^+\setminus\{0,1\}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Nnul}{\ensuremath{\mathbb{N}_0}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Znul}{\ensuremath{\mathbb{Z}_0}}
+\newcommand{\Zplus}{\ensuremath{\mathbb{Z}^+}}
+\newcommand{\Zmin}{\ensuremath{\mathbb{Z}^-}}
+\newcommand{\Znulplus}{\ensuremath{\mathbb{Z}_0^+}}
+\newcommand{\Znulmin}{\ensuremath{\mathbb{Z}_0^-}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\Cnul}{\ensuremath{\mathbb{C}_0}}
+\newcommand{\Cplus}{\ensuremath{\mathbb{C}^+}}
+\newcommand{\Cmin}{\ensuremath{\mathbb{C}^-}}
+\newcommand{\Cnulplus}{\ensuremath{\mathbb{C}_0^+}}
+\newcommand{\Cnulmin}{\ensuremath{\mathbb{C}_0^-}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Qnul}{\ensuremath{\mathbb{Q}_0}}
+\newcommand{\Qplus}{\ensuremath{\mathbb{Q}^+}}
+\newcommand{\Qmin}{\ensuremath{\mathbb{Q}^-}}
+\newcommand{\Qnulplus}{\ensuremath{\mathbb{Q}_0^+}}
+\newcommand{\Qnulmin}{\ensuremath{\mathbb{Q}_0^-}}
+\newcommand{\perdef}{\overset{\mathrm{def}}{=}}
+\newcommand{\pernot}{\overset{\mathrm{not}}{=}}
+\newcommand{\bgsin}{\mathrm{bgsin}\,}
+\newcommand{\bgcos}{\mathrm{bgcos}\,}
+\newcommand{\bgtan}{\mathrm{bgtan}\,}
+\newcommand{\bgcot}{\mathrm{bgcot}\,}
+\newcommand{\bgsinh}{\mathrm{bgsinh}\,}
+\newcommand{\bgcosh}{\mathrm{bgcosh}\,}
+\newcommand{\bgtanh}{\mathrm{bgtanh}\,}
+\newcommand{\bgcoth}{\mathrm{bgcoth}\,}
+\newcommand{\Bgsin}{\mathrm{Bgsin}\,}
+\newcommand{\Bgcos}{\mathrm{Bgcos}\,}
+\newcommand{\Bgtan}{\mathrm{Bgtan}\,}
+\newcommand{\Bgcot}{\mathrm{Bgcot}\,}
+\newcommand{\Bgsinh}{\mathrm{Bgsinh}\,}
+\newcommand{\Bgcosh}{\mathrm{Bgcosh}\,}
+\newcommand{\Bgtanh}{\mathrm{Bgtanh}\,}
+\newcommand{\Bgcoth}{\mathrm{Bgcoth}\,}
+\newcommand{\cosec}{\mathrm{cosec}\,}
+\newcommand{\dom}{\mathrm{dom}\,}
+\newcommand{\bld}{\mathrm{bld}\,}
+\newcommand{\graf}{\mathrm{graf}\,}
+\newcommand{\rc}{\mathrm{rc}\,}
+\newcommand{\co}{\mathrm{co}\,}
+\newcommand{\oefverwijzing}[1]{\ensuremath{\hookrightarrow}\ \textsl{#1}}
+\newcommand{\startletternummering}{\renewcommand{\labelenumi}{(\alph{enumi})}}
+\newcommand{\eindeletternummering}{\renewcommand{\labelenumi}{\arabic{enumi}.}}
+\newcommand{\bron}[1]{\begin{scriptsize} \emph{#1} \end{scriptsize}} 
+
+
+%
+% copied from https://github.com/mooculus/calculus
+%
 
 %\usepackage{todonotes}
 %\usepackage{mathtools} %% Required for wide table Curl and Greens
@@ -63,9 +135,9 @@
 
 
 \newcommand{\RR}{\mathbb R}
-\newcommand{\R}{\mathbb R}
-\newcommand{\N}{\mathbb N}
-\newcommand{\Z}{\mathbb Z}
+%\newcommand{\R}{\mathbb R}
+%\newcommand{\N}{\mathbb N}
+%\newcommand{\Z}{\mathbb Z}
 
 \newcommand{\sagemath}{\textsf{SageMath}}
 
@@ -173,7 +245,7 @@
 %%%%%%%%%%%%%
 
 %% Simple horiz vectors
-\renewcommand{\vector}[1]{\left\langle #1\right\rangle}
+%\renewcommand{\vector}[1]{\left\langle #1\right\rangle}
 
 
 %% %% Complex Horiz Vectors with angle brackets
