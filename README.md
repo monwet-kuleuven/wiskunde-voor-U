@@ -11,3 +11,12 @@ De tekst is geschreven in LaTeX, en maakt gebruik van  Ximera (https://ximera.os
 
 
 * de structuur is (minstens initieel) gebaseerd op die van https://github.com/mooculus/calculus (zie file in dir structure aldaar)
+
+
+# Ximera
+## Info
+* Zie https://ximera.osu.edu/introduction  (source: https://github.com/XimeraProject/gettingStarted)
+
+## Setup
+*  gpg key genereren en naar ximera.osu.edu sturen
+
