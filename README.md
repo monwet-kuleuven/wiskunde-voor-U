@@ -1,4 +1,4 @@
-# Wiskunde-voor-(startende-)U(inversiteitststudenten Wetenschappen)
+# Wiskunde-voor-(startende-)U(niversiteitststudenten Wetenschappen)
 Voorbereidingscursus wiskunde voor beginnende Universiteitsstudenten (Wetenschappen)
 
 
