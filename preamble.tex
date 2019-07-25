@@ -4,21 +4,23 @@
 \usepackage[utf8]{inputenc}
 
 
+\graphicspath{
+	{./}
+	{goniometrie/}
+}
+
+
 %\usepackage{todonotes}
 %\usepackage{mathtools} %% Required for wide table Curl and Greens
 %\usepackage{cuted} %% Required for wide table Curl and Greens
 \newcommand{\todo}{}
 
-\usepackage{esint} % for \oiint
-\ifxake%%https://math.meta.stackexchange.com/questions/9973/how-do-you-render-a-closed-surface-double-integral
-\renewcommand{\oiint}{{\large\bigcirc}\kern-1.56em\iint}
-\fi
+% Font niet (correct?) geinstalleerd in MikTeX?
+%\usepackage{esint} % for \oiint
+%\ifxake%%https://math.meta.stackexchange.com/questions/9973/how-do-you-render-a-closed-surface-double-integral
+%\renewcommand{\oiint}{{\large\bigcirc}\kern-1.56em\iint}
+%\fi
 
-
-\graphicspath{
-  {./}
-  {./goniometrie}
-}
 
 \newcommand{\mooculus}{\textsf{\textbf{MOOC}\textnormal{\textsf{ULUS}}}}
 
