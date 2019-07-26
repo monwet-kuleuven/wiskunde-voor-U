@@ -1,6 +1,15 @@
-\documentclass[numbers]{ximera}
+\documentclass[numbers,wordchoicegiven]{ximera}
+% use of options here to be investigated!!!
+% -> in pdf: just pint the correct
+% -> in HTML: provide options
+% BUT: in exercises: also in pdf provide options!!!
+
+\author{Zomercursus KU Leuven}
+\outcome{Algebraïsch kunnen rekenen met absolute waarde.}
+\outcome{Het verband begrijpen tussen afstand en absolute waarde.}
 
 \input{../preamble.tex}
+
 
 \title[Rekenvaardigheden:]{Absolute waarde}
 
@@ -10,7 +19,7 @@
 \end{abstract}
 \maketitle
 
-\section{Definitie en betekenis}\label{basisaw}
+\section{Definitie en verband met afstand}\label{basisaw}
 
 \begin{definition}
 	Voor een reëel getal $a\in\R$ definiëren we de \textit{absolute waarde} van $a$, genoteerd $|a|$, als
@@ -30,21 +39,25 @@
 		\begin{enumerate}
 			\item $|5|=5$ en $|-5|=5$
 			\item $|\sqrt{2}-1|=\sqrt{2} - 1$
-			\item $|1-\sqrt{2}| = \sqrt{2} - 1$
+			\item $|1-\sqrt{2}| = \wordChoice{\choice[correct]{\sqrt{2} - 1}\choice{1-\sqrt{2}}}$
 			\item $|2-\sqrt{2}| = 2 - \sqrt{2}$
 			\item $|2 + 1| = |2| + | 1| (=3)$
 			\item $|2 + (-1)| \neq |2| + | -1|$
-			\item $|x^2| = x^2$ (want $x^2 \geq 0$)
-			\item $|-x|= ....$ \\ (er is GEEN algemene formule! En ZEER ZEKER NIET \\ $|-x|=x$, want dat is fout zodra $x<0$ !!!)
-			\item $|x^2 + 1| = x^2 + 1$
-			\item $|x^2 - 1| = ....$ \\(er is GEEN algemene formule!)
 		\end{enumerate}
-	\end{multicols}
+\end{multicols}
+\end{example}
+\begin{example} Voorbeelden van absolute waardes (met $a\in\R$)
+		\begin{enumerate}[resume]
+			\item $|a^2| = a^2$ (want $a^2 \geq 0$)
+			\item $|-a|= ....$ \\ (er is GEEN eenvoudige algemene formule! \\En ZEER ZEKER NIET $|-a|=a$: fout zodra $a<0$ !!!)
+			\item $|a^2 + 1| = a^2 + 1$
+			\item $|a^2 - 1| = ....$ \qquad(er is GEEN eenvoudige algemene formule!)
+\end{enumerate}
 \end{example}
 
 Als we het getal $a$ voorstellen op de getallenas, zien we onmiddelijk volgende
 \begin{proposition} 
-	De absolute waarde van een getal is zijn afstand tot de oorsprong (op de getallenas)
+	De absolute waarde van een getal is zijn afstand tot de oorsprong (op de getallenas).
 \end{proposition}
 \begin{enumerate}
 \item als $a \geq 0$
@@ -67,7 +80,8 @@ Als we het getal $a$ voorstellen op de getallenas, zien we onmiddelijk volgende
 \put(340,-10){\makebox(0,0){$\R$}}
 \put(120,0){\makebox(0,0){$\bullet$}}
 \put(220,0){\makebox(0,0){$\bullet$}}
-\put(120,10){\makebox(0,0){$a$}} \put(220,10){\makebox(0,0){$0$}}
+\put(120,10){\makebox(0,0){$a$}} 
+\put(220,10){\makebox(0,0){$0$}}
 \put(170,-20){\makebox(0,0){$|a|=-a$}}
 \put(147,-20){\vector(-1,0){28}}
 \put(193,-20){\vector(1,0){28}}
@@ -77,21 +91,41 @@ Als we het getal $a$ voorstellen op de getallenas, zien we onmiddelijk volgende
 Deze (triviale) eigenschap, die op het eerste zicht is toegevoegd door overijverige wiskundigen die hun cursussen wat langer wilden maken, leidt nochtans onmiddellijk tot volgend (echt!) interessant inzicht: 
 \begin{proposition}
 	Zij $a,b\in\R$ Dan geldt\\
-	$|x-y|$ is de afstand tussen $x$ en $y$ (op de getallenas)
+	$|x-y|$ is de afstand tussen $x$ en $y$ (op de getallenas).
 \end{proposition}
 Het is ERG BELANGRIJK om bij 'de absolute waarde van een verschil' ALTIJD minstens even te denken aan 'afstand tussen de twee termen'. Merk op dat je elke som gemakkelijk kan schrijven als een verschil, en dat dus ook $|x+y| = |x+(-y)|$ gelijk is aan de afstand tussen $x$ en $-y$. Dit is een ERG BELANGRIJK inzicht om de meeste van volgende oefeningen snel en eenvoudig te kunnen oplossen.
 
+\section{Eigenschappen}
 De betekenis en geldigheid van volgende veel gebruikte eigenschappen kunnen eenvoudig worden nagegaan op de getallenas:
-\begin{proposition}
+\begin{proposition}\label{basisaw}
 	Als $x,a \in \R$ en $r\in\R^+_0$, dan is 
-	\begin{enumerate} 
-		\item \label{aw<r}		$|x|<r\qquad	\Leftrightarrow \qquad -r<x<r$ 
-		\item \label{aw>r} 		$|x|>r\qquad	\Leftrightarrow \qquad x<-r\;$ of $\;r<x$ 
-		\item \label{aw	x-a<r}	$|x-a|<r\qquad 	\Leftrightarrow \qquad a-r<x<a+r$ 
-		\item \label{aw x-a>r}	$|x-a|>r\qquad 	\Leftrightarrow \qquad x<a-r\;$ of $\;a+r<x.$
-	\end{enumerate}  
+%	\begin{enumerate} 
+%		\item \label{aw<r}		$|x|<r\qquad	\Leftrightarrow \qquad -r<x<r$ 
+%		\item \label{aw>r} 		$|x|>r\qquad	\Leftrightarrow \qquad x<-r\;$ of $\;r<x$ 
+%		\item \label{aw	x-a<r}	$|x-a|<r\qquad 	\Leftrightarrow \qquad a-r<x<a+r$ 
+%		\item \label{aw x-a>r}	$|x-a|>r\qquad 	\Leftrightarrow \qquad x<a-r\;$ of $\;a+r<x.$
+%	\end{enumerate}
+%	\begin{flalign} 
+%	 |x|<r   &\Leftrightarrow &-r<x<r   &\text{$x$ kleiner dan $r$} &  \label{aaw<r}	          \\
+%	 |x|>r   &\Leftrightarrow &x<-r \text{of} r<x &\text{$x$ groter dan $r$} &  \\
+%	\end{flalign}
+
+	\begin{tabular}{lrclrrrr} 
+	1)&$|x|<r$   &$\Leftrightarrow$ &$-r<x<r$  & $\Leftrightarrow$ & $x\in]-r,r[$     & $\Leftrightarrow$&$x$ ligt dichter dan $r$ bij $0$    \\
+	2)&$|x|>r$   &$\Leftrightarrow$ &$x<-r$ of $r<x$ & $\Leftrightarrow$ & $x\notin]-r,r[$   & $\Leftrightarrow$ &$x$ ligt verder dan $r$ van $0$    \\
+	3)&$|x-a|<r$ & $\Leftrightarrow$ & $ a-r<x<a+r$  & $\Leftrightarrow$ & $x\in]a-r,a+r[$  & $\Leftrightarrow$ & $x$ ligt dichter dan $r$ bij $a$           \\
+	4)&$|x-a|>r$ & $\Leftrightarrow$ & $ x<a-r\;$ of $\;a+r<x.$  & $\Leftrightarrow$ & $x\notin]a-r,a+r[$  & $\Leftrightarrow$ & $x$ ligt verder dan $r$ van $a$\\
+	\end{tabular}        
 \end{proposition}
 
+\todo{TODO: Toegevoegen tekening!}
+
+\begin{remark} \  %forceer newline; betere oplossing? (te veel whitespace...)
+%	\begin{enumerate}
+%		\item 
+		Met deze eigenschap kan je dus één ongelijkheid \textit{met} een absolute waarde omzetten in een \textit{dubbele} ongelijkheid \textit{zonder} absolute waarde. Het is ERG BELANGRIJK zo snel mogelijk deze equivalentie als volledig evident en natuurlijk te beschouwen. Je kent deze formules voldoende goed van zodra je niet meer verschil ziet tussen de formules $|x|<r$ en $-r<x<r$ en $x\in]-r,r[$ als tussen de woorden aap, Aap en \texttt{Aap}.
+ %	\end{enumerate}
+\end{remark}
 % Uit Zomercursus
 
 Voor verdere referentie volgen hier nog enkele eigenschappen van de absolute waarde
@@ -99,30 +133,27 @@ Voor verdere referentie volgen hier nog enkele eigenschappen van de absolute waa
 \begin{proposition}\label{eig: aw}
 	Als $x,y,z\in \R$, dan is
 	\begin{enumerate}
-		\item \label{aw tss}$-|x| \leqslant x \leqslant |x|$ \item
-		\label{aw 0}$|x|=0 \qquad\Leftrightarrow \qquad x=0$ \item
-		\label{aw x -x} $|x|=|-x|$
-		\item \label{aw
-			kwadr}$|x|^2=x^2=|x^2|$
-		\item \label{wortel
-			kwadr}$\sqrt{x^2}=|x|$
-		\item \label{kwadr
-			wortel}$(\sqrt{x})^2=x$ \textit{maar hier is $x \geqslant o$
-			anders bestaat de wortel niet!}
-		\item \label{aw
-			product}$|x\;y|=|x||y|,$ \textit{de absolute waarde van het
-			product is het product van de absolute waarden.}
-		\item \label{aw
-			quotient}$\displaystyle \left|\frac{x}{y}\right|=\frac{|x|}{|y|}$
-		met $y\neq 0,$ \textit{de absolute waarde van het quoti\"ent is
-			het quoti\"ent van de absolute waarden.}
-		\item \label{aw1edrieh}$|x+y| \leqslant|x|+|y|\qquad$ {\bf eerste
-			drie\-hoeks\-on\-ge\-lijk\-heid}
+		\item \label{aw tss}$-|x| \leqslant x \leqslant |x|$ 
+		\item \label{aw 0}$|x|=0 \quad\Leftrightarrow \quad x=0$ 
+		\item\label{aw x -x} $|x|=|-x|$
+		\item \label{aw kwadr}$|x|^2=x^2=|x^2|$
+		\item \label{wortel	kwadr}$\sqrt{x^2}=|x|$
+		\item \label{kwadr wortel}$(\sqrt{x})^2=x$ \hfill(hier is $x \geqslant 0$
+			want anders bestaat de wortel niet!)
+		\item \label{aw product}$|x\;y|=|x||y|,$ \hfill(de absolute waarde van het
+			product is het product van de absolute waarden.)
+		\item \label{aw	quotient}$\displaystyle \left|\frac{x}{y}\right|=\frac{|x|}{|y|}$
+		met $y\neq 0,$ \hfill(de absolute waarde van het quoti\"ent is
+			het quoti\"ent van de absolute waarden.)
+			
+		\todo{\item TODO:Volgende eigenschappen horen eerder bij ongelijkheden ...?}
+		\item \label{aw1edrieh}$|x+y| \leqslant|x|+|y|$ \hfill ({\bf eerste
+			drie\-hoeks\-on\-ge\-lijk\-heid})
 		\item \label{aw1e drieh2}$|x-y|
-		\leqslant|x-z|+|z-y|\;\;$ {\bf eerste
-			drie\-hoeks\-on\-ge\-lijk\-heid} (\textit{equivalente vorm})
-		\item \label{aw 2e drieh} $\ds |\;|x|-|y|\;| \leqslant|x-y|\qquad$
-		{\bf tweede driehoeksongelijkheid}
+		\leqslant|x-z|+|z-y|\;\;$ \hfill ({\bf eerste
+			drie\-hoeks\-on\-ge\-lijk\-heid;  \textit{equivalente vorm}})
+		\item \label{aw 2e drieh} $\ds |\;|x|-|y|\;| \leqslant|x-y|$ \hfill
+		(\bf tweede driehoeksongelijkheid)
 	\end{enumerate}
 \end{proposition}
 
@@ -134,7 +165,7 @@ Uit \ref{aw1edrieh} volgt ook onmiddellijk dat $|x-y| \leq |x|+|y|$ (want $x-y=x
 \begin{problem} Onderzoek welke $x\in \R$ voldoen aan $|x-5|<9.$
 		\begin{oplossing} 
 			\begin{eqnarray*}
-				|x-5|&<&9 \qquad \textit{de afstand tussen $x$ en $5$ is kleiner dan $9$}\\
+				|x-5|&<&9 \qquad\qquad \textit{de afstand tussen $x$ en $5$ is kleiner dan $9$}\\
 				&\Updownarrow &\textit{eig. \ref{basisaw}(\ref{aw x-a<r})}\\
 				5-9<&x&<5+9\\
 				&\Updownarrow &\\
@@ -196,7 +227,8 @@ Uit \ref{aw1edrieh} volgt ook onmiddellijk dat $|x-y| \leq |x|+|y|$ (want $x-y=x
 \begin{problem}	 Als $x,y \in\R$, $\varepsilon\in \R_0^+$ en er geldt dat
 		$|x-y|<\varepsilon,$ kan je dan een waarde vinden voor
 		$\varepsilon$ waarvoor $\displaystyle \frac{|y|}{2}<|x|$?
-		\begin{oplossing}
+\begin{expandable}
+		\begin{oplossing} \ 
 			\textit{De tweede driehoeksongelijkheid legt een verband tussen
 				$|x|,|y|$ en $|x-y|$. We zullen daarmee aan de slag gaan.}
 			\\We weten dat $\displaystyle |\;|x|-|y|\;| \leqslant|x-y|$ en verder
@@ -208,9 +240,10 @@ Uit \ref{aw1edrieh} volgt ook onmiddellijk dat $|x-y| \leq |x|+|y|$ (want $x-y=x
 			Als we bijvoorbeeld $\ds\varepsilon=\frac{|y|}{2}$ kiezen geeft de
 			linkse ongelijkheid het gevraagde $\ds \frac{|y|}{2}<|x|$.
 		\end{oplossing}
+	\end{expandable}
 \end{problem}
 
-\section{Oefeningen}
+%\section{Oefeningen}
 %\practice{awbasisrekenen}
 
 \end{document}
