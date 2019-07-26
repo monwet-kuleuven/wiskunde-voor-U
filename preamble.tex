@@ -1,4 +1,6 @@
 
+\usepackage[margin=1cm, includehead, includefoot, hmargin={.8in,.5in}, paperwidth=8.5in, paperheight=8.5in]{geometry}
+
 \usepackage[utf8]{inputenc}
 \usepackage{multicol}
 
@@ -15,7 +17,71 @@
 \renewcommand{\leq}{\leqslant}
 
 
-\newtheorem{oplossing}[theorem]{Oplossing}
+
+
+%
+% Poging tot aanpassen layout
+%
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+% Herdefinieer enkele omgevingen (PAS OP: enkel voor PDF, voor html: zie css..!!!)
+% remove italics def
+\makeatletter   % because of the @ below: make @ a (normal) letter!!
+\let\definition\relax
+\let\c@definition\relax
+\let\enddefinition\relax
+\theoremstyle{definition}
+%\newtheorem*{definition}{Definitie}
+\newmdtheoremenv{definition}{Definitie}
+%\newtcbtheorem[number within=section]{definition}{Definitie}{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+%\newtcbtheorem{definition}{Definitie}{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+
+
+
+% remove italics def
+\let\example\relax
+\let\c@example\relax
+\let\endexample\relax
+\theoremstyle{definition}
+\newtheorem{example}{Voorbeeld}
+
+% remove italics def
+\let\remark\relax
+\let\c@remark\relax
+\let\endremark\relax
+\theoremstyle{definition}
+\newtheorem{remark}{Opmerking}
+
+% remove italics def
+\let\proposition\relax
+\let\c@proposition\relax
+\let\endproposition\relax
+%\theoremstyle{proposition}
+\newmdtheoremenv{proposition}{Eigenschap}
+
+% remove italics def
+\let\problem\relax
+\let\c@problem\relax
+\let\endproblem\relax
+%\theoremstyle{problem}
+\newtheorem{problem}{Voorbeeld oefening}
+
+% remove italics def
+\let\exercise\relax
+\let\c@exercise\relax
+\let\endexercise\relax
+%\theoremstyle{problem}
+\newtheorem{exercise}{Oef.}
+
+\newtheorem*{oplossing}{Oplossing}
+%\newtheorem{oplossing}[definition]{Oplossing}
+
+\makeatother
+
+
+
 
 %definities nieuwe commando's - afkortingen veel gebruikte symbolen
 \newcommand{\ds}{\displaystyle}

@@ -1,55 +1,11 @@
-\documentclass[handout,numbers]{xourse}
+\documentclass[handout,numbers,noauthor,nooutcomes]{xourse}
 %\documentclass[10pt,handout,wordchoicegiven]{xourse}
 %\documentclass[handout]{xourse}
 %\documentclass[numbers]{xourse}
 
 \input{preamble.tex}
 
-\usepackage{mdframed}
-
-% remove italics def
-\makeatletter   % because of the @ below !!
-\let\definition\relax
-\let\c@definition\relax
-\let\enddefinition\relax
-\theoremstyle{definition}
-%\newtheorem*{definition}{Definitie}
-\newmdtheoremenv{definition}{Definitie}
-
-
-
-% remove italics def
-\let\example\relax
-\let\c@example\relax
-\let\endexample\relax
-\theoremstyle{definition}
-\newtheorem{example}{Voorbeeld}
-
-% remove italics def
-\let\proposition\relax
-\let\c@proposition\relax
-\let\endproposition\relax
-%\theoremstyle{proposition}
-\newmdtheoremenv{proposition}{Eigenschap}
-
-% remove italics def
-\let\problem\relax
-\let\c@problem\relax
-\let\endproblem\relax
-%\theoremstyle{problem}
-\newtheorem{problem}{Voorbeeld oefening}
-
-% remove italics def
-\let\exercise\relax
-\let\c@exercise\relax
-\let\endexercise\relax
-%\theoremstyle{problem}
-\newtheorem{exercise}{Oef.}
-
-\makeatother
-
-\title{Voorbereidingslessen wiskunde voor studenten Wetenschappen}
-
+\title{Voorkennislessen wiskunde voor studenten Wetenschappen}
 
 \begin{document}
 \begin{abstract}
@@ -61,4 +17,6 @@
 \practice{rekenvaardigheden/exercises/awbasisvergelijkingen}
 \practice{rekenvaardigheden/exercises/aw_al_de_rest}
 
+\newpage
+\activity{rekenvaardigheden/ongelijkheden.tex}
 \end{document}
