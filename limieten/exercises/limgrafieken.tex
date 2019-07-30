@@ -1,0 +1,94 @@
+\documentclass{ximera}
+
+\input{../../preamble.tex}
+
+\author{Wim Obbels}
+\license{Creative Commons 3.0 By-bC}
+
+
+\outcome{}
+
+
+\begin{document}
+%\begin{exercise} \ 
+	Bepaal de gevraagde limieten op basis van een grafiek.
+	
+	\begin{image}[\textwidth]
+		\begin{tikzpicture}
+		\begin{axis}
+		[
+		axis equal,
+		ymax=5,ymin=-5,
+		samples=200,
+		axis lines=center,
+		extra y ticks={0},
+		restrict y to domain=-10:10,
+		]
+		\addplot[domain=-5:5,color=blue] {1/x};
+		\legend{$1/x$}
+		\end{axis}
+		\end{tikzpicture}
+\quad
+		\begin{tikzpicture}
+			\begin{axis}
+			[
+			axis equal,
+			ymax=5,ymin=-5,
+			samples=200,
+			axis lines=center,
+			extra y ticks={0},
+			restrict y to domain=-10:10,
+			]
+			\addplot[domain=-5:5,color=blue] {1/x^2};
+			\legend{$1/x^2$}
+			\end{axis}
+		\end{tikzpicture}
+		\quad
+		\begin{tikzpicture}
+		\begin{axis}
+		[
+		axis equal,
+		ymax=5,ymin=-5,
+		samples=200,
+		axis lines=center,
+		extra y ticks={0},
+		restrict y to domain=-10:10,
+		]
+		\addplot[domain=-5:5,color=blue] {exp(x)};
+		\addplot[domain=0.001:5,color=blue,dashed] {ln(x)};
+		\legend{$e^x$, $\ln x$}
+		\end{axis}
+		\end{tikzpicture}
+	\end{image}
+	
+    % probeersel om gemakkelijk oefeningen te kunnen maken; to be done properly, want dit is (nog) geknoei ... !
+	\def\isA{}
+	\def\isB{}
+	\def\isC{}
+	\def\isD{}
+	\def\isE{}
+	\def\isF{}
+
+	\newcommand{\localoefoptions}{\hfill\wordChoice{\choice[\isA]{$+\infty$}\choice[\isB]{$-\infty$}\choice[\isC]{0}\choice[\isD]{1}\choice[\isE]{bestaat niet}\choice[\isF]{andere oplossing}}}
+		
+	% todo: limiet van sin x: bestaat niet
+	% todo: limiet van sin(1/x): bestaat ook niet
+
+		Deze oefeningen zouden zeer eenvoudig moeten zijn:
+		\begin{exercise} \def\isA{correct}   $\limxi    \frac{1}{x^2}= \;$   \localoefoptions \end{exercise}
+		\begin{exercise} \def\isA{correct}   $\limxi    e^x = \;$            \localoefoptions \end{exercise}
+		\begin{exercise} \def\isB{correct}   $\limxmi   e^x = \;$            \localoefoptions \end{exercise}
+		\begin{exercise} \def\isB{correct}   $\rlimx    \ln x = \;$          \localoefoptions \end{exercise}
+		\begin{exercise} \def\isE{correct}   $\llimx    \ln x = \;$          \localoefoptions \end{exercise}
+		\begin{exercise} \def\isE{correct}   $\limx     \ln x = \;$          \localoefoptions \end{exercise}
+		Deze oefeningen vragen net iets meer nadenken:				
+		\begin{exercise} \def\isD{correct}   $\limxi    e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
+		\begin{exercise} \def\isC{correct}   $\limxmi   e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
+		\begin{exercise} \def\isE{correct}   $\limx     e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
+		\begin{exercise} \def\isA{correct}   $\rlimx    e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
+		\begin{exercise} \def\isC{correct}   $\llimx    e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
+		\begin{exercise} \def\isC{correct}   $\limxi    \ln(1+ \frac 1x) = \;$ \localoefoptions \end{exercise}
+		
+%\end{exercise}
+
+\end{document}
