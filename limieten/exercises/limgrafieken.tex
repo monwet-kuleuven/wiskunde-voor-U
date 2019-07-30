@@ -12,9 +12,11 @@
 \begin{document}
 %\begin{exercise} \ 
 	Bepaal de gevraagde limieten op basis van een grafiek.
-	
-	\begin{image}[\textwidth]
-		\begin{tikzpicture}
+
+% todo: find out how image is (supposed to be) working
+%	\begin{image}[\textwidth]
+%\begin{figure}[width=\textwidth]
+		\begin{tikzpicture}[scale=0.5]
 		\begin{axis}
 		[
 		axis equal,
@@ -29,7 +31,7 @@
 		\end{axis}
 		\end{tikzpicture}
 \quad
-		\begin{tikzpicture}
+		\begin{tikzpicture}[scale=0.5]
 			\begin{axis}
 			[
 			axis equal,
@@ -44,7 +46,7 @@
 			\end{axis}
 		\end{tikzpicture}
 		\quad
-		\begin{tikzpicture}
+		\begin{tikzpicture}[scale=0.5]
 		\begin{axis}
 		[
 		axis equal,
@@ -59,7 +61,9 @@
 		\legend{$e^x$, $\ln x$}
 		\end{axis}
 		\end{tikzpicture}
-	\end{image}
+%	\end{image}
+%\end{figure}
+
 	
     % probeersel om gemakkelijk oefeningen te kunnen maken; to be done properly, want dit is (nog) geknoei ... !
 	\def\isA{}
@@ -80,11 +84,11 @@
 		\begin{exercise} \def\isB{correct}   $\limxmi   e^x = \;$            \localoefoptions \end{exercise}
 		\begin{exercise} \def\isB{correct}   $\rlimx    \ln x = \;$          \localoefoptions \end{exercise}
 		\begin{exercise} \def\isE{correct}   $\llimx    \ln x = \;$          \localoefoptions \end{exercise}
-		\begin{exercise} \def\isE{correct}   $\limx     \ln x = \;$          \localoefoptions \end{exercise}
+		\begin{exercise} \def\isE{correct}   $\limxz    \ln x = \;$          \localoefoptions \end{exercise}
 		Deze oefeningen vragen net iets meer nadenken:				
 		\begin{exercise} \def\isD{correct}   $\limxi    e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
 		\begin{exercise} \def\isC{correct}   $\limxmi   e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
-		\begin{exercise} \def\isE{correct}   $\limx     e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
+		\begin{exercise} \def\isE{correct}   $\limxz     e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
 		\begin{exercise} \def\isA{correct}   $\rlimx    e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
 		\begin{exercise} \def\isC{correct}   $\llimx    e^{\frac 1x} = \;$   \localoefoptions \end{exercise}
 		\begin{exercise} \def\isC{correct}   $\limxi    \ln(1+ \frac 1x) = \;$ \localoefoptions \end{exercise}

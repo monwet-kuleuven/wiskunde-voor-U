@@ -23,12 +23,20 @@
 % MERK OP: hier kan dus ook de notatie voor linker/rechterlimiet worden gekozen !!!
 % Usage: \limx geeft lim voor x-> 0;  \limx[a^2]  geeft lim voor x-> a^2 en \limxi geeft lim voor x -> \infy \limxmi -> -\infty 
 % Mmm, zonder de \ifblank lijkt het niet te werken in htlatex ...?
-\newcommand{\limx}[1][]{\lim_{x \rightarrow \ifblank{#1}{0}{#1}}}
-\newcommand{\llimx}[1][]{\lim_{x \underset < \rightarrow \ifblank{#1}{0}{#1}}}
-\newcommand{\rlimx}[1][]{\lim_{x \underset > \rightarrow \ifblank{#1}{0}{#1}}}
+%\newcommand{\limx}[1][]{\lim_{x \rightarrow \ifblank{#1}{0}{#1}}}
+%\newcommand{\llimx}[1][]{\lim_{x \underset < \rightarrow \ifblank{#1}{0}{#1}}}
+%\newcommand{\rlimx}[1][]{\lim_{x \underset > \rightarrow \ifblank{#1}{0}{#1}}}
+%\newcommand{\limxi}{\limx[+\infty]}  % I voor \Infty
+%\newcommand{\limxmi}{\limx[-\infty]} % MI voor Min \Infty
 
-\newcommand{\limxi}{\limx[+\infty]}  % I voor \Infty
-\newcommand{\limxmi}{\limx[-\infty]} % MI voor Min \Infty
+\newcommand{\limx}[1]{\lim_{x \rightarrow #1}}
+\newcommand{\llimx}{\lim_{x \underset < \rightarrow 0}}
+\newcommand{\rlimx}{\lim_{x \underset > \rightarrow 0}}
+\newcommand{\limxz}{\limx{0}}  % Z voor zero
+\newcommand{\limxi}{\limx{+\infty}}  % I voor \Infty
+\newcommand{\limxmi}{\limx{-\infty}} % MI voor Min \Infty
+
+
 
 % bestaan niet ...!
 %\newcommand{\rlimxi}{\rlimx[+\infty]}
