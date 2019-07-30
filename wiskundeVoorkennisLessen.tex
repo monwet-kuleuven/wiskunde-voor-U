@@ -3,6 +3,13 @@
 %\documentclass[handout]{xourse}
 %\documentclass[numbers]{xourse}
 
+\makeatletter
+\newcommand{\exerciseCollection}[2]{
+	\def\input@path{{#1}}
+	\activity{#1#2}}
+\makeatother
+
+
 \input{preamble.tex}
 
 \title{Voorkennislessen wiskunde voor studenten Wetenschappen}
@@ -20,8 +27,8 @@
 \practice{rekenvaardigheden/exercises/awbasisvergelijkingen}
 \practice{rekenvaardigheden/exercises/aw_al_de_rest}
 
-\newpage
-\activity{rekenvaardigheden/ongelijkheden.tex}
+%\newpage
+%\activity{rekenvaardigheden/ongelijkheden.tex}
 
 
 \newpage
@@ -30,7 +37,8 @@
 \sectionstyle
 
 \activity{limieten/limieten.tex}
-\activity{limieten/exercises/limgrafieken.tex}
+%\activity{limieten/exercises/limgrafieken.tex}
+\exerciseCollection{limieten/exercises/}{exerciseList}
 \activity{limieten/asymptoten.tex}
 
 \end{document}
