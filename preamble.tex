@@ -29,12 +29,17 @@
 %\newcommand{\limxi}{\limx[+\infty]}  % I voor \Infty
 %\newcommand{\limxmi}{\limx[-\infty]} % MI voor Min \Infty
 
-\newcommand{\limx}[1]{\lim_{x \rightarrow #1}}
+\newcommand{\limxg}[1]{\lim_{x \rightarrow #1}}
+\newcommand{\llimxc}{\lim_{x \underset < \rightarrow c}}
+\newcommand{\rlimxc}{\lim_{x \underset > \rightarrow c}}
 \newcommand{\llimx}{\lim_{x \underset < \rightarrow 0}}
 \newcommand{\rlimx}{\lim_{x \underset > \rightarrow 0}}
-\newcommand{\limxz}{\limx{0}}  % Z voor zero
-\newcommand{\limxi}{\limx{+\infty}}  % I voor \Infty
-\newcommand{\limxmi}{\limx{-\infty}} % MI voor Min \Infty
+
+\newcommand{\limxz}{\limxg{0}}  % Z voor zero
+\newcommand{\limx}{\limxg{0}} 
+\newcommand{\limxc}{\limxg{c}} 
+\newcommand{\limxi}{\limxg{+\infty}}  % I voor \Infty
+\newcommand{\limxmi}{\limxg{-\infty}} % MI voor Min \Infty
 
 
 

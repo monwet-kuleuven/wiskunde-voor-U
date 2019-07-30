@@ -111,8 +111,8 @@ We zeggen dan ook dat de functie (of de uitdrukking) $\dfrac{\sin x}{x}$ gelijk 
 
 Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt aan $0$ \textit{als $x$ naar oneindig gaat}, en we schrijven  $\limxi \dfrac{\sin x}{x} = 0$. 
 
-\begin{image}
-	\begin{tikzpicture}[scale=2]
+\begin{image}[\width]
+	\begin{tikzpicture}[scale=1]
 	\begin{axis}
 	[
 	samples=200,
@@ -133,7 +133,7 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 \end{image}
 \end{example}
 
-\begin{example} (Limieten van $\frac{1}{x^2}$)
+\begin{example} (Limieten van $\frac{1}{x}$)
 	
 	We doen hetzelfde als hierboven voor $f: x\mapsto  1/x$.
 	
@@ -141,11 +141,11 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 	
 	Voor $x$ heel klein (in de betekenis van heel dicht bij $0$), lijkt het ook eenvoudig: als $x$ naar $0$ gaat, dat wordt $1/x$ immers oneindig groot. Maar, er is jammer genoeg een complicatie: als $x$ negatief is en dicht bij $0$ ligt, dan wordt $x$ niet heel groot, maar net heel klein (in de betekenis van heel erg negatief). Dus: voor $x$ dicht bij $0$, kan $1/x$ ofwel heel groot zijn (als $x>0$, ofwel net heel erg negatief (als $x<0$). Dus: het hangt er maar van af 'langs welke kant' we $x$ naar $0$ laten gaan, of we in $+\infty$ dan wel in $-\infty$ uitkomen. 
 	
-	Het heeft geen zin om in dit geval te spreken van een limiet, maar het is in een aantal gevallen (in het bijzonder in deze cursus) erg handig om toch een begrip en een notatie te hebben in deze situatie. We spreken van \textit{linkerlimiet} als we $0$ langs links benaderen, dus met $x<$ (of $0>x$, dat is natuurlijk hetzelfde!), en \textit{rechterlimiet} voor langs rechts (dus $x>0$, of ook $0<x$). En we hebben dus enkel een (echte) \textit{limiet} als de linkerlimiet gelijk is aan de rechterlimiet!
+	Het heeft geen zin om in dit geval te spreken van een limiet, maar het is in een aantal gevallen (in het bijzonder in deze cursus) erg handig om toch een begrip en een notatie te hebben in deze situatie. We spreken van \textit{linkerlimiet} als we $0$ langs links benaderen, dus met $x<0$ (of $0>x$, dat is natuurlijk hetzelfde!), en \textit{rechterlimiet} voor langs rechts (dus $x>0$, of ook $0<x$). En we hebben dus enkel een (echte) \textit{limiet} als de linkerlimiet gelijk is aan de rechterlimiet!
 	
 	De situatie zou volledig duidelijk moeten zijn op volgende tekening:
-	\begin{image}
-		\begin{tikzpicture}[scale=4]
+	\begin{image}[\width]
+		\begin{tikzpicture}[scale=1]
 		\begin{axis}
 		[
 		axis equal,
@@ -181,21 +181,21 @@ We gaan zoals vermeld in deze module niet in op de exacte wiskundige definitie v
 	Dan zeggen en schrijven we dat 
 
 \begin{align*}
-	\limx[c]  f(x) = a & \quad\iff\quad \text{de limiet van $f$ als $x$ naar $c$ gaat is (gelijk aan) $a$} \\
+	\limxc  f(x) = a & \quad\iff\quad \text{de limiet van $f$ als $x$ naar $c$ gaat is (gelijk aan) $a$} \\
 	                   & \quad\iff\quad \text{als }x\to c\text{, dan } 									f(x) \to a \\
 	                   \\
-	\llimx[c] f(x) = a & \quad\iff\quad \text{de linkerlimiet van $f$ als $x$ naar $c$ gaat is (gelijk aan) $a$} \\
+	\llimxc f(x) = a & \quad\iff\quad \text{de linkerlimiet van $f$ als $x$ naar $c$ gaat is (gelijk aan) $a$} \\
 	                   & \quad\iff\quad \text{de limiet van $f$ als $x$ langs links naar $c$ gaat is (gelijk aan) $a$} \\
 	                   & \quad\iff\quad \text{als }x\to c\text{\textbf{ langs links} (dus $x<c$), dan } f(x) \to a \\
 	                   \\
-	\rlimx[c] f(x) = a & \quad\iff\quad \text{de rechterlimiet van $f$ als $x$ naar $c$ gaat is (gelijk aan) $a$} \\
+	\rlimxc f(x) = a & \quad\iff\quad \text{de rechterlimiet van $f$ als $x$ naar $c$ gaat is (gelijk aan) $a$} \\
 					   & \quad\iff\quad \text{de limiet van $f$ als $x$ langs rechts naar $c$ gaat is (gelijk aan) $a$} \\
 					   & \quad\iff\quad \text{als }x\to c\text{\textbf{ langs rechts} (dus $x>c$), dan }f(x) \to a 
 \end{align*}
 Merk op: $(x<c\iff c>x)$ en $(x>c \iff c<x)$. Let dus zowel op de tekens $<,>$ \textit{en} op de volgorde van de letters of cijfers!  
 \end{definition}
 
-Merk op: als we  $x\to c$ lezen als '$x$ gaat naar $c$' of '$x$ ligt (erg) dicht bij $c$', dan heeft dat een zeker dynamisch aspect: $x$ wordt verondersteld te 'bewegen' naar iets. Het is belangrijk te beseffen dat het resultaat, of de 'uitkomst' van zo'n limiet, dus datgene wat met het symbool $\limx[c] f(x)$ wordt aangeduid, gewoon een bepaald getal is (of eventueel het symbool $\pm\infty$: zie daarvoor verder).
+Merk op: als we  $x\to c$ lezen als '$x$ gaat naar $c$' of '$x$ ligt (erg) dicht bij $c$', dan heeft dat een zeker dynamisch aspect: $x$ wordt verondersteld te 'bewegen' naar iets. Het is belangrijk te beseffen dat het resultaat, of de 'uitkomst' van zo'n limiet, dus datgene wat met het symbool $\limxc f(x)$ wordt aangeduid, gewoon een bepaald getal is (of eventueel het symbool $\pm\infty$: zie daarvoor verder).
 
 %(overbodig) Merk op: hierbij staan zowel de letters $a$ als $c$ dus voor reële getallen \textit{of} voor één van de symbolen $+\infty$ of $-\infty$. Zie verder voor de rekenregels voor $\pm\infty$.
 
@@ -213,24 +213,23 @@ Het is duidelijk dat opties 2 en  3 \textsc{strikt wiskundig niet geldig zijn}. 
 \begin{exercise} \ 
 	Bereken op basis van volgende welbekende grafieken onderstaande limieten
 
-\begin{image}
-% todo: scale werkt niet ...?
-	\begin{tikzpicture}[scale=4]
-\begin{axis}
-[
-axis equal,
-ymax=5,ymin=-5,
-samples=200,
-axis lines=center,
-extra y ticks={0},
-  restrict y to domain=-10:10,
-]
-\addplot[domain=-5:5,color=blue] {1/x^2};
-\legend{$1/x^2$}
-\end{axis}
-\end{tikzpicture}
+\begin{image}[\textwidth]
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+		axis equal,
+		ymax=5,ymin=-5,
+		samples=200,
+		axis lines=center,
+		extra y ticks={0},
+		  restrict y to domain=-10:10,
+		]
+		\addplot[domain=-5:5,color=blue] {1/x^2};
+		\legend{$1/x^2$}
+		\end{axis}
+	\end{tikzpicture}
 \quad
-	\begin{tikzpicture}[scale=4]
+	\begin{tikzpicture}
 	\begin{axis}
 	[
 	axis equal,
@@ -244,8 +243,8 @@ extra y ticks={0},
 	\legend{$1/x$}
 	\end{axis}
 	\end{tikzpicture}
-	\quad
-	\begin{tikzpicture}[scale=4]
+\quad
+	\begin{tikzpicture}
 	\begin{axis}
 	[
     axis equal,
@@ -256,7 +255,7 @@ extra y ticks={0},
     restrict y to domain=-10:10,
 	]
 	\addplot[domain=-5:5,color=blue] {exp(x)};
-	\addplot[domain=0.001:5,dashed,color=red] {ln(x)};
+	\addplot[domain=0.001:5,color=blue,dashed] {ln(x)};
 	\legend{$e^x$, $\ln x$}
 	\end{axis}
 	\end{tikzpicture}
@@ -298,9 +297,8 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	
 	Dit is een veelterm en we kunnen die bekijken als de som van de functies $x\mapsto3x^2, x\mapsto-4x$ en $x\mapsto2$. 
 	Dat ziet er als volgt uit:
-\begin{image}
-	% todo: scale werkt niet ...?
-	\begin{tikzpicture}[scale=4]
+\begin{image}[\width]
+	\begin{tikzpicture}[scale=1]
 	\begin{axis}
 	[
 	axis equal,
@@ -327,30 +325,30 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	Zij $A\subseteq\R, f,g:A\to\R$ twee continue functies, en $c\in A$ of $c$ ligt 'op de rand van $A$'. \\
 	In het bijzonder kan eventueel $c=+\infty$ of $c=-\infty$. 
 	
-%	Veronderstel dat $\limx[c] f(x) = a$ en $\limx[c] g(x) = b$ (met $a,b\in \R\cap \{\pm\infty\}$).
-	Veronderstel dat $\limx[c] f(x)$ en $\limx[c] g(x)$ bestaan%, en \textbf{beide {\large eindig} zijn}.
+%	Veronderstel dat $\limxc f(x) = a$ en $\limxc g(x) = b$ (met $a,b\in \R\cap \{\pm\infty\}$).
+	Veronderstel dat $\limxc f(x)$ en $\limxc g(x)$ bestaan%, en \textbf{beide {\large eindig} zijn}.
 	
 	Dan gelden volgende (reken-)regels  \textbf{\color{red} tenzij ze een {\large onbepaaldheid} geven}: 
 	
 	
 	\begin{align}
-		 \limx[c] \big(f(x) +g(x)\big) & = \limx[c] f(x) + \limx[c] g(x)  
+		 \limxc \big(f(x) +g(x)\big) & = \limxc f(x) + \limxc g(x)  
 		     & \text{[lim(som) = som(lims)]} \label{elim-som} \\
-		 \limx[c] \big(f(x) -g(x)\big) & = \limx[c] f(x) - \limx[c] g(x)  
+		 \limxc \big(f(x) -g(x)\big) & = \limxc f(x) - \limxc g(x)  
 		     & \text{[lim(verschil) = verschil(lims)])} \label{elim-verschil}\\
-		 \limx[c] \big(f(x)\cdot g(x)\big) & = \limx[c] f(x) \cdot \limx[c] g(x)  
+		 \limxc \big(f(x)\cdot g(x)\big) & = \limxc f(x) \cdot \limxc g(x)  
 		     & \text{[lim(product) =  product(lims)]} \label{elim-product} \\
 		 %
-		 \intertext{Als $\limx[c] g(x) \neq 0:$}
-		 \limx[c] \dfrac{f(x)}{g(x)} & = \dfrac{\limx[c] f(x)}{\limx[c] g(x)}  
+		 \intertext{Als $\limxc g(x) \neq 0:$}
+		 \limxc \dfrac{f(x)}{g(x)} & = \dfrac{\limxc f(x)}{\limxc g(x)}  
 		     & \text{[lim(quotiënt) = quotiënt(lims)]} \label{elim-quotient} \\
 		 %
 		 \intertext{Als $c\in A$ (dus $c$ behoort tot dom $f$)} %(en dus $c$ tot het domein van $f$ behoort):} 
-		 \limx[c] f(x) & = f(c) 
+		 \limxc f(x) & = f(c) 
 		     & \text{[lim\_in\_c($f$) = $f$(c) als $f$(c) bestaat en $f$ continu]} \label{elim-domein} \\
 		 %
-		 \intertext{Als $f(g(x))$ bestaat voor $x$ dicht bij $c$, $f(\limx[c]g(x))$ bestaat, $f$ is continu (TBV!):} 
-		 \limx[c] f(g(x)) & = f(\limx[c] g(x)) 
+		 \intertext{Als $f(g(x))$ bestaat voor $x$ dicht bij $c$, $f(\limxc(x))$ bestaat, $f$ is continu (TBV!):} 
+		 \limxc f(g(x)) & = f(\limxc g(x)) 
 		     & \text{[lim($f$(iets)) =  $f$(lim(iets)) \textit{als} alle vw voldaan!]} \label{elim-continu} 
 	\end{align}
 \end{proposition}
@@ -369,7 +367,7 @@ Uitwijding: merk op dat:
 	\limxi g(x) & = \limxi (a-x) = -\infty \\
 	\limxi (g(x)+f(x)) & = \limxi a = a \\
 	\end{align*}
-    In dit geval impliceert dus $\limx[c] \big(f(x) +g(x)\big) = \limx[c] f(x) + \limx[c] g(x)$ dat $(+\infty) + (-\infty)$ gelijk zou moeten zijn aan $a$. Maar $a$ is willekeurig (of \textit{onbepaald}): we kunnen voor $a$ even goed $0$ kiezen als $2$ of $2\pi/3$ \dots! Dus: de rekenregels voor de som van limieten impliceren dat $(+\infty)+(-\infty)$ elke waarde kan aannemen, en dus noodzakelijkerwijze \textit{onbepaald} moet blijven. Jammer maar helaas ...
+    In dit geval impliceert dus $\limxc \big(f(x) +g(x)\big) = \limxc f(x) + \limxc g(x)$ dat $(+\infty) + (-\infty)$ gelijk zou moeten zijn aan $a$. Maar $a$ is willekeurig (of \textit{onbepaald}): we kunnen voor $a$ even goed $0$ kiezen als $2$ of $2\pi/3$ \dots! Dus: de rekenregels voor de som van limieten impliceren dat $(+\infty)+(-\infty)$ elke waarde kan aannemen, en dus noodzakelijkerwijze \textit{onbepaald} moet blijven. Jammer maar helaas ...
     
     
 \end{example}
@@ -382,7 +380,7 @@ Zoek een gelijkaardig eenvoudig (tegen)voorbeeld voor $0\cdot\infty$ en voor $\d
 
 We zijn dus verplicht om voldoende voorzichtig rekenregels vast te leggen voor de symbolen $+\infty$ en $-\infty$. We kunnen rekenen met $+\infty$ en $-\infty$  op voorwaarde dat we zogenaamde \textit{onbepaalde vormen} vermijden.
 
-Merk op: we schrijven verder meestal gewoon $\infty$ voor $+\infty$. \\
+Merk op: we schrijven verder meestal gewoon $\infty$ voor $+\infty$ (net zoals we $5$ schrijven voor $+5$). \\
 En $\pm\infty$ betekent $+\infty$ of $-\infty$ (in die volgorde, zodat we ook kunnen schrijven dat $-(\pm\infty) = \mp\infty$!)
 
 Eerst enkele regels die wel gewoon werken zoals het hoort:
@@ -522,7 +520,7 @@ De limiet van een rationale functie in $\pm\infty$ wordt bepaald door de hoogste
 	Op de onderstaande tekening is $g(x)=(x+5)(x-5)(x-1)^2/50$ getekend, samen met $1/g(x)$. We zien dat de limiet in $x=1$ gelijk is aan $-\infty$ (omdat $g(x)$ er een dubbel nulpunt heeft en negatief is in de omgeving van $-1$, terwijl er in $x=\pm5$ telkens enkelvoudige nulpunten zijn, waar $g(x)$ dus van teken verandert, en $1/g(x)$ dus geen limiet heeft (maar enkel een linker- en een rechterlimiet).
 	
 
-\begin{image}
+\begin{image}[\width]
 %\begin{figure}
 	\begin{tikzpicture}
 	 [
