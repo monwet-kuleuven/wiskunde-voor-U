@@ -30,10 +30,12 @@
 %\newcommand{\limxmi}{\limx[-\infty]} % MI voor Min \Infty
 
 \newcommand{\limxg}[1]{\lim_{x \rightarrow #1}}
-\newcommand{\llimxc}{\lim_{x \underset \le \rightarrow c}}
-\newcommand{\rlimxc}{\lim_{x \underset \ge \rightarrow c}}
-\newcommand{\llimx}{\lim_{x \underset {\text{\textless}}\rightarrow 0}}
-\newcommand{\rlimx}{\lim_{x \underset {\text{\textgreater}} \rightarrow 0}}
+\newcommand{\llimxc}{\lim_{x \underset < \rightarrow c}}
+\newcommand{\rlimxc}{\lim_{x \underset > \rightarrow c}}
+% < gave illegal macro definition
+%\text{\textless} showed "\textless" in html
+\newcommand{\llimx}{\lim_{x \underset{<} \rightarrow 0}}
+\newcommand{\rlimx}{\lim_{x \underset{>} \rightarrow 0}}
 
 \newcommand{\limxz}{\limxg{0}}  % Z voor zero
 \newcommand{\limx}{\limxg{0}} 
