@@ -115,7 +115,7 @@ Test animation:
 
 \begin{animateinline}[loop, poster = first, controls]{30}
 	%
-	\whiledo{\theangle<359}{
+	\whiledo{\theangle<9}{
 		%
 		\begin{tikzpicture}
 		% Axis
@@ -138,7 +138,7 @@ Test animation:
 		\end{tikzpicture}
 		%
 		\stepcounter{angle}
-		\ifthenelse{\theangle<359}{
+		\ifthenelse{\theangle<9}{
 			\newframe
 		}{
 		\end{animateinline}
