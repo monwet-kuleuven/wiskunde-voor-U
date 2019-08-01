@@ -21,3 +21,6 @@ De tekst is geschreven in LaTeX, en maakt gebruik van  Ximera (https://ximera.os
 *  gpg key genereren en naar ximera.osu.edu sturen
 
 ## Gebruik een lokale service
+
+## TODO:
+* check wanneer/hoe de ximera-server svg's served/refreshed
