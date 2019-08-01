@@ -20,3 +20,4 @@ De tekst is geschreven in LaTeX, en maakt gebruik van  Ximera (https://ximera.os
 ## Setup
 *  gpg key genereren en naar ximera.osu.edu sturen
 
+## Gebruik een lokale service
