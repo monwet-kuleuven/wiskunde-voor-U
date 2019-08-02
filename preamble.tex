@@ -23,40 +23,32 @@
 % Shortcuts voor limieten
 % MERK OP: hier kan dus ook de notatie voor linker/rechterlimiet worden gekozen !!!
 % Usage: \limx geeft lim voor x-> 0;  \limx[a^2]  geeft lim voor x-> a^2 en \limxi geeft lim voor x -> \infy \limxmi -> -\infty 
+
 % Mmm, zonder de \ifblank lijkt het niet te werken in htlatex ...?
 %\newcommand{\limx}[1][]{\lim_{x \rightarrow \ifblank{#1}{0}{#1}}}
-%\newcommand{\llimx}[1][]{\lim_{x \underset < \rightarrow \ifblank{#1}{0}{#1}}}
-%\newcommand{\rlimx}[1][]{\lim_{x \underset > \rightarrow \ifblank{#1}{0}{#1}}}
-%\newcommand{\limxi}{\limx[+\infty]}  % I voor \Infty
-%\newcommand{\limxmi}{\limx[-\infty]} % MI voor Min \Infty
 
-\newcommand{\limxg}[1]{\lim_{x \rightarrow #1}}
-\newcommand{\llimxc}{\lim_{x \underset < \rightarrow c}}
-\newcommand{\rlimxc}{\lim_{x \underset > \rightarrow c}}
+\newcommand{\limxg}[1]{\lim_{x \rightarrow #1}}    % g  voor Generic ...
+\newcommand{\llimxg}[1]{\lim_{x \rightarrow {#1}^-}}
+\newcommand{\rlimxg}[1]{\lim_{x \rightarrow {#1}^+}}
+%\newcommand{\llimxc}{\lim_{x \underset < \rightarrow c}}  % werkt niet in html?
+%\newcommand{\rlimxc}{\lim_{x \underset > \rightarrow c}}  % werkt niet in html?
 % < gave illegal macro definition
 %\text{\textless} showed "\textless" in html
 %\DeclareUnicodeCharacter{227A}{\xgt}
 %\DeclareUnicodeCharacter{227B}{\xlt}
 %\newcommand{\llimx}{\lim_{x \underset{\char8826} \rightarrow 0}}
 %\newcommand{\rlimx}{\lim_{x \underset{\char8826} \rightarrow 0}}
-\newcommand{\llimx}{\lim_{x \underset{-} \rightarrow 0}}
-\newcommand{\rlimx}{\lim_{x \underset{+} \rightarrow 0}}
 
+\newcommand{\limx}{\limxg{0}}     % limieten naar 0
+\newcommand{\llimx}{\llimxg{0}}
+\newcommand{\rlimx}{\rlimxg{0}}
 
-\newcommand{\limxz}{\limxg{0}}  % Z voor zero
-\newcommand{\limx}{\limxg{0}} 
-\newcommand{\limxc}{\limxg{c}} 
 \newcommand{\limxi}{\limxg{+\infty}}  % I voor \Infty
 \newcommand{\limxmi}{\limxg{-\infty}} % MI voor Min \Infty
 
-
-
-% bestaan niet ...!
-%\newcommand{\rlimxi}{\rlimx[+\infty]}
-%\newcommand{\rlimxmi}{\rlimx[-\infty]}
-%
-%\newcommand{\llimxi}{\llimx[+\infty]}
-%\newcommand{\llimxmi}{\llimx[-\infty]}
+\newcommand{\limxc}{\limxg{c}}     % was handig in de module over limieten ...
+\newcommand{\llimxc}{\llimxg{c}}
+\newcommand{\rlimxc}{\rlimxg{c}}
 
 %
 % Poging tot aanpassen layout

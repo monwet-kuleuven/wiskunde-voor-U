@@ -156,8 +156,8 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 		\addplot[domain=-6:6,color=blue] {1/x};
 		\addlegendentry{$y=\frac1x$};	 
 		\addlegendentry{};   
-		\node[anchor=east, font=\small] at  (axis cs: -0.2,4.4) {$\rlimx[0] \frac1x =+\infty$};
-		\node[anchor=west] at  (axis cs: 0.2,-4) {$\llimx[0] \frac1x =-\infty$};
+		\node[anchor=east, font=\small] at  (axis cs: -0.2,4.4) {$\rlimx \frac1x =+\infty$};
+		\node[anchor=west] at  (axis cs: 0.2,-4) {$\llimx \frac1x =-\infty$};
 		\node[anchor=south west] at (axis cs: -6,0.2) {$\limxmi \frac1x =0$};
 		\node[anchor=north east] at  (axis cs: 6,-0.4) {$\limxi \frac1x =0$};
 
@@ -193,13 +193,19 @@ We gaan zoals vermeld in deze module niet in op de exacte wiskundige definitie v
 
 \end{definition}
 
-Merk op: $x<c$ is hetzelfde als  $c>x$, net zoals  $x>c$ hetzelfde betekent als $c<x$. Let dus zowel op de tekens $<,>$ \textit{en} op de volgorde van de letters of cijfers!  
+\begin{remark}
 
-Merk op: als we  $x\to c$ lezen als '$x$ gaat naar $c$' of '$x$ ligt (erg) dicht bij $c$', dan heeft dat een zeker dynamisch aspect: $x$ wordt verondersteld te 'bewegen' naar iets. Het is belangrijk te beseffen dat het resultaat, of de 'uitkomst' van zo'n limiet, dus datgene wat met het symbool $\limxc f(x)$ wordt aangeduid, gewoon een bepaald getal is (of eventueel het symbool $\pm\infty$: zie daarvoor verder). Daar is dus niets 'bewegends' meer aan!
+\begin{itemize}	
+\item Let op: $x<c$ is hetzelfde als  $c>x$, net zoals  $x>c$ hetzelfde betekent als $c<x$. Let dus zowel op de tekens $<,>$ \textit{en} op de volgorde van de letters of cijfers!  
+
+\item Als we  $x\to c$ lezen als '$x$ gaat naar $c$' of '$x$ ligt (erg) dicht bij $c$', dan heeft dat een zeker dynamisch aspect: $x$ wordt verondersteld te 'bewegen' naar iets. Het is belangrijk te beseffen dat het resultaat, of de 'uitkomst' van zo'n limiet, dus datgene wat met het symbool $\limxc f(x)$ wordt aangeduid, gewoon een bepaald getal is of het symbool $\pm\infty$. Daar is dus niets 'bewegends' of 'mysterieus' aan!
+\end{itemize}
+
+\end{remark}
 
 %(overbodig) Merk op: hierbij staan zowel de letters $a$ als $c$ dus voor reële getallen \textit{of} voor één van de symbolen $+\infty$ of $-\infty$. Zie verder voor de rekenregels voor $\pm\infty$.
 
-Merk op: de definitie zegt niet (wiskundig) nauwkeurig wat een limiet \textit{precies is}. Het volstaat -voor deze module- om op basis van dit soort definitie een intuïtief begrip op te bouwen over wat limieten zijn, en hoe ze kunnen worden berekend. Met dit soort van intuïtieve definities kunnen van limieten natuurlijk geen eigenschappen worden \textit{bewezen}, of echte berekeningen worden gemaakt. We kunnen op deze basis limieten (enkel) bepalen op volgende manieren:
+Deze definitie zegt dus \textit{niet} (wiskundig) nauwkeurig wat een limiet \textit{precies is}. Het volstaat -voor deze module- om op basis van dit soort definitie een intuïtief begrip op te bouwen over wat limieten zijn, en hoe ze kunnen worden berekend. Met dit soort van intuïtieve definities kunnen van limieten natuurlijk geen eigenschappen worden \textit{bewezen}, of echte berekeningen worden gemaakt. We kunnen op deze basis limieten (enkel) bepalen op volgende manieren:
 \begin{enumerate}
 	\item gebruik maken van betrouwbare rekenregels (zie verder)
 	\item aflezen op een grafiek  
@@ -296,7 +302,7 @@ Om enigszins efficiënt te rekenen  met limieten is het erg belangrijk om over h
 
 \begin{uitwijding}[Waarom rekenregels ...?] \ 
 	
-Zoals wel meer gebeurt in de wiskunde (en daarbuiten), proberen we eerst iets simpel en willen we dat daarna zo eenvoudig mogelijk uitbreiden naar meer ingewikkelde situaties. We kunnen nu limieten aflezen van (eenvoudige) grafieken van functies. Maar het zou wel erg onhandig zijn om bijvoorbeeld voor de limieten $\limx \frac{8}{x^2}, \limx (4+\frac{1}{x^2}), \limx ((x+2)^2 + \frac{8}{x^2})$ telkens grafieken te moeten tekenen! Er zijn grenzen aan de waanzin, zelfs voor wiskundigen.
+Zoals wel meer gebeurt in de wiskunde (en daarbuiten), proberen we eerst iets simpel en willen we dat daarna zo eenvoudig mogelijk uitbreiden naar meer ingewikkelde situaties. We kunnen nu limieten aflezen van (eenvoudige) grafieken van functies. Maar het zou wel erg onhandig zijn om bijvoorbeeld voor de limieten $\limx \frac{8}{x^2}, \limx (4+\frac{1}{x^2}), \limx ((x+2)^2 + \frac{8}{x^2})$ telkens grafieken te moeten tekenen! %\grapje{Er zijn grenzen aan de waanzin, zelfs voor wiskundigen.}
 
 Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingewikkelde limieten te kunnen berekenen op basis van eenvoudige(re) limieten. In een ideale wereld is de limiet van een som gewoon de som van de limieten, en hetzelfde voor verschillen, producten, quotiënten, machten enzovoort. De wereld is niet ideaal, maar het kon slechter. In vele gevallen is rekenen met limieten  zo eenvoudig als het redelijkerwijs kan zijn. Maar, jammer genoeg zijn er enkele venijnige uitzonderingsgevallen. We bekijken eerst enkele voorbeelden.
 \end{uitwijding}
@@ -355,7 +361,7 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	Maar, voor $x^2 - e^x$ duiken er mogelijke problemen op:
 	\begin{alignat*}{6}
 		% Mmm, alignment nog niet wat het moet zijn ...!
-		& \limx &(x^2-e^x)   & = \limx x^2   &- \limx e^x   & = 0 1 1 = -1 \\
+		& \limx &(x^2-e^x)   & = \limx x^2   &- \limx e^x   & = 0 - 1 = -1 \\
 		& \limxi &(x^2-e^x)  & = \limxi x^2  &- \limxi e^x  & = \infty - \infty = -\infty (???) \\
 		& \limxmi &(x^2-e^x) & = \limxmi x^2 &- \limxmi e^x & = \infty - 0 = \infty \\
 	\end{alignat*}
@@ -421,11 +427,10 @@ Maar er zit dus een enigszins venijnig addertje onder het gras: er ontbreken enk
 	Volgende uitdrukkingen zijn onbepaald. Dat betekent dat ze \textit{geen betekenis} hebben.	
 	
 	\begin{tabular}{cccr}
-		$\infty - \infty$ &$(+\infty) + (-\infty)$  & 	$(-\infty) + (+\infty) $  & oneindig min oneindig \\
-		$0\cdot\infty$ & $0 \cdot (\pm\infty)$   & 	$(\pm\infty)\cdot 0$   & nul maal oneindig \\
+		\colorbox{lightgray}{$\infty - \infty$} &$(+\infty) + (-\infty)$  & 	$(-\infty) + (+\infty) $  & oneindig min oneindig \\
+		\colorbox{lightgray}{$0\cdot\infty$} & $0 \cdot (\pm\infty)$   & 	$(\pm\infty)\cdot 0$   & nul maal oneindig \\
 		\\
-		% Mmm, shortstack werkt niet (goed) in html (wordt een afbeelding!)
-		$\dfrac 00$ & $\dfrac\infty\infty$ & $\dfrac{\pm\infty}{\mp\infty}$ & \shortstack{\hfill nul gedeeld door nul \\ oneindig gedeeld door oneindig}
+		\colorbox{lightgray}{$\dfrac 00$} & \colorbox{lightgray}{$\dfrac\infty\infty$} & $\dfrac{\pm\infty}{\mp\infty}$ & \begin{tabular}{r} nul gedeeld door nul \\ oneindig gedeeld door oneindig\end{tabular}
 	\end{tabular}
 \end{proposition}
 Merk op: ook $0^0$, $\infty^0$ en $1^\infty$ zijn onbepaald, maar we zullen ze in deze cursus niet tegenkomen.
@@ -433,7 +438,7 @@ Merk op: ook $0^0$, $\infty^0$ en $1^\infty$ zijn onbepaald, maar we zullen ze i
 
 De rekenregels voor $\pm\infty$ stellen ons in staat volgende interessante eigenschap te formuleren voor het berekenen van limieten:
 
-\begin{proposition} (Rekenregels \textit{eindige} limieten)
+\begin{proposition} (Rekenregels limieten)
 	
 	Zij $A\subseteq\R, f,g:A\to\R$ twee continue functies, en $c\in A$ of $c$ ligt 'op de rand van $A$'. \\
 	In het bijzonder kan eventueel $c=+\infty$ of $c=-\infty$. 
@@ -469,9 +474,9 @@ De rekenregels voor $\pm\infty$ stellen ons in staat volgende interessante eigen
 \begin{remark} \ 
 	
 \begin{enumerate}
-	\item Als je dus bij een berekening een onbepaalde vorm uitkomt, is er iets mis. Je zal een andere berekeningswijze moeten vinden, die de onbepaalde vorm vermijdt.
+	\item Als je dus bij een berekening een onbepaalde vorm uitkomt, is er iets mis. Je zal een andere berekeningswijze moeten vinden, die de onbepaalde vorm vermijdt. Gelukkig bestaan er een aantal standaard trukjes (zie verder).
 	\item De lijn lim(som) = som(lims) leest als 'de limiet van een som is de som van de limieten'. Dit is een voorbeeld van een in de wiskunde erg populair \link[mantra]{https://nl.wikipedia.org/wiki/Mantra} dat zeer de moeite waard is om vertrouwd mee te worden. Het mantra is steeds van de vorm "de X van de Y's is de Y van de X'en", met X en Y twee concepten of uitdrukkingen. De distributiviteit van het product ten opzichte van de som wordt dan 'het product van een som is de som van de producten', en dat is inderdaad precies wat de distributiviteit zegt: $a\cdot(b+c) = a\cdot b+a\cdot c$: het linkerlid is het product van ($a$ met) een som (namelijk $b+c$)en dat is gelijk aan het rechterlid, namelijk een som van (twee) producten (namelijk $a\cdot b$ en $a\cdot c$). Een groot deel van de wiskunde kan worden geformuleerd in dit soort mantra's, en het is van belang te weten wanneer ze opgaan, en wanneer niet.Zowerkt hetr bijvoorbeeld \textit{niet} voor de sinus en de som: de sinus van een som is \textit{niet} gelijk aan de som van de sinussen: $\sin(\alpha+\beta) \neq \sin\alpha+\sin\beta$). 
-	\item Deze rekenregels maken het leven zo eenvoudig als überhaupt mogelijk: we kunnen 'gewoon' rekenen met limieten, \textsc{tot we op onbepaaldheden uitkomen}. Als dat het geval is, moeten we nadenken, en een trukje proberen vinden om de onbepaaldheden te  vermijden. Gelukkig bestaan er een aantal standaard trukjes (zie verder).
+%	\item Deze rekenregels maken het leven zo eenvoudig als überhaupt mogelijk: we kunnen 'gewoon' rekenen met limieten, \textsc{tot we op onbepaaldheden uitkomen}. Als dat het geval is, moeten we nadenken, en een trukje proberen vinden om de onbepaaldheden te  vermijden. Gelukkig bestaan er een aantal standaard trukjes (zie verder).
 	\item Voor continue functies, en onder bepaalde bestaansvoorwaarden, zegt eigenschap (\ref{elim-continu})  dat de limiet en de functieoproep van plaats mogen worden gewisseld, of nog dat de limiet 'door' de functie gaat: de limiet van de functie (van iets) is de functie van de limiet (van dat iets). Bijvoorbeeld: $\lim(\sin(x^2-1)) = \sin(\lim(x^2-1))$.
 
 	\grapje{\item In verband met eigenschap (\ref{elim-continu}) zijn er voorlopig nog geen nuttige toepassingen bekend van de formules lim($f$(iets)) =  $f$(lim(iets)) in de rijwielsector, hoewel kwatongen beweren dat er daar misschien toch mogelijkheden zouden kunnen zijn.}
