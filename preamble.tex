@@ -65,6 +65,18 @@
 \usepackage{tcolorbox}
 \tcbuselibrary{theorems}
 
+
+\theoremstyle{definition}
+\newmdtheoremenv[backgroundcolor=lightgray]{uitwijding}{Uitwijding}
+\AtBeginEnvironment{uitwijding}{\small}
+
+\newcommand{\grapje}[1]{{\small#1{\reversemarginpar\marginpar{\Smiley}}}}
+%\newcommand{\grapje}[1]{}
+
+%\theoremstyle{definition}
+%\newmdtheoremenv[backgroundcolor=lightgray]{grapje}{}
+%\AtBeginEnvironment{uitwijding}{\small\Smiley}
+
 % Herdefinieer enkele omgevingen (PAS OP: enkel voor PDF, voor html: zie css..!!!)
 % remove italics def
 \makeatletter   % because of the @ below: make @ a (normal) letter!!
@@ -112,7 +124,7 @@
 \let\c@exercise\relax
 \let\endexercise\relax
 %\theoremstyle{problem}
-\newtheorem{exercise}{Oef.}
+\newtheorem{exercise}{Oefening}
 
 \newtheorem*{oplossing}{Oplossing}
 %\newtheorem{oplossing}[definition]{Oplossing}

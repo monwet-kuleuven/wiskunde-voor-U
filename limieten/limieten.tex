@@ -33,8 +33,8 @@ Voor wie (nog) niet overtuigd is dat dit een mogelijk nuttige bezigheid is, hebb
 % todo: layout zodat duidelijk is dat dit een 'uitwijding' is (dus: expandable aanpassen/vervangen) (voorlopig adhoc tcolorbox) 
 % todo: nagaan hoe exandable precies werkt
 
-\begin{tcolorbox}[title=Uitwijding: achtergrondinformatie over het hoe en waarom van limieten]
-	\footnotesize
+\begin{uitwijding}[Wat en waarom van limieten] \ 
+	
 (Merk op: dit is enkel inleidende achtergrondinformatie, en geen leerstof.)	
 
 Dikwijls is men geïnteresseerd in wat er gebeurt 'net op de rand van wat al gekend is'. \todo{TODO: goed voorbeeldje vinden}. Wiskundig kunnen we dit soort situaties (in gunstige gevallen) beschrijven (en soms zelfs begrijpen) in termen van \textit{limieten}. 
@@ -75,7 +75,7 @@ Maar, de erg gelijkaardige eigenschap 'is groter dan nul', dus '$a_n>0$', geldt 
 In dit hoofdstuk krijg je een kleine inleiding in de problematiek van limieten van \textit{functies} (en dus niet van \textit{rijen} zoals in dit voorbeeld). Later gebruiken we die limieten om asymptoten te bekijken, afgeleiden en integralen te definiëren en nog veel meer. 
 
 Merk op: een meer formele en exacte behandeling van limieten wordt snel technisch (bijvoorbeeld met de onder (niet-)kenners erg beruchte $\epsilon$'s en $\delta$'s) \todo{TODO voetnoot?} en dat valt -jammer voor ons schrijvers van cursusteksten, maar gelukkig voor u die het resultaat van onze arbeid moeten studeren- buiten het bestek van deze cursus. Sommigen van u kennen het al, en voor anderen komt het nog. Maar, velen onder u zullen aan de technische details ontsnappen.
-\end{tcolorbox}
+\end{uitwijding}
 \end{expandable}
 
 
@@ -190,10 +190,12 @@ We gaan zoals vermeld in deze module niet in op de exacte wiskundige definitie v
 					   & \quad\iff\quad \text{de limiet van $f$ als $x$ langs rechts naar $c$ gaat is (gelijk aan) $a$} \\
 					   & \quad\iff\quad \text{als }x\to c\text{\textbf{ langs rechts} (dus $x>c$), dan }f(x) \to a 
 \end{align*}
-Merk op: $(x<c\iff c>x)$ en $(x>c \iff c<x)$. Let dus zowel op de tekens $<,>$ \textit{en} op de volgorde van de letters of cijfers!  
+
 \end{definition}
 
-Merk op: als we  $x\to c$ lezen als '$x$ gaat naar $c$' of '$x$ ligt (erg) dicht bij $c$', dan heeft dat een zeker dynamisch aspect: $x$ wordt verondersteld te 'bewegen' naar iets. Het is belangrijk te beseffen dat het resultaat, of de 'uitkomst' van zo'n limiet, dus datgene wat met het symbool $\limxc f(x)$ wordt aangeduid, gewoon een bepaald getal is (of eventueel het symbool $\pm\infty$: zie daarvoor verder).
+Merk op: $x<c$ is hetzelfde als  $c>x$, net zoals  $x>c$ hetzelfde betekent als $c<x$. Let dus zowel op de tekens $<,>$ \textit{en} op de volgorde van de letters of cijfers!  
+
+Merk op: als we  $x\to c$ lezen als '$x$ gaat naar $c$' of '$x$ ligt (erg) dicht bij $c$', dan heeft dat een zeker dynamisch aspect: $x$ wordt verondersteld te 'bewegen' naar iets. Het is belangrijk te beseffen dat het resultaat, of de 'uitkomst' van zo'n limiet, dus datgene wat met het symbool $\limxc f(x)$ wordt aangeduid, gewoon een bepaald getal is (of eventueel het symbool $\pm\infty$: zie daarvoor verder). Daar is dus niets 'bewegends' meer aan!
 
 %(overbodig) Merk op: hierbij staan zowel de letters $a$ als $c$ dus voor reële getallen \textit{of} voor één van de symbolen $+\infty$ of $-\infty$. Zie verder voor de rekenregels voor $\pm\infty$.
 
@@ -207,6 +209,9 @@ Merk op: de definitie zegt niet (wiskundig) nauwkeurig wat een limiet \textit{pr
 \end{enumerate}
 Het is duidelijk dat opties 2 en  3 \textsc{strikt wiskundig niet geldig zijn}. Maar, de definitie van limiet is dat ook niet, dus tot nader order is het -mits de nodige voorzichtigheid- niet verboden, en dus toegelaten, om er toch gebruik van te maken. De 'tot nader order' hangt af van welke studierichtingen en cursussen u verder nog zal volgen! De voorlopige methode die hier wordt uiteengezet bestaat uit het toepassen van onderstaande rekenregels op gekend veronderstelde basislimieten (die bijvoorbeeld zijn bepaald via hun grafiek). 
 % (is boven al gezegd) Afhankelijk van u vooropleiding kent u er eigenlijk al meer van, en afhankelijk van uw huidige opleiding, zal u er misschien in de nabije toekomst veel meer over moeten weten! 
+
+\begin{comment}
+% Zie exercices ...!
 
 \begin{exercise} \ 
 	Bereken op basis van volgende welbekende grafieken onderstaande limieten
@@ -283,17 +288,22 @@ Het is duidelijk dat opties 2 en  3 \textsc{strikt wiskundig niet geldig zijn}. 
 % from https://github.com/XronosUF/MAC2311
 	\end{enumerate}
 \end{exercise}
+\end{comment}
 
+\subsection{Rekenregels voor het berekenen van limieten}
 
-\subsection{Rekenregels berekenen van limieten}
+Om enigszins efficiënt te rekenen  met limieten is het erg belangrijk om over handige rekenregels te beschikken.
 
+\begin{uitwijding}[Waarom rekenregels ...?] \ 
+	
 Zoals wel meer gebeurt in de wiskunde (en daarbuiten), proberen we eerst iets simpel en willen we dat daarna zo eenvoudig mogelijk uitbreiden naar meer ingewikkelde situaties. We kunnen nu limieten aflezen van (eenvoudige) grafieken van functies. Maar het zou wel erg onhandig zijn om bijvoorbeeld voor de limieten $\limx \frac{8}{x^2}, \limx (4+\frac{1}{x^2}), \limx ((x+2)^2 + \frac{8}{x^2})$ telkens grafieken te moeten tekenen! Er zijn grenzen aan de waanzin, zelfs voor wiskundigen.
 
 Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingewikkelde limieten te kunnen berekenen op basis van eenvoudige(re) limieten. In een ideale wereld is de limiet van een som gewoon de som van de limieten, en hetzelfde voor verschillen, producten, quotiënten, machten enzovoort. De wereld is niet ideaal, maar het kon slechter. In vele gevallen is rekenen met limieten  zo eenvoudig als het redelijkerwijs kan zijn. Maar, jammer genoeg zijn er enkele venijnige uitzonderingsgevallen. We bekijken eerst enkele voorbeelden.
+\end{uitwijding}
 
 \begin{example} (Limieten van $x^2 \pm e^x$)
 	
-	Dit is een veelterm en we kunnen die bekijken als de som van de functies $x\mapsto3x^2, x\mapsto-4x$ en $x\mapsto2$. 
+	We kunnen de functie $x^2+e^x$ bekijken als de som van de functies $x\mapsto x^2$ en $x\mapsto e^x$. 
 	Dat ziet er als volgt uit:
 \begin{image}[\width]
 	\begin{tikzpicture}[scale=1]
@@ -310,13 +320,118 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	\addplot[domain=-5:5,color=blue,dotted] {exp(x)};
 %	\addplot[domain=-5:5,color=blue,dotted] {2};
 	\addplot[domain=-5:5,color=red,thick] {x^2+exp(x)};
-%	\legend{$1/x^2$}
+	\legend{$x^2 + e^x$}
+	\end{axis}
+	\end{tikzpicture}	
+	\quad
+		\begin{tikzpicture}[scale=1]
+	\begin{axis}
+	[
+	axis equal,
+	ymax=5,ymin=-5,
+	samples=200,
+	axis lines=center,
+	extra y ticks={0},
+	restrict y to domain=-10:10,
+	]
+	\addplot[domain=-5:5,color=blue,dotted] {x^2};
+	\addplot[domain=-5:5,color=blue,dotted] {-exp(x)};
+	%	\addplot[domain=-5:5,color=blue,dotted] {2};
+	\addplot[domain=-5:5,color=red,thick] {x^2-exp(x)};
+	\legend{$x^2 + (-e^x))$}
 	\end{axis}
 	\end{tikzpicture}	
 \end{image}
 	
-	To Be Completed
+	Op de grafiek is duidelijk dat de limiet van de som $x^2+e^x$ altijd gelijk is aan de som van de limieten van de termen $x^2$ en $e^x$:
+	\begin{alignat*}{6}
+	% Mmm, alignment nog niet wat het moet zijn ...!
+	& \limx &(x^2+e^x)   & = \limx x^2   &+ \limx e^x   & = 0 + 1 = 1 \\
+	& \limxi &(x^2+e^x)  & = \limxi x^2  &+ \limxi e^x  & = \infty + \infty = +\infty \\
+	& \limxmi &(x^2+e^x) & = \limxmi x^2 &+ \limxmi e^x & = \infty + 0 = \infty \\
+	\end{alignat*}
+	Mooi en gemakkelijk!
+	
+	Maar, voor $x^2 - e^x$ duiken er mogelijke problemen op:
+	\begin{alignat*}{6}
+		% Mmm, alignment nog niet wat het moet zijn ...!
+		& \limx &(x^2-e^x)   & = \limx x^2   &- \limx e^x   & = 0 1 1 = -1 \\
+		& \limxi &(x^2-e^x)  & = \limxi x^2  &- \limxi e^x  & = \infty - \infty = -\infty (???) \\
+		& \limxmi &(x^2-e^x) & = \limxmi x^2 &- \limxmi e^x & = \infty - 0 = \infty \\
+	\end{alignat*}
+	Het is wat verdacht waarom $\infty - \infty = -\infty$ (wat blijkbaar nodig is om $\limxi (x^2-e^x) = \limxi x^2  - \limxi e^x$ te doen kloppen.  En het geeft inderdaad een onoverkomelijk probleem: als we ook willen dat $\limxi (x^2  - x^2) = \limxi x^2  - \limxi e^x  = \infty - \infty$  dan moet $\infty - \infty = 0$, en voor $\limxi ((x+a) - x) = \limxi (x+a) - \limxi x$ moet zelfs $\infty - \infty = a$, met $a$ een willekeurig reëel getal. Miserie miserie ...  
+
 \end{example}
+\begin{example}(Extra: Limieten van $x - (a-x)$)
+	
+	Zij $a\in\R$, en beschouw de functies $f(x)=x$ en $g(x)=a-x$. Dan geldt (evident) dat $f(x)+g(x)=x+(a-x)=a$ en dat 
+	\begin{align*}
+	\limxi f(x) & = \limxi x = +\infty \\
+	\limxi g(x) & = \limxi (a-x) = -\infty \\
+	\limxi (g(x)+f(x)) & = \limxi a = a \\
+	\end{align*}
+	In dit geval impliceert dus $\limxc \big(f(x) +g(x)\big) = \limxc f(x) + \limxc g(x)$ dat $(+\infty) + (-\infty)$ gelijk zou moeten zijn aan $a$. Maar $a$ is willekeurig (of \textit{onbepaald}): we kunnen voor $a$ even goed $0$ kiezen als $2$ of $2\pi/3$ \dots! Dus: de rekenregels voor de som van limieten impliceren dat $(+\infty)+(-\infty)$ elke waarde kan aannemen, en dus noodzakelijkerwijze \textit{onbepaald} moet blijven. Jammer maar helaas ...
+	
+	
+\end{example}
+\begin{problem}
+	
+	Zoek een gelijkaardig eenvoudig (tegen)voorbeeld voor $0\cdot\infty$ en voor $\dfrac00$ en $\dfrac\infty\infty$.
+\end{problem}
+
+
+
+We zijn dus verplicht om voldoende voorzichtig rekenregels vast te leggen voor de symbolen $+\infty$ en $-\infty$. Men kan bewijzen dat je zonder problemen kan rekenen met $+\infty$ en $-\infty$  op voorwaarde dat je zogenaamde \textit{onbepaalde vormen} vermijdt.
+
+Merk op: we schrijven verder meestal gewoon $\infty$ voor $+\infty$ (net zoals we $5$ schrijven voor $+5$). \\
+En $\pm\infty$ betekent $+\infty$ of $-\infty$ (in die volgorde, zodat we ook kunnen schrijven dat $-(\pm\infty) = \mp\infty$!)
+
+Eerst enkele regels die wel gewoon werken zoals het hoort:
+\begin{proposition} (Rekenregels voor de symbolen $+\infty$ en $-\infty$)
+	
+	% todo: Uitleg over symbool X ...?
+	Zij $a\in\R$. Dan geldt:	
+	\begin{align*}
+	-(+\infty) & = -\infty \\
+	-(-\infty) & = +\infty  & \text{($+\infty$ en $-\infty$ zijn elkaars tegengestelde)}\\ 
+	\\
+	\infty & = +\infty   \\
+	\pm\infty &\text{ staat voor} +\infty \text{ of } -\infty \\
+	-(\pm\infty) &= \mp\infty &\text{(voor de hand liggende afspraken)} \\
+	\\
+	a+\infty & = \infty+a = \infty - a = -a +\infty \\
+	& = \colorbox{lightgray}{$\infty + \infty = \infty$} & \text{($\infty + X =\infty$ behalve als $X=-\infty$)} \\
+	\\
+	a+(-\infty) & = a-\infty = -\infty+a =-\infty - a = -a - \infty \\
+	& = \colorbox{lightgray}{$-\infty - \infty = -\infty+(-\infty) = -\infty$} & \text{($-\infty+X=-\infty$ behalve als $X=+\infty$)} \\
+	\intertext{Als $a>0$ ($a$ strikt positief)}	         
+	a\cdot\infty & = \infty\cdot a \\
+	& = \colorbox{lightgray}{$\infty \cdot \infty = (-\infty) \cdot (-\infty) = \infty$} & \text{($X\cdot\pm\infty=\pm\infty$ als $X>0$)} \\
+	\intertext{Als $a<0$ ($a$ strikt negatief)}	         
+	a\cdot\infty & = \infty\cdot a \\
+	& = \colorbox{lightgray}{$\infty \cdot (-\infty) = (-\infty)\cdot\infty = -\infty$} & \text{($X\cdot(\pm\infty) = \mp\infty$ als $X<0$)} \\
+	\end{align*}	
+\end{proposition}  
+
+Al deze regels zijn erg natuurlijk, en stellen op zich geen probleem. \\
+Maar er zit dus een enigszins venijnig addertje onder het gras: er ontbreken enkele combinaties en die \textit{gelden niet} (altijd). Op examens durven studenten zich wel eens laten bijten door zo'n addertje. Dat is steeds erg pijnlijk. Je probeert het dus best te vermijden.
+
+\begin{proposition} (\textbf{Onbepaalde vormen} met $\pm\infty$)
+	
+	Volgende uitdrukkingen zijn onbepaald. Dat betekent dat ze \textit{geen betekenis} hebben.	
+	
+	\begin{tabular}{cccr}
+		$\infty - \infty$ &$(+\infty) + (-\infty)$  & 	$(-\infty) + (+\infty) $  & oneindig min oneindig \\
+		$0\cdot\infty$ & $0 \cdot (\pm\infty)$   & 	$(\pm\infty)\cdot 0$   & nul maal oneindig \\
+		\\
+		% Mmm, shortstack werkt niet (goed) in html (wordt een afbeelding!)
+		$\dfrac 00$ & $\dfrac\infty\infty$ & $\dfrac{\pm\infty}{\mp\infty}$ & \shortstack{\hfill nul gedeeld door nul \\ oneindig gedeeld door oneindig}
+	\end{tabular}
+\end{proposition}
+Merk op: ook $0^0$, $\infty^0$ en $1^\infty$ zijn onbepaald, maar we zullen ze in deze cursus niet tegenkomen.
+
+
+De rekenregels voor $\pm\infty$ stellen ons in staat volgende interessante eigenschap te formuleren voor het berekenen van limieten:
 
 \begin{proposition} (Rekenregels \textit{eindige} limieten)
 	
@@ -341,91 +456,30 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 		 \limxc \dfrac{f(x)}{g(x)} & = \dfrac{\limxc f(x)}{\limxc g(x)}  
 		     & \text{[lim(quotiënt) = quotiënt(lims)]} \label{elim-quotient} \\
 		 %
-		 \intertext{Als $c\in A$ (dus $c$ behoort tot dom $f$)} %(en dus $c$ tot het domein van $f$ behoort):} 
+		 \intertext{Als $c\in A$ (i.e. $c$ behoort tot dom $f$)} %(en dus $c$ tot het domein van $f$ behoort):} 
 		 \limxc f(x) & = f(c) 
 		     & \text{[lim\_in\_c($f$) = $f$(c) als $f$(c) bestaat en $f$ continu]} \label{elim-domein} \\
 		 %
 		 \intertext{Als $f(g(x))$ bestaat voor $x$ dicht bij $c$, $f(\limxc(x))$ bestaat, $f$ is continu (TBV!):} 
 		 \limxc f(g(x)) & = f(\limxc g(x)) 
-		     & \text{[lim($f$(iets)) =  $f$(lim(iets)) \textit{als} alle vw voldaan!]} \label{elim-continu} 
+		     & \text{[lim($f$(iets)) =  $f$(lim(iets)) \textit{als alle vw voldaan!}]} \label{elim-continu} 
 	\end{align}
 \end{proposition}
 
-Uitwijding: merk op dat:
+\begin{remark} \ 
+	
 \begin{enumerate}
-	\item je de lijn lim(som) = som(\textit{eindige} lims) leest als 'de limiet van een som is de som van de (eindige) limieten'. Dit is een voorbeeld van een in de wiskunde erg populair \link[mantra]{https://nl.wikipedia.org/wiki/Mantra} dat zeer de moeite waard is om vertrouwd mee te worden. Het mantra is steeds van de vorm "de X van de Y's is de Y van de X'en", met X en Y twee concepten of uitdrukkingen. De distributiviteit van het product ten opzichte van de som wordt dan 'het product van een som is de som van de producten', en dat is inderdaad precies wat de distributiviteit zegt: $a\cdot(b+c) = a\cdot b+a\cdot c$: het linkerlid is het product van ($a$ met) een som (namelijk $b+c$)en dat is gelijk aan het rechterlid, namelijk een som van (twee) producten (namelijk $a\cdot b$ en $a\cdot c$). Een groot deel van de wiskunde kan worden geformuleerd in dit soort mantra's, en het is van belang te weten wanneer ze opgaan, en wanneer niet.Zowerkt hetr bijvoorbeeld \textit{niet} voor de sinus en de som: de sinus van een som is \textit{niet} gelijk aan de som van de sinussen: $\sin(\alpha+\beta) \neq \sin\alpha+\sin\beta$). 
-	\item deze rekenregels het leven erg eenvoudig maken: alles is zo eenvoudig als überhaupt mogelijk! We vinden het zelfs niet zinvol om voor deze eigenschap erg uitgebreide sets oefeningen te voorzien! Jammer genoeg gelden deze regels \textsc{niet} meer altijd van zodra oneindige limieten $\pm\infty$ voorkomen. In dat geval wordt het leven veel ingewikkelder, zoals uit verdere voorbeelden zal blijken.
-	\item voor continue functies, en onder bepaalde bestaansvoorwaarden, eigenschap (\ref{elim-continu}) zegt dat de limiet en de functieoproep van plaats mogen worden gewisseld, of nog dat de limiet 'door' de functie gaat: de limiet van de functie (van iets) is de functie van de limiet (van dat iets). Bijvoorbeeld: $\lim(\sin(x^2-1)) = \sin(\lim(x^2-1))$.
-	\item er in verband met eigenschap (\ref{elim-continu}) voorlopig nog geen nuttige toepassingen bekend zijn van de formules lim($f$(iets)) =  $f$(lim(iets)) in de rijwielsector, hoewel kwatongen beweren dat er daar misschien toch mogelijkheden  zouden kunnen zijn. 
+	\item Als je dus bij een berekening een onbepaalde vorm uitkomt, is er iets mis. Je zal een andere berekeningswijze moeten vinden, die de onbepaalde vorm vermijdt.
+	\item De lijn lim(som) = som(lims) leest als 'de limiet van een som is de som van de limieten'. Dit is een voorbeeld van een in de wiskunde erg populair \link[mantra]{https://nl.wikipedia.org/wiki/Mantra} dat zeer de moeite waard is om vertrouwd mee te worden. Het mantra is steeds van de vorm "de X van de Y's is de Y van de X'en", met X en Y twee concepten of uitdrukkingen. De distributiviteit van het product ten opzichte van de som wordt dan 'het product van een som is de som van de producten', en dat is inderdaad precies wat de distributiviteit zegt: $a\cdot(b+c) = a\cdot b+a\cdot c$: het linkerlid is het product van ($a$ met) een som (namelijk $b+c$)en dat is gelijk aan het rechterlid, namelijk een som van (twee) producten (namelijk $a\cdot b$ en $a\cdot c$). Een groot deel van de wiskunde kan worden geformuleerd in dit soort mantra's, en het is van belang te weten wanneer ze opgaan, en wanneer niet.Zowerkt hetr bijvoorbeeld \textit{niet} voor de sinus en de som: de sinus van een som is \textit{niet} gelijk aan de som van de sinussen: $\sin(\alpha+\beta) \neq \sin\alpha+\sin\beta$). 
+	\item Deze rekenregels maken het leven zo eenvoudig als überhaupt mogelijk: we kunnen 'gewoon' rekenen met limieten, \textsc{tot we op onbepaaldheden uitkomen}. Als dat het geval is, moeten we nadenken, en een trukje proberen vinden om de onbepaaldheden te  vermijden. Gelukkig bestaan er een aantal standaard trukjes (zie verder).
+	\item Voor continue functies, en onder bepaalde bestaansvoorwaarden, zegt eigenschap (\ref{elim-continu})  dat de limiet en de functieoproep van plaats mogen worden gewisseld, of nog dat de limiet 'door' de functie gaat: de limiet van de functie (van iets) is de functie van de limiet (van dat iets). Bijvoorbeeld: $\lim(\sin(x^2-1)) = \sin(\lim(x^2-1))$.
+
+	\grapje{\item In verband met eigenschap (\ref{elim-continu}) zijn er voorlopig nog geen nuttige toepassingen bekend van de formules lim($f$(iets)) =  $f$(lim(iets)) in de rijwielsector, hoewel kwatongen beweren dat er daar misschien toch mogelijkheden zouden kunnen zijn.}
+
 \end{enumerate}
-\begin{example}
-	Zij $a\in\R$, en beschouw de functies $f(x)=x$ en $g(x)=a-x$. Dan geldt (evident) dat $f(x)+g(x)=x+(a-x)=a$ en dat 
-	\begin{align*}
-	\limxi f(x) & = \limxi x = +\infty \\
-	\limxi g(x) & = \limxi (a-x) = -\infty \\
-	\limxi (g(x)+f(x)) & = \limxi a = a \\
-	\end{align*}
-    In dit geval impliceert dus $\limxc \big(f(x) +g(x)\big) = \limxc f(x) + \limxc g(x)$ dat $(+\infty) + (-\infty)$ gelijk zou moeten zijn aan $a$. Maar $a$ is willekeurig (of \textit{onbepaald}): we kunnen voor $a$ even goed $0$ kiezen als $2$ of $2\pi/3$ \dots! Dus: de rekenregels voor de som van limieten impliceren dat $(+\infty)+(-\infty)$ elke waarde kan aannemen, en dus noodzakelijkerwijze \textit{onbepaald} moet blijven. Jammer maar helaas ...
-    
-    
-\end{example}
-\begin{example}
-	
-Zoek een gelijkaardig eenvoudig (tegen)voorbeeld voor $0\cdot\infty$ en voor $\dfrac00$ en $\dfrac\infty\infty$.
-\end{example}
+\end{remark}
 
 
-
-We zijn dus verplicht om voldoende voorzichtig rekenregels vast te leggen voor de symbolen $+\infty$ en $-\infty$. We kunnen rekenen met $+\infty$ en $-\infty$  op voorwaarde dat we zogenaamde \textit{onbepaalde vormen} vermijden.
-
-Merk op: we schrijven verder meestal gewoon $\infty$ voor $+\infty$ (net zoals we $5$ schrijven voor $+5$). \\
-En $\pm\infty$ betekent $+\infty$ of $-\infty$ (in die volgorde, zodat we ook kunnen schrijven dat $-(\pm\infty) = \mp\infty$!)
-
-Eerst enkele regels die wel gewoon werken zoals het hoort:
-\begin{proposition} (Rekenregels voor de symbolen $+\infty$ en $-\infty$)
-	
-% todo: Uitleg over symbool X ...?
-Zij $a\in\R$. Dan geldt:	
-	\begin{align*}
-	-(+\infty) & = -\infty \\
-	-(-\infty) & = +\infty  & \text{($+\infty$ en $-\infty$ zijn elkaars tegengestelde)}\\ 
-	\\
-		\infty & = +\infty   \\
-		\pm\infty &\text{ staat voor} +\infty \text{ of } -\infty \\
-		-(\pm\infty) &= \mp\infty &\text{(voor de hand liggende afspraken)} \\
-	\\
-	a+\infty & = \infty+a = \infty - a = -a +\infty \\
-	         & = \infty + \infty = \infty & \text{($\infty + X =\infty$ behalve als $X=-\infty$)} \\
-	\\
-	a+(-\infty) & = a-\infty = -\infty+a =-\infty - a = -a - \infty \\
-	         & = -\infty - \infty = -\infty+(-\infty) = -\infty & \text{($-\infty+X=-\infty$ behalve als $X=+\infty$)} \\
-\intertext{Als $a>0$ ($a$ strikt positief)}	         
-	a\cdot\infty & = \infty\cdot a \\
-& = \infty \cdot \infty = (-\infty) \cdot (-\infty) = \infty & \text{($X\cdot\pm\infty=\pm\infty$ als $X>0$)} \\
-\intertext{Als $a<0$ ($a$ strikt negatief)}	         
-a\cdot\infty & = \infty\cdot a \\
-& = \infty \cdot (-\infty) = (-\infty)\cdot\infty = -\infty & \text{($X\cdot(\pm\infty) = \mp\infty$ als $X<0$)} \\
-	\end{align*}	
-\end{proposition}  
-
-Ook al deze regels zijn erg natuurlijk, en stellen op zich geen probleem. \\
-Maar er zit dus een enigszins venijnig addertje onder het gras: er ontbreken enkele combinaties en die \textit{gelden niet} (altijd). Op examens durven studenten zich wel eens laten bijten door zo'n addertje. Dat is steeds erg pijnlijk. Je probeert het dus best te vermijden.
-
-\begin{proposition} (\textbf{Onbepaalde vormen} met $\pm\infty$)
-	
-	Volgende uitdrukkingen zijn onbepaald. Dat betekent dat ze \textit{geen betekenis} hebben.	
-	
-	\begin{tabular}{cccr}
-	$\infty - \infty$ &$(+\infty) + (-\infty)$  & 	$(-\infty) + (+\infty) $  & oneindig min oneindig \\
-	$0\cdot\infty$ & $0 \cdot (\pm\infty)$   & 	$(\pm\infty)\cdot 0$   & nul maal oneindig \\
-	\\
-	% Mmm, shortstack werkt niet (goed) in html (wordt een afbeelding!)
-	$\dfrac 00$ & $\dfrac\infty\infty$ & $\dfrac{\pm\infty}{\mp\infty}$ & \shortstack{\hfill nul gedeeld door nul \\ oneindig gedeeld door oneindig}
-	\end{tabular}
-\end{proposition}
-Merk op: ook $0^0$, $\infty^0$ en $1^\infty$ zijn onbepaald, maar we zullen ze in deze cursus niet tegenkomen.
-
-Merk op: als je bij een berekening een onbepaalde vorm uitkomt, is er iets mis. Je zal een andere berekeningswijze moeten vinden, die de onbepaalde vorm vermijdt.
 
 \subsection{Limieten in $c=\pm\infty$ }
 
