@@ -1,21 +1,17 @@
-\documentclass[handout,numbers]{ximera}
+\documentclass{ximera}
+%\documentclass[handout,numbers]{ximera}
 % todo: proper use of options of documentclass to be investigated!!!
-% eg with '\wordchoice'
-% -> in pdf: just pint the correct options
-% -> in HTML: provide all options
-% BUT: in exercises: also in pdf provide all options!!!
 
-% todo: make todo's (optionally) printable in the text !
 
 \author{Zomercursus KU Leuven}
-% todo: nadenken over outcomes (formulering/gebruik/...)
+
 \outcome{Limieten kunnen berekenen}
 \outcome{Onbepaaldheden met oneindig kunnen herkennen}
 
 \input{../preamble.tex}
 
 
-\title[Limieten:]{Rekenregels}
+\title{Limieten: Rekenregels}
 
 \begin{document}
 \begin{abstract}
@@ -120,9 +116,11 @@ Merk op: we schrijven verder meestal gewoon $\infty$ voor $+\infty$ (net zoals w
 En $\pm\infty$ betekent $+\infty$ of $-\infty$ (in die volgorde, zodat we ook kunnen schrijven dat $-(\pm\infty) = \mp\infty$!)
 
 Eerst enkele regels die wel gewoon werken zoals het hoort:
+\todo{Uitleg over symbool X ...?}
+\todo{Uitzoeken: \verbatim{\intertext} online ..}
 \begin{proposition} (Rekenregels voor de symbolen $+\infty$ en $-\infty$)
 	
-	% todo: Uitleg over symbool X ...?
+
 	Zij $a\in\R$. Dan geldt:	
 	\begin{align*}
 	-(+\infty) & = -\infty \\
@@ -138,7 +136,8 @@ Eerst enkele regels die wel gewoon werken zoals het hoort:
 	a+(-\infty) & = a-\infty = -\infty+a =-\infty - a = -a - \infty \\
 	& = \colorbox{lightgray}{$-\infty - \infty = -\infty+(-\infty) = -\infty$} & \text{($-\infty+X=-\infty$ behalve als $X=+\infty$)} \\
 	\pdfOnly{\intertext{Als $a>0$ ($a$ strikt positief)}}
-	\begin{onlineOnly}\mbox{ Als $a>0$ ($a$ strikt positief) }\end{onlineOnly}
+	\mbox{ Als $a>0$ ($a$ strikt positief) }\\	
+%	\begin{onlineOnly}\mbox{ Als $a>0$ ($a$ strikt positief) }\end{onlineOnly}
 	a\cdot\infty & = \infty\cdot a \\
 	& = \colorbox{lightgray}{$\infty \cdot \infty = (-\infty) \cdot (-\infty) = \infty$} & \text{($X\cdot\pm\infty=\pm\infty$ als $X>0$)} \\
 	\pdfOnly{\intertext{Als $a<0$ ($a$ strikt negatief)}}
@@ -291,7 +290,7 @@ De limiet van een rationale functie in $\pm\infty$ wordt bepaald door de hoogste
 
 \subsection{Limieten in nulpunten van de noemer}
 
-\todo{TODO: wijzen op herhaling samenstelling functies (f(1/x) / 1/f(x) / f(x+a) etc)}
+\todo{(wijzen op) herhaling samenstelling functies (f(1/x) / 1/f(x) / f(x+a) etc)}
 
 \subsubsection{Limieten van $\dfrac{1}{g(x)}$ met $g(x)$ een veelterm}
 
