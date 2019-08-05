@@ -1,14 +1,12 @@
-\documentclass[numbers]{ximera}
+\documentclass[noinstructornotes,numbers]{ximera}
 % todo: proper use of options of documentclass to be investigated!!!
 % eg with '\wordchoice'
 % -> in pdf: just pint the correct options
 % -> in HTML: provide all options
 % BUT: in exercises: also in pdf provide all options!!!
 
-% todo: make todo's (optionally) printable in the text !
-
 \author{Zomercursus KU Leuven}
-% todo: nadenken over outcomes (formulering/gebruik/...)
+
 \outcome{Limieten kunnen berekenen}
 \outcome{Onbepaaldheden met oneindig kunnen herkennen}
 
@@ -23,21 +21,28 @@
 \end{abstract}
 \maketitle
 
+\listoftodos
+
+\todo {nadenken over outcomes (formulering/gebruik/...)}
+\todo{nadenken over 'jij' vorm of 'we' vorm in dit soort teksten !!!}
+	
+
 \subsection{Inleiding}
-%todo: nadenken over 'jij' vorm of 'we' vormin dit soort teksten !!!
+
 In dit deel bestudeer je \textit{limieten} en leer je rekenen met het symbool $\infty$ ('\textit{oneindig}').
 
 \begin{expandable}
 Voor wie (nog) niet overtuigd is dat dit een mogelijk nuttige bezigheid is, hebben we volgende% een uitwijding over het wat en waarom van limieten.
 
-% todo: layout zodat duidelijk is dat dit een 'uitwijding' is (dus: expandable aanpassen/vervangen) (voorlopig adhoc tcolorbox) 
-% todo: nagaan hoe exandable precies werkt
+\todo{layout/functionaliteit 'uitwijding' (dus: expandable aanpassen/vervangen; voorlopig adhoc tcolorbox) }
+\todo{Uitzoeken: hoe werkt expandable precies}
+\todo{limieten: goed voorbeeldje vinden 'interesse net op de rand'}
 
 \begin{uitwijding}[Wat en waarom van limieten] \ 
 	
 (Merk op: dit is enkel inleidende achtergrondinformatie, en geen leerstof.)	
 
-Dikwijls is men geïnteresseerd in wat er gebeurt 'net op de rand van wat al gekend is'. \todo{TODO: goed voorbeeldje vinden}. Wiskundig kunnen we dit soort situaties (in gunstige gevallen) beschrijven (en soms zelfs begrijpen) in termen van \textit{limieten}. 
+Dikwijls is men geïnteresseerd in wat er gebeurt 'net op de rand van wat al gekend is'. Wiskundig kunnen we dit soort situaties (in gunstige gevallen) beschrijven (en soms zelfs begrijpen) in termen van \textit{limieten}. 
 
 In het eerder eenvoudige geval van rijen is het intuïtief aannemelijk dat de rij getallen
 \begin{align*}
@@ -74,8 +79,9 @@ Maar, de erg gelijkaardige eigenschap 'is groter dan nul', dus '$a_n>0$', geldt 
 
 In dit hoofdstuk krijg je een kleine inleiding in de problematiek van limieten van \textit{functies} (en dus niet van \textit{rijen} zoals in dit voorbeeld). Later gebruiken we die limieten om asymptoten te bekijken, afgeleiden en integralen te definiëren en nog veel meer. 
 
-Merk op: een meer formele en exacte behandeling van limieten wordt snel technisch (bijvoorbeeld met de onder (niet-)kenners erg beruchte $\epsilon$'s en $\delta$'s) \todo{TODO voetnoot?} en dat valt -jammer voor ons schrijvers van cursusteksten, maar gelukkig voor u die het resultaat van onze arbeid moeten studeren- buiten het bestek van deze cursus. Sommigen van u kennen het al, en voor anderen komt het nog. Maar, velen onder u zullen aan de technische details ontsnappen.
+Merk op: een meer formele en exacte behandeling van limieten wordt snel technisch (bijvoorbeeld met de onder (niet-)kenners erg beruchte $\epsilon$'s en $\delta$'s) en dat valt -jammer voor ons schrijvers van cursusteksten, maar gelukkig voor u die het resultaat van onze arbeid moeten studeren- buiten het bestek van deze cursus. Sommigen van u kennen het al, en voor anderen komt het nog. Maar, velen onder u zullen aan de technische details ontsnappen.
 \end{uitwijding}
+\todo{voetnoot ivm epsilons/deltas ?}
 \end{expandable}
 
 
@@ -83,14 +89,13 @@ Merk op: een meer formele en exacte behandeling van limieten wordt snel technisc
 
 We geven als kennismaking enkele voorbeelden van limieten van functies, om dan tot een soort van intuïtieve definitie te komen. In  deze cursus geven we geen formeel-wiskundige definitie van limiten, we beperken ons het intuïtief aflezen van limieten op grafieken van functies. In een volgende paragfraaf geven we wel wiskundig exacte rekenregels voor limieten.
 
-%\todo{
+\todo{Uitzoeken: hoe werkt instructorNotes precies}
+% \begin{instructorNotes}
 % We kiezen sin(x)/x als eerste voorbeeld, omdat daarbij \infty geen enkele rol speelt, 
 % en dus enkel het begrip 'limiet' wordt gebruikt
 % 1/x is 'complexer' omdat er een mix is tussen de (in principe onafhankelijke) begrippen 'limiet' en 'oneindig'
 % nadeel is dat sin(x)/x misschien ook als'complex' wordt ervaren, hoewelodat eenvoudig kan worden uitgelegd op de tekening
-%
-% todo: maak hiervan 'instructornotes?
-% todo: uitleggen waarom de rode lijn uinderdaad sin(x)/x is ...?
+% \end{instructorNotes}
 %}
 
 \begin{example} (Limieten van $\frac{\sin x}{x}$)
@@ -99,7 +104,8 @@ Beschouw de functie $f:x\mapsto \dfrac{\sin x}{x}$. Dat is de gekende sinusfunct
 
 De situatie is wat moeilijker direct te begrijpen voor erg kleine $x$: als we delen door kleine $x$, wordt het resultaat in principe steeds groter, maar hier wordt tegelijk ook de $sin x$ in de teller kleiner. We delen dus iets kleins door iets kleins, en dat is niet noodzakelijk altijd klein (de meeste mensen vinden bijvoorbeeld $10^{-90}$ klein, maar $10^{-90}/10^{-100} = 10^{10}$ eerder groot ...!). 
 
-Merk ook op dat we niet zomaar $x=0$ kunnen invullen in de formule, want dan krijgen we $\frac{\sin 0}{0} = \frac{0}{0}$, en 'dat mag niet'. \todo{TODO: verwijzing naar onbepaaldheid $0/0$ evt in voetnoot???}. 
+Merk ook op dat we niet zomaar $x=0$ kunnen invullen in de formule, want dan krijgen we $\frac{\sin 0}{0} = \frac{0}{0}$, en 'dat mag niet'. 
+\todo{verwijzing naar onbepaaldheid $0/0$ (evt in voetnoot)???}. 
 
 Een rekenmachine leert voor $x=0,01$ dat $\frac{\sin(0,01)}{0,01}=0,999983\dots$, en we kunnen dus vermoeden dat $\frac{\sin x}{x}$ steeds dichter bij $1$ zal liggen naarmate we $x$ kleiner kiezen. Men kan ook wiskundig aantonen dat dat inderdaad zo is.
 
@@ -108,6 +114,11 @@ Ook uit de grafiek van de functie  $\dfrac{\sin x}{x}$ blijkt trouwens dat voor 
 We zeggen dan ook dat de functie (of de uitdrukking) $\dfrac{\sin x}{x}$ gelijk is (of ook gelijk \textit{wordt}) aan $1$ \textit{als $x$ naar $0$ gaat}, en we schrijven $\limx \dfrac{\sin x}{x} = 1$.
 
 Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt aan $0$ \textit{als $x$ naar oneindig gaat}, en we schrijven  $\limxi \dfrac{\sin x}{x} = 0$. 
+
+\todo{ legende nog niet goed geformateerd ...}
+\todo{ Uitzoeken: functionaliteit van width in image environment (online vs pdf)}
+\todo{ Uitleggen waarom de rode lijn inderdaad sin(x)/x is ...?}
+
 
 \begin{image}[\width]
 	\begin{tikzpicture}[scale=1]
@@ -125,7 +136,6 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 	\addplot[domain=0.001:10,semithick,dotted,color=blue] {x};
 	\addplot[domain=0.001:10,ultra thick,color=red] {sin((deg(x)))/x}; 
 	\legend{$y=sin(x)$,$y=x$,$y=\frac{\sin x}{x}$};
-	% todo legende nog niet goed geformateerd ...?
 	\end{axis}
 	\end{tikzpicture}
 \end{image}
@@ -167,7 +177,8 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 	\end{image}
 \end{example}
 
-\todo{TODO: tekst aanpassen!} Het begrip \textit{limiet} heeft dus niet noodzakelijk een direct verband met het begrip \textit{oneindig} (tenzij in de betekenis van 'ergens oneindig dicht bij liggen'). Maar we zullen verder toch erg veel met oneindig te maken krijgen: enerzijds zullen we zeggen dat een 'limiet gelijk is aan oneindig' als de functiewaarden steeds groter worden, en anderzijds zullen we ook 'limieten in oneindig' bekijken, namelijk wat er gebeurt als $x$ steeds groter wordt.
+\todo{tekst aanpassen: oneindig vs limiet} 
+Het begrip \textit{limiet} heeft dus niet noodzakelijk een direct verband met het begrip \textit{oneindig} (tenzij in de betekenis van 'ergens oneindig dicht bij liggen'). Maar we zullen verder toch erg veel met oneindig te maken krijgen: enerzijds zullen we zeggen dat een 'limiet gelijk is aan oneindig' als de functiewaarden steeds groter worden, en anderzijds zullen we ook 'limieten in oneindig' bekijken, namelijk wat er gebeurt als $x$ steeds groter wordt.
 
 %We bestuderen enkele eigenschappen van limieten (bij veeltermen zoals $x^5-2x^2+7$, rationale functies zoals$\frac{5x}{x-5}$ en irrationale functies zoals $\frac{\sqrt{x-1}}{x-1}$). 
 
@@ -193,7 +204,7 @@ We gaan zoals vermeld in deze module niet in op de exacte wiskundige definitie v
 
 \end{definition}
 
-\begin{remark}
+\begin{remark} \ 
 
 \begin{itemize}	
 \item Let op: $x<c$ is hetzelfde als  $c>x$, net zoals  $x>c$ hetzelfde betekent als $c<x$. Let dus zowel op de tekens $<,>$ \textit{en} op de volgorde van de letters of cijfers!  

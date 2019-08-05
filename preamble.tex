@@ -7,6 +7,9 @@
 \usepackage{ifthen}
 \usepackage{animate}
 
+%\usepackage[disable]{todonotes}
+\usepackage{todonotes}
+
 \graphicspath{
 	{./}
 	{goniometrie/}
@@ -118,6 +121,13 @@
 %\theoremstyle{problem}
 \newtheorem{exercise}{Oefening}
 
+% remove italics def
+\let\question\relax
+\let\c@question\relax
+\let\endquestion\relax
+%\theoremstyle{problem}
+\newtheorem{question}{Vraag}
+
 \newtheorem*{oplossing}{Oplossing}
 %\newtheorem{oplossing}[definition]{Oplossing}
 
@@ -194,7 +204,7 @@
 %\usepackage{todonotes}
 %\usepackage{mathtools} %% Required for wide table Curl and Greens
 %\usepackage{cuted} %% Required for wide table Curl and Greens
-\newcommand{\todo}{}
+%\newcommand{\todo}{}
 
 % Font niet (correct?) geinstalleerd in MikTeX?
 %\usepackage{esint} % for \oiint

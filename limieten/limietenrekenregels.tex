@@ -1,4 +1,4 @@
-\documentclass[numbers]{ximera}
+\documentclass[handout,numbers]{ximera}
 % todo: proper use of options of documentclass to be investigated!!!
 % eg with '\wordchoice'
 % -> in pdf: just pint the correct options
@@ -137,11 +137,13 @@ Eerst enkele regels die wel gewoon werken zoals het hoort:
 	\\
 	a+(-\infty) & = a-\infty = -\infty+a =-\infty - a = -a - \infty \\
 	& = \colorbox{lightgray}{$-\infty - \infty = -\infty+(-\infty) = -\infty$} & \text{($-\infty+X=-\infty$ behalve als $X=+\infty$)} \\
-	\intertext{Als $a>0$ ($a$ strikt positief)}	         
+	\pdfOnly{\intertext{Als $a>0$ ($a$ strikt positief)}}
+	\begin{onlineOnly}\mbox{ Als $a>0$ ($a$ strikt positief) }\end{onlineOnly}
 	a\cdot\infty & = \infty\cdot a \\
 	& = \colorbox{lightgray}{$\infty \cdot \infty = (-\infty) \cdot (-\infty) = \infty$} & \text{($X\cdot\pm\infty=\pm\infty$ als $X>0$)} \\
-	\intertext{Als $a<0$ ($a$ strikt negatief)}	         
-	a\cdot\infty & = \infty\cdot a \\
+	\pdfOnly{\intertext{Als $a<0$ ($a$ strikt negatief)}}
+%	\begin{onlineOnly}\text{Als $a<0$ ($a$ strikt negatief)}\\ \end{onlineOnly}%
+		a\cdot\infty & = \infty\cdot a \\
 	& = \colorbox{lightgray}{$\infty \cdot (-\infty) = (-\infty)\cdot\infty = -\infty$} & \text{($X\cdot(\pm\infty) = \mp\infty$ als $X<0$)} \\
 	\end{align*}	
 \end{proposition}  
