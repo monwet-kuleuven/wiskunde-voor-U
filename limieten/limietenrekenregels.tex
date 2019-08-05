@@ -135,12 +135,13 @@ Eerst enkele regels die wel gewoon werken zoals het hoort:
 	\\
 	a+(-\infty) & = a-\infty = -\infty+a =-\infty - a = -a - \infty \\
 	& = \colorbox{lightgray}{$-\infty - \infty = -\infty+(-\infty) = -\infty$} & \text{($-\infty+X=-\infty$ behalve als $X=+\infty$)} \\
-	\pdfOnly{\intertext{Als $a>0$ ($a$ strikt positief)}}
-	\mbox{ Als $a>0$ ($a$ strikt positief) }\\	
+%	\pdfOnly{\intertext{Als $a>0$ ($a$ strikt positief)}}
+	\mbox{ Als $a>0$ }\\% ($a$ strikt positief) }\\	
 %	\begin{onlineOnly}\mbox{ Als $a>0$ ($a$ strikt positief) }\end{onlineOnly}
 	a\cdot\infty & = \infty\cdot a \\
 	& = \colorbox{lightgray}{$\infty \cdot \infty = (-\infty) \cdot (-\infty) = \infty$} & \text{($X\cdot\pm\infty=\pm\infty$ als $X>0$)} \\
-	\pdfOnly{\intertext{Als $a<0$ ($a$ strikt negatief)}}
+	\mbox{Als $a<0$ } \\% ($a$ strikt negatief)} \\
+%	\pdfOnly{\intertext{Als $a<0$ ($a$ strikt negatief)}}
 %	\begin{onlineOnly}\text{Als $a<0$ ($a$ strikt negatief)}\\ \end{onlineOnly}%
 		a\cdot\infty & = \infty\cdot a \\
 	& = \colorbox{lightgray}{$\infty \cdot (-\infty) = (-\infty)\cdot\infty = -\infty$} & \text{($X\cdot(\pm\infty) = \mp\infty$ als $X<0$)} \\
@@ -185,15 +186,16 @@ De rekenregels voor $\pm\infty$ stellen ons in staat volgende interessante eigen
 		 \limxc \big(f(x)\cdot g(x)\big) & = \limxc f(x) \cdot \limxc g(x)  
 		     & \text{[lim(product) =  product(lims)]} \label{elim-product} \\
 		 %
-		 \intertext{Als $\limxc g(x) \neq 0:$}
+		 \mbox{Als $\limxc g(x) \neq 0:$} \notag\\
 		 \limxc \dfrac{f(x)}{g(x)} & = \dfrac{\limxc f(x)}{\limxc g(x)}  
 		     & \text{[lim(quotiënt) = quotiënt(lims)]} \label{elim-quotient} \\
 		 %
-		 \intertext{Als $c\in A$ (i.e. $c$ behoort tot dom $f$)} %(en dus $c$ tot het domein van $f$ behoort):} 
+		 \mbox{Als $c\in A$} \notag\\ % (i.e. $c$ behoort tot dom $f$)}
 		 \limxc f(x) & = f(c) 
 		     & \text{[lim\_in\_c($f$) = $f$(c) als $f$(c) bestaat en $f$ continu]} \label{elim-domein} \\
 		 %
-		 \intertext{Als $f(g(x))$ bestaat voor $x$ dicht bij $c$, $f(\limxc(x))$ bestaat, $f$ is continu (TBV!):} 
+%		 \intertext{Als $f(g(x))$ bestaat voor $x$ dicht bij $c$, $f(\limxc(x))$ bestaat, $f$ is continu (TBV!):} 
+		 \text{Als alle vw voldaan:} \notag \\ %& \mbox{\small Als LL en RL bestaan:} \\ 
 		 \limxc f(g(x)) & = f(\limxc g(x)) 
 		     & \text{[lim($f$(iets)) =  $f$(lim(iets)) \textit{als alle vw voldaan!}]} \label{elim-continu} 
 	\end{align}
