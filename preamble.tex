@@ -1,7 +1,9 @@
+\usepackage[dutch]{babel}
 
 \usepackage[a4paper]{geometry}
 
 \usepackage[utf8]{inputenc}
+
 \usepackage{multicol}
 \usepackage{tikzsymbols}
 \usepackage{ifthen}
@@ -129,6 +131,13 @@
 \let\endquestion\relax
 %\theoremstyle{problem}
 \newtheorem{question}{Vraag}
+
+% remove italics def
+\let\notation\relax
+\let\c@notation\relax
+\let\endnotation\relax
+%\theoremstyle{problem}
+\newmdtheoremenv{notation}{Notatie}
 
 \newtheorem*{oplossing}{Oplossing}
 %\newtheorem{oplossing}[definition]{Oplossing}
