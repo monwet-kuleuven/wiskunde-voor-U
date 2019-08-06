@@ -1,10 +1,10 @@
 \documentclass{ximera}
+%\documentclass[wordchoicegiven]{ximera}
+
 \input{../preamble.tex}
-\usepackage{booktabs}
-\usepackage{multirow}
 
 \author{Zomercursus KU Leuven}
-\outcome{Algebraïsch kunnen rekenen met breuken.}
+\outcome{Algebraïsch kunnen rekenen met machten.}
 
 
 \title[Rekenvaardigheden:]{Machten}
@@ -15,12 +15,21 @@
 \end{abstract}
 \maketitle
 
-\subsection{De machtsverheffing: definitie en rekenregels}
-\subsection{Machtsverheffing met een re\"eel grondtal en een gehele exponent}
-\begin{definition}(Machtsverheffing met re\"eel grondtal en gehele exponent)
-	Zij $a\in\R$ en $n\in\N$. De \emph{macht} $a^n$ (spreek uit: $a$
-	tot de macht $n$ of $a$ tot de $n$-de) met \emph{grondtal} $a$ en
-	\emph{exponent} $n$ wordt als volgt gedefinieerd:
+%\subsection{De machtsverheffing: definitie en rekenregels}
+\subsection{Machten met een re\"eel grondtal en een gehele exponent}
+
+Eén manier om de vermenigvuldiging te definiëren is zeggen dat 'vermenigvuldigen is herhaald optellen': $3\times 2 \perdef 2 + 2+ 2$, en $n\times a = a+a+\dots +a$ ($n$ keer). 
+
+Op dezelfde manier geldt: 'machtsverheffen is herhaald vermenigvuldigen': $2^3 \perdef 2\times2\times2$. 
+
+Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten. 
+
+\begin{definition}(Machtsverheffing met re\"eel grondtal en gehele exponent) \ 
+	
+	Zij $a\in\Rnul$ en $n\in\N$. 
+	
+	We definiëren de \emph{$n$-de macht}  van $a$ en noteren $a^n$:
+	% (spreek uit: $a$	tot de macht $n$ of $a$ tot de $n$-de) met \emph{grondtal} $a$ en 	\emph{exponent} $n$ wordt als volgt gedefinieerd:
 	\[a^n\perdef
 	\left\{
 	\begin{array}{cl}
@@ -29,96 +38,138 @@
 	\end{array}
 	\right.\]
 	
-	Zij $a\in\Rnul$ en $n\in\N$. De macht $a^{-n}$ met grondtal $a$ en
-	exponent $-n$ wordt als volgt gedefinieerd:
+	We noeme $a$ het \textit{grondtal} en $n$ de \textit{exponent}.
+		
+	We definiëren ook machten met negatieve exponenten:
+	
 	\[a^{-n}\perdef\frac{1}{a^n}.\]
+	
+	Voor $a=0$ en $n>0$ definiëren we $0^n = 0$. 
+	
+	De uitdrukkingen $0^0$ en $0^{-n}$ zijn \textit{onbepaald} en hebben dus \textit{geen} betekenis.
+	
 \end{definition}
-%\newpage
-\begin{example}
-	\begin{itemize}
-		\item $a^0=1$ voor alle $a\in\Rnul$.
-		\item $a^1=a$ voor alle $a\in\R$
-		\item $\ds a^{-1}=\frac{1}{a}$ voor alle $a\in\Rnul$
-		\item $0^n=0$ voor alle $n\in\Nnul$.
-		\item $0^z$ is niet gedefinieerd voor $z\in\Zmin$.
-		\item $1^z=1$ voor alle $z\in\Z$.
-	\end{itemize}
-\end{example}
+
+\begin{remark} \ 
+	
+	\begin{enumerate}
+	\item Onmiddelijke gevolgen van de definities:
+			\begin{itemize}
+			\item $a^0=$\wordChoice{\choice[correct]{$1$}\choice{$0$}\choice{$a$}} voor alle $a\in\Rnul$.
+			\item $a^1=$\wordChoice{\choice{$1$}\choice{$0$}\choice[correct]{$a$}} voor alle $a\in\R$
+			\item $a^{-1}=\frac{1}{a}$ voor alle $a\in\Rnul$
+			%		\item $0^n=0$ voor alle $n\in\Nnul$.
+			%		\item $0^z$ is niet gedefinieerd voor $z\in\Zmin$.
+			\item $1^z=1$ voor alle $z\in\Z$.
+		\end{itemize}
+	\item (Uitweiding) Er is natuurlijk geen enkele reden om 'Y is herhaald X'en' niet verder te herhalen! Zie \link{https://nl.wikipedia.org/wiki/Knuths_pijlomhoognotatie} voor meer info.
+\end{enumerate} 
+\end{remark}
+
 \begin{proposition}
 	Zij $x,y\in\R$ en $m,n\in\N$. Er geldt:
 	\[
+	\arraycolsep=1.4pt\def\arraystretch{2.2}
 	\begin{array}{r@{\ =\ }l@{\qquad}l}
-	\specialrule{.1em}{0ex}{1ex}
 	\ds{x^{m}x^{n}}&\ds{x^{m+n}}&\\
-	\midrule
-	\ds{\frac{x^{m}}{x^{n}}}&\ds{x^{m-n}}&\textrm{als }x\neq0\\
-	\midrule
 	\ds{(xy)^n}&\ds{x^ny^n}&\\
-	\midrule
-	\ds{\left(\frac{x}{y}\right)^{n}}&\ds{\frac{x^{n}}{y^{n}}}&\textrm{als }y\neq0\\
-	\midrule
 	\ds{\left(x^{m}\right)^{n}}&\ds{x^{mn}}&\\
-	\specialrule{.1em}{1ex}{0ex}
+	\ds{\frac{x^{m}}{x^{n}}}&\ds{x^{m-n}}&\textrm{als }x\neq0\\
+	\ds{\left(\frac{x}{y}\right)^{n}}&\ds{\frac{x^{n}}{y^{n}}}&\textrm{als }y\neq0\\
 	\end{array}
 	\]
-	Zij $x,y\in\Rnul$ en $m,n\in\Z$. Er geldt:
-	\[
-	\begin{array}{r@{\ =\ }l}
-	\specialrule{.1em}{0ex}{1ex}
-	\ds{x^{m}x^{n}}&\ds{x^{m+n}}\\
-	\midrule
-	\ds{\frac{x^{m}}{x^{n}}}&\ds{x^{m-n}}\\
-	\midrule
-	\ds{(xy)^n}&\ds{x^ny^n}\\
-	\midrule
-	\ds{\left(\frac{x}{y}\right)^{n}}&\ds{\frac{x^{n}}{y^{n}}}\\
-	\midrule
-	\ds{\left(x^{m}\right)^{n}}&\ds{x^{mn}}\\
-	\specialrule{.1em}{1ex}{0ex}
-	\end{array}
-	\]
+	Dezelfde regels gelden voor gehele $m,n\in\Z$ voor zover ze betekenis hebben 
+	\\ (dus: grondtal niet nul als de exponent negatief is).
+	
+	Dezelfde regels gelden ook voor reële $m,n\in\R$ voor zover ze betekenis hebben
+	\\ (zie verder paragraaf \ref{machten-r}).
+
 \end{proposition}
 
+\begin{example} \ 
+	
+	\begin{enumerate}
+	\item $\ds{\left(\left(\frac{1}{2}\right)^{2}\right)^{-3}=\left(\frac{1}{2}\right)^{-6}=2^{6}=64}$
+	\item $\ds{\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)^{2}=\frac{\left(\frac{1}{2}\right)^{2}}{\left(\frac{1}{3}\right)^{2}}=
+		\frac{\frac{1}{4}}{\frac{1}{9}}=\frac{1}{4} \cdot 9=\frac{9}{4}}$
+\end{enumerate}
+\end{example}
 
-\newpage
-\subsection{Machtsverheffing met een strikt positief re\"eel grondtal en een re\"ele exponent}
+\subsection{Machten met een strikt positief re\"eel grondtal en een rationale exponent}
+
+Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing tamelijk eenvoudig nog verder veralgemenen: we definiëren eerst $a^{\frac1n}$, dan $a^{\frac mn} = a^q, q\in\Q$, en tenslotte zelfs $a^r, r\in\R$.
+ 
+
 \begin{definition}(Machtsverheffing met grondtal in \Rplus\ en exponent in \Q)
 	
 	%%%%%%\rule{0ex}{0ex}\\[-3ex]
 	
-	Zij $a\in\Rplus$ en $n\in\Nnul$. De macht $\ds
-	a^{\frac{1}{n}}$ met grondtal $a$ en exponent $\ds\frac{1}{n}$ wordt
-	gedefinieerd als het uniek positief re\"eel getal waarvan de $n$-de
-	macht gelijk is aan $a$:
-	\[\left\{
-	\begin{array}{l}
-	\ds a^{\frac{1}{n}}\geq 0\textrm{\ \ \ en}\\
-	\ds\left(a^{\frac{1}{n}}\right)^n=a.\\
-	\end{array}
-	\right.\] De macht $\ds a^{\frac{1}{n}}$ wordt ook wel genoteerd
-	met $\ds\sqrt[n]{a}$.
+	Zij $a,b\in\Rplus$ en $n\in\Nnul$, $m\in\Z$. 
 	
-	Zij $a\in\Rnulplus$, $m\in\Z$ en $n\in\Nnul$. De macht $\ds
-	a^{\frac{m}{n}}$ met grondtal $a$ en exponent $\ds\frac{m}{n}$
-	wordt als volgt gedefinieerd:
+	De macht $a^{\frac{1}{n}}$ met grondtal $a$ en exponent $\ds\frac{1}{n}$ wordt
+	gedefinieerd als het uniek positief re\"eel getal $b$ waarvan de $n$-de
+	macht gelijk is aan $a$:
+	\[b = a^\frac 1n \iff b^n = a\]
+%	\[\left\{
+%	\begin{array}{l}
+%	\ds a^{\frac{1}{n}}\geq 0\textrm{\ \ \ en}\\
+%	\ds\left(a^{\frac{1}{n}}\right)^n=a.\\
+%	\end{array}
+%	\right.\] 
+	
+	We noemen $a^{\frac{1}{n}}$ de \textit{$n$-de machtswortel }uit $a$, of de $n$-de wortel uit $a$ en noteren
+	\[
+		\sqrt[n]{a} \perdef a^\frac 1n
+	\]
+	We definiëren ook
 	\[a^{\frac{m}{n}}\perdef \left(a^{\frac{1}{n}}\right)^m.\]
 \end{definition}
-\begin{example}
+
+\begin{example} \ 
+	
+	\begin{enumerate}
+	\item  We hebben volgende gevolgen:
 	\begin{itemize}
-		\item $\ds a^{\frac{1}{n}}=\sqrt[n]{a}$ voor alle $a\in\Rnulplus$ en alle
+		\item $\ds a^{\frac{1}{n}}=\sqrt[n]{https://taaladvies.net/taal/advies/vraag/824a}$ voor alle $a\in\Rnulplus$ en alle
 		$n\in\Nnul$, i.h.b.~hebben we
 		\item $\ds a^{\frac{1}{2}}=\sqrt{a}$ voor alle $a\in\Rnulplus$.
 		\item $\ds a^{-\frac{1}{n}}=\frac{1}{\sqrt[n]{a}}=\sqrt[n]{\frac{1}{a}}$ voor alle $a\in\Rnulplus$ en alle $n\in\Nnul$
 		\item $\ds a^{\frac{m}{n}}=\left(\sqrt[n]{a}\right)^m=\sqrt[n]{a^m}$ voor alle $a\in\Rnulplus$, alle $m\in\Z$ en alle $n\in\Nnul$
 		\item $1^q=1$ voor alle $q\in\Q$.
 	\end{itemize}
+
+	\item $\frac{4}{\sqrt{8}}=\frac{2^{2}}{8^{\frac{1}{2}}}=\frac{2^{2}}{(2^{3})^{\frac{1}{2}}}=2^{2-\frac{3}{2}}=
+	2^{\frac{1}{2}}=\sqrt{2}$
+	\item
+$\sqrt[3]{8} \cdot \sqrt{64}=8^{\frac{1}{3}}\cdot \sqrt{8^{2}}=8^{\frac{1}{3}}\cdot8=8^{\frac{1}{3}+1}=8^{\frac{4}{3}}=(\sqrt[3]{8})^4=2^4=16$
+\end{enumerate}
+	Stel $x,y \in \Rnul$ dan geldt:
+\begin{enumerate}[resume]
+	\item
+	$\ds{\frac{\sqrt[4]{x^{3}}}{x}=x^{\frac{3}{4}-1}=x^{\frac{-1}{4}}=\frac{1}{\sqrt[4]{x}}}$
+	\item
+	$\ds{\left(x^{3}\cdot \sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(\sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(x^{\frac{1}{4}}\right)^{2}=x^{6}\cdot x^{\frac{2}{4}}=
+		x^{6+\frac{1}{2}}=x^{\frac{13}{2}}=\sqrt{x^{13}}}$
+	\item
+	$\ds{y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4}=y^{2} \cdot \frac{\left(x^{2}y\right)^{\frac{4}{2}}}{x^{4}y^{4}}=y^{2}\cdot \frac{x^{4}y^{2}}{x^{4}y^{4}}
+		=y^{2} \cdot \frac{1}{y^{2}}=1}$
+	\item
+	$\ds{\sqrt{48 x^{9}y^{4}}=\sqrt{(16 \cdot 3)(x^{8} \cdot
+			x)y^{4}}=\sqrt{16 \cdot 3\cdot (x^{4})^{2}\cdot x\cdot
+			(y^{2})^{2}}=4 x^{4}y^{2}\sqrt{3x}}$
+	
+\end{enumerate}
 \end{example}
-\subsubsection*{Machtsverheffing met een strikt positief re\"eel grondtal en een re\"ele exponent}
-We wensen tenslotte ook $a^r$ te defini\"eren met $a\in\Rnulplus$
-en $r\in\R$. Dit is niet evident en we zullen de definitie hier
-ook niet in detail geven. Hiervoor verwijzen we naar de cursus
-wiskunde uit het eerste jaar waar dit zeker nog aan bod komt. Wel
-schets ik hier kort \'{e}\'{e}n mogelijke manier om zin te geven
+\subsection*{Machten met een strikt positief re\"eel grondtal en een re\"ele exponent}\label{machten-r}
+Men kan ook $a^r$ te definiëren met $a\in\Rnulplus$
+en $r\in\R$ (dus uitdrukkingen zoals $2^{\sqrt{3}}$, $\pi^{\sqrt{5}}$ en $\sqrt{7}^{\sqrt{\pi}}$). Dit is technisch enigszins subtiel en we zullen de definitie hier
+ook niet in detail geven. 
+
+Wie toch nieuwsgierig is kan volgende uitweiding lezen:
+
+\begin{uitwijding}
+
+Details vind je in wat meer gevorderde cursussen wiskunde, maar hier schetsen we kort \'{e}\'{e}n mogelijke manier om een precieze betekenis te geven
 aan de uitdrukking $a^r$ met $a\in\Rnulplus$ en $r\in\R$.
 
 Neem dus $a\in\Rnulplus$ en $r\in\R$. We weten reeds dat $a^q$
@@ -139,79 +190,44 @@ $\ds a^{q_n}$ beschouwen. Op die manier bekomen we een nieuwe rij
 $a^{q_1},a^{q_2},a^{q_3},\ldots$ Nu blijkt dat ook deze rij steeds
 zal convergeren naar een zeker re\"eel getal $s$ en dat deze
 limiet niet afhangt van de keuze van de rij $q_1,q_2,q_3,\ldots$
-die we gebruikt hebben om $r$ te benaderen. Dit laat ons dan toe
+die we gebruikt hebben  om $r$ te benaderen. Dit laat ons dan toe
 om de macht $a^r$ te defini\"eren als dat getal $s$ dat je op die
 manier bekomt en dat enkel afhangt van $a$ en $r$.
 
-Zelfs voor machten met re\"ele exponenten (en dus i.h.b.~voor
+\end{uitwijding}
+
+Ook voor machten met re\"ele exponenten (en dus i.h.b.~voor
 machten met rationale exponenten) blijven de gebruikelijke
-rekenregels (zoals we die reeds zagen voor machten met gehele
-exponenten) gelden. We sommen ze hieronder nog eens op,
-(natuurlijk) zonder bewijs.
+rekenregels  gelden:
+
 \begin{proposition}
 	Zij $x,y\in\Rnulplus$ en $r,s\in\R$. Er geldt:
 	\[
+	\arraycolsep=1.4pt\def\arraystretch{2.2}
 	\begin{array}{r@{\ =\ }l}
-	\specialrule{.1em}{0ex}{1ex}
 	\ds{x^{r}x^{s}}&\ds{x^{r+s}}\\
-	\midrule
-	\ds{\frac{x^{r}}{x^{s}}}&\ds{x^{r-s}}\\
-	\midrule
 	\ds{(xy)^r}&\ds{x^ry^r}\\
-	\midrule
-	\ds{\left(\frac{x}{y}\right)^{r}}&\ds{\frac{x^{r}}{y^{r}}}\\
-	\midrule
 	\ds{\left(x^{r}\right)^{s}}&\ds{x^{rs}}\\
-	\specialrule{.1em}{1ex}{0ex}
+	x^{-r} & \frac{1}{x^r} \\
 	\end{array}
 	\]
 \end{proposition}
 
-\subsection{Voorbeeldoefeningen}
-\begin{enumerate}
-	\item Numerieke voorbeelden
-	\begin{enumerate}
-		\item $\ds{\left(\left(\frac{1}{2}\right)^{2}\right)^{-3}=\left(\frac{1}{2}\right)^{-6}=2^{6}=64}$
-		\item $\ds{\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)^{2}=\frac{\left(\frac{1}{2}\right)^{2}}{\left(\frac{1}{3}\right)^{2}}=
-			\frac{\frac{1}{4}}{\frac{1}{9}}=\frac{1}{4} \cdot 9=\frac{9}{4}}$
-		\item $\ds{\frac{4}{\sqrt{8}}=\frac{2^{2}}{8^{\frac{1}{2}}}=\frac{2^{2}}{(2^{3})^{\frac{1}{2}}}=2^{2-\frac{3}{2}}=
-			2^{\frac{1}{2}}=\sqrt{2}}$
-		\item
-		$\ds{\sqrt[3]{8} \cdot \sqrt{64}=8^{\frac{1}{3}}\cdot \sqrt{8^{2}}=8^{\frac{1}{3}}\cdot8=8^{\frac{1}{3}+1}=8^{\frac{4}{3}}=(\sqrt[3]{8})^4}=2^4=16$
-	\end{enumerate}
-	\pagebreak
-	\item Stel $x,y \in \Rnul$ dan geldt:
-	\begin{enumerate}
-		\item
-		$\ds{\frac{\sqrt[4]{x^{3}}}{x}=x^{\frac{3}{4}-1}=x^{\frac{-1}{4}}=\frac{1}{\sqrt[4]{x}}}$
-		\item
-		$\ds{\left(x^{3}\cdot \sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(\sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(x^{\frac{1}{4}}\right)^{2}=x^{6}\cdot x^{\frac{2}{4}}=
-			x^{6+\frac{1}{2}}=x^{\frac{13}{2}}=\sqrt{x^{13}}}$
-		\item
-		$\ds{y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4}=y^{2} \cdot \frac{\left(x^{2}y\right)^{\frac{4}{2}}}{x^{4}y^{4}}=y^{2}\cdot \frac{x^{4}y^{2}}{x^{4}y^{4}}
-			=y^{2} \cdot \frac{1}{y^{2}}=1}$
-		\item
-		$\ds{\sqrt{48 x^{9}y^{4}}=\sqrt{(16 \cdot 3)(x^{8} \cdot
-				x)y^{4}}=\sqrt{16 \cdot 3\cdot (x^{4})^{2}\cdot x\cdot
-				(y^{2})^{2}}=4 x^{4}y^{2}\sqrt{3x}}$
-		
-	\end{enumerate}
-\end{enumerate}
 
 
-
-\subsection{Rekenregels machten}\label{machtenrekenregels}
+\subsection{Herhaling / Onthoud }\label{machtenrekenregels}
 
 \begin{proposition}
-	
-\subsection{Machten}
 Zij $x,y>0$ en $m,n\in\RR$. Dan geldt:
 \begin{align*}
 	x^{m}x^{n}          &= x^{m+n}     & \text{(product van machten met zelfde grondtal)}\\
-	\sqrt[n] x          &= x^{\frac1n}  & \text{(notatie)}\\
-	\frac{x^{m}}{x^{n}} &= x^{m-n}      & \text{(quotiënt van machten)} \\
 	(xy)^n              &= x^ny^n      & \text{(product van machten met zelfde exponent)}\\
 	\left(x^{m}\right)^{n}&= x^{mn}    & \text{(macht van een macht)}\\	
+	x^{\frac1n} &= \sqrt[n] x          & \text{(notatie/definitie)}\\
+	x^{-n}          &= \frac{1}{x^n}  & \text{(notatie/definitie)}\\
+	\frac{x^{m}}{x^{n}} &= x^{m-n}      & \text{(quotiënt van machten)} \\
+	x^0&=1, \quad x^1=x \quad x^{-1}=\frac1x \\
+	\sqrt[n]{x}^n & = x = (\sqrt[n]{x})^n
 \end{align*}
 \end{proposition}
 
