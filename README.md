@@ -26,3 +26,4 @@ De tekst is geschreven in LaTeX, en maakt gebruik van  Ximera (https://ximera.os
 * check wanneer/hoe de ximera-server svg's served/refreshed
 * NEED dvipng
 * need xake clean ..???????
+* need sage  (eb sagetex ..?)

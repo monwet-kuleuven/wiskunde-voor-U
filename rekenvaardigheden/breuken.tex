@@ -1,25 +1,88 @@
 \documentclass[numbers,wordchoicegiven]{ximera}
 \input{../preamble.tex}
+\usepackage{booktabs}
+\usepackage{multirow}
 
 \author{Zomercursus KU Leuven}
 \outcome{Algebraïsch kunnen rekenen met breuken.}
-
-
 
 
 \title[Rekenvaardigheden:]{Breuken}
 
 \begin{document}
 \begin{abstract}
-	Voor gebroken verhoudingen!
+	Gebroken verhoudingen.
 \end{abstract}
 \maketitle
+
+test: $\limxg{1} aaa$
+
+test: $\limxi aaa$
+
+
+In dit deel geven we heel bondig de rekenregels voor het werken
+met breuken. Deze zijn heel eenvoudig, de bedoeling is echter dat
+je deze rekenregels kan toepassen in moeilijkere berekeningen
+zoals de daaropvolgende voorbeeldoefeningen.
+
+\subsection{Rekenregels voor breuken}
+\begin{proposition}
+Zij $a,b,c,d\in \R$. Er geldt:
+\[
+\begin{array}{r@{\ }c@{\ }l@{\qquad}l@{\qquad}l}
+\specialrule{.1em}{0ex}{1ex}
+\ds{\frac{a+b}{c}}&=&\ds{\frac{a}{c}+\frac{b}{c}}&\textrm{indien }c \neq 0&\textrm{breuken splitsen}\\
+\addlinespace[.7ex]
+\midrule
+\addlinespace[.7ex]
+\ds{\frac{a}{b}+\frac{c}{d}}&=&\ds{\frac{ad+cb}{bd}}&\textrm{indien }b,d \neq 0&\textrm{breuken optellen}\\
+\addlinespace[.7ex]
+\midrule
+\addlinespace[.7ex]
+\ds{\frac{ab}{ac}}&=&\ds{\frac{b}{c}}&\textrm{indien }a,c \neq 0&\textrm{breuken vereenvoudigen}\\
+\addlinespace[.7ex]
+\midrule
+\addlinespace[.7ex]
+\ds{\frac{\frac{a}{b}}{\ c\ }}&=&\ds{\frac{a}{bc}}&\textrm{indien }b,c \neq 0&\multirow{5}{4.5cm}{\textrm{rekenregels voor meerdere breukstrepen}}\\\addlinespace[2.2ex]
+\ds{\frac{a}{\ \frac{b}{c}\ }}&=&\ds{\frac{ac}{b}}&\textrm{indien }b,c \neq 0&\\\addlinespace[2.2ex]
+\ds{\frac{\frac{a}{b}}{\ \frac{c}{d}\ }}&=&\ds{\frac{ad}{bc}}&\textrm{indien }b,c,d \neq 0&\\
+\specialrule{.1em}{1ex}{0ex}
+\end{array}
+\]
+\end{proposition}
+
+\subsection{Voorbeelden}
+\begin{enumerate}
+	\item Numerieke voorbeelden
+	\begin{enumerate}
+		\item Breuk splitsen:\ \ $\ds{\frac{120+74}{2}=\frac{120}{2}+\frac{74}{2}=60+37=97}$
+		\item Breuken optellen:\ \ $\ds{\frac{1}{8}+\frac{5}{6}=\frac{1 \cdot 6+5 \cdot 8}{48}=\frac{46}{48}}$
+		\item Breuk vereenvoudigen:\ \ $\ds{\frac{125}{50}=\frac{25 \cdot 5}{25 \cdot 2}=\frac{5}{2}}$
+		\item Rekenen met meerdere breukstrepen:\ \ $\ds{\frac{\frac{80}{2}}{10}=\frac{80}{2\cdot10}=\frac{80}{20}=4}$
+	\end{enumerate}
+	
+	\item Symbolisch rekenen ($x,y,p,q\in\R$)
+	\begin{enumerate}
+		\item Rekenen met meerdere breukstrepen:\\
+		Stel $x,y \neq 0$, dan is $\ds{\frac{x+y}{\frac{x}{y}}=\frac{(x+y)y}{x}}$
+		\item Rekenen met meerdere breukstrepen:\\
+		Stel $x,y \neq 0$, dan is $\ds{\frac{\frac{x+y}{x}}{\ y\ }=\frac{x+y}{xy}}$
+		\item Breuk vereenvoudigen --- verschil van twee kwadraten:\\
+		Stel $p-q \neq 0$, dan is $\ds{\frac{p^{2}-q^{2}}{p-q}=\frac{(p+q)(p-q)}{p-q}=p+q}$
+		\item Breuk vereenvoudigen, rekenen met meerdere breukstrepen --- factor afzonderen:\\
+		Stel $p,q \neq 0$, dan is $\ds{\frac{\frac{p+qp}{pq^{2}}}{\frac{p^{2}}{q}}=\frac{\frac{p(1+q)}{pq^{2}}}{\frac{p^{2}}{q}}=
+			\frac{\frac{1+q}{q^{2}}}{\frac{p^{2}}{q}}=\frac{(1+q)q}{q^{2}p^2}=\frac{1+q}{qp^{2}}}$
+		\item Breuken splitsen, rekenen met meerdere breukstrepen:\\
+		Stel $x \neq 0$, dan is $\ds{\frac{-1}{1-\frac{x+1}{x}}=\frac{-1}{1-\left(1+\frac{1}{x}\right)}=\frac{-1}{1-1-\frac{1}{x}}=\frac{-1}{\frac{-1}{x}}=\frac{-1x}{-1}=x}$
+	\end{enumerate}
+\end{enumerate}
+
 
 \subsection{Rekenregels}\label{breukenrekenregels}
 
 \begin{proposition}
 	
-	Zij $a,b,c,d\in \RR$. Er geldt:
+	Zij $a,b,c,d\in \R$. Er geldt:
 	\begin{align*}
 		\frac{a}{b}+\frac{c}{d}& =\frac{ad+cb}{bd} & \text{indien } b,d \neq 0 \\ \\
 		\dfrac{\frac{a}{b}}{\ c\ }&=\frac{a}{bc}  & \text{indien }b,c \neq 0 \\ \\
