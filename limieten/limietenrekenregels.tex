@@ -88,7 +88,7 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 		& \limxi &(x^2-e^x)  & = \limxi x^2  &- \limxi e^x  & = \infty - \infty = -\infty (???) \\
 		& \limxmi &(x^2-e^x) & = \limxmi x^2 &- \limxmi e^x & = \infty - 0 = \infty \\
 	\end{alignat*}
-	Het is wat verdacht waarom $\infty - \infty = -\infty$ (wat blijkbaar nodig is om $\limxi (x^2-e^x) = \limxi x^2  - \limxi e^x$ te doen kloppen.  En het geeft inderdaad een onoverkomelijk probleem: als we ook willen dat $\limxi (x^2  - x^2) = \limxi x^2  - \limxi e^x  = \infty - \infty$  dan moet $\infty - \infty = 0$, en voor $\limxi ((x+a) - x) = \limxi (x+a) - \limxi x$ moet zelfs $\infty - \infty = a$, met $a$ een willekeurig reëel getal. Miserie miserie ...  
+	Het is wat verdacht dat $\infty - \infty = -\infty$ (wat blijkbaar nodig is om $\limxi (x^2-e^x) = \limxi x^2  - \limxi e^x$ te doen kloppen.  En het geeft inderdaad een onoverkomelijk probleem: als we ook willen dat $\limxi (x^2  - e^x) = \limxi x^2  - \limxi e^x  = \infty - \infty$  dan moet $\infty - \infty = 0$, en voor $\limxi ((x+a) - x) = \limxi (x+a) - \limxi x$ moet zelfs $\infty - \infty = a$, met $a$ een willekeurig reëel getal. Miserie miserie ...  
 
 \end{example}
 \begin{example}(Extra: Limieten van $x - (a-x)$)
@@ -103,8 +103,9 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	
 	
 \end{example}
+
+\todo{Wordt voorbeeld, met uitleg ...}
 \begin{problem}
-	
 	Zoek een gelijkaardig eenvoudig (tegen)voorbeeld voor $0\cdot\infty$ en voor $\dfrac00$ en $\dfrac\infty\infty$.
 \end{problem}
 
@@ -115,20 +116,27 @@ We zijn dus verplicht om voldoende voorzichtig rekenregels vast te leggen voor d
 Merk op: we schrijven verder meestal gewoon $\infty$ voor $+\infty$ (net zoals we $5$ schrijven voor $+5$). \\
 En $\pm\infty$ betekent $+\infty$ of $-\infty$ (in die volgorde, zodat we ook kunnen schrijven dat $-(\pm\infty) = \mp\infty$!)
 
-Eerst enkele regels die wel gewoon werken zoals het hoort:
+\begin{notation} (Afspraken in verband met oneindig)	
+	\begin{align*}
+	\infty & = +\infty   \\
+	\pm\infty &\text{ staat voor} +\infty \text{ of } -\infty \\
+	\end{align*}
+\end{notation}
+
+
+Eerst enkele regels die wel gewoon werken zoals bij de reële getallen:
 \todo{Uitleg over symbool X ...?}
 \todo{Uitzoeken: \verbatim{\intertext} online ..}
+
+
 \begin{proposition} (Rekenregels voor de symbolen $+\infty$ en $-\infty$)
-	
 
 	Zij $a\in\R$. Dan geldt:	
 	\begin{align*}
 	-(+\infty) & = -\infty \\
-	-(-\infty) & = +\infty  & \text{($+\infty$ en $-\infty$ zijn elkaars tegengestelde)}\\ 
-	\\
-	\infty & = +\infty   \\
-	\pm\infty &\text{ staat voor} +\infty \text{ of } -\infty \\
-	-(\pm\infty) &= \mp\infty &\text{(voor de hand liggende afspraken)} \\
+	-(-\infty) & = +\infty  \\
+	-(\pm\infty) &= \mp\infty \\
+	-(\mp\infty) &= \pm\infty & \text{($+\infty$ en $-\infty$ zijn elkaars tegengestelde)}\\ 
 	\\
 	a+\infty & = \infty+a = \infty - a = -a +\infty \\
 	& = \colorbox{lightgray}{$\infty + \infty = \infty$} & \text{($\infty + X =\infty$ behalve als $X=-\infty$)} \\
@@ -204,10 +212,10 @@ De rekenregels voor $\pm\infty$ stellen ons in staat volgende interessante eigen
 \begin{remark} \ 
 	
 \begin{enumerate}
-	\item Als je dus bij een berekening een onbepaalde vorm uitkomt, is er iets mis. Je zal een andere berekeningswijze moeten vinden, die de onbepaalde vorm vermijdt. Gelukkig bestaan er een aantal standaard trukjes (zie verder).
-	\item De lijn lim(som) = som(lims) leest als 'de limiet van een som is de som van de limieten'. Dit is een voorbeeld van een in de wiskunde erg populair \link[mantra]{https://nl.wikipedia.org/wiki/Mantra} dat zeer de moeite waard is om vertrouwd mee te worden. Het mantra is steeds van de vorm "de X van de Y's is de Y van de X'en", met X en Y twee concepten of uitdrukkingen. De distributiviteit van het product ten opzichte van de som wordt dan 'het product van een som is de som van de producten', en dat is inderdaad precies wat de distributiviteit zegt: $a\cdot(b+c) = a\cdot b+a\cdot c$: het linkerlid is het product van ($a$ met) een som (namelijk $b+c$)en dat is gelijk aan het rechterlid, namelijk een som van (twee) producten (namelijk $a\cdot b$ en $a\cdot c$). Een groot deel van de wiskunde kan worden geformuleerd in dit soort mantra's, en het is van belang te weten wanneer ze opgaan, en wanneer niet.Zowerkt hetr bijvoorbeeld \textit{niet} voor de sinus en de som: de sinus van een som is \textit{niet} gelijk aan de som van de sinussen: $\sin(\alpha+\beta) \neq \sin\alpha+\sin\beta$). 
+	\item Als je bij een berekening een onbepaalde vorm uitkomt, is er iets mis. Je zal een andere berekeningswijze moeten vinden, die de onbepaalde vorm vermijdt. Gelukkig bestaan er een aantal standaard trukjes (zie verder).
+	\item De lijn lim(som) = som(lims) leest als 'de limiet van een som is de som van de limieten'. Dit is een voorbeeld van een in de wiskunde erg populair \link[mantra]{https://nl.wikipedia.org/wiki/Mantra} dat zeer de moeite waard is om vertrouwd mee te worden. Het mantra is steeds van de vorm "de X van de Y's is de Y van de X'en", met X en Y twee concepten of uitdrukkingen. De distributiviteit van het product ten opzichte van de som wordt dan 'het product van een som is de som van de producten', en dat is inderdaad precies wat de distributiviteit zegt: $a\cdot(b+c) = a\cdot b+a\cdot c$: het linkerlid is het product van ($a$ met) een som (namelijk $b+c$)en dat is gelijk aan het rechterlid, namelijk een som van (twee) producten (namelijk $a\cdot b$ en $a\cdot c$). Een groot deel van de wiskunde kan worden geformuleerd in dit soort mantra's, en het is van belang te weten wanneer ze opgaan, en wanneer niet. Zo werkt het bijvoorbeeld \textit{niet} voor de sinus en de som: de sinus van een som is \textit{niet} gelijk aan de som van de sinussen: $\sin(\alpha+\beta) \neq \sin\alpha+\sin\beta$. 
 %	\item Deze rekenregels maken het leven zo eenvoudig als überhaupt mogelijk: we kunnen 'gewoon' rekenen met limieten, \textsc{tot we op onbepaaldheden uitkomen}. Als dat het geval is, moeten we nadenken, en een trukje proberen vinden om de onbepaaldheden te  vermijden. Gelukkig bestaan er een aantal standaard trukjes (zie verder).
-	\item Voor continue functies, en onder bepaalde bestaansvoorwaarden, zegt eigenschap (\ref{elim-continu})  dat de limiet en de functieoproep van plaats mogen worden gewisseld, of nog dat de limiet 'door' de functie gaat: de limiet van de functie (van iets) is de functie van de limiet (van dat iets). Bijvoorbeeld: $\lim(\sin(x^2-1)) = \sin(\lim(x^2-1))$.
+	\item Voor continue functies, en onder bepaalde bestaansvoorwaarden, zegt eigenschap (\ref{elim-continu})  dat de limiet en de functieoproep van plaats mogen worden gewisseld, of nog dat de limiet 'door' de functie gaat: de limiet van de functie (van iets) is de functie van de limiet (van dat iets). Bijvoorbeeld: $\limxg{1}(\sin(x^2-1)) = \sin(\limxg{1}(x^2-1)) = \limxg{1}\sin(0) = 0$.
 
 	\grapje{\item In verband met eigenschap (\ref{elim-continu}) zijn er voorlopig nog geen nuttige toepassingen bekend van de formules lim($f$(iets)) =  $f$(lim(iets)) in de rijwielsector, hoewel kwatongen beweren dat er daar misschien toch mogelijkheden zouden kunnen zijn.}
 
