@@ -1,10 +1,5 @@
-\documentclass[numbers,wordchoicegiven]{ximera}
+\documentclass[numbers]{ximera}
 \input{../preamble.tex}
-\usepackage{booktabs}
-\usepackage{multirow}
-
-\renewcommand\limxi{brol}
-\renewcommand\ds{}
 
 \author{Zomercursus KU Leuven}
 \outcome{Algebraïsch kunnen rekenen met breuken.}
@@ -18,11 +13,6 @@
 \end{abstract}
 \maketitle
 
-test: $\limxg{1} aaa$
-
-test: $\limxi aaa$
-
-
 In dit deel geven we heel bondig de rekenregels voor het werken
 met breuken. Deze zijn heel eenvoudig, de bedoeling is echter dat
 je deze rekenregels kan toepassen in moeilijkere berekeningen
@@ -32,24 +22,31 @@ zoals de daaropvolgende voorbeeldoefeningen.
 \begin{proposition}
 Zij $a,b,c,d\in \R$. Er geldt:
 \[
+\arraycolsep=1.4pt\def\arraystretch{2.2}
 \begin{array}{r@{\ }c@{\ }l@{\qquad}l@{\qquad}l}
-\specialrule{.1em}{0ex}{1ex}
+%\specialrule{.1em}{0ex}{1ex}
 \ds{\frac{a+b}{c}}&=&\ds{\frac{a}{c}+\frac{b}{c}}&\textrm{indien }c \neq 0&\textrm{breuken splitsen}\\
-\addlinespace[.7ex]
-\midrule
-\addlinespace[.7ex]
-\ds{\frac{a}{b}+\frac{c}{d}}&=&\ds{\frac{ad+cb}{bd}}&\textrm{indien }b,d \neq 0&\textrm{breuken optellen}\\
-\addlinespace[.7ex]
-\midrule
-\addlinespace[.7ex]
+%\addlinespace[.7ex]
+%\midrule
+%\addlinespace[.7ex]
+\ds{\frac{a}{b}+\frac{c}{d}}&=&\ds{\frac{ad+cb}{bd}}&\textrm{indien }b,d \neq 0&\textrm{breuken optellen (gelijke noemer)}\\
+%\addlinespace[.7ex]
+%\midrule
+%\addlinespace[.7ex]
 \ds{\frac{ab}{ac}}&=&\ds{\frac{b}{c}}&\textrm{indien }a,c \neq 0&\textrm{breuken vereenvoudigen}\\
-\addlinespace[.7ex]
-\midrule
-\addlinespace[.7ex]
-\ds{\frac{\frac{a}{b}}{\ c\ }}&=&\ds{\frac{a}{bc}}&\textrm{indien }b,c \neq 0&\multirow{5}{4.5cm}{\textrm{rekenregels voor meerdere breukstrepen}}\\\addlinespace[2.2ex]
-\ds{\frac{a}{\ \frac{b}{c}\ }}&=&\ds{\frac{ac}{b}}&\textrm{indien }b,c \neq 0&\\\addlinespace[2.2ex]
+%\addlinespace[.7ex]
+%\midrule
+%\addlinespace[.7ex]
+\ds{\frac{\frac{a}{b}}{\ c\ }}&=&\ds{\frac{a}{bc}}&\textrm{indien }b,c \neq 0&
+%\multirow{5}{4.5cm}{
+	\textrm{rekenregels voor meerdere breukstrepen}
+%}
+\\
+%\addlinespace[2.2ex]
+\ds{\frac{a}{\ \frac{b}{c}\ }}&=&\ds{\frac{ac}{b}}&\textrm{indien }b,c \neq 0&\\
+%\addlinespace[2.2ex]
 \ds{\frac{\frac{a}{b}}{\ \frac{c}{d}\ }}&=&\ds{\frac{ad}{bc}}&\textrm{indien }b,c,d \neq 0&\\
-\specialrule{.1em}{1ex}{0ex}
+%\specialrule{.1em}{1ex}{0ex}
 \end{array}
 \]
 \end{proposition}
