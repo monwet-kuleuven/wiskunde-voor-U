@@ -6,9 +6,7 @@
 % -> in HTML: provide all options
 % BUT: in exercises: also in pdf provide all options!!!
 
-
-%\newcommand\showtodonotes{}
-
+\providecommand\showtodonotes{}
 \input{../preamble.tex}
 
 \author{Zomercursus KU Leuven}
@@ -25,7 +23,7 @@
 \end{abstract}
 \maketitle
 
-\listoftodos
+%\listoftodos
 
 \todo[inline]{nadenken over outcomes (formulering/gebruik/...)}
 \todo[inline]{nadenken over 'jij' vorm of 'we' vorm in dit soort teksten !!!}
@@ -35,12 +33,14 @@
 
 In dit deel bestudeer je \textit{limieten} en leer je rekenen met het symbool $\infty$ ('\textit{oneindig}').
 
-\begin{expandable}
-Voor wie (nog) niet overtuigd is dat dit een mogelijk nuttige bezigheid is, hebben we volgende% een uitwijding over het wat en waarom van limieten.
-
 \todo[inline]{layout/functionaliteit 'uitwijding' (dus: expandable aanpassen/vervangen; voorlopig adhoc tcolorbox) }
 \todo[inline]{Uitzoeken: hoe werkt expandable precies}
 \todo[inline] {limieten: goed voorbeeldje vinden 'interesse net op de rand'}
+
+
+\begin{expandable}
+Voor wie (nog) niet overtuigd is dat dit een mogelijk nuttige bezigheid is, hebben we volgende% een uitwijding over het wat en waarom van limieten.
+
 
 \begin{uitwijding}[Wat en waarom van limieten] \ 
 	
@@ -49,7 +49,7 @@ Voor wie (nog) niet overtuigd is dat dit een mogelijk nuttige bezigheid is, hebb
 Dikwijls is men geïnteresseerd in wat er gebeurt 'net op de rand van wat al gekend is'. Wiskundig kunnen we dit soort situaties - in gunstige gevallen-  beschrijven en soms zelfs begrijpen in termen van \textit{limieten}. 
 
 In het eerder eenvoudige geval van rijen is het intuïtief aannemelijk dat de rij getallen
-\todo{Notatie $(a_n)$ uitleggen (of weglaten, of verwijzen naar ...)}
+%\todo{Notatie $(a_n)$ uitleggen (of weglaten, of verwijzen naar ...)}
 \begin{align*}
 % geen (afschrikwekkende?) formules ... ?
 %(a_n) = \Big(\frac{1}{n^2}\Big) & = 1, \frac{1}{4}, \frac{1}{9}, \frac{1}{16},\frac{1}{25},\dots\\
@@ -66,7 +66,7 @@ Voor de rij
 (b_n) = \;1,\;-1,\;1,\;-1,\;1,\;-1,\dots
 \]
 lijkt er geen limiet te bestaan, 
-\todo{uitleggen waarom $b_n$ geen limiet heeft}
+%\todo{uitleggen waarom $b_n$ geen limiet heeft}
 terwijl voor de rij 
 \[
 %(c_n) = (n^2) = 1,4,9,16,25,\dots
@@ -87,8 +87,9 @@ In dit hoofdstuk krijg je een kleine inleiding in de problematiek van limieten v
 
 Merk op: een meer formele en exacte behandeling van limieten wordt snel technisch (bijvoorbeeld met de onder (niet-)kenners erg beruchte $\epsilon$'s en $\delta$'s) en dat valt -jammer voor ons schrijvers van cursusteksten, maar gelukkig voor u die het resultaat van onze arbeid moeten studeren- buiten het bestek van deze cursus. Sommigen van u kennen het al, en voor anderen komt het nog. Maar, velen onder u zullen aan de technische details ontsnappen.
 \end{uitwijding}
-\todo{voetnoot ivm epsilons/deltas ?}
+
 \end{expandable}
+\todo{voetnoot ivm epsilons/deltas ?}
 
 
 \subsection{Voorbeeld en definitie}
