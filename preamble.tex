@@ -58,6 +58,8 @@
 \newcommand{\llimxc}{\llimxg{c}}
 \newcommand{\rlimxc}{\rlimxg{c}}
 
+\newcommand{\important}[1]{\text{\colorbox{lightgray}{$#1$}}}
+
 %
 % Poging tot aanpassen layout
 %
@@ -66,7 +68,15 @@
 \tcbuselibrary{theorems}
 
 
-\theoremstyle{definition}
+\ifdefined\nouitweiding  
+	\excludecomment{uitweiding}
+\else
+	\theoremstyle{definition}
+	\newmdtheoremenv[backgroundcolor=lightgray]{uitweiding}{Uitweiding}
+	\AtBeginEnvironment{uitweiding}{\small}
+\fi
+
+% genante fout ...! (to be removed zodra niet meer gebruikt) 
 \newmdtheoremenv[backgroundcolor=lightgray]{uitwijding}{Uitwijding}
 \AtBeginEnvironment{uitwijding}{\small}
 
@@ -99,6 +109,13 @@
 \newtheorem{example}{Voorbeeld}
 
 % remove italics def
+\let\explanation\relax
+\let\c@explanation\relax
+\let\endexplanation\relax
+\theoremstyle{definition}
+\newtheorem*{explanation}{Uitleg}
+
+% remove italics defprovidecommand
 \let\remark\relax
 \let\c@remark\relax
 \let\endremark\relax
