@@ -1,3 +1,5 @@
+% 201908: PAS OP: babel lijkt problemen te veroorzaken met online math
+% (wegens syntax error met toegevoegde \newcommands ...)
 %\usepackage[dutch]{babel}
 
 \usepackage[a4paper]{geometry}
@@ -9,8 +11,11 @@
 \usepackage{ifthen}
 \usepackage{animate}
 
-\providecommand\showtodonotes{disable}
+\usepackage{ulem} % \sout voor strike-out
 
+% Met "\newcommand\showtodonotes{}" kan je todonotes tonen (in pdf/online)
+% 201908: online werkt het niet (goed)
+\providecommand\showtodonotes{disable}
 \usepackage[\showtodonotes]{todonotes}
 %\usepackage{todonotes}
 
