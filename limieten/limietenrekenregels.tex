@@ -46,6 +46,7 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	axis lines=center,
 	extra y ticks={0},
 	restrict y to domain=-10:10,
+	legend pos=south west,
 	]
 	\addplot[domain=-5:5,color=blue,dotted] {x^2};
 	\addplot[domain=-5:5,color=blue,dotted] {exp(x)};
@@ -64,6 +65,7 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	axis lines=center,
 	extra y ticks={0},
 	restrict y to domain=-10:10,
+	legend pos=south west,
 	]
 	\addplot[domain=-5:5,color=blue,dotted] {x^2};
 	\addplot[domain=-5:5,color=blue,dotted] {-exp(x)};
@@ -107,9 +109,9 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 \end{example}
 
 \todo{Wordt voorbeeld, met uitleg ...}
-\begin{problem}
+\begin{example}
 	Zoek een gelijkaardig eenvoudig (tegen)voorbeeld voor $0\cdot\infty$ en voor $\dfrac00$ en $\dfrac\infty\infty$.
-\end{problem}
+\end{example}
 
 
 
@@ -141,20 +143,20 @@ Eerst enkele regels die wel gewoon werken zoals bij de reële getallen:
 	-(\mp\infty) &= \pm\infty & \text{($+\infty$ en $-\infty$ zijn elkaars tegengestelde)}\\ 
 	\\
 	a+\infty & = \infty+a = \infty - a = -a +\infty \\
-	& = \colorbox{lightgray}{$\infty + \infty = \infty$} & \text{($\infty + X =\infty$ behalve als $X=-\infty$)} \\
+	& = \important{\infty + \infty = \infty} & \text{($\infty + X =\infty$ behalve als $X=-\infty$)} \\
 	\\
 	a+(-\infty) & = a-\infty = -\infty+a =-\infty - a = -a - \infty \\
-	& = \colorbox{lightgray}{$-\infty - \infty = -\infty+(-\infty) = -\infty$} & \text{($-\infty+X=-\infty$ behalve als $X=+\infty$)} \\
+	& = \important{-\infty - \infty = -\infty+(-\infty) = -\infty} & \text{($-\infty+X=-\infty$ behalve als $X=+\infty$)} \\
 %	\pdfOnly{\intertext{Als $a>0$ ($a$ strikt positief)}}
 	\mbox{ Als $a>0$ }\\% ($a$ strikt positief) }\\	
 %	\begin{onlineOnly}\mbox{ Als $a>0$ ($a$ strikt positief) }\end{onlineOnly}
 	a\cdot\infty & = \infty\cdot a \\
-	& = \colorbox{lightgray}{$\infty \cdot \infty = (-\infty) \cdot (-\infty) = \infty$} & \text{($X\cdot\pm\infty=\pm\infty$ als $X>0$)} \\
+	& = \important{\infty \cdot \infty = (-\infty) \cdot (-\infty) = \infty} & \text{($X\cdot\pm\infty=\pm\infty$ als $X>0$)} \\
 	\mbox{Als $a<0$ } \\% ($a$ strikt negatief)} \\
 %	\pdfOnly{\intertext{Als $a<0$ ($a$ strikt negatief)}}
 %	\begin{onlineOnly}\text{Als $a<0$ ($a$ strikt negatief)}\\ \end{onlineOnly}%
 		a\cdot\infty & = \infty\cdot a \\
-	& = \colorbox{lightgray}{$\infty \cdot (-\infty) = (-\infty)\cdot\infty = -\infty$} & \text{($X\cdot(\pm\infty) = \mp\infty$ als $X<0$)} \\
+	& = \important{\infty \cdot (-\infty) = (-\infty)\cdot\infty = -\infty} & \text{($X\cdot(\pm\infty) = \mp\infty$ als $X<0$)} \\
 	\end{align*}	
 \end{proposition}  
 
@@ -167,10 +169,10 @@ Maar er zit dus een enigszins venijnig addertje onder het gras: er ontbreken enk
 	
 %	\begin{align*}
 	\begin{tabular}{cccr}
-		$\colorbox{lightgray}{$\infty - \infty$}$ &$(+\infty) + (-\infty)$  & 	$(-\infty) + (+\infty) $  & oneindig min oneindig \\
-		\colorbox{lightgray}{$0\cdot\infty$} & $0 \cdot (\pm\infty)$   & 	$(\pm\infty)\cdot 0$   & nul maal oneindig \\
+		\important{\infty - \infty} &$(+\infty) + (-\infty)$  & 	$(-\infty) + (+\infty) $  & oneindig min oneindig \\
+		\important{0\cdot\infty} & $0 \cdot (\pm\infty)$   & 	$(\pm\infty)\cdot 0$   & nul maal oneindig \\
 		\\
-		\colorbox{lightgray}{$\dfrac 00$} & \colorbox{lightgray}{$\dfrac\infty\infty$} & $\dfrac{\pm\infty}{\mp\infty}$ & \begin{tabular}{r} nul gedeeld door nul \\ oneindig gedeeld door oneindig\end{tabular}
+		\important{\dfrac 00} & \important{\dfrac\infty\infty} & $\dfrac{\pm\infty}{\mp\infty}$ & \begin{tabular}{r} nul gedeeld door nul \\ oneindig gedeeld door oneindig\end{tabular}
 	\end{tabular}
 %	\end{align*}
 \end{proposition}
@@ -209,7 +211,7 @@ De rekenregels voor $\pm\infty$ stellen ons in staat volgende interessante eigen
 %		 \intertext{Als $f(g(x))$ bestaat voor $x$ dicht bij $c$, $f(\limxc(x))$ bestaat, $f$ is continu (TBV!):} 
 		 \text{Als alle vw voldaan:} \notag \\ %& \mbox{\small Als LL en RL bestaan:} \\ 
 		 \limxc f(g(x)) & = f(\limxc g(x)) 
-		     & \text{[lim($f$(iets)) =  $f$(lim(iets)) \textit{als alle vw voldaan!}]} \label{elim-continu} 
+		     & \text{[lim($f$(iets)) =  $f$(lim(iets)) (als alle vw voldaan!)} \label{elim-continu} 
 	\end{align}
 \end{proposition}
 
@@ -336,7 +338,8 @@ De limiet van een rationale functie in $\pm\infty$ wordt bepaald door de hoogste
 	  restrict y to domain=-10:10,
 	  ymax=8,ymin=-8,
       extra y ticks={0},
-      legend style={at={(0.15,0.45)},anchor=north east},
+%      legend style={at={(0.15,0.45)},anchor=north east},
+      legend pos=south west,
 	]
 	\addplot[domain=-8.001:8,semithick,dashed,color=blue] {t(x)};
 	\addplot[domain=-8.001:8,thick,color=red] {1/t(x)};
