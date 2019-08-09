@@ -71,22 +71,28 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 
 \begin{proposition}
 	Zij $x,y\in\R$ en $m,n\in\N$. Er geldt:
-	\[
-	\arraycolsep=1.4pt\def\arraystretch{2.2}
-	\begin{array}{r@{\ =\ }l@{\qquad}l}
-	\ds{x^{m}x^{n}}&\ds{x^{m+n}}&\\
-	\ds{(xy)^n}&\ds{x^ny^n}&\\
-	\ds{\left(x^{m}\right)^{n}}&\ds{x^{mn}}&\\
-	\ds{\frac{x^{m}}{x^{n}}}&\ds{x^{m-n}}&\textrm{als }x\neq0\\
-	\ds{\left(\frac{x}{y}\right)^{n}}&\ds{\frac{x^{n}}{y^{n}}}&\textrm{als }y\neq0\\
-	\end{array}
-	\]
+%	\[
+%	\def\arraystretch{2.2}
+%	\begin{array}{r@{\ =\ }l@{\qquad}l}
+
+{
+	\savebox\strutbox{$\vphantom{\dfrac11^n}$}   % hack; doesn't work in html
+\begin{align*}
+	x^{m}x^{n}  & = x^{m+n}            & \text{(product van gelijksoortige machten)} \\
+	(xy)^n      & = x^ny^n             & \text{(macht van product)}\\
+	\left(x^{m}\right)^{n} & = x^{mn}  & \text{(macht van een macht)} \\
+	\\
+	\frac{x^{m}}{x^{n}}    & = x^{m-n} & \text{als }x\neq0\\
+	\left(\frac{x}{y}\right)^{n} & = \frac{x^{n}}{y^{n}} & \text{als }y\neq0\\
+\end{align*}
+%	\end{array}
+%	\]
 	Dezelfde regels gelden voor gehele $m,n\in\Z$ voor zover ze betekenis hebben 
 	\\ (dus: grondtal niet nul als de exponent negatief is).
 	
 	Dezelfde regels gelden ook voor reële $m,n\in\R$ voor zover ze betekenis hebben
 	\\ (zie verder paragraaf \ref{machten-r}).
-
+}
 \end{proposition}
 
 \begin{example} \ 
@@ -128,14 +134,19 @@ Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing tam
 	\[a^{\frac{m}{n}}\perdef \left(a^{\frac{1}{n}}\right)^m.\]
 \end{definition}
 
+\begin{remark} \ 
+\begin{enumerate}
+	\item Voor $n=2$ schrijven we gewoon $\sqrt{a}$ in plaats van $\sqrt[2]{a}$.
+	\item (Uitbreiding) We hebben ons in deze definitie beperkt tot positieve grontallen. Voor negatieve grondtallen is de definitie van machten met rationale exponenten wat subtieler, en we zullen er hier niet verder op ingaan. Het kan volstaan op te merken dat $-8$ geen vierkantswortel heeft, maar wel een (negatieve!) derdemachtswortel (namelijk $-2$, want $(-2)^3 = -8$). Maar, als we negatieve wortels toelaten, dan heeft $4$ weer twee mogelijke wortels, namelijk $2$ en $-2$. Als we complexe getallen toelaten, verandert de situatie weer.
+\end{enumerate}
+\end{remark}
 \begin{example} \ 
 	
 	\begin{enumerate}
 	\item  We hebben volgende gevolgen:
 	\begin{itemize}
-		\item $\ds a^{\frac{1}{n}}=\sqrt[n]{https://taaladvies.net/taal/advies/vraag/824a}$ voor alle $a\in\Rnulplus$ en alle
-		$n\in\Nnul$, i.h.b.~hebben we
-		\item $\ds a^{\frac{1}{2}}=\sqrt{a}$ voor alle $a\in\Rnulplus$.
+%		\item $\ds a^{\frac{1}{n}}=\sqrt[n]{a}$ voor alle $a\in\Rnulplus$ en alle 	$n\in\Nnul$, i.h.b.~hebben we
+%		\item $\ds a^{\frac{1}{2}}=\sqrt{a}$ voor alle $a\in\Rnulplus$.
 		\item $\ds a^{-\frac{1}{n}}=\frac{1}{\sqrt[n]{a}}=\sqrt[n]{\frac{1}{a}}$ voor alle $a\in\Rnulplus$ en alle $n\in\Nnul$
 		\item $\ds a^{\frac{m}{n}}=\left(\sqrt[n]{a}\right)^m=\sqrt[n]{a^m}$ voor alle $a\in\Rnulplus$, alle $m\in\Z$ en alle $n\in\Nnul$
 		\item $1^q=1$ voor alle $q\in\Q$.
@@ -170,7 +181,8 @@ ook niet in detail geven.
 
 Wie toch nieuwsgierig is kan volgende uitweiding lezen:
 
-\begin{uitwijding}
+
+\begin{uitweiding}
 
 Details vind je in wat meer gevorderde cursussen wiskunde, maar hier schetsen we kort \'{e}\'{e}n mogelijke manier om een precieze betekenis te geven
 aan de uitdrukking $a^r$ met $a\in\Rnulplus$ en $r\in\R$.
@@ -197,7 +209,7 @@ die we gebruikt hebben  om $r$ te benaderen. Dit laat ons dan toe
 om de macht $a^r$ te defini\"eren als dat getal $s$ dat je op die
 manier bekomt en dat enkel afhangt van $a$ en $r$.
 
-\end{uitwijding}
+\end{uitweiding}
 
 Ook voor machten met re\"ele exponenten (en dus i.h.b.~voor
 machten met rationale exponenten) blijven de gebruikelijke
@@ -229,8 +241,8 @@ Zij $x,y>0$ en $m,n\in\RR$. Dan geldt:
 	x^{\frac1n} &= \sqrt[n] x          & \text{(notatie/definitie)}\\
 	x^{-n}          &= \frac{1}{x^n}  & \text{(notatie/definitie)}\\
 	\frac{x^{m}}{x^{n}} &= x^{m-n}      & \text{(quotiënt van machten)} \\
-	x^0&=1, \quad x^1=x \quad x^{-1}=\frac1x \\
-	\sqrt[n]{x}^n & = x = (\sqrt[n]{x})^n
+	x^0&=1, \quad x^1=x, \quad x^{-1}=\frac1x \\
+	\sqrt[n]{x^n} & = x = (\sqrt[n]{x})^n
 \end{align*}
 \end{proposition}
 

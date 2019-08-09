@@ -11,26 +11,6 @@
 %
 \input{../preamble.tex}
 
-% BEGIN Spielerei om feedback 'inline' te krijgen; TO BE DONE PROPERLY
-\usepackage{environ}
-
-\let\feedback\relax
-\let\endfeedback\relax
-
-\ifhandout%
-\renewenvironment{feedback}
-{%
-	\setbox0\vbox\bgroup
-}
-{%
-	\egroup
-}
-\else
-\NewEnviron{feedback}[1][attempt]{\hfill (Inderdaad, \BODY)}{}
-
-\fi
-% END Spielerei
-
 
 % Specifieke settings voor dit deel:
 \author{Zomercursus KU Leuven}
