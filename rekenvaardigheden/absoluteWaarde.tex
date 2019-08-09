@@ -19,7 +19,7 @@
 \end{abstract}
 \maketitle
 
-\section{Definitie en verband met afstand}\label{basisaw}
+\section{Definitie en verband met afstand}\label{rv:sec:def}
 
 \begin{definition}
 	Voor een reëel getal $a\in\R$ definiëren we de \textit{absolute waarde} van $a$, genoteerd $|a|$, als
@@ -49,13 +49,13 @@
 \begin{example} Voorbeelden van absolute waardes (met $a\in\R$)
 		\begin{enumerate}[resume]
 			\item $|a^2| = a^2$ (want $a^2 \geq 0$)
-			\item $|-a|= ....$ \\ (er is GEEN eenvoudige algemene formule! \\En ZEER ZEKER NIET $|-a|=a$: fout zodra $a<0$ !!!)
+			\item $|-a|= |a|$ \\ Let op: er is \textsc{geen} eenvoudige algemene formule zonder $|\cdot|$! \\En \textsc{zeer zeker niet} $|-a|=a$: dat is fout zodra $a<0$ !
 			\item $|a^2 + 1| = a^2 + 1$
-			\item $|a^2 - 1| = ....$ \qquad(er is GEEN eenvoudige algemene formule!)
+			\item $|a^2 - 1| = ....$ \qquad(er is \textsc{geen} eenvoudige algemene formule!)
 \end{enumerate}
 \end{example}
 
-Als we het getal $a$ voorstellen op de getallenas, zien we onmiddelijk volgende
+Als we het getal $a$ voorstellen op de getallenas, zien we onmiddellijk volgende
 \begin{proposition} 
 	De absolute waarde van een getal is zijn afstand tot de oorsprong (op de getallenas).
 \end{proposition}
@@ -97,9 +97,9 @@ Deze (triviale) eigenschap, die op het eerste zicht is toegevoegd door overijver
 	Zij $a,b\in\R$ Dan geldt\\
 	$|x-y|$ is de afstand tussen $x$ en $y$ (op de getallenas).
 \end{proposition}
-Het is ERG BELANGRIJK om bij 'de absolute waarde van een verschil' ALTIJD minstens even te denken aan 'afstand tussen de twee termen'. Merk op dat je elke som gemakkelijk kan schrijven als een verschil, en dat dus ook $|x+y| = |x+(-y)|$ gelijk is aan de afstand tussen $x$ en $-y$. Dit is een ERG BELANGRIJK inzicht om de meeste van volgende oefeningen snel en eenvoudig te kunnen oplossen.
+Het is \textsc{erg belangrijk} om bij 'de absolute waarde van een verschil' \textsc{altijd} minstens even te denken aan 'afstand tussen de twee termen'. Merk op dat je elke som gemakkelijk kan schrijven als een verschil, en dat dus ook $|x+y| = |x+(-y)|$ gelijk is aan de afstand tussen $x$ en $-y$. Dit is een \textsc{erg belangrijk} inzicht om de meeste van volgende oefeningen snel en eenvoudig te kunnen oplossen.
 
-\section{Eigenschappen}
+\section{Eigenschappen van absolute waarde}
 De betekenis en geldigheid van volgende veel gebruikte eigenschappen kunnen eenvoudig worden nagegaan op de getallenas:
 \begin{proposition}\label{basisaw}
 	Als $x,a \in \R$ en $r\in\R^+_0$, dan is 
@@ -115,10 +115,16 @@ De betekenis en geldigheid van volgende veel gebruikte eigenschappen kunnen eenv
 %	\end{flalign}
 
 	\begin{tabular}{lrclrrrr} 
-	1)&$|x|<r$   &$\Leftrightarrow$ &$-r<x<r$  & $\Leftrightarrow$ & $x\in]-r,r[$     & $\Leftrightarrow$&$x$ ligt dichter dan $r$ bij $0$    \\
-	2)&$|x|>r$   &$\Leftrightarrow$ &$x<-r$ of $r<x$ & $\Leftrightarrow$ & $x\notin]-r,r[$   & $\Leftrightarrow$ &$x$ ligt verder dan $r$ van $0$    \\
-	3)&$|x-a|<r$ & $\Leftrightarrow$ & $ a-r<x<a+r$  & $\Leftrightarrow$ & $x\in]a-r,a+r[$  & $\Leftrightarrow$ & $x$ ligt dichter dan $r$ bij $a$           \\
-	4)&$|x-a|>r$ & $\Leftrightarrow$ & $ x<a-r\;$ of $\;a+r<x.$  & $\Leftrightarrow$ & $x\notin]a-r,a+r[$  & $\Leftrightarrow$ & $x$ ligt verder dan $r$ van $a$\\
+	1)&$|x|<r$   &$\Leftrightarrow$ &$-r<x<r$  & $\Leftrightarrow$ & $x\in]-r,r[$     \\ & & $\Leftrightarrow$&$x$ ligt dichter dan $r$ bij $0$    \\
+	\\
+	2)&$|x|>r$   &$\Leftrightarrow$ &$x<-r$ of $r<x$ & $\Leftrightarrow$ & $x\notin]-r,r[$   
+	\\ & & $\Leftrightarrow$ &$x$ ligt verder dan $r$ van $0$    \\
+	\\
+	3)&$|x-a|<r$ & $\Leftrightarrow$ & $ a-r<x<a+r$  & $\Leftrightarrow$ & $x\in]a-r,a+r[$ 
+	\\ & & $\Leftrightarrow$ & $x$ ligt dichter dan $r$ bij $a$           \\
+	\\
+	4)&$|x-a|>r$ & $\Leftrightarrow$ & $ x<a-r\;$ of $\;a+r<x.$  & $\Leftrightarrow$ & $x\notin]a-r,a+r[$  
+	\\ & & $\Leftrightarrow$ & $x$ ligt verder dan $r$ van $a$\\
 	\end{tabular}        
 \end{proposition}
 
@@ -127,7 +133,7 @@ De betekenis en geldigheid van volgende veel gebruikte eigenschappen kunnen eenv
 \begin{remark} \  %forceer newline; betere oplossing? (te veel whitespace...)
 %	\begin{enumerate}
 %		\item 
-		Met deze eigenschap kan je dus één ongelijkheid \textit{met} een absolute waarde omzetten in een \textit{dubbele} ongelijkheid \textit{zonder} absolute waarde. Het is ERG BELANGRIJK zo snel mogelijk deze equivalentie als volledig evident en natuurlijk te beschouwen. Je kent deze formules voldoende goed van zodra je niet meer verschil ziet tussen de formules $|x|<r$ en $-r<x<r$ en $x\in]-r,r[$ als tussen de woorden aap, Aap en \texttt{Aap}.
+		Met deze eigenschap kan je dus één ongelijkheid \textit{met} een absolute waarde omzetten in een \textit{dubbele} ongelijkheid \textit{zonder} absolute waarde. Het is \textsc{erg belangrijk} zo snel mogelijk deze equivalentie als volledig evident en natuurlijk te beschouwen. Je kent deze formules voldoende goed van zodra je niet meer verschil ziet tussen de formules $|x|<r$ en $-r<x<r$ en $x\in]-r,r[$ als tussen de woorden aap, Aap en $Aap$.
  %	\end{enumerate}
 \end{remark}
 % Uit Zomercursus
@@ -139,16 +145,14 @@ Voor verdere referentie volgen hier nog enkele eigenschappen van de absolute waa
 	\begin{enumerate}
 		\item \label{aw tss}$-|x| \leqslant x \leqslant |x|$ 
 		\item \label{aw 0}$|x|=0 \quad\Leftrightarrow \quad x=0$ 
-		\item\label{aw x -x} $|x|=|-x|$
-		\item \label{aw kwadr}$|x|^2=x^2=|x^2|$
+		\item \label{aw x -x} $|-x|=|x|$ \hfill (maar niet $|-x|=x$ als $x<0$ )
+		\item \label{aw kwadr}$|x|^2=x^2=|x^2|$ \hfill ($=|-x^2| = |(-x)^2|$)
 		\item \label{wortel	kwadr}$\sqrt{x^2}=|x|$
-		\item \label{kwadr wortel}$(\sqrt{x})^2=x$ \hfill(hier is $x \geqslant 0$
+		\item \label{kwadr wortel}$(\sqrt{x})^2=x$ \hfill(als $x \geq 0$
 			want anders bestaat de wortel niet!)
-		\item \label{aw product}$|x\;y|=|x||y|,$ \hfill(de absolute waarde van het
-			product is het product van de absolute waarden.)
+		\item \label{aw product}$|x\cdot y|=|x|\cdot|y|$ \hfill(absolute waarde van product is product van absolute waarden)
 		\item \label{aw	quotient}$\displaystyle \left|\frac{x}{y}\right|=\frac{|x|}{|y|}$
-		met $y\neq 0,$ \hfill(de absolute waarde van het quoti\"ent is
-			het quoti\"ent van de absolute waarden.)
+		met $y\neq 0$ \hfill(absolute waarde quotiënt is quotiënt van absolute waarden)
 			
 
 		\item \label{aw1edrieh}$|x+y| \leqslant|x|+|y|$ \hfill ({\bf eerste
@@ -162,11 +166,15 @@ Voor verdere referentie volgen hier nog enkele eigenschappen van de absolute waa
 \end{proposition}
 \todo{Laatste drie  eigenschappen horen eerder bij ongelijkheden ...?}
 
-\begin{remark}
-Uit \ref{aw1edrieh} volgt ook onmiddellijk dat $|x-y| \leq |x|+|y|$ (want $x-y=x+(-y)$ en $|y|=|-y|$), maar natuurlijk geldt NIET dat $\cancel{|x-y| \leq |x| - |y|}$. We weten dan weer WEL dat $|\;|x|-|y|\;|\leq|x-y|$ (dat is \ref{aw 2e drieh}).
+\begin{remark}\ 
+	\begin{enumerate}
+		\item Uit \ref{aw1edrieh} volgt ook onmiddellijk dat $|x-y| \leq |x|+|y|$ (want $x-y=x+(-y)$ en $|y|=|-y|$), maar natuurlijk geldt \textsc{niet} dat $\cancel{|x-y| \leq |x| - |y|}$. We weten dan weer wel dat $|\;|x|-|y|\;|\leq|x-y|$ (dat is \ref{aw 2e drieh}).
+		\item Er geldt dus \textsc{niet} dat \sout{absolute waarde van de som is de som van de absolute waarden} !
+		\item de laatste drie ongelijkheden staan hier enkel ter referentie: zie (ref) voor meer uitleg
+	\end{enumerate}
 \end{remark}
 
-
+\todo{nakijken uitwerkingen oefeningen absolute waardes}
 \begin{problem} Onderzoek welke $x\in \R$ voldoen aan $|x-5|<9.$
 		\begin{expandable}
 		\begin{oplossing} 
