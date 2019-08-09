@@ -60,23 +60,26 @@ Voor breuken definiëren we volgende regels voor gelijkheid, optelling en vermen
 \begin{definition} (Definitie gelijkheid en basisbewerkingen breuken)
 	
 Zij $a,b,c,d\in \R$. Zodra de noemers verschillend zijn van $0$, geldt:
-\[
-	\arraycolsep=1.4pt\def\arraystretch{2.2}
-	\begin{array}{r@{\ }c@{\ }l@{\qquad}l@{\qquad}l}
-		\important{\frac{a}{b} = \frac{c}{d}}  &\iff& \important{ad = bc} 
+%\[
+%	\def\arraystretch{2.2}
+%	\begin{array}{r@{\ }c@{\ }l@{\qquad}l@{\qquad}l}
+\begin{align*}
+		\important{\frac{a}{b} = \frac{c}{d}}  &\iff \important{ad = bc} 
 	%			& \textrm{indien }c \neq 0
 			& \textrm{gelijkheid van breuken} \\
-		\frac{a}{b}+\frac{c}{d} &=& \frac{ad+cb}{bd} 
+		\frac{a}{b}+\frac{c}{d} &= \frac{ad+cb}{bd} 
 %			& \textrm{indien }b,d \neq 0
 			& \textrm{breuken optellen (op gelijke noemer brengen)} \\
-		\frac{a}{b} \cdot \frac{c}{d} &=& \frac{a\cdot c}{b\cdot d} 
+		\frac{a}{b} \cdot \frac{c}{d} &= \frac{a\cdot c}{b\cdot d} 
 %			& \textrm{indien }b,d \neq 0
 			& \textrm{breuken vermenigvuldigen (product tellers $/$ product noemers)} \\
-		\frac{a}{b} : \frac{c}{d} &=& \frac{a\cdot d}{b\cdot c} 
+		\frac{a}{b} : \frac{c}{d} &= \frac{a\cdot d}{b\cdot c} 
 %			& \textrm{indien }b,d \neq 0
 		& \textrm{breuken delen (maal omgekeerde)} \\
-\end{array}			
-\]
+\end{align*}
+%\end{array}	
+	
+%\]
 \end{definition}
 Met elke breuk $\frac ab$ associëren we een getal, namelijk het resultaat van de deling van $a$ door $b$.
 
@@ -100,49 +103,48 @@ Getallen die we zo bekomen met $a,b\in\Z$ noemen we \textit{rationale getallen},
 	\end{uitweiding}
 \end{expandable}
 
-\begin{example} (Triviale voorbeelden)
+%\begin{example} (Triviale voorbeelden)
 	
-	\begin{enumerate}
-		\item $\frac23 + \frac13 = \answer[given]{1}$   
-			\begin{feedback} want $\frac23 + \frac13 = \frac{1+2}{3} = \frac33 = 1$ \end{feedback}
-		\item $\frac35 + \frac12 = \answer[given]{1,1}$
-			\begin{feedback} want $\frac35 + \frac12 = \frac{3\cdot 2+1\cdot 5}{5\cdot 2} = \frac{11}{10}=1,1$ \end{feedback}
-		\item $\frac{1+1}{1} = \answer[given]{2}$
-			\begin{feedback} want $\frac{1+1}{1} = \frac21 = 2, \text{ of ook }  \frac{1+1}{1} = \frac11+\frac11 = 2$ \end{feedback}		
-		\item $\frac{1}{1+1} = \answer[given]{0,5}$
-			\begin{feedback} en \textit{niet} $\frac{1}{1+1} = \frac11 + \frac 11 = 1+ 1 = 2$ \end{feedback}
-
-	\end{enumerate}
-\end{example}
+\begin{example}$\frac23 + \frac13 = \answer[given]{1}$   
+			\begin{feedback} want $\frac23 + \frac13 = \frac{1+2}{3} = \frac33 = 1$ \end{feedback}\end{example}
+\begin{example}$\frac35 + \frac12 = \answer[given]{1.1}$
+			\begin{feedback} want $\frac35 + \frac12 = \frac{3\cdot 2+1\cdot 5}{5\cdot 2} = \frac{11}{10}=1,1$ \end{feedback}\end{example}
+\begin{example}$\frac{1+1}{1} = \answer[given]{2}$
+			\begin{feedback} want $\frac{1+1}{1} = \frac21 = 2, \text{ of ook }  \frac{1+1}{1} = \frac11+\frac11 = 2$ \end{feedback}\end{example}		
+\begin{example}$\frac{1}{1+1} = \answer[given]{0.5}$
+			\begin{feedback} en \textit{niet} $\frac{1}{1+1} = \frac11 + \frac 11 = 1+ 1 = 2$ \end{feedback}\end{example}
+%\end{example}
 
 
 \begin{proposition} (Eenvoudige maar belangrijke gevolgen)
 	
 	Zij $a,b,c,d\in \R$. Zodra de noemers verschillend zijn van $0$, geldt:
-\[
-	\arraycolsep=1.4pt\def\arraystretch{2.2}
-	\begin{array}{r@{\ }c@{\ }l@{\qquad}l}
-		\frac{a\cdot c}{a\cdot d} &=& \frac{c}{d} 
+%\[
+%	\def\arraystretch{2.2}
+%	\begin{array}{r@{\ }c@{\ }l@{\qquad}l}
+\begin{align*}
+		\frac{a\cdot c}{a\cdot d} &= \frac{c}{d} 
 			& \text{breuken vereenvoudigen} \hfill\text{(factor $a$ wegdelen)} \\
-		a\cdot \frac{c}{d}   &=& \frac{a\cdot c}{d} 
+		a\cdot \frac{c}{d}   &= \frac{a\cdot c}{d} 
 			& \text{getal maal breuk}\hfill \text{(maal in teller)} \\
-		\frac{a}{c}+\frac{b}{c}  &=& \frac{a+b}{c} 
+		\frac{a}{c}+\frac{b}{c}  &= \frac{a+b}{c} 
 			& \text{breuken optellen}\hfill\text{(geval gelijke noemers)} \\
-		\frac{a+b}{c} &=& \frac{a}{c}+\frac{b}{c}  
+		\frac{a+b}{c} &= \frac{a}{c}+\frac{b}{c}  
 			& \text{breuken splitsen} \hfill\text{(zelfde formule als vorige!)}\\
-		\frac{\frac{a}{b}}{\ c\ } &=& \frac ab \cdot \frac 1c = \frac{a}{b\cdot c} 
+		\frac{\frac{a}{b}}{\ c\ } &= \frac ab \cdot \frac 1c = \frac{a}{b\cdot c} 
 %			& \textrm{indien }b,c \neq 0
 		& \text{breuk gedeeld door getal}\hfill\text{(maal in noemer)}\\
-		\frac{a}{\ \frac{b}{c}\ } &=& a\cdot \frac cb = \frac{a\cdot c}{b}
+		\frac{a}{\ \frac{b}{c}\ } &= a\cdot \frac cb = \frac{a\cdot c}{b}
 		%			& \textrm{indien }b,c \neq 0
 		& \text{getal gedeeld door breuk}\hfill\text{(maal omgekeerde)}\\
-		\frac{\frac{a}{b}}{\ \frac{c}{d}\ } &=& \frac ab \cdot \frac dc =  \frac{a\cdot d}{b\cdot c}
+		\frac{\frac{a}{b}}{\ \frac{c}{d}\ } &= \frac ab \cdot \frac dc =  \frac{a\cdot d}{b\cdot c}
 		%			& \textrm{indien }b,c,d \neq 0
 		& \text{breuk gedeeld door breuk}\hfill\text{(maal omgekeerde)}\\
-		\frac{\frac{a}{d}}{\ \frac{c}{d}\ } &=& \frac ad \cdot \frac dc =  \frac{a}{c}
+		\frac{\frac{a}{d}}{\ \frac{c}{d}\ } &= \frac ad \cdot \frac dc =  \frac{a}{c}
 		& \text{gelijke noemers wegwerken}\hfill\text{($\frac 1d$ wegdelen)}\\
-	\end{array}
-\]
+		\end{align*}
+%	\end{array}
+%\]
 \end{proposition}
 
 
