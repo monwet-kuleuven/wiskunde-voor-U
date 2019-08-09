@@ -62,7 +62,9 @@
 \newcommand{\llimxc}{\llimxg{c}}
 \newcommand{\rlimxc}{\rlimxg{c}}
 
-\newcommand{\important}[1]{\text{\colorbox{lightgray}{\ensuremath{#1}}}}
+%werkt in math en text mode om MATH met grijze achtergond te tonen (ook \important{\text{blabla}} lijkt te werken)
+\newcommand{\important}[1]{\ensuremath{\colorbox{lightgray}{$#1$}}}
+
 
 %
 % Poging tot aanpassen layout
