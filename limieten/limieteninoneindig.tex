@@ -1,0 +1,180 @@
+\documentclass{ximera}
+%\documentclass[handout,numbers]{ximera}
+
+\author{Zomercursus KU Leuven}
+
+%\outcome{Limieten kunnen berekenen}
+
+\input{../preamble.tex}
+
+
+\title{Limieten: Limieten in $\infty$}
+
+\begin{document}
+\begin{abstract}
+	lim(som) is soms som(lims) 
+\end{abstract}
+\maketitle
+
+\subsection{Limieten in $c=\pm\infty$ }
+
+
+\todo{uitleg toevoegen}
+\begin{exercise}
+Probeer met de rekenregels voor limieten en voor $\pm\infty$ om $\limxi (3x^2-4x+2)$ te berekenen.
+
+
+
+\end{exercise}
+
+\begin{proposition} (Limiet veelterm in $c=\pm\infty$)
+
+De limiet van een veelterm in $\pm\infty$ is de limiet van de hoogstegraadsterm (en dus gelijk aan $+\infty$ of $-\infty$ naargelang het teken van de hoogstegraadscoëfficiënt en het al dan niet even zijn van de graad van de veelterm).
+
+De limiet van een rationale functie in $\pm\infty$ wordt bepaald door de hoogstegraadstermen van teller en noemer (en is gelijk aan $0$, $\pm\infty$ of het quotiënt van de hoogstegraadscoëfficiënten).
+\end{proposition}
+
+
+\begin{exercise}
+	\textit{Bereken met behulp van voorgaande rekenregels}
+	\begin{enumerate}
+		\renewcommand{\labelenumi}{(\alph{enumi})}
+		\item $\displaystyle{\lim_{x \rightarrow + \infty}} (-4x^5 + 7x^4 -
+		11)$
+		\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{-x^2 + 3x
+			- 2}{3x-7}$
+		\item $\displaystyle{\lim_{x \rightarrow + \infty}} \frac{2x^2 -
+			3}{x^3 - x + 2}$
+		\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{x^3 -
+			1}{x - 1}$
+		\item $\displaystyle{\lim_{x \rightarrow + \infty}} \frac{x^6 +
+			5x^2 + 1}{x^4 - x^6}$
+		\item $\displaystyle{\lim_{x \rightarrow + \infty}} (\sqrt{4x^2 - 7x} + 3x)$
+		\item $\displaystyle{\lim_{x \rightarrow + \infty}} (\sqrt{2 x^2 + 3} - x)$
+		\item $\displaystyle{\lim_{x \rightarrow - \infty}} (\sqrt{2 x^2 + 3} - x)$
+		\item $\displaystyle{\lim_{x \rightarrow + \infty}} \frac{\sqrt{x^2 + 5} + 2x}{3x-1}$
+		\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{\sqrt{x^2 + 5} + 2x}{3x-1}$
+		\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{\sqrt{x^2+1} + ax}{\sqrt{x^2+2}}$
+		\item $\displaystyle{\lim_{x \rightarrow - \infty}} (\sqrt{4x^2 + 7x} +
+		2x)$  
+		\item $\displaystyle{\lim_{x \rightarrow - \infty}} (\sqrt{4x^2 + 7x} +
+		ax)$  
+		\item $\displaystyle{\lim_{x \rightarrow + \infty}} x(\sqrt{2+ \frac{3}{x^2}} - \sqrt{2- \frac{3}{x^2}})$
+		\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{ax + b}{7x- \sqrt{x^2 + 10}}$
+	\end{enumerate}
+\begin{comment}  % remove for now: to be integrated with \anwer / \choice \ \... ?
+	\begin{oplossing}
+		\begin{enumerate}
+			\renewcommand{\labelenumi}{(\alph{enumi})}
+			\item $\displaystyle{\lim_{x \rightarrow + \infty}} (-4x^5 + 7x^4 -	11) = - \infty$
+			\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{-x^2 + 3x	- 2}{3x-7} = + \infty$
+			\item $\displaystyle{\lim_{x \rightarrow + \infty}} \frac{2x^2 - 3}{x^3 - x + 2} = 0$
+			\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{x^3 -	1}{x - 1} = + \infty$
+			\item $\displaystyle{\lim_{x \rightarrow + \infty}} \frac{x^6 + 5x^2 + 1}{x^4 - x^6}= -1$
+			\item $\displaystyle{\lim_{x \rightarrow + \infty}} (\sqrt{4x^2 - 7x} + 3x)= + \infty$
+			\item $\displaystyle{\lim_{x \rightarrow + \infty}} (\sqrt{2 x^2 + 3} - x)= + \infty$
+			\item $\displaystyle{\lim_{x \rightarrow - \infty}} (\sqrt{2 x^2 + 3} - x)= + \infty$
+			\item $\displaystyle{\lim_{x \rightarrow + \infty}} \frac{\sqrt{x^2 + 5} + 2x}{3x-1} = 1$
+			\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{\sqrt{x^2 + 5} + 2x}{3x-1} = \frac13$
+			\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{\sqrt{x^2+1} + ax}{\sqrt{x^2+2}} = 1-a$
+			\item $\displaystyle{\lim_{x \rightarrow - \infty}} (\sqrt{4x^2 + 7x} + 2x)= - \frac74$
+			\item $\displaystyle{\lim_{x \rightarrow - \infty}} (\sqrt{4x^2 + 7x} +	ax)$  
+			\begin{itemize}
+				\item[] voor $a<2: + \infty$
+				\item[] voor $a>2: - \infty$
+				\item[] voor $a=2:$ zie vorige oefening 
+			\end{itemize}
+			\item $\displaystyle{\lim_{x \rightarrow + \infty}} x(\sqrt{2+ \frac{3}{x^2}} - \sqrt{2- \frac{3}{x^2}}) = 0$
+			\item $\displaystyle{\lim_{x \rightarrow - \infty}} \frac{ax + b}{7x- \sqrt{x^2 + 10}}= \frac{a}{8}$
+		\end{enumerate}
+	\end{oplossing}
+\end{comment}
+\end{exercise}
+
+\subsection{Limieten in nulpunten van de noemer}
+
+\todo{(wijzen op) herhaling samenstelling functies (f(1/x) / 1/f(x) / f(x+a) etc)}
+
+\subsubsection{Limieten van $\dfrac{1}{g(x)}$ met $g(x)$ een veelterm}
+
+\begin{example}
+	De functie $f_1(x)=\dfrac{1}{x}$ heeft geen limiet in $x=0$, 
+	omdat $\llimx f_1(x) = -\infty$ terwijl $\rlimx f_1(x) = +\infty$. 
+	Maar, $f_2(x)=\dfrac{1}{x^2} = +\infty$ omdat $x^2$ (en dus ook $\frac{1}{x^2}$) altijd positief is 
+	(in de buurt van $0$ zou voldoende zijn, maar $x^2$ is natuurlijk overal positief). 
+	
+	Om in het algemeen het limietgedrag van $\dfrac{1}{g(x)}$ te kennen, is het dus (nodig en) voldoende om het tekenverloop te kennen van $g(x)$ in de buurt van zijn nulpunten. 
+	
+	Op de onderstaande tekening is $g(x)=(x+5)(x-5)(x-1)^2/50$ getekend, samen met $1/g(x)$. We zien dat de limiet in $x=1$ gelijk is aan $-\infty$ (omdat $g(x)$ er een dubbel nulpunt heeft en negatief is in de omgeving van $-1$, terwijl er in $x=\pm5$ telkens enkelvoudige nulpunten zijn, waar $g(x)$ dus van teken verandert, en $1/g(x)$ dus geen limiet heeft (maar enkel een linker- en een rechterlimiet).
+	
+
+\begin{image}[\width]
+%\begin{figure}
+	\begin{tikzpicture}
+	 [
+	declare function=
+	{
+		t(\x) = (\x-5)*(\x-1)^2*(x+5)/50 ;
+	}
+	]
+	\begin{axis}
+	[ samples=1000, axis lines=center,
+	  axis equal,
+	  scale=2,
+	  restrict y to domain=-10:10,
+	  ymax=8,ymin=-8,
+      extra y ticks={0},
+%      legend style={at={(0.15,0.45)},anchor=north east},
+      legend pos=south west,
+	]
+	\addplot[domain=-8.001:8,semithick,dashed,color=blue] {t(x)};
+	\addplot[domain=-8.001:8,thick,color=red] {1/t(x)};
+	\legend{$g(x)$, $1/g(x)$}
+	\end{axis}
+	\end{tikzpicture}
+%	\captionof{figure}{Test}
+%\end{figure}
+\end{image}
+
+\end{example}
+
+Voor het vervolg is het erg belangrijk ten diepste overtuigd te zijn van de waarheid en trivialiteit van volgende twee eigenschappen (die op de vorige tekening duidelijk worden geïllustreerd):
+
+\begin{proposition} (Triviale eigenschap veeltermen en rationale functies)
+% \todo: er is meer vertikale whitespace tussen de titel en de enumerate dan tussen de titel en de \paragraph infra!
+\begin{enumerate}
+	\item Een veelterm $f(x)$ kan alleen van teken veranderen in een nulpunt. 
+	\item Een veelterm verandert niet van teken in elk nulpunt.
+	\item Een rationale functie $f(x)$ kan alleen van teken veranderen in een nulpunt van teller of noemer. 
+	\item Een rationale functie  verandert niet van teken in elk nulpunt van teller of noemer.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition} (Triviale eigenschap omgekeerde functie)
+	
+Zij $f$ een reële functie, $c\in\R$. Dan geldt dat
+\begin{enumerate}
+\item	$\dfrac{1}{f(c)}$ heeft altijd hetzelfde teken als $f(c)$  \quad(tenzij $f(c)=0$\dots)
+
+\item    $\dfrac{1}{f(x)}$ heeft \textit{mogelijk} een oneindige limiet in $x=c \quad\iff\quad f(c)=0$ 
+
+\item    $\dfrac{1}{f(x)}$ heeft \textit{echt} een oneindige limiet in $x=c \quad\iff\quad f(c)=0$ en $f(x)$ verandert niet van teken in de buurt van $c$ 
+\end{enumerate}
+\end{proposition}
+
+\subsubsection{Limieten van rationale functies $f(x)/g(x)$}
+
+\begin{verbatim}
+Er zijn volgende mogelijkheden met $m_teller$ en $m_noemer$ de multipliciteiten van $c$:
+
+* de limiet is een getal verschillend van 0  
+                           (als $m_{noemer} = m_{teller}$)
+* de limiet is 0           (als $m_{noemer} > m_{teller}$)
+* de limiet is $\pm\infty$ (als $m_{noemer} < m_{teller}$ en llim = rlim)
+* de limiet bestaat niet   (als $m_{noemer} < m_{teller}$ en llim \neq rlim)
+
+\end{verbatim}
+
+
+
+\end{document}
