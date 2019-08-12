@@ -102,17 +102,17 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	\begin{align*}	
 	&\limx x^2 - \limx e^x  &=&& 0 - 1 &= -1 &=&& \limx (x^2-e^x) \\
 	&\limxi x^2 - \limxi e^x  &=&& (+\infty)-(+\infty) &\overset{???}{=} -\infty &=&& \limxi (x^2-e^x)  \\
-	&\limxmi x^2 - \limxmi e^x  &=&& (+\infty)1-0  &=  +\infty &=&& \limxmi (x^2-e^x)
+	&\limxmi x^2 - \limxmi e^x  &=&& (+\infty)-0  &=  +\infty &=&& \limxmi (x^2-e^x)
 	\end{align*}
 	
-	Het lijkt wat verdacht dat $(+\infty) - (+\infty) = -\infty$, wat nodig is om $\limxi (x^2-e^x)  \overset{?}{=} \limxi x^2  - \limxi e^x$ te doen kloppen.  
+	Het lijkt wat verdacht dat $(+\infty) - (+\infty)  \overset{?}{=} -\infty$, wat nodig is om $\limxi (x^2-e^x)  \overset{?}{=} \limxi x^2  - \limxi e^x$ te doen kloppen.  
 	
 	En het geeft inderdaad een onoverkomelijk probleem: als we ook willen dat $0 = \limxi (x^2  - x^2)  \overset{?}{=} \limxi x^2  - \limxi x^2  = \infty - \infty$  dan moet $\infty - \infty = 0$. 
 	
 	Nog erger: opdat $a = \limxi ((x+a) - x) \overset{?}{=} \limxi (x+a) - \limxi x$ moet $\infty - \infty = a$, met $a$ een willekeurig reëel getal. Miserie miserie ...  
 
 \end{example}
-\begin{example}(Extra: Limieten van $x - (a-x)$)
+\begin{example}(Extra: Limieten van $x + (a-x)$)
 	
 	Zij $a\in\R$, en beschouw de functies $f(x)=x$ en $g(x)=a-x$. Dan geldt (evident) dat $f(x)+g(x)=x+(a-x)=a$ en dat 
 	\begin{align*}
@@ -120,6 +120,9 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	\limxi g(x) & = \limxi (a-x) = -\infty \\
 	\limxi (g(x)+f(x)) & = \limxi a = a \\
 	\end{align*}
+	
+	\geogebra{zwrge8pa}{400}{300}
+	
 	In dit geval impliceert dus $\limxc \big(f(x) +g(x)\big) = \limxc f(x) + \limxc g(x)$ dat $(+\infty) + (-\infty)$ gelijk zou moeten zijn aan $a$. Maar $a$ is willekeurig (of \textit{onbepaald}): we kunnen voor $a$ even goed $0$ kiezen als $2$ of $2\pi/3$ \dots! Dus: de rekenregels voor de som van limieten impliceren dat $(+\infty)+(-\infty)$ elke waarde kan aannemen, en dus noodzakelijkerwijze \textit{onbepaald} moet blijven. Jammer maar helaas ...
 	
 	
