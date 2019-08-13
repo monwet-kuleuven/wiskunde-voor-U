@@ -31,44 +31,44 @@ breuken. Deze zijn heel eenvoudig, maar de uitdaging is deze rekenregels automat
 
 \subsection{Definities en rekenregels voor breuken}
 We definiëren een \textit{breuk} als een uitdrukking van de vorm $\frac{a}{b}$ met $a,b\in\R$, met $b\neq0$. 
-\\We noemen $a$ de \textit{teller}, en $b$ de \textit{noemer} van de breuk, en als $a\neq0$ is $\frac ba$ de \textit{omgekeerde} van $\frac ab$ 
+
+%\\We noemen $a$ de \textit{teller}, en $b$ de \textit{noemer} van de breuk, en als $a\neq0$ is $\frac ba$ de \textit{omgekeerde} van $\frac ab$ 
 
 Merk op dat uitdrukkingen van de vorm $\frac a0$ niet gedefineerd zijn (en dus \textit{niet bestaan}).  
 
-Voor breuken definiëren we volgende regels voor gelijkheid, optelling en vermenigvuldiging: 
-
-\begin{definition} (Definitie gelijkheid en basisbewerkingen breuken)
-	
-Zij $a,b,c,d\in \R$. Zodra de noemers verschillend zijn van $0$, geldt:
-%\[
-%	\def\arraystretch{2.2}
-%	\begin{array}{r@{\ }c@{\ }l@{\qquad}l@{\qquad}l}
-\begin{align*}
-		\important{\frac{a}{b} = \frac{c}{d}}  &\iff \important{ad = bc} 
-	%			& \textrm{indien }c \neq 0
-			& \textrm{gelijkheid van breuken} \\
-		\frac{a}{b}+\frac{c}{d} &= \frac{ad+cb}{bd} 
-%			& \textrm{indien }b,d \neq 0
-			& \textrm{breuken optellen (op gelijke noemer brengen)} \\
-		\frac{a}{b} \cdot \frac{c}{d} &= \frac{a\cdot c}{b\cdot d} 
-%			& \textrm{indien }b,d \neq 0
-			& \textrm{breuken vermenigvuldigen (product tellers $/$ product noemers)} \\
-		\frac{a}{b} : \frac{c}{d} &= \frac{a\cdot d}{b\cdot c} 
-%			& \textrm{indien }b,d \neq 0
-		& \textrm{breuken delen (maal omgekeerde)} \\
-\end{align*}
-%\end{array}	
-	
-%\]
-\end{definition}
 Met elke breuk $\frac ab$ associëren we een getal, namelijk het resultaat van de deling van $a$ door $b$.
 
 Bijvoorbeeld: $\frac42=\frac21=2$; \quad $\frac12=0,5$; \quad $\frac13=0,33\dots$ en $\frac{\pi}{2}=1,57\dots$. 
 
 Getallen die we zo bekomen met $a,b\in\Z$ noemen we \textit{rationale getallen}, en de verzameling van alle rationale getallen noteren we met $\Q$.
 
+
+Voor breuken definiëren we volgende regels voor gelijkheid, optelling en vermenigvuldiging: 
+
+\begin{definition} (Definitie gelijkheid en basisbewerkingen breuken)
+	
+Zij $a,b,c,d\in \R$. 
+
+Een uitdrukking van de vorm $\frac ab$ met $b\neq0$ noemen we een \textit{breuk} met \textit{teller} $a$ en \textit{noemer} $b$. Als ook $a\neq0$ noemen we $\frac ba$ de \textit{omgekeerde} van $\frac ab$. 
+
+Zodra de noemers verschillend zijn van $0$, geldt:
+
+\begin{align*}
+		\important{\frac{a}{b} = \frac{c}{d}}  &\iff \important{ad = bc} 
+			& \textrm{gelijkheid van breuken} \\
+		\frac{a}{b}+\frac{c}{d} &\perdef \frac{ad+cb}{bd} 
+			& \textrm{ optelling (op gelijke noemer brengen)} \\
+		\frac{a}{b} \cdot \frac{c}{d} &\perdef \frac{a\cdot c}{b\cdot d} 
+			& \textrm{vermenigvuldiging (teller $\times$ teller, noemer $\times$ noemer) }\\%(product tellers $/$ product noemers)} \\
+		\frac{a}{b} : \frac{c}{d} &\perdef \frac ab \cdot \frac dc = \frac{a\cdot d}{b\cdot c} 
+		& \textrm{deling (maal omgekeerde)} \\
+\end{align*}
+
+\end{definition}
+
+\begin{uitweiding} (Subtiele subtiliteiten over breuken)
 \begin{expandable}
-	\begin{uitweiding}
+
 		In deze definitie van breuken zitten allerlei subtiliteiten verstopt, die in vele cursussen terecht of ten onrechte worden genegeerd. 
 		
 		Zo is er een noodzakelijk maar subtiel onderscheid tussen een \textit{breuk} en een \textit{getal}. Inderdaad, als we willen spreken van 'de teller van een breuk', dan moeten noodzakelijk de breuken $\frac 12$ en $\frac 24$ verschillend zijn, want ze hebben verschillende tellers! Wie toch zou durven beweren dat \textit{gelijke} dingen (de 'breuken' $\frac 12$ en $\frac 24$)  \textit{verschillende} eigenschappen kunnen hebben (namelijk de teller van $\frac 12$ is 1 maar de teller van 'dezelfde breuk' $\frac24$ zou 2 zijn) verdrinkt onmiddellijk in een diep filosofisch moeras. Als \textit{getallen} zijn de twee breuken natuurlijk wel gelijk (namelijk gelijk aan het getal 2).
@@ -80,8 +80,8 @@ Getallen die we zo bekomen met $a,b\in\Z$ noemen we \textit{rationale getallen},
 		De oplossing van dergelijke subtiliteiten is meestal dat we via 'misbruik van notatie' geen onderscheid meer maken tussen de breuk $\frac 12$ en het (unieke) getal $\frac 12 = 0.5$ dat met deze breuk overeenkomt. En natuurlijk levert dat in de praktijk (bijna...) nooit problemen op. Integendeel, telkens wel het onderscheid maken zou de zaken erg compliceren. 
 		
 		Filosofische conclusie: misschien zijn sommige wiskundige definities en eigenschappen eigenlijk enkel begrijpbaar voor twee soorten mensen: enerzijds diegenen die er (dikwijls terecht!) snel overlezen, inzien waarover het gaat en zich geen verdere vragen stellen. Anderzijds heb je diegenen die alles in uiterste detail willen begrijpen, en na verloop van tijd alle subtiliteiten doorhebben. Maar misschien vallen vele studerenden in de tussencategorie: ze proberen de definities zo goed mogelijk te begrijpen maar lopen tegen één of andere moeilijkheid aan: hoe kan het dat $\frac 12$ en $\frac 24$ \textit{hetzelfde} zijn, terwijl ze toch een \textit{verschillende} teller hebben. En, in de handboeken die ze gebruiken worden dat soort moeilijkheden niet uitgelegd...
-	\end{uitweiding}
 \end{expandable}
+\end{uitweiding}
 
 %\begin{example} (Triviale voorbeelden)
 	
@@ -99,9 +99,8 @@ Getallen die we zo bekomen met $a,b\in\Z$ noemen we \textit{rationale getallen},
 \begin{proposition} (Eenvoudige maar belangrijke gevolgen)
 	
 	Zij $a,b,c,d\in \R$. Zodra de noemers verschillend zijn van $0$, geldt:
-%\[
-%	\def\arraystretch{2.2}
-%	\begin{array}{r@{\ }c@{\ }l@{\qquad}l}
+{
+\savebox\strutbox{$\vphantom{\dfrac{1^2}{1^2}^n}$}   % hack!
 \begin{align*}
 		\frac{a\cdot c}{a\cdot d} &= \frac{c}{d} 
 			& \text{breuken vereenvoudigen} \hfill\text{(factor $a$ wegdelen)} \\
@@ -112,19 +111,15 @@ Getallen die we zo bekomen met $a,b\in\Z$ noemen we \textit{rationale getallen},
 		\frac{a+b}{c} &= \frac{a}{c}+\frac{b}{c}  
 			& \text{breuken splitsen} \hfill\text{(zelfde formule als vorige!)}\\
 		\frac{\frac{a}{b}}{\ c\ } &= \frac ab \cdot \frac 1c = \frac{a}{b\cdot c} 
-%			& \textrm{indien }b,c \neq 0
 		& \text{breuk gedeeld door getal}\hfill\text{(maal in noemer)}\\
 		\frac{a}{\ \frac{b}{c}\ } &= a\cdot \frac cb = \frac{a\cdot c}{b}
-		%			& \textrm{indien }b,c \neq 0
 		& \text{getal gedeeld door breuk}\hfill\text{(maal omgekeerde)}\\
 		\frac{\frac{a}{b}}{\ \frac{c}{d}\ } &= \frac ab \cdot \frac dc =  \frac{a\cdot d}{b\cdot c}
-		%			& \textrm{indien }b,c,d \neq 0
 		& \text{breuk gedeeld door breuk}\hfill\text{(maal omgekeerde)}\\
 		\frac{\frac{a}{d}}{\ \frac{c}{d}\ } &= \frac ad \cdot \frac dc =  \frac{a}{c}
 		& \text{gelijke noemers wegwerken}\hfill\text{($\frac 1d$ wegdelen)}\\
 		\end{align*}
-%	\end{array}
-%\]
+}
 \end{proposition}
 
 
@@ -132,10 +127,11 @@ Al deze eigenschappen zijn eenvoudige gevolgen van de vorige definitie. Het is e
 
 Het heeft geen zin deze eigenschappen \textit{van buiten} te leren, je moet ze \textit{van binnen} kennen, dus door en door kennen. Dat is allicht al het geval, maar indien niet moet je hierover (erg veel) oefeningen maken.
 
-\begin{expandable}
+
 \begin{uitweiding}
-\begin{example}
+%\begin{example}
 	Waarom is $\frac{a}{c}+\frac{b}{c} = \frac{a+b}{c}$ ?
+	\begin{expandable}
 	\begin{explanation} \ 
 		
 		De meest eenvoudige uitleg: het is gewoon het optellen van breuken die dezelfde noemer hebben: dat is makkelijk, waarom moet daar nog verder aandacht aan worden besteed.
@@ -149,9 +145,9 @@ Het heeft geen zin deze eigenschappen \textit{van buiten} te leren, je moet ze \
 		Dit bewijst dat $\frac{a}{c}+\frac{b}{c} = \frac{a+b}{c}$.
 	\end{explanation}
 	
-\end{example}
-\end{uitweiding}
 \end{expandable}
+\end{uitweiding}
+%\end{example}
 
 
 \begin{example} (Numeriek rekenen met breuken)
