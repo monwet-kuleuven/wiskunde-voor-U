@@ -87,10 +87,12 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	 \limxmi x^2 &= -\infty & \limxmi e^x&= 0       & \limxmi (x^2+e^x)&= -\infty 
 	 \end{align*}
 	 en dus  
+	 \newcommand\perinderdaad{\overset{!}{=}}
+ 	 \newcommand\perhaps{\overset{?}{=}}
 	 \begin{align*}	
-	 &\limx x^2 + \limx e^x  = & 0 + 1 &= 1 &= \limx (x^2+e^x) \\
-     &\limxi x^2 + \limxi e^x  =& +\infty+(+\infty) &= +\infty &= \limxi (x^2+e^x)  \\
-     &\limxmi x^2 + \limxmi e^x  =&  -\infty+0 &= -\infty &= \limxmi (x^2+e^x)
+	 &\limx x^2 + \limx e^x  = & 0 + 1              &&\perinderdaad&& 1 &&= \limx (x^2+e^x) \\
+     &\limxi x^2 + \limxi e^x  = &+\infty+(+\infty) &&\perinderdaad&& +\infty &&= \limxi (x^2+e^x)  \\
+     &\limxmi x^2 + \limxmi e^x  = & -\infty+0      &&\perinderdaad&& -\infty &&= \limxmi (x^2+e^x)
 	\end{align*}
      
 %\
@@ -100,16 +102,16 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	Maar, voor $x^2 - e^x$ duiken er mogelijke problemen op:
 	
 	\begin{align*}	
-	&\limx x^2 - \limx e^x  &=&& 0 - 1 &= -1 &=&& \limx (x^2-e^x) \\
-	&\limxi x^2 - \limxi e^x  &=&& (+\infty)-(+\infty) &\overset{???}{=} -\infty &=&& \limxi (x^2-e^x)  \\
-	&\limxmi x^2 - \limxmi e^x  &=&& (+\infty)-0  &=  +\infty &=&& \limxmi (x^2-e^x)
+	&\limx x^2 - \limx e^x  = & 0 - 1       &&\perinderdaad&& -1 &&= \limx (x^2-e^x) \\
+	&\limxi x^2 - \limxi e^x  = & (+\infty)-(+\infty) &&\perhaps&& -\infty &&= \limxi (x^2-e^x)  \\
+	&\limxmi x^2 - \limxmi e^x  = & (+\infty)-0  &&\perinderdaad&&  +\infty &&= \limxmi (x^2-e^x)
 	\end{align*}
 	
-	Het lijkt wat verdacht dat $(+\infty) - (+\infty)  \overset{?}{=} -\infty$, wat nodig is om $\limxi (x^2-e^x)  \overset{?}{=} \limxi x^2  - \limxi e^x$ te doen kloppen.  
+	Het lijkt wat verdacht dat $(+\infty) - (+\infty)  \perhaps -\infty$, wat nodig is om $\limxi (x^2-e^x)  \perhaps \limxi x^2  - \limxi e^x$ te doen kloppen.  
 	
-	En het geeft inderdaad een onoverkomelijk probleem: als we ook willen dat $0 = \limxi (x^2  - x^2)  \overset{?}{=} \limxi x^2  - \limxi x^2  = \infty - \infty$  dan moet $\infty - \infty = 0$. 
+	En het geeft inderdaad een onoverkomelijk probleem: als we ook willen dat $0 = \limxi (x^2  - x^2)  \perhaps \limxi x^2  - \limxi x^2  = \infty - \infty$  dan moet $\infty - \infty \perhaps 0$. 
 	
-	Nog erger: opdat $a = \limxi ((x+a) - x) \overset{?}{=} \limxi (x+a) - \limxi x$ moet $\infty - \infty = a$, met $a$ een willekeurig reëel getal. Miserie miserie ...  
+	Nog erger: opdat $a = \limxi ((x+a) - x) \overset{?}{=} \limxi (x+a) - \limxi x$ moet $\infty - \infty \perhaps a$, met $a$ een willekeurig reëel getal. Miserie miserie ...  
 
 \end{example}
 \begin{example}(Extra: Limieten van $x + (a-x)$)
@@ -197,6 +199,8 @@ Eerst geven we de rekenregels die wel gewoon werken zoals bij de reële getallen
 	\\
 	a+(-\infty) & = a-\infty = -\infty+a =-\infty - a = -a - \infty \\
 	& = \important{-\infty - \infty = -\infty+(-\infty) = -\infty} & \text{($-\infty+X=-\infty$ behalve als $X=+\infty$)} \\
+	\\
+		\frac{a}{\infty} & = \important{\frac{a}{+\infty} = \frac{a}{-\infty} = 0} & (X/\infty = 0 \text{ als } X\neq \pm\infty) \\
 %	\pdfOnly{\intertext{Als $a>0$ ($a$ strikt positief)}}
 	\mbox{ Als $a>0$ }\\% ($a$ strikt positief) }\\	
 %	\begin{onlineOnly}\mbox{ Als $a>0$ ($a$ strikt positief) }\end{onlineOnly}
@@ -207,6 +211,7 @@ Eerst geven we de rekenregels die wel gewoon werken zoals bij de reële getallen
 %	\begin{onlineOnly}\text{Als $a<0$ ($a$ strikt negatief)}\\ \end{onlineOnly}%
 		a\cdot\infty & = \infty\cdot a \\
 	& = \important{\infty \cdot (-\infty) = (-\infty)\cdot\infty = -\infty} & \text{($X\cdot(\pm\infty) = \mp\infty$ als $X<0$)} \\
+			a\cdot\infty & = \infty\cdot a \\
 	\end{align*}	
 \end{proposition}  
 
