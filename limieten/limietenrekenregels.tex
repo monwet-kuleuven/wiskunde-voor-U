@@ -46,14 +46,14 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	axis lines=center,
 	extra y ticks={0},
 	restrict y to domain=-10:10,
-	legend pos=south west,
+	legend style={legend pos=south west,font=\tiny},
 	]
 	\addplot[domain=-5:5,color=blue,dashed] {x^2};
-	\addlegendentry{$x^2$}
+	\addlegendentry{$f(x) = x^2$}
 	\addplot[domain=-5:5,color=blue,dotted] {exp(x)};
-	\addlegendentry{$e^x$}
+	\addlegendentry{$g(x) = e^x$}
 	\addplot[domain=-5:5,color=red,thick] {x^2+exp(x)};
-	\addlegendentry{$x^2 + e^x$}
+	\addlegendentry{$f(x) + g(x) = x^2 + e^x$}
 	\end{axis}
 	\end{tikzpicture}	
 	\quad
@@ -66,14 +66,14 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	axis lines=center,
 	extra y ticks={0},
 	restrict y to domain=-10:10,
-	legend pos=south west,
+	legend style={legend pos=south west,font=\tiny},
 	]
 	\addplot[domain=-5:5,color=blue,dotted] {x^2};
-	\addlegendentry{$x^2$}
+	\addlegendentry{$f(x) = x^2$}
 	\addplot[domain=-5:5,color=blue,dotted] {-exp(x)};
-	\addlegendentry{$-e^x$}
+	\addlegendentry{$g(x) = -e^x$}
 	\addplot[domain=-5:5,color=red,thick] {x^2-exp(x)};
-	\addlegendentry{$x^2 + (-e^x))$}
+	\addlegendentry{$f(x)+g(x) = x^2 + (-e^x))$}
 	\end{axis}
 	\end{tikzpicture}	
 \end{image}
@@ -121,7 +121,10 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 	\limxi (g(x)+f(x)) & = \limxi a = a \\
 	\end{align*}
 	
+	{
+	\centering
 	\geogebra{zwrge8pa}{400}{300}
+	}
 	
 	In dit geval impliceert dus $\limxc \big(f(x) +g(x)\big) = \limxc f(x) + \limxc g(x)$ dat $(+\infty) + (-\infty)$ gelijk zou moeten zijn aan $a$. Maar $a$ is willekeurig (of \textit{onbepaald}): we kunnen voor $a$ even goed $0$ kiezen als $2$ of $2\pi/3$ \dots! Dus: de rekenregels voor de som van limieten impliceren dat $(+\infty)+(-\infty)$ elke waarde kan aannemen, en dus noodzakelijkerwijze \textit{onbepaald} moet blijven. Jammer maar helaas ...
 	
@@ -131,14 +134,41 @@ Dus moeten we hopen dat er (zo eenvoudig mogelijke) regeltjes zijn om meer ingew
 \todo{Wordt voorbeeld, met uitleg ...}
 \begin{example}
 	Zoek een gelijkaardig eenvoudig (tegen)voorbeeld voor $0\cdot\infty$ en voor $\dfrac00$ en $\dfrac\infty\infty$.
+	\begin{expandable}
+		% hack: to be done properly
+		
+		\def\isA{}
+		\def\isB{}
+		\def\isC{}
+		\def\isD{}
+		\def\isE{}
+		\def\isF{}
+		
+		\newcommand{\localoefoptions}{\wordChoice{\choice[\isA]{$+\infty$}\choice[\isB]{$-\infty$}\choice[\isC]{0}\choice[\isD]{1}\choice[\isE]{$a$}\choice[\isF]{andere oplossing}}}
+		
+		\begin{explanation} ($0\cdot\infty$ is onbepaald)
+			
+			Beschouw de functies $f(x)=ax^2$ en $g(x)=1/x^2$. Dat is $\limx f(x) =${\def\isC{correct}\localoefoptions}, $\limx g(x) = ${\def\isA{correct}\localoefoptions} en $\limx f(x)\cdot g(x) = \limx (a\cdot x^2 \ dot 1/x^2 = \limx a = ${\def\isE{correct}\localoefoptions}).
+			
+			(Opmerking: het voorbeeld zou ook met $ax$ en $1/x$ kunnen gegeven worden, maar dan moet je onderscheid maken tussen linker en rechterlimiet, ofwel  de limiet in $+\infty$ bekijken )
+		\end{explanation}
+		\begin{explanation} ($\dfrac00$ is onbepaald)
+			
+			Beschouw de functies $f(x)=ax$ en $g(x)=x$ in $0$.
+		\end{explanation}
+		\begin{explanation} ($\dfrac\infty\infty$ is onbepaald)
+		
+		Beschouw de functies $f(x)=ax$ en $g(x)=x$ in $+\infty$.
+	\end{explanation}
+	\end{expandable}
 \end{example}
 
 
 
 We zijn dus verplicht om voldoende voorzichtig rekenregels vast te leggen voor de symbolen $+\infty$ en $-\infty$. Men kan bewijzen dat je zonder problemen kan rekenen met $+\infty$ en $-\infty$  op voorwaarde dat je zogenaamde \textit{onbepaalde vormen} vermijdt.
 
-Merk op: we schrijven verder meestal gewoon $\infty$ voor $+\infty$ (net zoals we $5$ schrijven voor $+5$). \\
-En $\pm\infty$ betekent $+\infty$ of $-\infty$ (in die volgorde, zodat we ook kunnen schrijven dat $-(\pm\infty) = \mp\infty$!)
+We spreken af dat we ook gewoon $\infty$ schrijven voor $+\infty$, net zoals we $5$ schrijven voor $+5$. \\
+En $\pm\infty$ betekent $+\infty$ of $-\infty$, in die volgorde, zodat we verder ook kunnen schrijven dat $-(\pm\infty) = \mp\infty$!
 
 \begin{notation} (Afspraken in verband met oneindig)	
 	\begin{align*}
@@ -148,7 +178,7 @@ En $\pm\infty$ betekent $+\infty$ of $-\infty$ (in die volgorde, zodat we ook ku
 \end{notation}
 
 
-Eerst enkele regels die wel gewoon werken zoals bij de reële getallen:
+Eerst geven we de rekenregels die wel gewoon werken zoals bij de reële getallen:
 \todo{Uitleg over symbool X ...?}
 \todo{Uitzoeken: intertext online ..}
 
