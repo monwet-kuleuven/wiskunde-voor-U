@@ -22,9 +22,10 @@
 \begin{abstract}
 	\cancel{The sky }$\infty$ is the limit
 \end{abstract}
-\maketitle
+\todo{Mmm, \\cancel werkt niet in abstract-online ...?}
 
-%\listoftodos
+
+\maketitle
 
 \todo[inline]{nadenken over outcomes (formulering/gebruik/...)}
 \todo[inline]{nadenken over 'jij' vorm of 'we' vorm in dit soort teksten !!!}
@@ -45,12 +46,14 @@ Voor wie (nog) niet overtuigd is dat dit een mogelijk nuttige bezigheid is, hebb
 
 \begin{uitweiding}[Wat en waarom van limieten] \ 
 	
-(Merk op: dit is enkel inleidende achtergrondinformatie, en geen leerstof.)	
+\textit{Merk op: dit is enkel inleidende achtergrondinformatie, en geen leerstof.
+}
 
-Dikwijls is men geïnteresseerd in wat er gebeurt 'net op de rand van wat al gekend is'. Wiskundig kunnen we dit soort situaties - in gunstige gevallen-  beschrijven en soms zelfs begrijpen in termen van \textit{limieten}. 
+Niet alleen in de wiskunde is interesseert men zich soms in fenomenen die zich afspelen 'op de grens van wat al gekend is'. %voorbeeld ...
 
-In het eerder eenvoudige geval van rijen is het intuïtief aannemelijk dat de rij getallen
-%\todo{Notatie $(a_n)$ uitleggen (of weglaten, of verwijzen naar ...)}
+Wiskundig kunnen we dit soort situaties soms beschrijven en zelfs begrijpen in termen van \textit{limieten}. Het wiskundig begrip limiet is tamelijk complex, en een exacte wiskundige definitie wordt snel erg abstract en technisch. Maar, in eenvoudige gevallen kunnen we wel een en ander onderzoeken.
+
+We bekijken als inleidend voorbeeld enkele rijen van getallen, en vragen ons af of we iets zinnigs kunnen zeggen over het 'uiteindelijke gedrag' van zo'n rij getallen. Zo wordt de rij getallen
 \begin{align*}
 % geen (afschrikwekkende?) formules ... ?
 %(a_n) = \Big(\frac{1}{n^2}\Big) & = 1, \frac{1}{4}, \frac{1}{9}, \frac{1}{16},\frac{1}{25},\dots\\
@@ -58,44 +61,44 @@ In het eerder eenvoudige geval van rijen is het intuïtief aannemelijk dat de ri
                                 & =1,\; 0.25,\;  0.1111\dots,\; 0.0625,\; 0.04,\; 0.0277\dots,\; \dots
 \end{align*}
 
-'in de limiet' gelijk wordt aan $0$ (hoewel er natuurlijk geen enkele van de termen $a_n$ echt $0$ is!). \\
-We zeggen dat 'de limiet van de rij $(a_n)$ gelijk is aan $0$' of dat 'de $a_n$ in de limiet $0$ worden', en schrijven $\lim_{n\to\infty}a_n = 0$.
+steeds kleiner, en het is intuïtief aannemelijk om te beweren dat de rij 'in de limiet' gelijk wordt aan $0$. Hoewel er natuurlijk geen enkele van de termen $a_n$ echt $0$ is!. \\
+We zullen zeggen dat 'de limiet van de rij $(a_n)$ gelijk is aan $0$' of dat 'de $a_n$ in de limiet $0$ worden', en schrijven $\lim_{n\to\infty}a_n = 0$.
 
 Voor de rij 
 \[
 %(b_n) = ((-1)^{n+1}) = 1,-1,1,-1,1,-1,\dots
 (b_n) = \;1,\;-1,\;1,\;-1,\;1,\;-1,\dots
 \]
-lijkt er geen limiet te bestaan, 
+lijkt er niet één limiet te bestaan, want de rij springt steeds van $1$ naar $-1$ en terug, 
 %\todo{uitleggen waarom $b_n$ geen limiet heeft}
 terwijl voor de rij 
 \[
 %(c_n) = (n^2) = 1,4,9,16,25,\dots
 (c_n) = 1,\;4,\;9,\;16,\;25,\;\dots
 \]
-de natuurlijke limiet 'oneindig' zou kunnen zijn.
+de getallen altijd groter worden. Als we al van een 'limiet' willen spreken, zal die 'oneindig' moeten zijn.
 
-Een bijzonder belangrijke, maar erg subtiele, bezigheid bestaat erin te bestuderen \textit{wanneer} dergelijke limiet precies bestaat, en vooral \textit{welke} eigenschappen van dingen onder \textit{welke} voorwaarden ook \textit{in de limiet} bewaard blijven. 
+We zullen verder het begrip 'limiet' invoeren voor (reële) functies. Een bijzonder belangrijke, maar erg subtiele, bezigheid bestaat erin te bestuderen \textit{wanneer} zo'n limiet precies bestaat, en vooral \textit{welke} eigenschappen van dingen onder \textit{welke} voorwaarden ook \textit{in de limiet} bewaard blijven. 
 
 Dat dit erg subtiel is blijkt uit het volgende voorbeeld voor de rij $(a_n)$ van hierboven:
 
 De eigenschap 'is groter dan of gelijk aan nul', dus '$a_n\geq0$' geldt voor elke term $a_n$, en ze geldt ook \textit{in de limiet} (we zeggen ook 'voor de limiet') want  $0\geq0$. Dus: deze eigenschap $a_n\geq 0$ die geldt voor elke term, blijft ook gelden in de limiet. Dat is handig en mooi. 
 
-Maar, de erg gelijkaardige eigenschap 'is groter dan nul', dus '$a_n>0$', geldt ook voor alle $a_n$, maar ze geldt niet meer in de limiet, want $0\not>0$. Dat is erg jammer en erg vervelend. Het is de oorzaak van vele extra pagina's leerstof in veel wiskundecursussen (en van veel fouten op examens, maar dit geheel terzijde). \\
+Maar, de erg gelijkaardige eigenschap 'is groter dan nul', dus '$a_n>0$', geldt ook voor alle $a_n$, maar ze geldt niet meer in de limiet, want $0\not>0$. Dat is erg jammer en erg vervelend. Het is de oorzaak van vele extra pagina's leerstof in veel wiskundecursussen.  En van veel fouten op examens, maar dit geheel terzijde. \\
 
 
-In dit hoofdstuk krijg je een kleine inleiding in de problematiek van limieten van \textit{functies} (en dus niet van \textit{rijen} zoals in dit voorbeeld). Later gebruiken we die limieten om asymptoten te bekijken, afgeleiden en integralen te definiëren en nog veel meer. 
+In dit hoofdstuk krijg je een kleine inleiding in de problematiek van limieten van \textit{functies} (en dus niet van \textit{rijen} zoals in dit voorbeeld). Later gebruiken we die limieten om asymptoten te bekijken, afgeleiden en integralen te definiëren en nog veel meer. In een uitweiding zeggen we kort hoe een limiet wiskundig exacter kan worden gedefinieerd.
 
-Merk op: een meer formele en exacte behandeling van limieten wordt snel technisch (bijvoorbeeld met de onder (niet-)kenners erg beruchte $\epsilon$'s en $\delta$'s) en dat valt -jammer voor ons schrijvers van cursusteksten, maar gelukkig voor u die het resultaat van onze arbeid moeten studeren- buiten het bestek van deze cursus. Sommigen van u kennen het al, en voor anderen komt het nog. Maar, velen onder u zullen aan de technische details ontsnappen.
+%Merk op: een meer formele en exacte behandeling van limieten wordt snel technisch (bijvoorbeeld met de onder (niet-)kenners erg beruchte $\epsilon$'s en $\delta$'s) en dat valt -jammer voor ons schrijvers van cursusteksten, maar gelukkig voor u die het resultaat van onze arbeid moeten studeren- buiten het bestek van deze cursus. Sommigen van u kennen het al, en voor anderen komt het nog. Maar, velen onder u zullen aan de technische details ontsnappen.
 \end{uitweiding}
 
 \end{expandable}
-\todo{voetnoot ivm epsilons/deltas ?}
+\todo{voetnoot/uitweiding ivm epsilons/deltas ?}
 
 
 \subsection{Voorbeeld en definitie}
 
-We geven als kennismaking enkele voorbeelden van limieten van functies, om dan tot een soort van intuïtieve definitie te komen. In  deze cursus geven we geen formeel-wiskundige definitie van limieten, maar we geven voorbeelden die het begrip duidelijk moeten maken op grafieken van functies. In een volgende paragraaf geven we wel wiskundig exacte rekenregels voor limieten.
+We geven enkele voorbeelden en een intuïtieve definitie van limieten van functies. Dat zal volstaan om van enkele eenvoudige functies de limieten te bepalen op basis van de grafieken. In een volgende paragraaf geven we dan wiskundig exacte rekenregels om vanaf die basislimieten ingewikkeldere limieten te berekenen.
 
 \todo{Uitzoeken: hoe werkt instructorNotes precies}
 % \begin{instructorNotes}
@@ -106,7 +109,7 @@ We geven als kennismaking enkele voorbeelden van limieten van functies, om dan t
 % \end{instructorNotes}
 %}
 
-\begin{example} (Limieten van $\frac{\sin x}{x}$ ( of dus $\frac 1x \sin x$))
+\begin{example} (Limieten van $\frac{\sin x}{x}$ ( of dus $\frac 1x \cdot\sin x$))
 	
 Beschouw de functie $f:x\mapsto \dfrac{\sin x}{x}$. Dat is de gekende sinusfunctie die we delen door $x$. Voor grote $x$ zal die functie zeker erg dicht bij $0$ komen te liggen (want we delen de $\sin x$, wat tussen $-1$ en $1$ ligt, door een grote $x$, dus het resultaat wordt erg klein. 
 
@@ -138,6 +141,8 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 	ymax=3, ymin=-1,	
     restrict y to domain=-2:3,
 	extra y ticks={0},
+	legend style={legend pos=south west,font=\tiny},
+%	legend style={legend font=\tiny},
 	]
 	%pas op:sin werkt in DEGREE, en niet in RADIAAL;dus sin(deg(x))...!)
 	\addplot[domain=0.001:10,semithick,dashed,color=blue] {sin((deg(x)))};
@@ -157,7 +162,7 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 	
 	Voor $x$ heel klein (in de betekenis van heel dicht bij $0$), lijkt het ook eenvoudig: als $x$ naar $0$ gaat, dat wordt $1/x$ immers oneindig groot. Maar, er is jammer genoeg een complicatie: als $x$ negatief is en dicht bij $0$ ligt, dan wordt $x$ niet heel groot, maar net heel klein (in de betekenis van heel erg negatief). Dus: voor $x$ dicht bij $0$, kan $1/x$ ofwel heel groot zijn (als $x>0$), ofwel net heel erg negatief (als $x<0$). Dus: het hangt er maar van af 'langs welke kant' we $x$ naar $0$ laten gaan, of we in $+\infty$ dan wel in $-\infty$ uitkomen. 
 	
-	Het heeft geen zin om in dit geval te spreken van een limiet, maar het is in een aantal gevallen erg handig om toch een begrip en een notatie te hebben in deze situatie. We spreken van \textit{linkerlimiet} als we $0$ langs links benaderen, dus met $x<0$ (of $0>x$, dat is natuurlijk hetzelfde!), en \textit{rechterlimiet} voor langs rechts (dus $x>0$, of ook $0<x$). En we hebben dus enkel een echte \textit{limiet} als de linkerlimiet gelijk is aan de rechterlimiet!
+	We spreken in dit geval niet van een limiet, maar  van een \textit{linkerlimiet} als we $0$ langs links benaderen, dus met $x<0$ (of $0>x$, dat is natuurlijk hetzelfde!) en een \textit{rechterlimiet} voor naderen langs rechts (dus $x>0$, of ook $0<x$).% En we hebben dus enkel een echte \textit{limiet} als de linkerlimiet gelijk is aan de rechterlimiet!
 	
 	De situatie zou volledig duidelijk moeten zijn op volgende tekening:
 	\begin{image}[\width]
@@ -165,19 +170,28 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 		\begin{axis}
 		[
 		axis equal,
-		ymax=5,ymin=-5,
+		ymax=5,ymin=-5, ticks=none,
 		samples=200,
 		axis lines=center,
-		extra y ticks={0},
+%		extra y ticks={0},
 		restrict y to domain=-10:10,
+		legend style={legend pos=south west,font=\small},		
 		]
 		\addplot[domain=-6:6,color=blue] {1/x};
 		\addlegendentry{$y=\frac1x$};	 
-		\addlegendentry{};   
-		\node[anchor=east, font=\small] at  (axis cs: -0.2,4.4) {$\rlimx \frac1x =+\infty$};
-		\node[anchor=west] at  (axis cs: 0.2,-4) {$\llimx \frac1x =-\infty$};
-		\node[anchor=south west] at (axis cs: -6,0.2) {$\limxmi \frac1x =0$};
-		\node[anchor=north east] at  (axis cs: 6,-0.4) {$\limxi \frac1x =0$};
+		\node[anchor=west, color=red, font=\small] at  (axis cs: 0.2,-0.4) {$0\leftarrow x$};
+		\node[anchor=west, color=red, font=\small] at  (axis cs: 0.2,4.4) {$1/x\rightarrow +\infty$};
+
+		\node[anchor=west, color=red, font=\small] at  (axis cs: -6,0.2) {$-\infty\leftarrow x$};
+		\node[anchor=west, color=red, font=\small] at  (axis cs: -6,-0.8) {$1/x\rightarrow 0$};
+
+		\node[anchor=east, color=red, font=\small] at  (axis cs: 6,-0.4) {$x\rightarrow +\infty$};
+		\node[anchor=east, color=red, font=\small] at  (axis cs: 6,0.8) {$1/x\rightarrow 0$};
+
+%		\node[anchor=east, font=\small] at  (axis cs: -0.2,4.4) {$\rlimx \frac1x =+\infty$};
+%		\node[anchor=west] at  (axis cs: 0.2,-4) {$\llimx \frac1x =-\infty$};
+%		\node[anchor=south west] at (axis cs: -6,0.2) {$\limxmi \frac1x =0$};
+%		\node[anchor=north east] at  (axis cs: 6,-0.4) {$\limxi \frac1x =0$};
 
 		\end{axis}
 %		\node[draw,text width=4cm] at (0.1,-4) {$\llimx[0] 1/0 =1\infty$};
@@ -185,8 +199,8 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 	\end{image}
 \end{example}
 
-\todo{tekst aanpassen: oneindig vs limiet} 
-Het begrip \textit{limiet} heeft dus niet noodzakelijk een direct verband met het begrip \textit{oneindig} (tenzij in de betekenis van 'ergens oneindig dicht bij liggen'). Maar we zullen verder toch erg veel met oneindig te maken krijgen: enerzijds zullen we zeggen dat een 'limiet gelijk is aan oneindig' als de functiewaarden steeds groter worden, en anderzijds zullen we ook 'limieten in oneindig' bekijken, namelijk wat er gebeurt als $x$ steeds groter wordt.
+%\todo{tekst aanpassen: oneindig vs limiet} 
+%Het begrip \textit{limiet} heeft dus niet noodzakelijk een direct verband met het begrip \textit{oneindig} (tenzij in de betekenis van 'ergens oneindig dicht bij liggen'). Maar we zullen verder toch erg veel met oneindig te maken krijgen: enerzijds zullen we zeggen dat een 'limiet gelijk is aan oneindig' als de functiewaarden steeds groter worden, en anderzijds zullen we ook 'limieten in oneindig' bekijken, namelijk wat er gebeurt als $x$ steeds groter wordt.
 
 %We bestuderen enkele eigenschappen van limieten (bij veeltermen zoals $x^5-2x^2+7$, rationale functies zoals$\frac{5x}{x-5}$ en irrationale functies zoals $\frac{\sqrt{x-1}}{x-1}$). 
 
@@ -212,40 +226,187 @@ We gaan zoals vermeld in deze module niet in op de exacte wiskundige definitie v
 
 \end{definition}
 
+
 \begin{remark} \ 
 
 \begin{itemize}	
-\item Let op: $x<c$ is hetzelfde als  $c>x$, net zoals  $x>c$ hetzelfde betekent als $c<x$. Let dus zowel op de tekens $<,>$ \textit{en} op de volgorde van de letters of cijfers!  
+\item Men kan aantonen dat 
+$$
+	\limxc  f(x) = a \iff 	\llimxc  f(x) = a \text{ en } 	\rlimxc  f(x) = a
+$$
+\item Let op: $x<c$ is hetzelfde als  $c>x$, net zoals  $x>c$ hetzelfde betekent als $c<x$. Let dus zowel op de tekens $<,>$ \textit{als} op de volgorde van de letters of cijfers!  
 
 \item Als we  $x\to c$ lezen als '$x$ gaat naar $c$' of '$x$ ligt (erg) dicht bij $c$', dan heeft dat een zeker dynamisch aspect: $x$ wordt verondersteld te 'bewegen' naar iets. Het is belangrijk te beseffen dat het resultaat, of de 'uitkomst' van zo'n limiet, dus datgene wat met het symbool $\limxc f(x)$ wordt aangeduid, gewoon een bepaald getal is of het symbool $\pm\infty$. Daar is dus niets 'bewegends' of 'mysterieus' aan!
 
-\item De pseudo-definitie is bewust enigszins vaag over welke waarden $c$ precies mag aannemen. In deze cursus beperken we ons tot 'punten of randpunten van het domein van $f$. Dus, we kunnen spreken van de limiet van $f(x)=\sqrt{x}$ in de punten $1$ en $\pi$ en $81$ (punten van het domein), of in $0$ of $+\infty$ (punten 'op de rand van het domein'), maar de limiet in de punten $-1$, $-314$ en $-\infty$ heeft \textit{geen} betekenis. Merk ook op dat de waarde van $f(c)$ (als die bestaat) geen belang heeft bij het bepalen van $\limxg{c}f(x)$: enkel de waarden van $f$ \textit{in de buurt van} $c$ bepalen de limiet!.
+\item De uitdrukking 'de limiet $\limxc f(x)$ bestaat' wordt in de literatuur in twee mogelijke betekenissen gebruikt: soms bedoelt men 'de limiet bestaat en is eindig', maar soms bedoelt men ook 'de limiet bestaat maar is eventueel $\pm\infty$'. In deze cursus gebruiken we optie 2! \todo{Klopt dit?}
+
+\item Uitweiding: De pseudo-definitie is bewust enigszins vaag over welke waarden $c$ precies mag aannemen. In deze cursus beperken we ons tot 'punten of randpunten van het domein van $f$. Dus, we kunnen spreken van de limiet van $f(x)=\sqrt{x}$ in de punten $1$ en $\pi$ en $81$ (punten van het domein), of in $0$ of $+\infty$ (punten 'op de rand van het domein'), maar de limiet in de punten $-1$, $-314$ en $-\infty$ heeft \textit{geen} betekenis. Merk ook op dat de waarde van $f(c)$ (als die bestaat) geen belang heeft bij het bepalen van $\limxg{c}f(x)$: enkel de waarden van $f$ \textit{in de buurt van} $c$ bepalen de limiet! Het is een eigenschap (of zelfs een definitie!) van continue functies dat hun functiewaarden overal gelijk zijn aan hunn limieten.
+
+\item Uitbreiding: in de vlakke meetkunde gebruiken we ook het symbool $\infty$, maar daar maken we typisch geen onderscheid tussen $+\infty$ en $-\infty$. Zie aldaar voor een bijzonder fascinerende uitleg daarover.
+
 \end{itemize}
 
 \end{remark}
 
 %(overbodig) Merk op: hierbij staan zowel de letters $a$ als $c$ dus voor reële getallen \textit{of} voor één van de symbolen $+\infty$ of $-\infty$. Zie verder voor de rekenregels voor $\pm\infty$.
 
-Deze definitie zegt dus \textit{niet} (wiskundig) nauwkeurig wat een limiet \textit{precies is}. Het volstaat -voor deze module- om op basis van dit soort definitie een intuïtief begrip op te bouwen over wat limieten zijn, en hoe ze kunnen worden berekend. Met dit soort van intuïtieve definities kunnen van limieten natuurlijk geen eigenschappen worden \textit{bewezen}, of echte berekeningen worden gemaakt. We kunnen op deze basis limieten (enkel) bepalen op volgende manieren:
+%Deze definitie zegt dus \textit{niet} (wiskundig) nauwkeurig wat een limiet \textit{precies is}. Het volstaat -voor deze module- om op basis van dit soort definitie een intuïtief begrip op te bouwen over wat limieten zijn, en hoe ze kunnen worden berekend. Met dit soort van intuïtieve definities kunnen van limieten natuurlijk geen eigenschappen worden \textit{bewezen}, of echte berekeningen worden gemaakt. 
+
+We kunnen op deze basis limieten (enkel) bepalen op volgende manieren:
+
+\begin{proposition} (Berekeningswijze limieten)
+	
+We beschikken over onderstaande mogelijkheden om limieten te bepalen. (PAS OP: Er zijn echter aanzienlijke beperkingen en gevaren. Zie opmerkingen.)
 \begin{enumerate}
-	\item gebruik maken van betrouwbare rekenregels (zie verder)
 	\item aflezen op een grafiek  
-	\\(enigszins betrouwbaar als de grafiek betrouwbaar is!)
-	\item ons baseren op berekeningen 'in de buurt' en/of intuïtie 
-	\\(werkt dikwijls: bv $\frac{\sin(0,01)}{0,01}=0,999983\dots$, en dus geldt 'allicht' $\limx \frac{\sin x}{x} = 1$)
+%	\\(enigszins betrouwbaar als de grafiek betrouwbaar is!)
+	\item gebruik maken van betrouwbare rekenregels 
+%	\\ (zie verder REF)
+	\item zich baseren op berekeningen 'in de buurt' en/of intuïtie 
+%	\\
+
 \end{enumerate}
-Het is duidelijk dat opties 2 en  3 \textsc{strikt wiskundig niet geldig zijn}. Maar, de definitie van limiet is dat ook niet, dus tot nader order is het -mits de nodige voorzichtigheid- niet verboden, en dus toegelaten, om er toch gebruik van te maken. De 'tot nader order' hangt af van welke studierichtingen en cursussen u verder nog zal volgen! De voorlopige methode die hier wordt uiteengezet bestaat uit het toepassen van onderstaande rekenregels op gekend veronderstelde basislimieten (die bijvoorbeeld zijn bepaald via hun grafiek). 
-% (is boven al gezegd) Afhankelijk van u vooropleiding kent u er eigenlijk al meer van, en afhankelijk van uw huidige opleiding, zal u er misschien in de nabije toekomst veel meer over moeten weten! 
 
-\begin{example}  (Limiet $x\sin\frac 1x$ )
+Volgende limieten kunnen correct worden afgelezen op de grafieken:
+%\begin{proposition} (Basislimieten)
+\begin{align*}
+\limxi \frac 1x & = 0 &
+\rlimx \frac 1x & = +\infty &
+\llimx \frac 1x & = -\infty \\
+\limxi  e^x & = +\infty &
+\limxmi e^x & = 0 \\
+\limxi  \ln x & = +\infty &
+\rlimx  \ln x & = -\infty
+\end{align*}
+\end{proposition}
+
+\begin{remark} \ 
 	
-	TODO   (Uitbreiding?)
+	\begin{enumerate}
+		\item Het is ten zeerste aan te bevelen om waar mogelijk steeds gebruik te maken van de rekenregels die verder worden gezien.
+		\item PAS OP: aflezen op een grafiek werkt enkel als de grafiek betrouwbaar is. In deze cursus gebruiken we de methode ENKEL voor onderstaande basislimieten. In die gevallen kan men ook bewijzen dat de limieten wiskundig exact zijn.
+		\item PAS OP: berekeningen 'in de buurt' werken dikwijls, zoals bv voor $\frac{\sin(0,01)}{0,01}=0,999983\dots$ waaruit volgt dat dus allicht $\limx \frac{\sin x}{x} = 1$. Maar soms zijn berekeningen erg misleidend of volledig foutief. Zie bijvoorbeeld hieronder voor $\limx \sin(1/x)$.
+	\end{enumerate}
+\end{remark}
+
+\begin{example}  (Uitbreiding: limieten van  $\sin\frac 1x$  en $x\sin\frac 1x$ )
+	
+\begin{image}[\textwidth]
+	\begin{tikzpicture}
+	\begin{axis}
+	[
+	axis lines=center,
+	axis equal,
+	ymax=1, ymin=-1,	
+	restrict y to domain=-2:3,
+	extra y ticks={0},
+	legend style={legend pos=south east,font=\small},
+	%	legend style={legend font=\tiny},
+	]
+	%pas op:sin werkt in DEGREE, en niet in RADIAAL;dus sin(deg(x))...!)
+	%	\addplot[domain=0.001:10,semithick,dashed,color=blue] {sin((deg(x)))};
+	%	\addplot[domain=0.001:10,semithick,dotted,color=blue] {x};
+	\addplot[samples=1000, domain=0.001:0.2,color=red] {sin((deg(1/x)))}; 
+	\addplot[samples=50, domain=0.2:2      ,color=red] {sin((deg(1/x)))}; 
+	\legend{$y=\sin(1/x)$};
+	\end{axis}
+	\end{tikzpicture}
+	\quad
+	\begin{tikzpicture}
+	\begin{axis}
+	[
+	axis lines=center,
+	axis equal,
+	ymax=1, ymin=-1,	
+	restrict y to domain=-2:3,
+	extra y ticks={0},
+	legend style={legend pos=south east,font=\small},
+	%	legend style={legend font=\tiny},
+	]
+	%pas op:sin werkt in DEGREE, en niet in RADIAAL;dus sin(deg(x))...!)
+%	\addplot[domain=0.001:10,semithick,dashed,color=blue] {sin((deg(1/x)))};
+%	\addplot[domain=0.001:10,semithick,dotted,color=blue] {x};
+	\addplot[samples=100, domain=0.001:0.2,color=red] {x*sin((deg(1/x)))}; 
+	\addplot[samples=50,  domain=0.2:2,color=red] {x*sin((deg(1/x)))}; 
+	\legend{$y=x\sin(1/x)$};
+	\end{axis}
+	\end{tikzpicture}
+\end{image}
+
+\begin{image}[\textwidth]
+
+	\begin{tikzpicture}
+\begin{axis}
+[
+axis lines=center,
+%axis equal,
+%ymax=10, ymin=-10,	
+%restrict y to domain=-2:3,
+extra y ticks={0},
+legend style={legend pos=south east,font=\small},
+%	legend style={legend font=\tiny},
+]
+%pas op:sin werkt in DEGREE, en niet in RADIAAL;dus sin(deg(x))...!)
+%	\addplot[domain=0.001:10,semithick,dashed,color=blue] {sin((deg(1/x)))};
+%	\addplot[domain=0.001:10,semithick,dotted,color=blue] {x};
+\addplot[samples=500, domain=0.001:50,color=red] {x*sin((deg(x)))}; 
+\legend{$y=x\sin(x)$};
+\end{axis}
+\end{tikzpicture}
+\quad
+	\begin{tikzpicture}
+\begin{axis}
+[
+axis lines=center,
+%axis equal,
+ymax=1, ymin=-1,	
+%restrict y to domain=-2:3,
+extra y ticks={0},
+legend style={legend pos=south east,font=\small},
+%	legend style={legend font=\tiny},
+]
+%pas op:sin werkt in DEGREE, en niet in RADIAAL;dus sin(deg(x))...!)
+%	\addplot[domain=0.001:10,semithick,dashed,color=blue] {sin((deg(1/x)))};
+%	\addplot[domain=0.001:10,semithick,dotted,color=blue] {x};
+\addplot[samples=500, domain=0.001:50,color=red] {sin(deg(x))/x}; 
+\legend{$y=sin(x)/x$};
+\end{axis}
+\end{tikzpicture}
+
+\end{image}
+
+De limiet $\limx \sin(1/x)$ \textit{bestaat niet}, omdat de functie erg snel blijft trillen tussen $-1$ en $1$ rond $x=0$, en dus nooit in de buurt blijft van één bepaald getal. 
+
+Als we vermenigvuldigen met $x$, dan wordt $\limx x\sin(1/x) = 0$, omdat de trilling wordt gedempt rond $x=0$, en de functie zich daar wel concentreert rond  $y=0$.
+
+
+De limieten in $+\infty$ zijn ook duidelijk op de grafiek: $\limxi \sin(1/x) = 0$ en $\limxi x\sin(1/x) = 1$
+
+Zie xxx voor verdere uitleg over deze grafieken.
+
+Bepaal nu zelf volgende limieten op basis van deze grafieken:
+
+
+\def\isA{}
+\def\isB{}
+\def\isC{}
+\def\isD{}
+\def\isE{}
+\def\isF{}
+
+\newcommand{\localoefoptions}{\wordChoice{\choice[\isA]{$+\infty$}\choice[\isB]{$-\infty$}\choice[\isC]{0}\choice[\isD]{1}\choice[\isE]{bestaat niet}\choice[\isF]{andere oplossing}}}
+
+
+\begin{exercise} \def\isC{correct} $\limx x\sin x = $ \localoefoptions \end{exercise}
+\begin{exercise} \def\isD{correct} $\limx \frac{\sin x}{x} = $ \localoefoptions \end{exercise}
+\begin{exercise} \def\isC{correct} $\limxi \frac{\sin x}{x} = $ \localoefoptions \end{exercise}
+\begin{exercise} \def\isE{correct} $\limxi x\sin x = $ \localoefoptions \end{exercise}
+
+
+
+
 \end{example}
 
-\begin{example}  (Limiet $\sin\frac 1x$ )
-	
-	TODO (Uitbreiding?)
-\end{example}
 
 \begin{comment}
 % Zie exercices ...!
@@ -253,7 +414,7 @@ Het is duidelijk dat opties 2 en  3 \textsc{strikt wiskundig niet geldig zijn}. 
 \begin{exercise} \ 
 	Bereken op basis van volgende welbekende grafieken onderstaande limieten
 
-\begin{image}[\textwidth]
+\begin{image}[\textwidth]bestaat niet
 	\begin{tikzpicture}
 		\begin{axis}
 		[
