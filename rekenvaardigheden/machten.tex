@@ -11,7 +11,8 @@
 
 \begin{document}
 \begin{abstract}
-	
+	$(M8)^2 = \sqrt{666}$
+	% Macht in het kwadraat is de wortel van het kwaad ...; needs some explanation !
 \end{abstract}
 \maketitle
 
@@ -45,7 +46,7 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 	
 	Voor $a=0$ en $n>0$ definiëren we $0^n = 0$. 
 	
-	De uitdrukkingen $0^0$ en $0^{-n}$ zijn \textit{onbepaald} en hebben dus \textit{geen} betekenis.
+	De uitdrukkingen $0^0$ en $0^{-n}$ zijn \textit{onbepaald} en hebben dus \textit{geen betekenis}.
 	
 \end{definition}
 
@@ -94,18 +95,20 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 	\begin{align*}
 		x^{m}x^{n}  
 			& = \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{n \text{ factoren}}\cdot \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{m \text{ factoren}} 
-			= \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{n+m \text{ factoren}}
+			\underset{(\cdot \text{ is assoc.})}{=} \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{n+m \text{ factoren}}
 			=  x^{m+n} \\
 		(xy)^{n}  
 		  & = \underbrace{(xy)\cdot (xy)\cdot\ldots \cdot (xy)}_{n \text{ factoren}} 
-			= \underbrace{(x\cdot x\cdot\ldots \cdot x )}_{n \text{ factoren}} \cdot \underbrace{(y\cdot y\cdot\ldots \cdot y)}_{n\text{ factoren}} =  x^ny^n  \\
+			\underset{(\cdot \text{ is assoc. en comm.})}{=} \underbrace{(x\cdot x\cdot\ldots \cdot x )}_{n \text{ factoren}} \cdot \underbrace{(y\cdot y\cdot\ldots \cdot y)}_{n\text{ factoren}} =  x^ny^n  \\
 		(x^m)^{n}  
 		  & = \underbrace{x^m\cdot x^m \cdot\ldots \cdot x^m}_{n \text{ factoren}} 
 		    = \underbrace{\underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}\cdot \underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}\cdot\ldots \cdot \underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}}_{n \text{ factoren}} 
 		    = \underbrace{x\cdot x\cdot\ldots \cdot x}_{n\cdot m\text{ factoren}} 
 		    =  x^{mn}  \\
+		 & \text{ Men kan bovenstaande uitdrukkingen ook bewijzen voor $m,n \in\Z$} \\
 	 	\frac{x^{m}}{x^{n}}    
-	 	  & = x^n \cdot x^{-n}  = x^{m-n}  \\
+	 	  & \underset{(\text{def. $x^{-n}$})}{=} x^m \cdot x^{-n}  
+	 	  \underset{\text{(zie boven!)}}{=} x^{m-n} \\
 	 	\left(\frac{x}{y}\right)^n    
 	 	  & = (x\cdot y^{-1})^n = x^n\cdot y^{-n} = \frac{x^n}{y^n}   
 	\end{align*}
@@ -177,38 +180,47 @@ Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing tam
 
 \end{remark}
 
-\begin{example} Bereken:
+\begin{example} Bereken
  $\frac{4}{\sqrt{8}}= \answer[given]{\sqrt{2}}$
  	\begin{feedback}
  		(want $\frac{2^{2}}{8^{\frac{1}{2}}}=2^{2}(2^{-3})^{\frac{1}{2}}=2^{2-\frac{3}{2}}=
 	2^{\frac{1}{2}}=\sqrt{2}$)
 \end{feedback}
 \end{example}
-\begin{example} Bereken: $\sqrt[3]{8} \cdot \sqrt{64}= \answer[given]{16}$
+\begin{example} Bereken $\sqrt[3]{8} \cdot \sqrt{64}= \answer[given]{16}$
 	\begin{feedback}	(want $\sqrt[3]{8} \cdot \sqrt{64} = 8^{\frac{1}{3}}\cdot \sqrt{8^{2}}=8^{\frac{1}{3}}\cdot8=8^{\frac{1}{3}+1}=8^{\frac{4}{3}}=(\sqrt[3]{8})^4=2^4=16$)
 	\end{feedback}
 \end{example}
 %	Stel $x,y \in \Rnul$ dan geldt:
 
 \begin{example} Bereken 
-	$\frac{\sqrt[4]{x^{3}}}{x}=x^{\frac{3}{4}-1}=x^{\frac{-1}{4}}=\frac{1}{\sqrt[4]{x}}$
+	$\frac{\sqrt[4]{x^{3}}}{x}=\answer[given]{x^{-\frac14}}$
+	\begin{feedback} ( want $\frac{\sqrt[4]{x^{3}}}{x} = x^{\frac{3}{4}-1}=x^{\frac{-1}{4}}=\frac{1}{\sqrt[4]{x}}$ )
+	\end{feedback}
 \end{example}
-\begin{example}
-	$\left(x^{3}\cdot \sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(\sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(x^{\frac{1}{4}}\right)^{2}=x^{6}\cdot x^{\frac{2}{4}}=
-		x^{6+\frac{1}{2}}=x^{\frac{13}{2}}=\sqrt{x^{13}}$
+\begin{example} Bereken 
+	$\left(x^{3}\cdot \sqrt[4]{x}\right)^{2}= \answer[given]{\sqrt{x^13}}$
+	\begin{feedback} ( want $\left(x^{3}\cdot \sqrt[4]{x}\right)^{2} = x^{6}\cdot \left(\sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(x^{\frac{1}{4}}\right)^{2}=x^{6}\cdot x^{\frac{2}{4}}=
+		x^{6+\frac{1}{2}}=x^{\frac{13}{2}}=\sqrt{x^{13}}$ )
+	\end{feedback}
 \end{example}
-\begin{example}
-	$\ds{y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4}=y^{2} \cdot \frac{\left(x^{2}y\right)^{\frac{4}{2}}}{x^{4}y^{4}}=y^{2}\cdot \frac{x^{4}y^{2}}{x^{4}y^{4}}
-		=y^{2} \cdot \frac{1}{y^{2}}=1}$
+\begin{example} Bereken 
+	$y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4}=\answer[given]{1}$ \begin{feedback} (want $y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4} = y^{2} \cdot \frac{\left(x^{2}y\right)^{\frac{4}{2}}}{x^{4}y^{4}}=y^{2}\cdot \frac{x^{4}y^{2}}{x^{4}y^{4}}
+		=y^{2} \cdot \frac{1}{y^{2}}=1$ )
+	\end{feedback}
 	\end{example}
-\begin{example}
-	$\sqrt{48 x^{9}y^{4}}=\sqrt{(16 \cdot 3)(x^{8} \cdot
+\begin{example} Bereken
+	$\sqrt{48 x^{9}y^{4}}= \answer[given]{4 x^{4}y^{2}\sqrt{3x}}$
+		\begin{feedback} (want $\sqrt{48 x^{9}y^{4}} = 
+		\sqrt{(16 \cdot 3)(x^{8} \cdot
 			x)y^{4}}=\sqrt{16 \cdot 3\cdot (x^{4})^{2}\cdot x\cdot
-			(y^{2})^{2}}=4 x^{4}y^{2}\sqrt{3x}$
+			(y^{2})^{2}}=4 x^{4}y^{2}\sqrt{3x}$ )
+		\end{feedback}
 \end{example}
+\todo{Voorbeeld enigszins dubieus zonder verdere uitleg?}
 
 \subsection*{Machten met een strikt positief re\"eel grondtal en een re\"ele exponent}\label{machten-r}
-Men kan ook $a^r$ te definiëren met $a\in\Rnulplus$
+Men kan ook $a^r$ definiëren met $a\in\Rnulplus$
 en $r\in\R$ (dus uitdrukkingen zoals $2^{\sqrt{3}}$, $\pi^{\sqrt{5}}$ en $\sqrt{7}^{\sqrt{\pi}}$). Dit is technisch enigszins subtiel en we zullen de definitie hier
 ook niet in detail geven. 
 
@@ -237,7 +249,7 @@ convergeert. We kunnen dan voor elke $q_n$ in die rij de macht
 $\ds a^{q_n}$ beschouwen. Op die manier bekomen we een nieuwe rij
 $a^{q_1},a^{q_2},a^{q_3},\ldots$ 	
 %%%%%%\rule{0ex}{0ex}\\[-3ex]
-Nu blijkt dat ook deze rij steeds
+Men kan bewijzen dat ook deze rij steeds
 zal convergeren naar een zeker re\"eel getal $s$ en dat deze
 limiet niet afhangt van de keuze van de rij $q_1,q_2,q_3,\ldots$
 die we gebruikt hebben  om $r$ te benaderen. Dit laat ons dan toe
@@ -277,7 +289,7 @@ Zij $x,y>0$ en $m,n\in\RR$. Dan geldt:
 	x^{-n}          &= \frac{1}{x^n}  & \text{(notatie/definitie)}\\
 	\frac{x^{m}}{x^{n}} &= x^{m-n}      & \text{(quotiënt van machten)} \\
 	x^0&=1, \quad x^1=x, \quad x^{-1}=\frac1x \\
-	\sqrt[n]{x^n} & = x = (\sqrt[n]{x})^n
+	\sqrt[m]{x^n} & = x^{\frac{n}{m}} = (\sqrt[m]{x})^n
 \end{align*}
 \end{proposition}
 
