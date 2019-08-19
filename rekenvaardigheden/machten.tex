@@ -15,7 +15,6 @@
 \end{abstract}
 \maketitle
 
-%\subsection{De machtsverheffing: definitie en rekenregels}
 \subsection{Machten met een re\"eel grondtal en een gehele exponent}
 
 Eén manier om de vermenigvuldiging te definiëren is via 'vermenigvuldigen is herhaald optellen': $3\times 2 \perdef 2 + 2+ 2$, en $n\times a = a+a+\dots +a$ ($n$ keer). 
@@ -38,7 +37,7 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 	\end{array}
 	\right.\]
 	
-	We noeme $a$ het \textit{grondtal} en $n$ de \textit{exponent}.
+	We noemen $a$ het \textit{grondtal} en $n$ de \textit{exponent}.
 		
 	We definiëren ook machten met negatieve exponenten:
 	
@@ -59,10 +58,10 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 			\begin{itemize}
 			\item $a^0=$\wordChoice{\choice[correct]{$1$}\choice{$0$}\choice{$a$}} voor alle $a\in\Rnul$.
 			\item $a^1=$\wordChoice{\choice{$1$}\choice{$0$}\choice[correct]{$a$}} voor alle $a\in\R$
-			\item $a^{-1}=\frac{1}{a}$ voor alle $a\in\Rnul$
+			\item $a^{-1}=\frac{1}{a}$ voor alle $a\in$\wordChoice{\choice{$\R$}\choice{$\Rplus$}\choice[correct]{$\Rnul$}}
 			%		\item $0^n=0$ voor alle $n\in\Nnul$.
 			%		\item $0^z$ is niet gedefinieerd voor $z\in\Zmin$.
-			\item $1^z=1$ voor alle $z\in\Z$.
+			\item $1^n=1$ voor alle $n\in$\wordChoice{\choice{$\N$}\choice{$\R$}\choice[correct]{$\Z$}}.
 		\end{itemize}
 	\grapje{\item (Uitweiding) Er is natuurlijk geen enkele reden om 'Y is herhaald X'en' niet verder te herhalen. Zie \link[Wikipedia]{https://nl.wikipedia.org/wiki/Knuths_pijlomhoognotatie} voor meer info.
 	}
@@ -71,10 +70,6 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 
 \begin{proposition}
 	Zij $x,y\in\R$ en $m,n\in\N$. Er geldt:
-%	\[
-%	\def\arraystretch{2.2}
-%	\begin{array}{r@{\ =\ }l@{\qquad}l}
-
 {
 	\savebox\strutbox{$\vphantom{\dfrac11^n}$}   % hack; doesn't work in html
 \begin{align*}
@@ -85,8 +80,7 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 	\frac{x^{m}}{x^{n}}    & = x^{m-n} & \text{als }x\neq0\\
 	\left(\frac{x}{y}\right)^{n} & = \frac{x^{n}}{y^{n}} & \text{als }y\neq0\\
 \end{align*}
-%	\end{array}
-%	\]
+
 	Dezelfde regels gelden voor gehele $m,n\in\Z$ voor zover ze betekenis hebben 
 	\\ (dus: grondtal niet nul als de exponent negatief is).
 	
@@ -95,14 +89,37 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 }
 \end{proposition}
 
-\begin{example} \ 
-	
-	\begin{enumerate}
-	\item $\ds{\left(\left(\frac{1}{2}\right)^{2}\right)^{-3}=\left(\frac{1}{2}\right)^{-6}=2^{6}=64}$
-	\item $\ds{\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)^{2}=\frac{\left(\frac{1}{2}\right)^{2}}{\left(\frac{1}{3}\right)^{2}}=
-		\frac{\frac{1}{4}}{\frac{1}{9}}=\frac{1}{4} \cdot 9=\frac{9}{4}}$
-\end{enumerate}
-\end{example}
+\begin{proof} We geven enkel het bewijs voor $m,n\in\N$, en dat bestaat telkens uit een eenvoudige toepassing van de definitie en de rekenregels voor producten (dus: commutativiteit en associativiteit):
+	\begin{align*}
+		x^{m}x^{n}  
+			& = \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{n \text{ factoren}}\cdot \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{m \text{ factoren}} 
+			= \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{n+m \text{ factoren}}
+			=  x^{m+n} \\
+		(xy)^{n}  
+		  & = \underbrace{(xy)\cdot (xy)\cdot\ldots \cdot (xy)}_{n \text{ factoren}} 
+			= \underbrace{(x\cdot x\cdot\ldots \cdot x )}_{n \text{ factoren}} \cdot \underbrace{(y\cdot y\cdot\ldots \cdot y)}_{n\text{ factoren}} =  x^ny^n  \\
+		(x^m)^{n}  
+		  & = \underbrace{x^m\cdot x^m \cdot\ldots \cdot x^m}_{n \text{ factoren}} 
+		    = \underbrace{\underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}\cdot \underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}\cdot\ldots \cdot \underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}}_{n \text{ factoren}} 
+		    = \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{n\cdot m\text{ factoren}} 
+		    =  x^{mn}  \\
+	 	\frac{x^{m}}{x^{n}}    
+	 	  & = x^n \cdot x^{-n}  = x^{m-n}  \\
+	 	\left(\frac{x}{y}\right)^n    
+	 	  & = (x\cdot y^{-1})^n = x^n\cdot y^{-n} = \frac{x^n}{y^n}   
+	\end{align*}
+\end{proof}
+
+\begin{example} 
+	$\left(\left(\frac{1}{2}\right)^{2}\right)^{-3}=\answer[given]{64}$
+	\begin{feedback} (want $\left(\left(\frac{1}{2}\right)^{2}\right)^{-3} = \left(\left(2^{-1}\right)^{2}\right)^{-3} = 2^{(-1)\cdot2\cdot6} = 2^6 = 64$ )
+	\end{feedback}
+\end{example}	
+\begin{example} $\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)^{2}= \answer[given]{\frac{9}{4}}$
+	\begin{feedback}
+     (want $\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)^{2} = \frac{\left(2^{-1}\right)^{2}}{\left(3^{-1}\right)^{2}}= 2^{-2}\cdot3^2= \frac{9}{4}$)
+	\end{feedback}
+\end{example}	
 
 \subsection{Machten met een strikt positief re\"eel grondtal en een rationale exponent}
 
@@ -111,20 +128,13 @@ Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing tam
 
 \begin{definition}(Machtsverheffing met grondtal in \Rplus\ en exponent in \Q)
 	
-	%%%%%%\rule{0ex}{0ex}\\[-3ex]
-	
 	Zij $a,b\in\Rplus$ en $n\in\Nnul$, $m\in\Z$. 
 	
 	De macht $a^{\frac{1}{n}}$ met grondtal $a$ en exponent $\ds\frac{1}{n}$ wordt
 	gedefinieerd als het uniek positief re\"eel getal $b$ waarvan de $n$-de
 	macht gelijk is aan $a$:
 	\[b = a^\frac 1n \iff b^n = a\]
-%	\[\left\{
-%	\begin{array}{l}
-%	\ds a^{\frac{1}{n}}\geq 0\textrm{\ \ \ en}\\
-%	\ds\left(a^{\frac{1}{n}}\right)^n=a.\\
-%	\end{array}
-%	\right.\] 
+
 	
 	We noemen $a^{\frac{1}{n}}$ de \textit{$n$-de machtswortel }uit $a$, of de $n$-de wortel uit $a$ en noteren
 	\[
@@ -137,13 +147,13 @@ Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing tam
 \begin{remark} \ 
 \begin{enumerate}
 	\item Voor $n=2$ schrijven we gewoon $\sqrt{a}$ in plaats van $\sqrt[2]{a}$.
-	\item (Uitbreiding) We hebben ons in deze definitie beperkt tot positieve grontallen. Voor negatieve grondtallen is de definitie van machten met rationale exponenten wat subtieler, en we zullen er hier niet verder op ingaan. Het kan volstaan op te merken dat $-8$ geen vierkantswortel heeft, maar wel een (negatieve!) derdemachtswortel (namelijk $-2$, want $(-2)^3 = -8$). Maar, als we negatieve wortels toelaten, dan heeft $4$ weer twee mogelijke wortels, namelijk $2$ en $-2$. Als we complexe getallen toelaten, verandert de situatie weer.
+	\item (Uitbreiding) We hebben ons in deze definitie beperkt tot positieve grondtallen. Voor negatieve grondtallen is de definitie van machten met rationale exponenten wat subtieler, en we zullen er hier niet verder op ingaan. Het kan volstaan op te merken dat $-8$ geen vierkantswortel heeft, maar wel een (negatieve!) derdemachtswortel (namelijk $-2$, want $(-2)^3 = -8$). Maar, als we negatieve wortels toelaten, dan heeft $4$ weer twee mogelijke wortels, namelijk $2$ en $-2$. Als we complexe getallen toelaten, verandert de situatie weer. \todo{Zie xxx ?}
 \end{enumerate}
 \end{remark}
 \begin{example} \ 
 	
 	\begin{enumerate}
-	\item  We hebben volgende gevolgen:
+	\item  Onmiddellijke gevolgen van de definities:
 	\begin{itemize}
 %		\item $\ds a^{\frac{1}{n}}=\sqrt[n]{a}$ voor alle $a\in\Rnulplus$ en alle 	$n\in\Nnul$, i.h.b.~hebben we
 %		\item $\ds a^{\frac{1}{2}}=\sqrt{a}$ voor alle $a\in\Rnulplus$.
@@ -202,7 +212,9 @@ $n\to\infty$\rq\ of met $\lim_{n\to\infty}q_n=r$.
 Stel nu dat $q_1,q_2,q_3,\ldots$ zo'n rij is die naar $r$
 convergeert. We kunnen dan voor elke $q_n$ in die rij de macht
 $\ds a^{q_n}$ beschouwen. Op die manier bekomen we een nieuwe rij
-$a^{q_1},a^{q_2},a^{q_3},\ldots$ Nu blijkt dat ook deze rij steeds
+$a^{q_1},a^{q_2},a^{q_3},\ldots$ 	
+%%%%%%\rule{0ex}{0ex}\\[-3ex]
+Nu blijkt dat ook deze rij steeds
 zal convergeren naar een zeker re\"eel getal $s$ en dat deze
 limiet niet afhangt van de keuze van de rij $q_1,q_2,q_3,\ldots$
 die we gebruikt hebben  om $r$ te benaderen. Dit laat ons dan toe
