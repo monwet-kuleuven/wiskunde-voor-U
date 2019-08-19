@@ -78,6 +78,7 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 	\left(x^{m}\right)^{n} & = x^{mn}  & \text{(macht van een macht)} \\
 	\\
 	\frac{x^{m}}{x^{n}}    & = x^{m-n} & \text{als }x\neq0\\
+	\\
 	\left(\frac{x}{y}\right)^{n} & = \frac{x^{n}}{y^{n}} & \text{als }y\neq0\\
 \end{align*}
 
@@ -101,7 +102,7 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 		(x^m)^{n}  
 		  & = \underbrace{x^m\cdot x^m \cdot\ldots \cdot x^m}_{n \text{ factoren}} 
 		    = \underbrace{\underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}\cdot \underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}\cdot\ldots \cdot \underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}}_{n \text{ factoren}} 
-		    = \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{n\cdot m\text{ factoren}} 
+		    = \underbrace{x\cdot x\cdot\ldots \cdot x}_{n\cdot m\text{ factoren}} 
 		    =  x^{mn}  \\
 	 	\frac{x^{m}}{x^{n}}    
 	 	  & = x^n \cdot x^{-n}  = x^{m-n}  \\
@@ -147,13 +148,23 @@ Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing tam
 \begin{remark} \ 
 \begin{enumerate}
 	\item Voor $n=2$ schrijven we gewoon $\sqrt{a}$ in plaats van $\sqrt[2]{a}$.
-	\item (Uitbreiding) We hebben ons in deze definitie beperkt tot positieve grondtallen. Voor negatieve grondtallen is de definitie van machten met rationale exponenten wat subtieler, en we zullen er hier niet verder op ingaan. Het kan volstaan op te merken dat $-8$ geen vierkantswortel heeft, maar wel een (negatieve!) derdemachtswortel (namelijk $-2$, want $(-2)^3 = -8$). Maar, als we negatieve wortels toelaten, dan heeft $4$ weer twee mogelijke wortels, namelijk $2$ en $-2$. Als we complexe getallen toelaten, verandert de situatie weer. \todo{Zie xxx ?}
-\end{enumerate}
-\end{remark}
-\begin{example} \ 
+	\item De bovenstaande definitie is enkel zinvol als er inderdaad een dergelijk uniek positief reëel getal $b$ bestaat. Precies om dat te garanderen, hebben we ons beperkt tot \textsc{positieve} $a$ en $b$. Voor negatieve grondtallen is de situatie subtieler. We bespreken het kort in volgende uitweiding:
+	\begin{uitweiding}
+		\begin{expandable}
+	Voor negatieve grondtallen is de definitie van machten met rationale exponenten wat subtieler, en we zullen er hier niet verder op ingaan. Het kan volstaan op te merken dat $-8$ geen vierkantswortel heeft, maar wel een (negatieve!) derdemachtswortel (namelijk $-2$, want $(-2)^3 = -8$). Maar, als we negatieve wortels toelaten, dan heeft $4$ weer twee mogelijke wortels, namelijk $2$ en $-2$.  
+			
+	De definitie gebruikt een veel voorkomend wiskundig paradigma: we willen een nieuw begrip $X$  definiëren door een voorwaarde te geven waaraan $X$ moet voldoen. Als we ten eerste kunnen bewijzen dat er inderdaad zo'n $X$ bestaat (existentie), en ten tweede dat zo'n $X$ uniek is (uniciteit), dan hebben we een goede definitie (we zeggen: 'begrip $X$ is goed gedefinieerd').
 	
+	Voorbeelden:
 	\begin{enumerate}
-	\item  Onmiddellijke gevolgen van de definities:
+		\item Definitie van \textit{negatieve getallen}: als $a\in\N$, dan definiëren we $-a$ als het unieke getal $b$ zodat $a + b = 0$. 
+		\item Definitie van \textit{logaritme}: als $a,x\in\Rplus$, dan definiëren we ${}^a\log(x)$ als het unieke getal $b$ zodat $a^b = x$.  
+		\item Niet-voorbeeld voor \textit{vierkantswortel}: als $a\in\R$ dan zouden we naiefweg de vierkantswortel $\sqrt{a}$ kunnen proberen definëren als het unieke reëel getal $b\in\R$ zodat $b^2 = a$. Deze definitie is fout,  ten eerste omdat voor negatieve $a$ een dergelijke $b$ niet bestaat, en ten tweede omdat er voor positieve $a$ steeds twee dergelijke $b$'s zijn (namelijk een positieve en een negatieve 'vierkantswortel'). In bovenstaande definitie is dit probleem opgelost door zowel $a$ als $b$ te beperken tot \textit{positieve} reële getallen: in dat geval hebben we zowel existentie als uniciteit. Maar, de oplossing voldoet niet helemaal, want we zouden graag vierkantswortles kunne trekken uit negatieve getallen. Dat kan, als we complexe getallen toelaten. Maar, dan wordt de uniciteit problematisch: voor complexe getallen heeft het begrip '\textit{positieve} wortel' dan weer geen betekenis meer. Miserie miserie. \todo{referentie wortels van complexe getallen toevoegen ?}
+	\end{enumerate}
+\end{expandable}
+\end{uitweiding}
+
+ \item Onmiddellijke gevolgen van de definities:
 	\begin{itemize}
 %		\item $\ds a^{\frac{1}{n}}=\sqrt[n]{a}$ voor alle $a\in\Rnulplus$ en alle 	$n\in\Nnul$, i.h.b.~hebben we
 %		\item $\ds a^{\frac{1}{2}}=\sqrt{a}$ voor alle $a\in\Rnulplus$.
@@ -161,29 +172,41 @@ Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing tam
 		\item $\ds a^{\frac{m}{n}}=\left(\sqrt[n]{a}\right)^m=\sqrt[n]{a^m}$ voor alle $a\in\Rnulplus$, alle $m\in\Z$ en alle $n\in\Nnul$
 		\item $1^q=1$ voor alle $q\in\Q$.
 	\end{itemize}
+	\end{enumerate}
 
-	\item $\frac{4}{\sqrt{8}}=\frac{2^{2}}{8^{\frac{1}{2}}}=\frac{2^{2}}{(2^{3})^{\frac{1}{2}}}=2^{2-\frac{3}{2}}=
-	2^{\frac{1}{2}}=\sqrt{2}$
-	\item
-$\sqrt[3]{8} \cdot \sqrt{64}=8^{\frac{1}{3}}\cdot \sqrt{8^{2}}=8^{\frac{1}{3}}\cdot8=8^{\frac{1}{3}+1}=8^{\frac{4}{3}}=(\sqrt[3]{8})^4=2^4=16$
-\end{enumerate}
-	Stel $x,y \in \Rnul$ dan geldt:
-\begin{enumerate}[resume]
-	\item
-	$\ds{\frac{\sqrt[4]{x^{3}}}{x}=x^{\frac{3}{4}-1}=x^{\frac{-1}{4}}=\frac{1}{\sqrt[4]{x}}}$
-	\item
-	$\ds{\left(x^{3}\cdot \sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(\sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(x^{\frac{1}{4}}\right)^{2}=x^{6}\cdot x^{\frac{2}{4}}=
-		x^{6+\frac{1}{2}}=x^{\frac{13}{2}}=\sqrt{x^{13}}}$
-	\item
+
+\end{remark}
+
+\begin{example} Bereken:
+ $\frac{4}{\sqrt{8}}= \answer[given]{\sqrt{2}}$
+ 	\begin{feedback}
+ 		(want $\frac{2^{2}}{8^{\frac{1}{2}}}=2^{2}(2^{-3})^{\frac{1}{2}}=2^{2-\frac{3}{2}}=
+	2^{\frac{1}{2}}=\sqrt{2}$)
+\end{feedback}
+\end{example}
+\begin{example} Bereken: $\sqrt[3]{8} \cdot \sqrt{64}= \answer[given]{16}$
+	\begin{feedback}	(want $\sqrt[3]{8} \cdot \sqrt{64} = 8^{\frac{1}{3}}\cdot \sqrt{8^{2}}=8^{\frac{1}{3}}\cdot8=8^{\frac{1}{3}+1}=8^{\frac{4}{3}}=(\sqrt[3]{8})^4=2^4=16$)
+	\end{feedback}
+\end{example}
+%	Stel $x,y \in \Rnul$ dan geldt:
+
+\begin{example} Bereken 
+	$\frac{\sqrt[4]{x^{3}}}{x}=x^{\frac{3}{4}-1}=x^{\frac{-1}{4}}=\frac{1}{\sqrt[4]{x}}$
+\end{example}
+\begin{example}
+	$\left(x^{3}\cdot \sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(\sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(x^{\frac{1}{4}}\right)^{2}=x^{6}\cdot x^{\frac{2}{4}}=
+		x^{6+\frac{1}{2}}=x^{\frac{13}{2}}=\sqrt{x^{13}}$
+\end{example}
+\begin{example}
 	$\ds{y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4}=y^{2} \cdot \frac{\left(x^{2}y\right)^{\frac{4}{2}}}{x^{4}y^{4}}=y^{2}\cdot \frac{x^{4}y^{2}}{x^{4}y^{4}}
 		=y^{2} \cdot \frac{1}{y^{2}}=1}$
-	\item
-	$\ds{\sqrt{48 x^{9}y^{4}}=\sqrt{(16 \cdot 3)(x^{8} \cdot
+	\end{example}
+\begin{example}
+	$\sqrt{48 x^{9}y^{4}}=\sqrt{(16 \cdot 3)(x^{8} \cdot
 			x)y^{4}}=\sqrt{16 \cdot 3\cdot (x^{4})^{2}\cdot x\cdot
-			(y^{2})^{2}}=4 x^{4}y^{2}\sqrt{3x}}$
-	
-\end{enumerate}
+			(y^{2})^{2}}=4 x^{4}y^{2}\sqrt{3x}$
 \end{example}
+
 \subsection*{Machten met een strikt positief re\"eel grondtal en een re\"ele exponent}\label{machten-r}
 Men kan ook $a^r$ te definiëren met $a\in\Rnulplus$
 en $r\in\R$ (dus uitdrukkingen zoals $2^{\sqrt{3}}$, $\pi^{\sqrt{5}}$ en $\sqrt{7}^{\sqrt{\pi}}$). Dit is technisch enigszins subtiel en we zullen de definitie hier
@@ -193,7 +216,7 @@ Wie toch nieuwsgierig is kan volgende uitweiding lezen:
 
 
 \begin{uitweiding}
-
+	\begin{expandable}
 Details vind je in wat meer gevorderde cursussen wiskunde, maar hier schetsen we kort \'{e}\'{e}n mogelijke manier om een precieze betekenis te geven
 aan de uitdrukking $a^r$ met $a\in\Rnulplus$ en $r\in\R$.
 
@@ -220,7 +243,7 @@ limiet niet afhangt van de keuze van de rij $q_1,q_2,q_3,\ldots$
 die we gebruikt hebben  om $r$ te benaderen. Dit laat ons dan toe
 om de macht $a^r$ te defini\"eren als dat getal $s$ dat je op die
 manier bekomt en dat enkel afhangt van $a$ en $r$.
-
+\end{expandable}
 \end{uitweiding}
 
 Ook voor machten met re\"ele exponenten (en dus i.h.b.~voor
