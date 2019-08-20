@@ -1,0 +1,220 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\author{Zomercursus KU Leuven}
+\outcome{grafieken, formules van functies}
+
+
+\title{Voorstellingswijzen van functies}
+
+
+\begin{document}
+\begin{abstract}
+
+\end{abstract}
+\maketitle  
+
+\tikzstyle{fctie} = [rectangle, draw, fill=blue!20, node distance=1cm, text width=10em, text centered, rounded corners, minimum height=3em, thick]
+\tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=4em, text centered, minimum height=2em, thick]
+
+
+% \section{Voorstellingswijzen van functies}
+In de wiskunde ligt het dikwijls voor de hand om functies te definiëren via formules. Dat is zelfs zozeer het geval, dat er soms geen onderscheid meer wordt gemaakt tussen 'een formule voor een bepaalde functie' en 'een functie gedefinieerd door een bepaalde formule', hoewel het eigenlijk twee totaal verschillende dingen zijn. 
+
+Een formule is een reeks symbolen die aan bepaalde regels voldoet (bijvoorbeeld $x^2 + a^2x + 7$ is een goede formule, maar $x-+8(a7)$ is dat niet), terwijl een functie een ding is waar je \textit{iets} instopt en er dan \textit{ietsanders} uithaalt. Maar, veel formules kunnen direct worden gebruikt om er een functie mee te maken, en nogal wat functies kunnen met een formule worden berekend. 
+
+Toch zijn er nog vele andere manieren om functies te definiëren, voor te stellen of te beschrijven. We sommen er enkele op:
+
+\subsection{Opsomming en verzamelingen}
+Voorbeelden van \textbf{opsomming} en een \textbf{verzamelingvoorstelling}:
+
+
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\begin{tabular}{lcl}
+    $f(a)$ & = & $1$ \\
+    $f(b)$ & = & $2$ \\
+    $f(c)$ & = & $3$ \\
+    $f(d)$ & = & $3$ \\
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+\subsection{Tabel}
+Voorbeelden van een \textbf{tabelvoorstelling}:
+
+\begin{center}
+    \begin{tabular}[t]{| c | c |}
+        \hline
+        $x$   &  $f_1(x) = x + 5$  \\
+        \hline
+        -2   & 3  \\
+        -1   & 4  \\
+        0    & 5  \\
+        1    & 6  \\
+        2    & 7  \\
+        \hline
+        
+    \end{tabular}
+    \qquad 
+    \begin{tabular}[t]{| c | c |}
+        \hline
+        $x$   &  $f_2(x) = x^2$ \\
+        \hline
+        -2   &  4 \\
+        -1   &  1 \\
+        0    &  0 \\
+        1    &  1 \\
+        2    &  4 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+\subsection{Formule}
+Voorbeelden van een \textbf{formulevoorstelling}:
+
+
+\begin{tabular}[t]{l l l}
+    & Functie   &  Formule \\
+    \hline \\
+    & 'kwadrateer'                & $f(x) = x^2$ \\
+    & 'vierkantswortel'           & $f(x) = \sqrt{x}$ \\
+    & 'vierkantswortel plus acht' & $f(x) = \sqrt{x} + 8$ \\
+    & 'plus 5'                    & $f(x) = x + 5$ \\
+    & 'sinus van de dubbele hoek' & $f(x) = \sin(2x)$ \\
+\end{tabular}
+
+
+\subsection{Samengesteld functievoorschrift}
+Voorbeelden van een \textbf{samengestelde functievoorschrift}:
+\[  f(x) =  \left\{
+\begin{array}{ll}
+0 & x\leq 0 \\
+\frac{x}{2} & 0 \leq x\leq 2 \\
+1 & 2\leq x \\
+\end{array} 
+\right. \]
+
+
+\subsection{Grafiek}
+Voorbeelden van een \textbf{grafische voorstelling}:
+
+
+\begin{figure}%[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+
+\begin{tikzpicture}
+\begin{axis}[
+axis equal,
+axis lines=middle, ymin=-3,
+ylabel=$y$, 
+xlabel=$x$
+]
+\addplot[domain=-15:10, black, ultra thick] {x+5};
+\end{axis}
+\end{tikzpicture}
+
+
+        \caption{$f(x) = x + 5$}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+
+\begin{tikzpicture}
+\begin{axis}[
+axis equal,
+axis x line=middle, 
+axis y line=middle, 
+ylabel=$y$, 
+xlabel=$x$
+]
+\addplot[domain=-10:10, black, ultra thick
+] {x^2/10};
+\end{axis}
+\end{tikzpicture}
+
+        \caption{$f(x) = x^2/10$}
+    \end{minipage}
+\end{figure}
+
+
+\subsubsection{(Uitbreiding) Alternatieve grafische voorstellingen}
+
+De grafiek van een functie is in een aantal gevallen een bijzonder handig middel om de functie beter te begrijpen. Maar, in sommige gevallen zijn andere grafische voorstellingswijzen veel handigen. En, voor niet-reële functies werkt een klassieke grafiek meestal niet.
+
+Voorbeelden van een \textbf{alternatieve grafische voorstelling}:
+
+
+TODO !
+\begin{figure}%[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        
+%        \begin{tikzpicture}
+%        \begin{axis}[
+%        axis y line=none, xmin=-10, xmax=10,
+%        xlabel=$x$
+%        ]
+%    %    \addplot[domain=-15:10, black, ultra thick] {x+5};
+%        \end{axis}
+%        \begin{axis}[
+%        axis y line=none, xmin=-10, xmax=10,
+%        axis x position=top,
+%        xlabel=$x$
+%        ]
+%        %    \addplot[domain=-15:10, black, ultra thick] {x+5};
+%        \end{axis}
+%        \end{tikzpicture}
+        
+        
+        \caption{$f(x) = x + 5$}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        
+        \begin{tikzpicture}
+        \begin{axis}[
+        axis equal,
+        axis x line=middle, 
+        axis y line=middle, 
+        ylabel=$y$, 
+        xlabel=$x$
+        ]
+        \addplot[domain=-10:10, black, ultra thick
+        ] {x^2/10};
+        \end{axis}
+        \end{tikzpicture}
+        
+        \caption{$f(x) = x^2/10$}
+    \end{minipage}
+\end{figure}
+
+
+
+
+\end{document}

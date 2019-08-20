@@ -1,0 +1,136 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\author{Zomercursus KU Leuven}
+\outcome{grafieken van transformaties van een functie kunnen herkennen}
+\outcome{grafieken van transformaties van een functie kunnen maken}
+
+
+\title{Transformaties van een functie}
+
+
+\begin{document}
+\begin{abstract}
+
+\end{abstract}
+\maketitle  
+
+\tikzstyle{fctie} = [rectangle, draw, fill=blue!20, node distance=1cm, text width=10em, text centered, rounded corners, minimum height=3em, thick]
+\tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=4em, text centered, minimum height=2em, thick]
+
+% to be moved to own doculent ...?
+\section{Som, verschil, product en quotiënt van reële functies}
+
+
+\section{Samenstellen van functies}
+
+\subsection{Definitie}
+In de 'een functie is een machine' analogie betekent de 'functies samenstellen' gewoon twee machines achter elkaar plaatsen. 
+
+
+\subsection{(Uitbreiding) Het verschil tussen $f$ en $f(x)$}
+
+Men stelt vast dat er allerlei subtiele subtiliteiten verstopt zitten in het dagdagelijks gebruik van de symbolen $f$ (als naam van een functie) en $f(x)$ (in principe als functiewaarde van $f$ in $x$, maar veelal ook als synoniem voor de functie $f$). Het probleem manifesteert zich erg duidelijk bij de 'functie' $x\mapsto x^2$, die we meestal noteren als '$x^2$', maar ook bij de sinusfunctie, die meestal genoteerd wordt met $\sin x$. We noemen de functie dus $\sin x$, en niet sin. Iedereen kan eenvoudig nagaan dat in erg veel situaties met een symbool van het type $f(x)$ wel degelijk een functie wordt bedoeld, en niet de functiewaarde in één of ander (willekeurig) getal $x$.
+\\
+
+De dubbelzinnigheid rond de functies kan echter relatief eenvoudig beperkt worden tot een veelal toch al aanwezige dubbelzinnigheid in het gebruik van het symbool $x$. De letter $x$ wordt inderdaad in een wiskundige teksten gebruikt voor in principe erg verschillende concepten. 
+\\
+
+Zo kan $x$ een 'willekeurig element' zijn van een bepaalde verzameling, bijvoorbeeld in de formulering van een eigenschap: Zij $x\in\R$.
+
+Maar $x$ kan ook een 'onbekende' zijn, bijvoorbeeld bij het oplossen van vergelijkingen: zoek $x$ zodat $x^2+2x+1=0$. 
+
+Verder kan $x$ ook gewoon een letter zijn, bijvoorbeeld in de formule $(x+y)^2 = x^2+2xy+y^2$. (Die formule is veel algemener geldig dan bijvoorbeeld enkel voor 'willekeurige reële getallen $x$ en $y$'!)
+
+Tenslotte kan $x$ ook een 'variabele' zijn, bijvoorbeeld in de uitdrukking $f:x\mapsto f(x)$. (Het lijkt trouwens niet volledig triviaal om ergens een wiskundig zinvolle en praktisch bruikbare definitie te vinden van het begrip 'variabele'...! In deze cursus zal je ze allicht niet vinden?)
+
+
+\begin{definition} (Definitie van $x$ als de identieke functie)
+    
+    Zij $A$ een willekeurige verzameling. Dan noteren we met $x$ de identieke functie op $A$, dus
+    $$
+    x:A \to A,\quad y \mapsto x(y) = y
+    $$
+\end{definition}
+Merk op dat hier gekozen is om een willekeurig element van $A$ met de letter $y$ aan te duiden, maar met een klein misbruik van notatie (we gebruiken de letter $x$ in dezelfde formule in twee verschillende betekenissen) kunnen we ook schrijven:
+$$
+    x:A \to A,\quad x \mapsto x(x) = x
+$$
+Dus, $x$ is de functie die elk element op zichzelf afbeeldt. Eigenlijk moeten we schrijven $x_A$, want elke verzameling $A$ heeft natuurlijk haar eigen identieke functie. Per misbruik van notatie zullen we ze echter allemaal $x$ noemen. In geval van nood moet uit de context blijken voor welke $A$ we de functie $x$ precies nodig hebben.
+\\
+
+Met deze definitie hebben we de volgende merkwaardige stelling:
+\begin{proposition} (Gelijkheid van $f$ en $f(x)$ als functies)
+    
+    Zij $f:A\to B$ een functie. Dan geldt    
+    $$
+    f = fx = f\circ x = f(x)
+    $$
+    als gelijkheden van functies van $A$ naar $B$.
+\end{proposition}
+Bewijs: triviaal.
+
+Als gevolg van deze stelling is het toegelaten om bij het spreken over functies zowel over $f$ als over $f(x)$ te spreken. De dubbelzinnigheid rond het gebruik van de letter $x$ blijft natuurlijk wel bestaan, en de preciese betekenis moet telkens blijken uit de context.
+
+
+\section{Inverse functies}
+
+Als een functie bijectief is, kunnen we ze ook 'omkeren', of 'ongedaan maken': als we $b=f(a)$ hebben berekend, dan is die $a$ het enige element dat op $b$ wordt afgebeeld, en kunnen we dus een nieuwe functie definiëren, die we noteren met 
+$$f^{-1}: B \rightarrow A$$ 
+die $b$ afbeeldt op $a$, dus $f^{-1}(b) = a$.
+
+Met de functie $f^{-1}$ kunnen we dus de functie $f$ 'ongedaan maken': $f^{-1}(f(a)) = a$.
+
+In de 'een functie is een machine' analogie betekent de 'inverse functie' de machine in de omgekeerde richting doen draaien: van de output (terug) een input maken. Het is duidelijk dat dit voor de meeste machines onmogelijk is, net zoals de meeste functies geen inverse hebben. Maar, als functies een inverse hebben, is dat bijna altijd zeer interessant gegeven dat nadere studie vereist. En, soms kunnen we functies die geen inverse hebben toch wat manipuleren zodat er toch een soort van inverse kan gedefinieerd worden.
+
+\section{Transformaties van reële functies}
+
+\subsection{Motivatie}
+
+Voorbeelden: Bestudeer het verband tussen de (grafieken van) de volgende functies: 
+
+$f(x)$, $f(ax+b)$, $f(1/x)$, $af(x)+b$, $1/f(x)$
+
+
+(Hint: gebruik geogebra op http://)
+
+\subsection{(Uitbreiding) Wiskundige formulering}
+
+Zij $f:A\subset\R\to \R$ een reële functie.
+
+Zij $t:D \subset\R \to C\subset\R$ een reële functie, die we de \textit{transformatiefunctie} zullen noemen.
+
+\begin{center}
+\tikzstyle{fctie} = [rectangle, draw, fill=blue!30, node distance=1cm, text width=3em, text centered, rounded corners, minimum height=3em, thick]
+\tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=3em, text centered, minimum height=2em, thick]
+    
+\begin{tikzpicture}[]
+    \node [inpt] (input)  {Input $x$};
+    \node[fctie, right=of input, font=\Large\bfseries,fill=blue!10]     (functie1)  {t};
+    \node [inpt, right=of functie1] (output1)  {$t(x)$};
+    \node[fctie, right=of output1,font=\Large\bfseries]   (functie2)  {f};
+    \node [inpt, right=of functie2] (output) {Output $f(t(x))$ };  
+    \draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
+\end{tikzpicture}
+\begin{tikzpicture}[]
+    \node [inpt] (input)  {Input $x$};
+    \node[fctie, right=of input, font=\Large\bfseries]     (functie1)  {f};
+    \node [inpt, right=of functie1] (output1)  {$f(x)$};
+    \node[fctie, right=of output1,font=\Large\bfseries,fill=blue!10]   (functie2)  {t};
+    \node [inpt, right=of functie2] (output) {Output $t(f(x))$ };  
+    \draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
+\end{tikzpicture}
+\end{center}
+
+Voor enkele speciale types van transformatiefuncties $t$ kan de grafiek van $f\circ t$ en $t\circ f$ eenvoudig worden bepaald op basis van de grafiek van $f$.
+\\
+
+In het eerste geval, $f(t(x))$ passen we de transformatie toe \textit{binnen} de functie $f$, dus op de \textit{onafhankelijke} variable $x$. De transformatie  $t$ werkt dus \textbf{op de $x$-as} van de grafiek.
+\\
+
+In het tweede geval, $t(f(x))$ passen we de transformatie toe \textit{buiten} de functie $f$, dus op de \textit{afhankelijke} variable $y$ (want $y=f(x)$, en dus moeten we  $t(f(x)$, dus $t(y)$ berekenen. De transformatie $t$ werkt dus \textbf{op de $y$-as} van de grafiek.
+
+\subsection{Voorbeelden}
+
+
+\end{document}
