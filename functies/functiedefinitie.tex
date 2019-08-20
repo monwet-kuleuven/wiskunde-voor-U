@@ -8,84 +8,21 @@
 \title{Functies}
 
 
-%\documentclass[10pt]{article}
-%\setlength{\parindent}{0pt}
-%
-%\usepackage[utf8]{inputenc}
-%%\usepackage[T1]{fontenc}
-%
-%
-%
-%\usepackage{amsmath}
-%\usepackage{amsthm}
-%\usepackage{amssymb}
-%%\usepackage{enumerate}
-%\usepackage[margin=2cm]{geometry}
-%\usepackage{ulem}
-%\usepackage[dutch]{babel}
-%\usepackage{fancyhdr}
-%%\pagestyle{fancy}
-%%\usepackage{enumitem}
-%
-%\usepackage{pgfplots}
-%\usepackage{float}
-%
-%\newcommand{\N}{\mathbb{N}}
-%\newcommand{\Z}{\mathbb{Z}}
-%\newcommand{\Q}{\mathbb{Q}}
-%\newcommand{\R}{\mathbb{R}}
-%\newcommand{\bD}{\mathbf{D}}
-%\newcommand{\dd}{\mathrm{d}}
-%\newcommand{\ab}{\left[ a, b\right]}
-%
-%\theoremstyle{definition}
-%\newtheorem{eigenschap}{Eigenschap}
-%\newtheorem{opgave}{Opgave}
-%\newtheorem{definitie}{Definitie}
-%\newtheorem{stelling}{Stelling}
-%
-%\pagenumbering{gobble}
-%
-%
-%\usepackage{tikz}
-\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
-
-\usetikzlibrary{fit,% <--- added
-	positioning,    
-	shapes,decorations.markings}% <--- added
-%% https://tex.stackexchange.com/a/39282/121799
-%\tikzset{->-/.style={decoration={
-%			markings,
-%			mark=at position .5 with {\arrow{>}}},postaction={decorate}}}
-%\tikzset{-<>-/.style={decoration={
-%			markings,
-%			mark=at position .33 with {\arrow{<}},
-%			mark=at position .67 with {\arrow{>}}},postaction={decorate}}
-%}
+\begin{document}
 
 \tikzstyle{fctie} = [rectangle, draw, fill=blue!20, node distance=1cm, text width=10em, text centered, rounded corners, minimum height=3em, thick]
 \tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=4em, text centered, minimum height=2em, thick]
+    
 
-
-\begin{document}
-
-	
-	\section*{Wat is een \textit{functie}}
-\begin{footnotesize}
-
-In de wiskundelessen van het secundair onderwijs wordt veel aandacht besteed aan \textit{functies}, maar toch blijven sommigen moeite hebben met dat begrip. Ziehier dus een uitleg over \textit{functies}, bedoeld voor wie er al wat over gehoord en geleerd heeft, maar niet helemaal zeker is of hij alles goed heeft begrepen.
-% (en, ook wel voor wie er helemaal zeker van is dat hij of zij het zeker nog  helemaal niet heeft begrepen.)\footnote{De voorgaande zin is gegarandeerd de meest moeilijke uit de hele tekst. Vanaf hier wordt het alleen maar gemakkelijker.}
-\end{footnotesize}
-
-%	\tableofcontents
-%	\newpage
+%    \tableofcontents
+%    \newpage
 
 \section{Inleidende definities en eigenschappen}
 
 \subsection{(Pseudo-)definitie van het begrip functie}
 
 \begin{definition} (Pseudo-definitie van het begrip functie)
-	
+    
 Een  \textit{functie} is een wiskundig object dat met een \textit{iets} telkens een \textit{ietsanders} laat overeenkomen. 
 \end{definition}
 
@@ -146,7 +83,7 @@ en dus voor deze functie $k$ geldt dat $k(2)=4$ en $k(4)=16$.
 \end{center}
 
 %\begin{remark}
-Merk op:	
+Merk op:    
  Het is van cruciaal belang dat bij elke inputwaarde één vaste outputwaarde hoort. Dus de constructies met input $\N$ en definitie $f_1: x\mapsto $(de som van $x$ worpen met een dobbelsteen), $f_2: x\mapsto $(een getal $a$ zodat $a^2=x$) en $f_3:x\mapsto 1/x$ zijn geen functies.
  
  In de definitie van functies wordt niets gezegd over formules of grafieken. Inderdaad, reële functies \textit{hebben} dikwijls ---maar niet altijd--- een grafiek en een formule, maar ze \textit{zijn} dat niet. Zie verder.
@@ -167,8 +104,8 @@ Voorbeelden van \textit{reële} functies, dus van en naar (deelverzamelingen van
     & De functie 'omgekeerde':     & $f(x) = 1/x$ \\
     & De functie '$n$-de macht':   & $f(x) = x^n$, met $n$ een bepaald %\footnotemark[2]
      natuurlijk getal \\
-	& Eerstegraadsfuncties:        & $f(x) = ax + b$, met zekere $a,b \in \R$  \\
-	& Goniometrische functies:     & $f(x) = \sin(x)$, of ook $f(x)=\cos(ax+b)$, met $a,b \in \R$     \\
+    & Eerstegraadsfuncties:        & $f(x) = ax + b$, met zekere $a,b \in \R$  \\
+    & Goniometrische functies:     & $f(x) = \sin(x)$, of ook $f(x)=\cos(ax+b)$, met $a,b \in \R$     \\
 \end{tabular}
 \\
 %\footnotetext[2]{in plaats van \textit{bepaald}, kan je hier ook \textit{zeker} of \textit{vast} getal $n$ zeggen. Het betekent dat je voor elk natuurlijk getal $n$, een andere functie hebt, die telkens elke $x$ afbeeldt op $x^n$. Hetzelfde geldt in het volgende voorbeeld: voor elke $a$ en $b$ krijg je een andere eerstegraadsfunctie. Zo zijn de functies 'plus $5$' en 'maal $6$' van hierboven, voorbeelden van eerstegraadsfuncties. Oefening: geef de $a$ en $b$ die bij deze twee laatste voorbeelden horen. }
@@ -176,8 +113,8 @@ Voorbeelden van \textit{reële} functies, dus van en naar (deelverzamelingen van
 Voorbeelden van andere (wiskundige) functies:
 \\
 \begin{tabular}[t]{l l l}
-	& Oppervlaktefunctie $O$:    & $O$(rechthoek met zijden $a$ en $b$) = $a\cdot b$ (dus, de oppervlakte!) \\
-	& Coördinaatfunctie $C_x$\footnotemark[3]:     & $C_x($punt $A(x,y) $ in het vlak$) = x$, de $x$-coördinaat van het punt $A$  \\
+    & Oppervlaktefunctie $O$:    & $O$(rechthoek met zijden $a$ en $b$) = $a\cdot b$ (dus, de oppervlakte!) \\
+    & Coördinaatfunctie $C_x$\footnotemark[3]:     & $C_x($punt $A(x,y) $ in het vlak$) = x$, de $x$-coördinaat van het punt $A$  \\
     & Aantal-elementen-functie \# \footnotemark[4]: & \#(een eindige verzameling $A$) = het aantal elementen in $A$
 \end{tabular}
 \\
@@ -187,7 +124,7 @@ Voorbeelden van andere (wiskundige) functies:
 Voorbeelden van andere (iets minder direct wiskundige) functies:
 \\
 \begin{tabular}{l l p{10cm}}
-    & Snelheidsfunctie $v$:     & $v(t)$ = de snelheid van een bepaald voorwerp op tijdstip $t$, in km/u.  \\	
+    & Snelheidsfunctie $v$:     & $v(t)$ = de snelheid van een bepaald voorwerp op tijdstip $t$, in km/u.  \\    
     & Puntenfunctie $P$:        & $P$(leerling) = punten van bepaalde leerling (op een bepaalde toets)  \\
     & Gemiddeldeperleerlingfunctie $\mu_L$: & $\mu_L$(leerling) = gemiddelde (over alle toetsen) van een bepaalde leerling  \\
     & Gemiddeldepertoetsfunctie $\mu_T$ & $\mu_T$(toets) = gemiddelde (over alle leerlingen) op een bepaalde toets \\
@@ -199,21 +136,21 @@ Voorbeelden van andere (iets minder direct wiskundige) functies:
 \subsection{Domein en codomein}
 
  \begin{definition} (Domein en codomein van een functie)
-	
-	\begin{enumerate}
-		\item De verzameling van alle mogelijke inputs van een functie $f$ noemen we het \textbf{domein} van $f$, en we noteren Dom$f$.
-		\item De verzameling waarin alle mogelijke outputs van een functie moeten liggen noemen we het \textbf{codomein} van $f$, of ook wel het \textbf{doel} van $f$, en we noteren Codom$f$.
-		\item We schrijven een algemene functie dan ook meer nauwkeurig als volgt (soms op één, soms op twee regels):
-		\begin{align*}
-		f: \text{Dom}f &\longrightarrow \text{Codom}f \\
-		x &\longmapsto f(x)
-		\end{align*}
-		Zo schrijven we bijvoorbeeld:
-		\begin{align*}
-		f: \mathbb{R} &\longrightarrow \mathbb{R},         & x \longmapsto x+5  \\
-		f: \mathbb{R} &\longrightarrow \left[-1,1\right],  & x \longmapsto \sin(x) 
-		\end{align*}
-	\end{enumerate}
+    
+    \begin{enumerate}
+        \item De verzameling van alle mogelijke inputs van een functie $f$ noemen we het \textbf{domein} van $f$, en we noteren Dom$f$.
+        \item De verzameling waarin alle mogelijke outputs van een functie moeten liggen noemen we het \textbf{codomein} van $f$, of ook wel het \textbf{doel} van $f$, en we noteren Codom$f$.
+        \item We schrijven een algemene functie dan ook meer nauwkeurig als volgt (soms op één, soms op twee regels):
+        \begin{align*}
+        f: \text{Dom}f &\longrightarrow \text{Codom}f \\
+        x &\longmapsto f(x)
+        \end{align*}
+        Zo schrijven we bijvoorbeeld:
+        \begin{align*}
+        f: \mathbb{R} &\longrightarrow \mathbb{R},         & x \longmapsto x+5  \\
+        f: \mathbb{R} &\longrightarrow \left[-1,1\right],  & x \longmapsto \sin(x) 
+        \end{align*}
+    \end{enumerate}
 \end{definition}
 
 (Uitweiding) Om technische redenen hebben wiskundigen beslist dat een functie niet alleen bepaald wordt door wat ze doet, maar ook door haar mogelijke (of 'toegelaten') input en output. Zo is de functie 'kwadrateer-natuurlijke-getallen' strikt gesproken een \textit{andere} functie dan de functie kwadrateer-reële-getallen of de functie kwadrateer-rationale-getallen. Dus, twee functies zijn ---volgens de gangbare wiskundige definities--- gelijk aan elkaar als en slechts als ze dezelfde inputverzameling en outputverzameling hebben, en als ze aan elke inputwaarde dezelfde outputwaarde toekennen.
@@ -250,10 +187,10 @@ Voorbeelden van \textbf{opsomming} en een \textbf{verzamelingvoorstelling}:
 \begin{center}
 \begin{minipage}{0.3\textwidth}
 \begin{tabular}{lcl}
-	$f(a)$ & = & $1$ \\
-	$f(b)$ & = & $2$ \\
-	$f(c)$ & = & $3$ \\
-	$f(d)$ & = & $3$ \\
+    $f(a)$ & = & $1$ \\
+    $f(b)$ & = & $2$ \\
+    $f(c)$ & = & $3$ \\
+    $f(d)$ & = & $3$ \\
 \end{tabular}
 \end{minipage}
 \begin{minipage}{0.3\textwidth}
@@ -283,30 +220,30 @@ Voorbeelden van \textbf{opsomming} en een \textbf{verzamelingvoorstelling}:
 Voorbeelden van een \textbf{tabelvoorstelling}:
 
 \begin{center}
-	\begin{tabular}[t]{| c | c |}
-		\hline
-		$x$   &  $f_1(x) = x + 5$  \\
-		\hline
-		-2   & 3  \\
-		-1   & 4  \\
-		0    & 5  \\
-		1    & 6  \\
-		2    & 7  \\
-		\hline
-		
-	\end{tabular}
-	\qquad 
-	\begin{tabular}[t]{| c | c |}
-		\hline
-		$x$   &  $f_2(x) = x^2$ \\
-		\hline
-		-2   &  4 \\
-		-1   &  1 \\
-		0    &  0 \\
-		1    &  1 \\
-		2    &  4 \\
-		\hline
-	\end{tabular}
+    \begin{tabular}[t]{| c | c |}
+        \hline
+        $x$   &  $f_1(x) = x + 5$  \\
+        \hline
+        -2   & 3  \\
+        -1   & 4  \\
+        0    & 5  \\
+        1    & 6  \\
+        2    & 7  \\
+        \hline
+        
+    \end{tabular}
+    \qquad 
+    \begin{tabular}[t]{| c | c |}
+        \hline
+        $x$   &  $f_2(x) = x^2$ \\
+        \hline
+        -2   &  4 \\
+        -1   &  1 \\
+        0    &  0 \\
+        1    &  1 \\
+        2    &  4 \\
+        \hline
+    \end{tabular}
 \end{center}
 
 
@@ -315,13 +252,13 @@ Voorbeelden van een \textbf{formulevoorstelling}:
 
 
 \begin{tabular}[t]{l l l}
-	& Functie   &  Formule \\
-	\hline \\
+    & Functie   &  Formule \\
+    \hline \\
     & 'kwadrateer'                & $f(x) = x^2$ \\
-	& 'vierkantswortel'           & $f(x) = \sqrt{x}$ \\
-	& 'vierkantswortel plus acht' & $f(x) = \sqrt{x} + 8$ \\
-	& 'plus 5'                    & $f(x) = x + 5$ \\
-	& 'sinus van de dubbele hoek' & $f(x) = \sin(2x)$ \\
+    & 'vierkantswortel'           & $f(x) = \sqrt{x}$ \\
+    & 'vierkantswortel plus acht' & $f(x) = \sqrt{x} + 8$ \\
+    & 'plus 5'                    & $f(x) = x + 5$ \\
+    & 'sinus van de dubbele hoek' & $f(x) = \sin(2x)$ \\
 \end{tabular}
 
 
@@ -341,9 +278,9 @@ Voorbeelden van een \textbf{grafische voorstelling}:
 
 
 \begin{figure}%[H]
-	\centering
-	\begin{minipage}{0.45\textwidth}
-		\centering
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
 
 \begin{tikzpicture}
 \begin{axis}[
@@ -357,10 +294,10 @@ xlabel=$x$
 \end{tikzpicture}
 
 
-		\caption{$f(x) = x + 5$}
-	\end{minipage}\hfill
-	\begin{minipage}{0.45\textwidth}
-		\centering
+        \caption{$f(x) = x + 5$}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
 
 \begin{tikzpicture}
 \begin{axis}[
@@ -375,8 +312,8 @@ xlabel=$x$
 \end{axis}
 \end{tikzpicture}
 
-		\caption{$f(x) = x^2/10$}
-	\end{minipage}
+        \caption{$f(x) = x^2/10$}
+    \end{minipage}
 \end{figure}
 
 
@@ -389,47 +326,47 @@ Voorbeelden van een \textbf{alternatieve grafische voorstelling}:
 
 TODO !
 \begin{figure}%[H]
-	\centering
-	\begin{minipage}{0.45\textwidth}
-		\centering
-		
-%		\begin{tikzpicture}
-%		\begin{axis}[
-%		axis y line=none, xmin=-10, xmax=10,
-%		xlabel=$x$
-%		]
-%	%	\addplot[domain=-15:10, black, ultra thick] {x+5};
-%		\end{axis}
-%		\begin{axis}[
-%		axis y line=none, xmin=-10, xmax=10,
-%		axis x position=top,
-%		xlabel=$x$
-%		]
-%		%	\addplot[domain=-15:10, black, ultra thick] {x+5};
-%		\end{axis}
-%		\end{tikzpicture}
-		
-		
-		\caption{$f(x) = x + 5$}
-	\end{minipage}\hfill
-	\begin{minipage}{0.45\textwidth}
-		\centering
-		
-		\begin{tikzpicture}
-		\begin{axis}[
-		axis equal,
-		axis x line=middle, 
-		axis y line=middle, 
-		ylabel=$y$, 
-		xlabel=$x$
-		]
-		\addplot[domain=-10:10, black, ultra thick
-		] {x^2/10};
-		\end{axis}
-		\end{tikzpicture}
-		
-		\caption{$f(x) = x^2/10$}
-	\end{minipage}
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        
+%        \begin{tikzpicture}
+%        \begin{axis}[
+%        axis y line=none, xmin=-10, xmax=10,
+%        xlabel=$x$
+%        ]
+%    %    \addplot[domain=-15:10, black, ultra thick] {x+5};
+%        \end{axis}
+%        \begin{axis}[
+%        axis y line=none, xmin=-10, xmax=10,
+%        axis x position=top,
+%        xlabel=$x$
+%        ]
+%        %    \addplot[domain=-15:10, black, ultra thick] {x+5};
+%        \end{axis}
+%        \end{tikzpicture}
+        
+        
+        \caption{$f(x) = x + 5$}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        
+        \begin{tikzpicture}
+        \begin{axis}[
+        axis equal,
+        axis x line=middle, 
+        axis y line=middle, 
+        ylabel=$y$, 
+        xlabel=$x$
+        ]
+        \addplot[domain=-10:10, black, ultra thick
+        ] {x^2/10};
+        \end{axis}
+        \end{tikzpicture}
+        
+        \caption{$f(x) = x^2/10$}
+    \end{minipage}
 \end{figure}
 
 
@@ -438,13 +375,13 @@ TODO !
 \section{(Uitbreiding) Wiskundige definitie van een functie}
 
 {\scriptsize 
-	
-	WAARSCHUWING: op deze pagina maak je kennis met een typisch wiskundig fenomeen: om een bepaald begrip, waar we intuïtieve ideeën over hebben,   duidelijk en ondubbelzinnig te beschrijven, is dikwijls nogal wat technische bagage nodig. Dikwijls betekent dit echter ook dat wat op het eerste zicht tamelijk eenvoudig leek, nu alleen maar ingewikkeld, verwarrend en onbegrijpelijk geworden is. Dat is jammer, dikwijls onvermijdelijk, maar met enige goede wil ook nooit onoverkomelijk. Je herleest de zaak enkele keren, maakt van wat eenvoudige oefeningetjes, en herleest alles nog eens. Dan neem je een deugddoende ontspanning, je raapt al je moed bij elkaar en doet nog een kleine extra inspanning. Dan geeft je jezelf wat tijd om alles te laten bezinken, en op die manier lukt het iedereen om doorheen de technische bagage het intuïtieve idee terug te vinden. En dan heb je wiskundige vooruitgang gemaakt.  
+    
+    WAARSCHUWING: op deze pagina maak je kennis met een typisch wiskundig fenomeen: om een bepaald begrip, waar we intuïtieve ideeën over hebben,   duidelijk en ondubbelzinnig te beschrijven, is dikwijls nogal wat technische bagage nodig. Dikwijls betekent dit echter ook dat wat op het eerste zicht tamelijk eenvoudig leek, nu alleen maar ingewikkeld, verwarrend en onbegrijpelijk geworden is. Dat is jammer, dikwijls onvermijdelijk, maar met enige goede wil ook nooit onoverkomelijk. Je herleest de zaak enkele keren, maakt van wat eenvoudige oefeningetjes, en herleest alles nog eens. Dan neem je een deugddoende ontspanning, je raapt al je moed bij elkaar en doet nog een kleine extra inspanning. Dan geeft je jezelf wat tijd om alles te laten bezinken, en op die manier lukt het iedereen om doorheen de technische bagage het intuïtieve idee terug te vinden. En dan heb je wiskundige vooruitgang gemaakt.  
 
 }
 
 \begin{definition}  (Wiskundige definitie van een functie)
-	  
+      
 Een \textbf{functie\footnote{Soms wordt ook \textit{afbeelding} gebruikt, dat is meestal hetzelfde. In sommige handboeken wordt een klein technisch verschil gemaakt. We gebruiken typisch 'functie' als de verzamelingen A of B de reële getallen zijn. } $f$  van een verzameling $A$ naar een verzameling $B$}, genoteerd als $f:A\rightarrow B$ of $A \overset{f}{\rightarrow} B$ is per definitie een verzameling $G$  van koppels\footnote{Soms wordt ook \textit{geordende paren} gebruikt, dat is hetzelfde. Als we \textit{echt} wiskundig nauwkeurig willen zijn, zouden we natuurlijk ook het begrip koppel correct moeten definiëren.} $(a,b)$ waarbij geldt dat
 
 \begin{align}
@@ -468,7 +405,7 @@ veeltermfunctie & $f : \mathbb{R} \rightarrow \mathbb{R} :  $   & $x \mapsto  f(
 \end{tabular}
 
 \begin{definition} (Surjectie/injectie/bijectie)
-	
+    
 We noemen een functie \textbf{surjectief} als elk element van $B$ \textit{minstens één keer} wordt bereikt door $f$ (dus, als voor elke $b \in B$ een $a\in A$ bestaat zodat $f(a) = b$, of nog, als het beeld gelijk is aan het doel. 
 
 We noemen een functie \textbf{injectief} als elk element van $B$ \textit{hoogstens één keer} wordt bereikt door $f$ (dus, als er twee elementen $a_1, a_2\in A$ zijn zodat $f(a_1)=f(a_2)$, dan moet $a_1=a_2$.). 
@@ -604,27 +541,27 @@ Tenslotte kan $x$ ook een 'variabele' zijn, bijvoorbeeld in de uitdrukking $f:x\
 
 
 \begin{definition} (Definitie van $x$ als de identieke functie)
-	
-	Zij $A$ een willekeurige verzameling. Dan noteren we met $x$ de identieke functie op $A$, dus
-	$$
-	x:A \to A,\quad y \mapsto x(y) = y
-	$$
+    
+    Zij $A$ een willekeurige verzameling. Dan noteren we met $x$ de identieke functie op $A$, dus
+    $$
+    x:A \to A,\quad y \mapsto x(y) = y
+    $$
 \end{definition}
 Merk op dat hier gekozen is om een willekeurig element van $A$ met de letter $y$ aan te duiden, maar met een klein misbruik van notatie (we gebruiken de letter $x$ in dezelfde formule in twee verschillende betekenissen) kunnen we ook schrijven:
 $$
-	x:A \to A,\quad x \mapsto x(x) = x
+    x:A \to A,\quad x \mapsto x(x) = x
 $$
 Dus, $x$ is de functie die elk element op zichzelf afbeeldt. Eigenlijk moeten we schrijven $x_A$, want elke verzameling $A$ heeft natuurlijk haar eigen identieke functie. Per misbruik van notatie zullen we ze echter allemaal $x$ noemen. In geval van nood moet uit de context blijken voor welke $A$ we de functie $x$ precies nodig hebben.
 \\
 
 Met deze definitie hebben we de volgende merkwaardige stelling:
 \begin{proposition} (Gelijkheid van $f$ en $f(x)$ als functies)
-	
-	Zij $f:A\to B$ een functie. Dan geldt	
-	$$
-	f = fx = f\circ x = f(x)
-	$$
-	als gelijkheden van functies van $A$ naar $B$.
+    
+    Zij $f:A\to B$ een functie. Dan geldt    
+    $$
+    f = fx = f\circ x = f(x)
+    $$
+    als gelijkheden van functies van $A$ naar $B$.
 \end{proposition}
 Bewijs: triviaal.
 
@@ -661,17 +598,17 @@ Zij $t:D \subset\R \to C\subset\R$ een reële functie, die we de \textit{transfo
 \begin{center}
 \tikzstyle{fctie} = [rectangle, draw, fill=blue!30, node distance=1cm, text width=3em, text centered, rounded corners, minimum height=3em, thick]
 \tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=3em, text centered, minimum height=2em, thick]
-	
+    
 \begin{tikzpicture}[]
-	\node [inpt] (input)  {Input $x$};
-	\node[fctie, right=of input, font=\Large\bfseries,fill=blue!10]     (functie1)  {t};
-	\node [inpt, right=of functie1] (output1)  {$t(x)$};
-	\node[fctie, right=of output1,font=\Large\bfseries]   (functie2)  {f};
-	\node [inpt, right=of functie2] (output) {Output $f(t(x))$ };  
-	\draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
+    \node [inpt] (input)  {Input $x$};
+    \node[fctie, right=of input, font=\Large\bfseries,fill=blue!10]     (functie1)  {t};
+    \node [inpt, right=of functie1] (output1)  {$t(x)$};
+    \node[fctie, right=of output1,font=\Large\bfseries]   (functie2)  {f};
+    \node [inpt, right=of functie2] (output) {Output $f(t(x))$ };  
+    \draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
 \end{tikzpicture}
 \begin{tikzpicture}[]
-	\node [inpt] (input)  {Input $x$};
+    \node [inpt] (input)  {Input $x$};
     \node[fctie, right=of input, font=\Large\bfseries]     (functie1)  {f};
     \node [inpt, right=of functie1] (output1)  {$f(x)$};
     \node[fctie, right=of output1,font=\Large\bfseries,fill=blue!10]   (functie2)  {t};

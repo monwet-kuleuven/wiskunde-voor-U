@@ -1,0 +1,160 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\author{Zomercursus KU Leuven}
+\outcome{enig begrip van een formele definitie van een functie}
+
+
+\title{(Uitbreiding) Wiskundige definitie van een functie}
+
+
+\begin{document}
+\begin{abstract}
+
+\end{abstract}
+\maketitle  
+
+\tikzstyle{fctie} = [rectangle, draw, fill=blue!20, node distance=1cm, text width=10em, text centered, rounded corners, minimum height=3em, thick]
+\tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=4em, text centered, minimum height=2em, thick]
+
+
+{\scriptsize 
+    
+    WAARSCHUWING: op deze pagina maak je kennis met een typisch wiskundig fenomeen: om een bepaald begrip, waar we intuïtieve ideeën over hebben,   duidelijk en ondubbelzinnig te beschrijven, is dikwijls nogal wat technische bagage nodig. Dikwijls betekent dit echter ook dat wat op het eerste zicht tamelijk eenvoudig leek, nu alleen maar ingewikkeld, verwarrend en onbegrijpelijk geworden is. Dat is jammer, dikwijls onvermijdelijk, maar met enige goede wil ook nooit onoverkomelijk. Je herleest de zaak enkele keren, maakt van wat eenvoudige oefeningetjes, en herleest alles nog eens. Dan neem je een deugddoende ontspanning, je raapt al je moed bij elkaar en doet nog een kleine extra inspanning. Dan geeft je jezelf wat tijd om alles te laten bezinken, en op die manier lukt het iedereen om doorheen de technische bagage het intuïtieve idee terug te vinden. En dan heb je wiskundige vooruitgang gemaakt.  
+
+}
+
+\begin{definition}  (Wiskundige definitie van een functie)
+      
+Een \textbf{functie\footnote{Soms wordt ook \textit{afbeelding} gebruikt, dat is meestal hetzelfde. In sommige handboeken wordt een klein technisch verschil gemaakt. We gebruiken typisch 'functie' als de verzamelingen A of B de reële getallen zijn. } $f$  van een verzameling $A$ naar een verzameling $B$}, genoteerd als $f:A\rightarrow B$ of $A \overset{f}{\rightarrow} B$ is per definitie een verzameling $G$  van koppels\footnote{Soms wordt ook \textit{geordende paren} gebruikt, dat is hetzelfde. Als we \textit{echt} wiskundig nauwkeurig willen zijn, zouden we natuurlijk ook het begrip koppel correct moeten definiëren.} $(a,b)$ waarbij geldt dat
+
+\begin{align}
+\forall (a,b) \in G, \qquad & a\in A \text{ en } b\in B \\
+\forall a \in A, \qquad & \exists  b \in B : (a,b) \in G \\
+\forall a\in A, \forall b_1,b_2 \in B, \qquad  & (a,b_1) \in G \text{ en } (a,b_2) \in G \implies b_1 = b_2  
+\end{align}
+
+\end{definition}
+Hierbij betekent voorwaarde (1) dat de functie inderdaad 'van A naar B' gaat, voorwaarde (2) dat elke element $a$ inderdaad een beeld heeft in B, en voorwaarde (3) dat dat beeld uniek is.\footnote{Dit is een standaard techniek in de wiskunde: zeggen dat een bepaald ding uniek is, is hetzelfde als zeggen dat als je ooit twee zo'n dingen zou hebben, dat ze dan noodzakelijk aan elkaar gelijk moeten zijn. }
+
+We noteren de unieke $b$ die bij een zekere $a$ hoort als $f(a)$, dus $f(a)$ is  het \textit{beeld van $a$ onder de functie $f$}. We kunnen dan de verzameling $G$ ook schrijven als $\{(a,f(a)) | a\in A))\}$, en noemen deze verzameling ook de \textbf{grafiek} van de functie $f$. We noemen $A$ het \textbf{domein} van $f$, en $B$ het \textbf{doel} of het \textbf{codomein}. De verzameling $\{f(a) | a\in A\}$ noemen we het \textbf{beeld} of het \textbf{bereik} van $f$ (en dat is dus in het algemeen een deelverzameling van het doel of codomein $B$).
+
+
+Voorbeelden:
+
+\begin{tabular}[t]{r l l l}
+kwadraat   & $f : \mathbb{R} \rightarrow \mathbb{R} :  $   & $x \mapsto  f(x) = x^2 $\\
+sinus & $\sin : \mathbb{R} \rightarrow [-1,1] :    $ & $x \mapsto  \sin x $\\
+veeltermfunctie & $f : \mathbb{R} \rightarrow \mathbb{R} :  $   & $x \mapsto  f(x) = 2x^2+3x+7 $\\
+\end{tabular}
+
+\begin{definition} (Surjectie/injectie/bijectie)
+    
+We noemen een functie \textbf{surjectief} als elk element van $B$ \textit{minstens één keer} wordt bereikt door $f$ (dus, als voor elke $b \in B$ een $a\in A$ bestaat zodat $f(a) = b$, of nog, als het beeld gelijk is aan het doel. 
+
+We noemen een functie \textbf{injectief} als elk element van $B$ \textit{hoogstens één keer} wordt bereikt door $f$ (dus, als er twee elementen $a_1, a_2\in A$ zijn zodat $f(a_1)=f(a_2)$, dan moet $a_1=a_2$.). 
+
+We noemen een functie \textbf{bijectief} als elk element van $B$ \textit{juist één keer} wordt bereikt door $f$. Een functie is dus bijectief als en slechts als ze zowel injectief als surjectief is. 
+\end{definition}
+
+%\begin{minipage}{\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}\quad
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}
+}
+
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+%\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}\quad
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+%\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b4);
+%\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}\quad
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b4);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}
+}
+%\end{minipage}
+
+
+\end{document}
