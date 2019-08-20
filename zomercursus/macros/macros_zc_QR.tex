@@ -1,0 +1,279 @@
+%macro's voor zomercursus wiskunde - Groep Wetenschap & Technologie - 29 januari 2008
+%Bart Bories en Riet Callens
+%aangepast door Riet Callens op 23/06/2009
+%aangepast door Riet Callens op 9/7/2009 (newtheorem oefening toegevoegd)
+%aangepast door Riet Callens op 27/07/2012 voor pdf-tex
+%aangepast door Riet Callens op 22/08/2012 voor vragen ijkingstoets (numopl}
+%aangepast door Riet Callens op 1/08/2019 voor implementatie QR-codes - qrslidesA,qrslidesB,qrclip,qrapplet
+
+
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage{qrcode}
+\usepackage{etex}
+%standaard pakketten
+%\usepackage{a4wide}
+\usepackage[dutch]{babel}
+\usepackage{hyphenat}
+\usepackage{xcolor}
+\definecolor{KULblauw}{RGB}{26,67,121}
+\usepackage[urlbordercolor=white,linkbordercolor=white ]{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%\usepackage{pst-plot}
+%\usepackage{pst-pdf}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{through,calc,intersections}
+\pgfplotsset{axis lines = center}
+\pgfplotsset{axis equal image}
+\pgfplotsset{xlabel = x}
+\pgfplotsset{ylabel = y}
+\pgfplotsset{xlabel style={below right}}
+\pgfplotsset{ylabel style={above left}}
+
+%\usepackage{color}
+\usepackage[thmmarks,framed,amsmath]{ntheorem}
+\usepackage{answers}
+
+%definities nieuwe omgevingen
+\Newassociation{opl}{Oplossing}{ans}
+\Newassociation{numopl}{NumOplossing}{numans}
+\theoremstyle{break}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremsymbol{}
+
+\theorembodyfont{\upshape}
+\newtheorem{oefening}{Oefening}[section]
+\newtheorem{oefening2}{Oefening}
+\newtheorem{soefening}{Samengestelde oefening}
+\newtheorem{vraag}[oefening2] {Vraag}
+\newtheorem{oefeningen}[oefening]{Oefeningen}
+\newtheorem{taak}{Taak}
+\newtheorem{definitie}{Definitie}[section]
+\newtheorem{voorbeeld}[definitie]{Voorbeeld}
+
+%nieuwe commando's
+\newcommand{\qrslidesA}[1]{Lesmateriaal gebruikt in het A-programma: \vspace{3mm}\\  \qrcode{#1} \href{#1}{\tiny{#1}}\\\vspace{3mm}}
+\newcommand{\qrslidesB}[1]{Lesmateriaal gebruikt in het B-programma: \vspace{3mm}\\  \qrcode{#1} \href{#1}{\tiny{#1}}\\\vspace{3mm}}
+\newcommand{\qrclip}[1]{\qrcode{#1} clip: \href{#1}{\tiny{#1}}}
+\newcommand{\qrapplet}[1]{\qrcode{#1} applet: \href{#1}{\tiny{#1}}}
+
+%bladschikking
+\voffset=-1in
+\topmargin=1.5 cm
+\headheight=2cm
+\headsep=1cm
+\textheight=22cm
+\footskip=1.2cm
+\hoffset=-1in
+\oddsidemargin=2.5cm
+\evensidemargin=2.5cm
+\textwidth=15.5cm
+\marginparsep=0cm
+\marginparwidth=0cm
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5 pt}
+
+\newcounter{module}
+
+
+
+%hoofding +kop- en voettekst
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{\small{\textsc{\thesection.\ #1}}}{}}
+\def\hoofding #1#2#3{\newpage
+							\thispagestyle{empty}
+
+             \hrule
+             \begin{center}
+             {\large {\textsc{Zomercursus Wiskunde}}}
+
+             \bigskip
+%             \begin{minipage}[c]{2cm}\includegraphics[width=2cm]{./../macros/sedes.jpg}\end{minipage}
+
+             \bigskip
+             {\textsc{KU Leuven}}\\
+						 {\textsc{Groep Wetenschap \& Technologie}}
+						
+						 \bigskip
+             {\textsc{September 2019} }
+             \bigskip
+
+             {\large \textsc {Module \arabic{module}\\ \bigskip #1}} \\
+             (\small{versie \today})
+             \bigskip
+
+             \end{center}
+
+             \hrule
+
+             \bigskip
+#2
+
+\bigskip
+
+#3
+
+             
+						 \newpage
+						 \lfoot{\fancyplain{\textsc{\small Zomercursus Wiskunde\\Groep Wetenschap \& Technologie, KU Leuven}}
+					        {\textsc{\small Zomercursus Wiskunde\\Groep Wetenschap \& Technologie, KU Leuven}}}%tekst linksonder
+					   \cfoot{\fancyplain{}{}}
+			       \rfoot{}
+			           {}
+			            
+			       \fancyhead{}
+             \fancyhead[L]{\small{\textsc{Module \arabic{module}: #1}}}
+
+  					 \clearpage{\pagestyle{empty}\cleardoublepage}
+						 \tableofcontents
+  					 \clearpage{\pagestyle{empty}\cleardoublepage}
+			\pagestyle{fancy}
+			\newpage
+			\setcounter{page}{1}
+
+
+
+%\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\small{\leftmark}}}
+%\rhead[\fancyplain{}{\small{\textsc{#1}}}]{\fancyplain{}{\thepage}}
+
+%\fancyhead[LE,RO]{\thepage}
+%\fancyhead[LO]{\small{\textsc{Module \arabic{module}\\ #1}}}
+%\fancyhead[RE]{\leftmark}
+\fancyhead{}
+\fancyhead[RO]{\textsc{\arabic{module} - \thepage} \\ \small{\textsc{ Module \arabic{module}: #1}} }
+\fancyhead[LE]{\textsc{\arabic{module} - \thepage} \\ \small{\textsc{Module \arabic{module}: #1}}}
+
+
+
+}
+
+%definities nieuwe commando's - afkortingen veel gebruikte symbolen
+\newcommand{\ds}{\displaystyle}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Rnul}{\ensuremath{\mathbb{R}_0}}
+\newcommand{\Reen}{\ensuremath{\mathbb{R}\setminus\{1\}}}
+\newcommand{\Rnuleen}{\ensuremath{\mathbb{R}\setminus\{0,1\}}}
+\newcommand{\Rplus}{\ensuremath{\mathbb{R}^+}}
+\newcommand{\Rmin}{\ensuremath{\mathbb{R}^-}}
+\newcommand{\Rnulplus}{\ensuremath{\mathbb{R}_0^+}}
+\newcommand{\Rnulmin}{\ensuremath{\mathbb{R}_0^-}}
+\newcommand{\Rnuleenplus}{\ensuremath{\mathbb{R}^+\setminus\{0,1\}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Nnul}{\ensuremath{\mathbb{N}_0}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Znul}{\ensuremath{\mathbb{Z}_0}}
+\newcommand{\Zplus}{\ensuremath{\mathbb{Z}^+}}
+\newcommand{\Zmin}{\ensuremath{\mathbb{Z}^-}}
+\newcommand{\Znulplus}{\ensuremath{\mathbb{Z}_0^+}}
+\newcommand{\Znulmin}{\ensuremath{\mathbb{Z}_0^-}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\Cnul}{\ensuremath{\mathbb{C}_0}}
+\newcommand{\Cplus}{\ensuremath{\mathbb{C}^+}}
+\newcommand{\Cmin}{\ensuremath{\mathbb{C}^-}}
+\newcommand{\Cnulplus}{\ensuremath{\mathbb{C}_0^+}}
+\newcommand{\Cnulmin}{\ensuremath{\mathbb{C}_0^-}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Qnul}{\ensuremath{\mathbb{Q}_0}}
+\newcommand{\Qplus}{\ensuremath{\mathbb{Q}^+}}
+\newcommand{\Qmin}{\ensuremath{\mathbb{Q}^-}}
+\newcommand{\Qnulplus}{\ensuremath{\mathbb{Q}_0^+}}
+\newcommand{\Qnulmin}{\ensuremath{\mathbb{Q}_0^-}}
+\newcommand{\perdef}{\overset{\mathrm{def}}{=}}
+\newcommand{\pernot}{\overset{\mathrm{not}}{=}}
+\newcommand{\bgsin}{\mathrm{bgsin}\,}
+\newcommand{\bgcos}{\mathrm{bgcos}\,}
+\newcommand{\bgtan}{\mathrm{bgtan}\,}
+\newcommand{\bgcot}{\mathrm{bgcot}\,}
+\newcommand{\bgsinh}{\mathrm{bgsinh}\,}
+\newcommand{\bgcosh}{\mathrm{bgcosh}\,}
+\newcommand{\bgtanh}{\mathrm{bgtanh}\,}
+\newcommand{\bgcoth}{\mathrm{bgcoth}\,}
+\newcommand{\Bgsin}{\mathrm{Bgsin}\,}
+\newcommand{\Bgcos}{\mathrm{Bgcos}\,}
+\newcommand{\Bgtan}{\mathrm{Bgtan}\,}
+\newcommand{\Bgcot}{\mathrm{Bgcot}\,}
+\newcommand{\Bgsinh}{\mathrm{Bgsinh}\,}
+\newcommand{\Bgcosh}{\mathrm{Bgcosh}\,}
+\newcommand{\Bgtanh}{\mathrm{Bgtanh}\,}
+\newcommand{\Bgcoth}{\mathrm{Bgcoth}\,}
+\newcommand{\cosec}{\mathrm{cosec}\,}
+\newcommand{\dom}{\mathrm{dom}\,}
+\newcommand{\bld}{\mathrm{bld}\,}
+\newcommand{\graf}{\mathrm{graf}\,}
+\newcommand{\rc}{\mathrm{rc}\,}
+\newcommand{\co}{\mathrm{co}\,}
+\newcommand{\oefverwijzing}[1]{\ensuremath{\hookrightarrow}\ \textsl{#1}}
+\newcommand{\startletternummering}{\renewcommand{\labelenumi}{(\alph{enumi})}}
+\newcommand{\eindeletternummering}{\renewcommand{\labelenumi}{\arabic{enumi}.}}
+\newcommand{\bron}[1]{\begin{scriptsize} \emph{#1} \end{scriptsize}} 
+
+\usepackage{framed}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{color}
+
+
+
+
+
+\newtheorem{toepassing}[definitie]{Toepassing}
+\newtheorem{opmerking}[definitie]{Opmerking}
+\newtheorem{notatie}[definitie]{Notatie}
+\newtheorem{voorbeelden}[definitie]{Voorbeelden}
+\newtheorem{toepassingen}[definitie]{Toepassingen}
+\newtheorem{opmerkingen}[definitie]{Opmerkingen}
+\newtheorem{notaties}[definitie]{Notaties}
+\newtheorem{voorbeeldoefening}[definitie]{Voorbeeldoefening}
+\newtheorem{voorbeeldoefeningen}[definitie]{Voorbeeldoefeningen}
+\newtheorem{opdrn}[definitie]{Opdrachten}
+\newframedtheorem{kaderdefinitie}[definitie]{Definitie}
+\newframedtheorem{kadernotatie}[definitie]{Notatie}
+\newframedtheorem{kadernotaties}[definitie]{Notaties}
+
+
+\theorembodyfont{\itshape}
+\newtheorem{stelling}[definitie]{Stelling}
+\newtheorem{eigenschap}[definitie]{Eigenschap}
+\newtheorem{resultaat}[definitie]{Resultaat}
+\newtheorem{lemma}[definitie]{Lemma}
+\newtheorem{propositie}[definitie]{Propositie}
+\newtheorem{rekenregel}[definitie]{Rekenregel}
+\newtheorem{bijzondergeval}[definitie]{Bijzonder geval}
+\newtheorem{eigenschappen}[definitie]{Eigenschappen}
+\newtheorem{rekenregels}[definitie]{Rekenregels}
+\newtheorem{bijzonderegevallen}[definitie]{Bijzondere gevallen}
+\newframedtheorem{kaderstelling}[definitie]{Stelling}
+\newframedtheorem{kaderbijzonderegevallen}[definitie]{Bijzondere gevallen}
+\newframedtheorem{kadereigenschap}[definitie]{Eigenschap}
+\newframedtheorem{kaderresultaat}[definitie]{Resultaat}
+\newframedtheorem{kaderlemma}[definitie]{Lemma}
+\newframedtheorem{kaderpropositie}[definitie]{Propositie}
+\newframedtheorem{kaderrekenregel}[definitie]{Rekenregel}
+\newframedtheorem{kaderbijzondergeval}[definitie]{Bijzonder geval}
+\newframedtheorem{kadereigenschappen}[definitie]{Eigenschappen}
+\newframedtheorem{kaderrekenregels}[definitie]{Rekenregels}
+
+\theoremstyle{nonumberbreak}
+\theorembodyfont{\upshape}
+\theoremindent\parindent
+\newtheorem{oplossing}{Oplossing}
+\newtheorem{uitwerking}{Uitwerking}
+\newtheorem{werkwijze}{Werkwijze}
+\theoremsymbol{\ensuremath{_\blacksquare}}
+\newtheorem{bewijs}{Bewijs}
+\theoremindent0cm
+\theoremsymbol{}
+\newtheorem{oplossingen}[definitie]{Oplossingen}
+
+\theoremstyle{nonumberplain}
+\theorembodyfont{\normalfont}
+\theoremseparator{\hspace{-1ex}}
+\newframedtheorem{kader}{}
+%\newshadedtheorem{grijs}{} 
