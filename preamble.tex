@@ -6,6 +6,8 @@
 
 \usepackage[utf8]{inputenc}
 
+\usepackage{morewrites}   % nav zomercursus (answer...?)
+
 \usepackage{multicol}
 \usepackage{tikzsymbols}
 \usepackage{ifthen}
@@ -24,9 +26,10 @@
 %\usepackage{todonotes}
 
 \graphicspath{
-	{./}
-	{goniometrie/}
-	{limieten/}
+    {./}
+    {goniometrie/}
+    {limieten/}
+    {zomercursus/M09/}
 }
 
 
@@ -61,11 +64,6 @@
 
 \newcommand{\limxi}{\limxg{+\infty}}  % I voor \Infty
 \newcommand{\limxmi}{\limxg{-\infty}} % MI voor Min \Infty
-\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
-
-\usetikzlibrary{fit,% <--- added
-	positioning,    
-	shapes,decorations.markings}% <--- added
 \newcommand{\limxc}{\limxg{c}}     % is/was handig in de module over limieten ...
 \newcommand{\llimxc}{\llimxg{c}}
 \newcommand{\rlimxc}{\rlimxg{c}}
