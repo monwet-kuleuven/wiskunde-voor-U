@@ -1,0 +1,88 @@
+\include{./../macros/macros_zc_basic}%macro's laden
+\include{./../macros/macros_zc_extra}
+
+ 
+\hyphenation{}%foutief afgebroken woorden, gesplitst en door spaties gescheiden, opgeven
+
+
+\usepackage{pstricks}
+
+\begin{document}
+
+\parindent 0mm
+\include{zcdef}%eigen definities
+%\maketitle\thispagestyle{fancy}%drukt titel af en zorgt voor voettekst op titelpagina
+
+\[
+f:[0,1]\rightarrow \R:x\mapsto x^2
+\]
+\[
+f:\R \rightarrow \R:x\mapsto 1+x^2-\frac{1}{2}x^4
+\]
+
+\[
+f:\R^2 \rightarrow \R:(x,y)\mapsto x^2+y^2
+\]
+
+\[
+f:\R \rightarrow \R^2:t\mapsto (t,t)
+\]
+
+\[
+\ba{l}
+f\\
+g\\
+f+g\\
+f-g\\
+f\cdot g\\
+f/g
+\ea
+\]
+
+\vspace{5mm}
+\centerline{\hspace{3cm}\input{fig/pres/pres_gridgon.pst}}
+\centerline{\hspace{3cm}\input{fig/pres/pres_x__cosx.pst}}
+\centerline{\hspace{3cm}\input{fig/pres/pres_x+cosx.pst}}
+\centerline{\hspace{3cm}\input{fig/pres/pres_xcosx.pst}}
+\centerline{\hspace{3cm}\input{fig/pres/pres_cosx.pst}}
+\centerline{\hspace{3cm}\input{fig/pres/pres_cosx_x.pst}}
+\vspace{50mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Bepaal $f\circ g$ en $g\circ f$ met $ f:x\mapsto \sin(x+2) $ en $ g:x\mapsto x+1$
+
+Bepaal $f\circ g$ en $g\circ f$ met $ f:x\mapsto x+e^x $ en $ g:x\mapsto 2x+1$
+
+Schets $f\circ g$ en $g\circ f$ met $ f:x\mapsto x+2 $
+
+Schets $f\circ g$ en $g\circ f$ met $ f:x\mapsto 2x $
+
+Schets $f\circ g$ en $g\circ f$ met $ f:x\mapsto -x $
+
+Schets de krommen met  parametrisatie $ \phi: [0,2\pi] \rightarrow \R^2: t\mapsto (2\cos(t),4\sin(t))$
+
+Schets de krommen met  parametrisatie $ \phi: \R \rightarrow \R^2: t\mapsto (t,t^2)$
+
+\centerline{\hspace{3cm}\input{fig/pres/pres05.pst}}
+
+\centerline{\hspace{3cm}\input{fig/pres/pres_grid14.pst}}
+\centerline{\hspace{3cm}\input{fig/pres/pres_grid05.pst}}
+
+Schets de kromme met vergelijking in poolco\"ordinaten $r=1$
+
+Schets de kromme met vergelijking in poolco\"ordinaten $2r=\theta$
+
+
+Schets de grafiek van de volgende functie en zijn inverse. 
+
+Bepaal het voorschrift van de inverse.
+
+$ h: [0,4] \rightarrow \R: x\mapsto
+ \left\{\ba{ll} 2 x^2 & \mbox{ als } x \in [0,1]\\
+               x+1   & \mbox{ als } x \in [1,4]
+       \ea\right.
+$
+
+\end{document}
