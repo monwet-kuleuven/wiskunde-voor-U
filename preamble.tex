@@ -13,6 +13,10 @@
 
 \usepackage{ulem} % \sout voor strike-out
 
+
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
+\usetikzlibrary{decorations.markings}
+
 % Met "\newcommand\showtodonotes{}" kan je todonotes tonen (in pdf/online)
 % 201908: online werkt het niet (goed)
 \providecommand\showtodonotes{disable}
@@ -57,7 +61,11 @@
 
 \newcommand{\limxi}{\limxg{+\infty}}  % I voor \Infty
 \newcommand{\limxmi}{\limxg{-\infty}} % MI voor Min \Infty
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
 
+\usetikzlibrary{fit,% <--- added
+	positioning,    
+	shapes,decorations.markings}% <--- added
 \newcommand{\limxc}{\limxg{c}}     % is/was handig in de module over limieten ...
 \newcommand{\llimxc}{\llimxg{c}}
 \newcommand{\rlimxc}{\rlimxg{c}}

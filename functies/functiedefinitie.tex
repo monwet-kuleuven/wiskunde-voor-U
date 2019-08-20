@@ -1,0 +1,694 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\author{Zomercursus KU Leuven}
+\outcome{Enige vertrouwdheid met functies.}
+
+
+\title{Functies}
+
+
+%\documentclass[10pt]{article}
+%\setlength{\parindent}{0pt}
+%
+%\usepackage[utf8]{inputenc}
+%%\usepackage[T1]{fontenc}
+%
+%
+%
+%\usepackage{amsmath}
+%\usepackage{amsthm}
+%\usepackage{amssymb}
+%%\usepackage{enumerate}
+%\usepackage[margin=2cm]{geometry}
+%\usepackage{ulem}
+%\usepackage[dutch]{babel}
+%\usepackage{fancyhdr}
+%%\pagestyle{fancy}
+%%\usepackage{enumitem}
+%
+%\usepackage{pgfplots}
+%\usepackage{float}
+%
+%\newcommand{\N}{\mathbb{N}}
+%\newcommand{\Z}{\mathbb{Z}}
+%\newcommand{\Q}{\mathbb{Q}}
+%\newcommand{\R}{\mathbb{R}}
+%\newcommand{\bD}{\mathbf{D}}
+%\newcommand{\dd}{\mathrm{d}}
+%\newcommand{\ab}{\left[ a, b\right]}
+%
+%\theoremstyle{definition}
+%\newtheorem{eigenschap}{Eigenschap}
+%\newtheorem{opgave}{Opgave}
+%\newtheorem{definitie}{Definitie}
+%\newtheorem{stelling}{Stelling}
+%
+%\pagenumbering{gobble}
+%
+%
+%\usepackage{tikz}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
+
+\usetikzlibrary{fit,% <--- added
+	positioning,    
+	shapes,decorations.markings}% <--- added
+%% https://tex.stackexchange.com/a/39282/121799
+%\tikzset{->-/.style={decoration={
+%			markings,
+%			mark=at position .5 with {\arrow{>}}},postaction={decorate}}}
+%\tikzset{-<>-/.style={decoration={
+%			markings,
+%			mark=at position .33 with {\arrow{<}},
+%			mark=at position .67 with {\arrow{>}}},postaction={decorate}}
+%}
+
+\tikzstyle{fctie} = [rectangle, draw, fill=blue!20, node distance=1cm, text width=10em, text centered, rounded corners, minimum height=3em, thick]
+\tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=4em, text centered, minimum height=2em, thick]
+
+
+\begin{document}
+
+	
+	\section*{Wat is een \textit{functie}}
+\begin{footnotesize}
+
+In de wiskundelessen van het secundair onderwijs wordt veel aandacht besteed aan \textit{functies}, maar toch blijven sommigen moeite hebben met dat begrip. Ziehier dus een uitleg over \textit{functies}, bedoeld voor wie er al wat over gehoord en geleerd heeft, maar niet helemaal zeker is of hij alles goed heeft begrepen.
+% (en, ook wel voor wie er helemaal zeker van is dat hij of zij het zeker nog  helemaal niet heeft begrepen.)\footnote{De voorgaande zin is gegarandeerd de meest moeilijke uit de hele tekst. Vanaf hier wordt het alleen maar gemakkelijker.}
+\end{footnotesize}
+
+	\tableofcontents
+	\newpage
+
+\section{Inleidende definities en eigenschappen}
+
+\subsection{(Pseudo-)definitie van het begrip functie}
+
+\begin{definition} (Pseudo-definitie van het begrip functie)
+	
+Een  \textit{functie} is een wiskundig object dat met een \textit{iets} telkens een \textit{ietsanders} laat overeenkomen. 
+\end{definition}
+
+Anders gezegd: \\
+een functie is een machine of black box die voor elke \textit{input} telkens een \textit{output} genereert.
+\\
+
+Een typisch voorbeeld is de functie 'kwadrateer', die met elk getal zijn kwadraat associeert.
+
+Ongeveer alles kan dienen als input en output van wiskundige functies, maar in wat volgt we zullen ons dikwijls concentreren op zogenaamde \textit{reële functies}: dat zijn die functies waar zowel de input als de output reële getallen zijn. In ieder geval hebben we voor dergelijke reële functies allerlei interessante begrippen en eigenschappen die niet zomaar van toepassing zijn op meer algemene functies, zoals nulpunten, minima en maxima, grafieken, afgeleiden, integralen,\ldots.
+
+\begin{center}
+\begin{tikzpicture}[]
+\node[fctie,font=\Large\bfseries]     (functie)  {Functie };
+\node [inpt, left=of functie] (input)  {Input};
+\node [inpt,right=of functie] (output) {Output};  
+\draw[>->]  (input) -- (functie) -- (output);
+
+\node[fctie,font=\Large\bfseries, below of= functie, node distance=2cm]     (functiek4)  {Kwadrateer};
+\node [inpt, left=of functiek4] (inputk4)  {$4$};
+\node [inpt,right=of functiek4] (outputk4) {$16$};  
+\draw[>->]  (inputk4) -- (functiek4) -- (outputk4);
+
+\end{tikzpicture}
+\end{center}
+
+
+Een functie heeft meestal een naam, en als de wiskundigen geen bijzondere inspiratie hebben, geven ze als naam graag gewoon $f$ (van $f$unctie). De \textit{ietsen} duiden ze dikwijls aan met $x$.\footnote{Hiermee is bewezen dat wiskundigen ook grappig kunnen zijn. Ze hebben natuurlijk de letter $x$ gekozen, omdat \textit{ietsen} zo mooi lijkt op \textit{iexen}!} Soms gebruiken ze natuurlijk ook andere letters, en populaire keuzes zijn dan $h,g,f_1, f_2$ voor functies, en $x$, $t$, $n$, $x_1$,$x_2$ of zelfs ook $y$ en $y_1$  voor de \textit{ietsen}. Het resultaat van de actie van de functie $f$ op het ding $x$ noteren ze met meestal met $f(x)$, maar uitzonderlijk ook zonder de haakjes als $fx$. Ze lezen $f(x)$ als 
+\begin{itemize}
+\item $f$ van $x$
+\item de \textit{functiewaarde} van $f$ in $x$
+\item het \textit{beeld} van $f$ \textit{in} $x$
+\item het \textit{beeld} van $x$ \textit{onder} $f$ (of \textit{door} $f$)
+\end{itemize}
+Ze zeggen ook dat $f$ het element $x$ \textit{afbeeldt} op $f(x)$, of dat '$f$ toepassen op $x$' het element $f(x)$ oplevert. In het algemeen noteren ze::
+$$
+f: x \mapsto f(x) 
+$$
+en als ze dus ook de 'kwadrateer'-functie $k$ noemen wordt dat:
+$$
+k: x \mapsto x^2 \text{ \qquad of \qquad }  k: x \mapsto k(x) = x^2
+$$
+en dus voor deze functie $k$ geldt dat $k(2)=4$ en $k(4)=16$.
+
+\begin{center}
+\begin{tikzpicture}[]
+\node[fctie,font=\Large\bfseries, node distance=2cm]     (functief)  {Functie $f$};
+\node [inpt, left=of functief] (inputf)  {$x$};
+\node [inpt,right=of functief] (outputf) {$f(x)$};  
+\draw[>->]  (inputf) -- (functief) -- (outputf);
+
+\node[fctie,font=\Large\bfseries, below of= functief, node distance=2cm]     (functiek)  {Functie $x^2$};
+\node [inpt, left=of functiek] (inputk)  {$x$};
+\node [inpt,right=of functiek] (outputk) {$x^2$};  
+\draw[>->]  (inputk) -- (functiek) -- (outputk);
+
+\end{tikzpicture}
+\end{center}
+
+%\begin{remark}
+Merk op:	
+ Het is van cruciaal belang dat bij elke inputwaarde één vaste outputwaarde hoort. Dus de constructies met input $\N$ en definitie $f_1: x\mapsto $(de som van $x$ worpen met een dobbelsteen), $f_2: x\mapsto $(een getal $a$ zodat $a^2=x$) en $f_3:x\mapsto 1/x$ zijn geen functies.
+ 
+ In de definitie van functies wordt niets gezegd over formules of grafieken. Inderdaad, reële functies \textit{hebben} dikwijls ---maar niet altijd--- een grafiek en een formule, maar ze \textit{zijn} dat niet. Zie verder.
+ 
+ 
+\subsection{Voorbeelden}
+
+Voorbeelden van \textit{reële} functies, dus van en naar (deelverzamelingen van) de reële getallen $\R$:
+\\
+\begin{tabular}[t]{l l l}
+    & De functie 'plus $5$':       & $f(x) = x + 5$ \\
+    & De functie 'maal 6':         & $f(x) = 6x$ \\
+    & De functie '7':              & $f(x) = 7$  (een \textit{constante} functie) \\
+    & De functie 'doe niets':      & $f(x) = x$  (de \textit{identieke} functie) \\
+    & De functie 'kwadrateer':     & $f(x) = x^2$ \\
+    & De functie 'vierkantswortel':& $f(x) = \sqrt{x}$ \\   
+    & De functie 'tegengestelde':  & $f(x) = -x$ \\
+    & De functie 'omgekeerde':     & $f(x) = 1/x$ \\
+    & De functie '$n$-de macht':   & $f(x) = x^n$, met $n$ een bepaald %\footnotemark[2]
+     natuurlijk getal \\
+	& Eerstegraadsfuncties:        & $f(x) = ax + b$, met zekere $a,b \in \R$  \\
+	& Goniometrische functies:     & $f(x) = \sin(x)$, of ook $f(x)=\cos(ax+b)$, met $a,b \in \R$     \\
+\end{tabular}
+\\
+%\footnotetext[2]{in plaats van \textit{bepaald}, kan je hier ook \textit{zeker} of \textit{vast} getal $n$ zeggen. Het betekent dat je voor elk natuurlijk getal $n$, een andere functie hebt, die telkens elke $x$ afbeeldt op $x^n$. Hetzelfde geldt in het volgende voorbeeld: voor elke $a$ en $b$ krijg je een andere eerstegraadsfunctie. Zo zijn de functies 'plus $5$' en 'maal $6$' van hierboven, voorbeelden van eerstegraadsfuncties. Oefening: geef de $a$ en $b$ die bij deze twee laatste voorbeelden horen. }
+\\
+Voorbeelden van andere (wiskundige) functies:
+\\
+\begin{tabular}[t]{l l l}
+	& Oppervlaktefunctie $O$:    & $O$(rechthoek met zijden $a$ en $b$) = $a\cdot b$ (dus, de oppervlakte!) \\
+	& Coördinaatfunctie $C_x$\footnotemark[3]:     & $C_x($punt $A(x,y) $ in het vlak$) = x$, de $x$-coördinaat van het punt $A$  \\
+    & Aantal-elementen-functie \# \footnotemark[4]: & \#(een eindige verzameling $A$) = het aantal elementen in $A$
+\end{tabular}
+\\
+\footnotetext[3]{Een erg logische (maar, soms in het begin ook wat verwarrende) naam voor deze coördinaatfunctie is natuurlijk gewoon $x$. We krijgen dan $x(A) = x$, waarbij de eerste $x$ de naam is van de functie, en de tweede $x$ de $x$-coördinaat van het punt $A$.}
+\footnotetext[4]{Deze aantal-element-functies wordt dikwijls genoteerd met het symbool \#, en dan worden de haakjes om aan te geven dat het een functie is ook weggelaten, en krijgen we $\#A$ voor het aantal elementen van een verzameling. Soms wordt ook het symbool $|\cdot|$ gebruikt, en dan is $|A|$ het aantal elementen van $A$. We komen verder nog even terug op deze variaties die er blijkbaar bestaan in het noteren van functies.}
+
+Voorbeelden van andere (iets minder direct wiskundige) functies:
+\\
+\begin{tabular}{l l p{10cm}}
+    & Snelheidsfunctie $v$:     & $v(t)$ = de snelheid van een bepaald voorwerp op tijdstip $t$, in km/u.  \\	
+    & Puntenfunctie $P$:        & $P$(leerling) = punten van bepaalde leerling (op een bepaalde toets)  \\
+    & Gemiddeldeperleerlingfunctie $\mu_L$: & $\mu_L$(leerling) = gemiddelde (over alle toetsen) van een bepaalde leerling  \\
+    & Gemiddeldepertoetsfunctie $\mu_T$ & $\mu_T$(toets) = gemiddelde (over alle leerlingen) op een bepaalde toets \\
+    & Grappigheidsfunctie $G_o$  & $G_o$(een grap) = het aantal seconden dat bij een vast proefpubliek  werd gelachen na het horen van de grap \\
+    & Verkiezingsfuncties $T$   & $T$(een kandidaat bij een bepaalde verkiezing) =  het aantal stemmen dat die kandidaat behaald heeft \\
+\end{tabular}
+
+
+\subsection{Domein en codomein}
+
+ \begin{definition} (Domein en codomein van een functie)
+	
+	\begin{enumerate}
+		\item De verzameling van alle mogelijke inputs van een functie $f$ noemen we het \textbf{domein} van $f$, en we noteren Dom$f$.
+		\item De verzameling waarin alle mogelijke outputs van een functie moeten liggen noemen we het \textbf{codomein} van $f$, of ook wel het \textbf{doel} van $f$, en we noteren Codom$f$.
+		\item We schrijven een algemene functie dan ook meer nauwkeurig als volgt (soms op één, soms op twee regels):
+		\begin{align*}
+		f: \text{Dom}f &\longrightarrow \text{Codom}f \\
+		x &\longmapsto f(x)
+		\end{align*}
+		Zo schrijven we bijvoorbeeld:
+		\begin{align*}
+		f: \mathbb{R} &\longrightarrow \mathbb{R},         & x \longmapsto x+5  \\
+		f: \mathbb{R} &\longrightarrow \left[-1,1\right],  & x \longmapsto \sin(x) 
+		\end{align*}
+	\end{enumerate}
+\end{definition}
+
+(Uitweiding) Om technische redenen hebben wiskundigen beslist dat een functie niet alleen bepaald wordt door wat ze doet, maar ook door haar mogelijke (of 'toegelaten') input en output. Zo is de functie 'kwadrateer-natuurlijke-getallen' strikt gesproken een \textit{andere} functie dan de functie kwadrateer-reële-getallen of de functie kwadrateer-rationale-getallen. Dus, twee functies zijn ---volgens de gangbare wiskundige definities--- gelijk aan elkaar als en slechts als ze dezelfde inputverzameling en outputverzameling hebben, en als ze aan elke inputwaarde dezelfde outputwaarde toekennen.
+
+In symbolen: zelfs als elke functie
+$f_1:\N\to\N$, $f_2:\Z \to\N$, $f_3:\Z\to\Z$, $f_4:\R\to\R^+$ en $f_f:\R\to\R$ telkens elke $x$ afbeeldt op $x^2$, dan zijn het strikt genomen toch nog steeds \textit{verschillende} functies. In vele gevallen zullen we in de praktijk echter toch gewoon spreken over de functie 'kwadrateer', en het onderscheid in domein en codomein negeren.
+
+Voor reële functies waarvan we geen expliciet domein opgeven, nemen we per conventie als domein de grootst mogelijke deelverzameling van $\R$ waarop de functie logischerwijs kan gedefinieerd worden. Het codomein is dan ---meestal--- gewoon $\R$ 
+
+Voorbeeld: als we spreken over de functie $1/x$, dan bedoelen we meestal de functie
+$$
+f: \R_o \to \R: x\mapsto 1/x
+$$
+
+%\end{remark}
+
+%om uit te drukken dat, als je aan de functie $f$ een bepaald \textit{iets} $x$ geeft, dat daar dan \textit{ietsanders} uitkomt, namelijk $f(x)$, dat ze ook $y$ noemen. Meestal ---maar zeker niet altijd--- kan je, als je een concrete $x$ geeft, bijvoorbeeld 6, de bijhorende $y$ berekenen. Maar, zelfs als je die niet kan berekenen, moet de bedoelde $y$ wel op één of andere manier uniek vastliggen.  
+%\\
+
+
+
+
+\section{Voorstellingswijzen van functies}
+In de wiskunde ligt het dikwijls voor de hand om functies te definiëren via formules. Dat is zelfs zozeer het geval, dat er soms geen onderscheid meer wordt gemaakt tussen 'een formule voor een bepaalde functie' en 'een functie gedefinieerd door een bepaalde formule', hoewel het eigenlijk twee totaal verschillende dingen zijn. 
+
+Een formule is een reeks symbolen die aan bepaalde regels voldoet (bijvoorbeeld $x^2 + a^2x + 7$ is een goede formule, maar $x-+8(a7)$ is dat niet), terwijl een functie een ding is waar je \textit{iets} instopt en er dan \textit{ietsanders} uithaalt. Maar, veel formules kunnen direct worden gebruikt om er een functie mee te maken, en nogal wat functies kunnen met een formule worden berekend. 
+
+Toch zijn er nog vele andere manieren om functies te definiëren, voor te stellen of te beschrijven. We sommen er enkele op:
+
+\subsection{Opsomming en verzamelingen}
+Voorbeelden van \textbf{opsomming} en een \textbf{verzamelingvoorstelling}:
+
+
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\begin{tabular}{lcl}
+	$f(a)$ & = & $1$ \\
+	$f(b)$ & = & $2$ \\
+	$f(c)$ & = & $3$ \\
+	$f(d)$ & = & $3$ \\
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+\subsection{Tabel}
+Voorbeelden van een \textbf{tabelvoorstelling}:
+
+\begin{center}
+	\begin{tabular}[t]{| c | c |}
+		\hline
+		$x$   &  $f_1(x) = x + 5$  \\
+		\hline
+		-2   & 3  \\
+		-1   & 4  \\
+		0    & 5  \\
+		1    & 6  \\
+		2    & 7  \\
+		\hline
+		
+	\end{tabular}
+	\qquad 
+	\begin{tabular}[t]{| c | c |}
+		\hline
+		$x$   &  $f_2(x) = x^2$ \\
+		\hline
+		-2   &  4 \\
+		-1   &  1 \\
+		0    &  0 \\
+		1    &  1 \\
+		2    &  4 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+\subsection{Formule}
+Voorbeelden van een \textbf{formulevoorstelling}:
+
+
+\begin{tabular}[t]{l l l}
+	& Functie   &  Formule \\
+	\hline \\
+    & 'kwadrateer'                & $f(x) = x^2$ \\
+	& 'vierkantswortel'           & $f(x) = \sqrt{x}$ \\
+	& 'vierkantswortel plus acht' & $f(x) = \sqrt{x} + 8$ \\
+	& 'plus 5'                    & $f(x) = x + 5$ \\
+	& 'sinus van de dubbele hoek' & $f(x) = \sin(2x)$ \\
+\end{tabular}
+
+
+\subsection{Samengesteld functievoorschrift}
+Voorbeelden van een \textbf{samengestelde functievoorschrift}:
+\[  f(x) =  \left\{
+\begin{array}{ll}
+0 & x\leq 0 \\
+\frac{x}{2} & 0 \leq x\leq 2 \\
+1 & 2\leq x \\
+\end{array} 
+\right. \]
+
+
+\subsection{Grafiek}
+Voorbeelden van een \textbf{grafische voorstelling}:
+
+
+\begin{figure}%[H]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+
+\begin{tikzpicture}
+\begin{axis}[
+axis equal,
+axis lines=middle, ymin=-3,
+ylabel=$y$, 
+xlabel=$x$
+]
+\addplot[domain=-15:10, black, ultra thick] {x+5};
+\end{axis}
+\end{tikzpicture}
+
+
+		\caption{$f(x) = x + 5$}
+	\end{minipage}\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+
+\begin{tikzpicture}
+\begin{axis}[
+axis equal,
+axis x line=middle, 
+axis y line=middle, 
+ylabel=$y$, 
+xlabel=$x$
+]
+\addplot[domain=-10:10, black, ultra thick
+] {x^2/10};
+\end{axis}
+\end{tikzpicture}
+
+		\caption{$f(x) = x^2/10$}
+	\end{minipage}
+\end{figure}
+
+
+\subsubsection{(Uitbreiding) Alternatieve grafische voorstellingen}
+
+De grafiek van een functie is in een aantal gevallen een bijzonder handig middel om de functie beter te begrijpen. Maar, in sommige gevallen zijn andere grafische voorstellingswijzen veel handigen. En, voor niet-reële functies werkt een klassieke grafiek meestal niet.
+
+Voorbeelden van een \textbf{alternatieve grafische voorstelling}:
+
+
+TODO !
+\begin{figure}%[H]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		
+%		\begin{tikzpicture}
+%		\begin{axis}[
+%		axis y line=none, xmin=-10, xmax=10,
+%		xlabel=$x$
+%		]
+%	%	\addplot[domain=-15:10, black, ultra thick] {x+5};
+%		\end{axis}
+%		\begin{axis}[
+%		axis y line=none, xmin=-10, xmax=10,
+%		axis x position=top,
+%		xlabel=$x$
+%		]
+%		%	\addplot[domain=-15:10, black, ultra thick] {x+5};
+%		\end{axis}
+%		\end{tikzpicture}
+		
+		
+		\caption{$f(x) = x + 5$}
+	\end{minipage}\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis equal,
+		axis x line=middle, 
+		axis y line=middle, 
+		ylabel=$y$, 
+		xlabel=$x$
+		]
+		\addplot[domain=-10:10, black, ultra thick
+		] {x^2/10};
+		\end{axis}
+		\end{tikzpicture}
+		
+		\caption{$f(x) = x^2/10$}
+	\end{minipage}
+\end{figure}
+
+
+
+\pagebreak
+\section{(Uitbreiding) Wiskundige definitie van een functie}
+
+{\scriptsize 
+	
+	WAARSCHUWING: op deze pagina maak je kennis met een typisch wiskundig fenomeen: om een bepaald begrip, waar we intuïtieve ideeën over hebben,   duidelijk en ondubbelzinnig te beschrijven, is dikwijls nogal wat technische bagage nodig. Dikwijls betekent dit echter ook dat wat op het eerste zicht tamelijk eenvoudig leek, nu alleen maar ingewikkeld, verwarrend en onbegrijpelijk geworden is. Dat is jammer, dikwijls onvermijdelijk, maar met enige goede wil ook nooit onoverkomelijk. Je herleest de zaak enkele keren, maakt van wat eenvoudige oefeningetjes, en herleest alles nog eens. Dan neem je een deugddoende ontspanning, je raapt al je moed bij elkaar en doet nog een kleine extra inspanning. Dan geeft je jezelf wat tijd om alles te laten bezinken, en op die manier lukt het iedereen om doorheen de technische bagage het intuïtieve idee terug te vinden. En dan heb je wiskundige vooruitgang gemaakt.  
+
+}
+
+\begin{definition}  (Wiskundige definitie van een functie)
+	  
+Een \textbf{functie\footnote{Soms wordt ook \textit{afbeelding} gebruikt, dat is meestal hetzelfde. In sommige handboeken wordt een klein technisch verschil gemaakt. We gebruiken typisch 'functie' als de verzamelingen A of B de reële getallen zijn. } $f$  van een verzameling $A$ naar een verzameling $B$}, genoteerd als $f:A\rightarrow B$ of $A \overset{f}{\rightarrow} B$ is per definitie een verzameling $G$  van koppels\footnote{Soms wordt ook \textit{geordende paren} gebruikt, dat is hetzelfde. Als we \textit{echt} wiskundig nauwkeurig willen zijn, zouden we natuurlijk ook het begrip koppel correct moeten definiëren.} $(a,b)$ waarbij geldt dat
+
+\begin{align}
+\forall (a,b) \in G, \qquad & a\in A \text{ en } b\in B \\
+\forall a \in A, \qquad & \exists  b \in B : (a,b) \in G \\
+\forall a\in A, \forall b_1,b_2 \in B, \qquad  & (a,b_1) \in G \text{ en } (a,b_2) \in G \implies b_1 = b_2  
+\end{align}
+
+\end{definition}
+Hierbij betekent voorwaarde (1) dat de functie inderdaad 'van A naar B' gaat, voorwaarde (2) dat elke element $a$ inderdaad een beeld heeft in B, en voorwaarde (3) dat dat beeld uniek is.\footnote{Dit is een standaard techniek in de wiskunde: zeggen dat een bepaald ding uniek is, is hetzelfde als zeggen dat als je ooit twee zo'n dingen zou hebben, dat ze dan noodzakelijk aan elkaar gelijk moeten zijn. }
+
+We noteren de unieke $b$ die bij een zekere $a$ hoort als $f(a)$, dus $f(a)$ is  het \textit{beeld van $a$ onder de functie $f$}. We kunnen dan de verzameling $G$ ook schrijven als $\{(a,f(a)) | a\in A))\}$, en noemen deze verzameling ook de \textbf{grafiek} van de functie $f$. We noemen $A$ het \textbf{domein} van $f$, en $B$ het \textbf{doel} of het \textbf{codomein}. De verzameling $\{f(a) | a\in A\}$ noemen we het \textbf{beeld} of het \textbf{bereik} van $f$ (en dat is dus in het algemeen een deelverzameling van het doel of codomein $B$).
+
+
+Voorbeelden:
+
+\begin{tabular}[t]{r l l l}
+kwadraat   & $f : \mathbb{R} \rightarrow \mathbb{R} :  $   & $x \mapsto  f(x) = x^2 $\\
+sinus & $\sin : \mathbb{R} \rightarrow [-1,1] :    $ & $x \mapsto  \sin x $\\
+veeltermfunctie & $f : \mathbb{R} \rightarrow \mathbb{R} :  $   & $x \mapsto  f(x) = 2x^2+3x+7 $\\
+\end{tabular}
+
+\begin{definition} (Surjectie/injectie/bijectie)
+	
+We noemen een functie \textbf{surjectief} als elk element van $B$ \textit{minstens één keer} wordt bereikt door $f$ (dus, als voor elke $b \in B$ een $a\in A$ bestaat zodat $f(a) = b$, of nog, als het beeld gelijk is aan het doel. 
+
+We noemen een functie \textbf{injectief} als elk element van $B$ \textit{hoogstens één keer} wordt bereikt door $f$ (dus, als er twee elementen $a_1, a_2\in A$ zijn zodat $f(a_1)=f(a_2)$, dan moet $a_1=a_2$.). 
+
+We noemen een functie \textbf{bijectief} als elk element van $B$ \textit{juist één keer} wordt bereikt door $f$. Een functie is dus bijectief als en slechts als ze zowel injectief als surjectief is. 
+\end{definition}
+
+%\begin{minipage}{\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}\quad
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}
+}
+
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+%\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}\quad
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+%\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b4);
+%\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}\quad
+\begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+\node[ele,label=left:$a$] (a1) at (0,4) {};    
+\node[ele,label=left:$b$] (a2) at (0,3) {};    
+\node[ele,label=left:$c$] (a3) at (0,2) {};
+\node[ele,label=left:$d$] (a4) at (0,1) {};
+
+\node[ele,,label=right:$1$] (b1) at (4,4) {};
+\node[ele,,label=right:$2$] (b2) at (4,3) {};
+\node[ele,,label=right:$3$] (b3) at (4,2) {};
+\node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+\node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+\node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;  
+\draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b4);
+\draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+\end{tikzpicture}
+}
+%\end{minipage}
+
+\section{Som, verschil, product en quotiënt van reële functies}
+
+
+
+
+\section{Samenstellen van functies}
+
+\subsection{Definitie}
+In de 'een functie is een machine' analogie betekent de 'functies samenstellen' gewoon twee machines achter elkaar plaatsen. 
+
+
+\subsection{(Uitbreiding) Het verschil tussen $f$ en $f(x)$}
+
+Men stelt vast dat er allerlei subtiele subtiliteiten verstopt zitten in het dagdagelijks gebruik van de symbolen $f$ (als naam van een functie) en $f(x)$ (in principe als functiewaarde van $f$ in $x$, maar veelal ook als synoniem voor de functie $f$). Het probleem manifesteert zich erg duidelijk bij de 'functie' $x\mapsto x^2$, die we meestal noteren als '$x^2$', maar ook bij de sinusfunctie, die meestal genoteerd wordt met $\sin x$. We noemen de functie dus $\sin x$, en niet sin. Iedereen kan eenvoudig nagaan dat in erg veel situaties met een symbool van het type $f(x)$ wel degelijk een functie wordt bedoeld, en niet de functiewaarde in één of ander (willekeurig) getal $x$.
+\\
+
+De dubbelzinnigheid rond de functies kan echter relatief eenvoudig beperkt worden tot een veelal toch al aanwezige dubbelzinnigheid in het gebruik van het symbool $x$. De letter $x$ wordt inderdaad in een wiskundige teksten gebruikt voor in principe erg verschillende concepten. 
+\\
+
+Zo kan $x$ een 'willekeurig element' zijn van een bepaalde verzameling, bijvoorbeeld in de formulering van een eigenschap: Zij $x\in\R$.
+
+Maar $x$ kan ook een 'onbekende' zijn, bijvoorbeeld bij het oplossen van vergelijkingen: zoek $x$ zodat $x^2+2x+1=0$. 
+
+Verder kan $x$ ook gewoon een letter zijn, bijvoorbeeld in de formule $(x+y)^2 = x^2+2xy+y^2$. (Die formule is veel algemener geldig dan bijvoorbeeld enkel voor 'willekeurige reële getallen $x$ en $y$'!)
+
+Tenslotte kan $x$ ook een 'variabele' zijn, bijvoorbeeld in de uitdrukking $f:x\mapsto f(x)$. (Het lijkt trouwens niet volledig triviaal om ergens een wiskundig zinvolle en praktisch bruikbare definitie te vinden van het begrip 'variabele'...! In deze cursus zal je ze allicht niet vinden?)
+
+
+\begin{definition} (Definitie van $x$ als de identieke functie)
+	
+	Zij $A$ een willekeurige verzameling. Dan noteren we met $x$ de identieke functie op $A$, dus
+	$$
+	x:A \to A,\quad y \mapsto x(y) = y
+	$$
+\end{definition}
+Merk op dat hier gekozen is om een willekeurig element van $A$ met de letter $y$ aan te duiden, maar met een klein misbruik van notatie (we gebruiken de letter $x$ in dezelfde formule in twee verschillende betekenissen) kunnen we ook schrijven:
+$$
+	x:A \to A,\quad x \mapsto x(x) = x
+$$
+Dus, $x$ is de functie die elk element op zichzelf afbeeldt. Eigenlijk moeten we schrijven $x_A$, want elke verzameling $A$ heeft natuurlijk haar eigen identieke functie. Per misbruik van notatie zullen we ze echter allemaal $x$ noemen. In geval van nood moet uit de context blijken voor welke $A$ we de functie $x$ precies nodig hebben.
+\\
+
+Met deze definitie hebben we de volgende merkwaardige stelling:
+\begin{proposition} (Gelijkheid van $f$ en $f(x)$ als functies)
+	
+	Zij $f:A\to B$ een functie. Dan geldt	
+	$$
+	f = fx = f\circ x = f(x)
+	$$
+	als gelijkheden van functies van $A$ naar $B$.
+\end{proposition}
+Bewijs: triviaal.
+
+Als gevolg van deze stelling is het toegelaten om bij het spreken over functies zowel over $f$ als over $f(x)$ te spreken. De dubbelzinnigheid rond het gebruik van de letter $x$ blijft natuurlijk wel bestaan, en de preciese betekenis moet telkens blijken uit de context.
+
+
+\section{Inverse functies}
+
+Als een functie bijectief is, kunnen we ze ook 'omkeren', of 'ongedaan maken': als we $b=f(a)$ hebben berekend, dan is die $a$ het enige element dat op $b$ wordt afgebeeld, en kunnen we dus een nieuwe functie definiëren, die we noteren met 
+$$f^{-1}: B \rightarrow A$$ 
+die $b$ afbeeldt op $a$, dus $f^{-1}(b) = a$.
+
+Met de functie $f^{-1}$ kunnen we dus de functie $f$ 'ongedaan maken': $f^{-1}(f(a)) = a$.
+
+In de 'een functie is een machine' analogie betekent de 'inverse functie' de machine in de omgekeerde richting doen draaien: van de output (terug) een input maken. Het is duidelijk dat dit voor de meeste machines onmogelijk is, net zoals de meeste functies geen inverse hebben. Maar, als functies een inverse hebben, is dat bijna altijd zeer interessant gegeven dat nadere studie vereist. En, soms kunnen we functies die geen inverse hebben toch wat manipuleren zodat er toch een soort van inverse kan gedefinieerd worden.
+
+\section{Transformaties van reële functies}
+
+\subsection{Motivatie}
+
+Voorbeelden: Bestudeer het verband tussen de (grafieken van) de volgende functies: 
+
+$f(x)$, $f(ax+b)$, $f(1/x)$, $af(x)+b$, $1/f(x)$
+
+
+(Hint: gebruik geogebra op http://)
+
+\subsection{(Uitbreiding) Wiskundige formulering}
+
+Zij $f:A\subset\R\to \R$ een reële functie.
+
+Zij $t:D \subset\R \to C\subset\R$ een reële functie, die we de \textit{transformatiefunctie} zullen noemen.
+
+\begin{center}
+\tikzstyle{fctie} = [rectangle, draw, fill=blue!30, node distance=1cm, text width=3em, text centered, rounded corners, minimum height=3em, thick]
+\tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=3em, text centered, minimum height=2em, thick]
+	
+\begin{tikzpicture}[]
+	\node [inpt] (input)  {Input $x$};
+	\node[fctie, right=of input, font=\Large\bfseries,fill=blue!10]     (functie1)  {t};
+	\node [inpt, right=of functie1] (output1)  {$t(x)$};
+	\node[fctie, right=of output1,font=\Large\bfseries]   (functie2)  {f};
+	\node [inpt, right=of functie2] (output) {Output $f(t(x))$ };  
+	\draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
+\end{tikzpicture}
+\begin{tikzpicture}[]
+	\node [inpt] (input)  {Input $x$};
+    \node[fctie, right=of input, font=\Large\bfseries]     (functie1)  {f};
+    \node [inpt, right=of functie1] (output1)  {$f(x)$};
+    \node[fctie, right=of output1,font=\Large\bfseries,fill=blue!10]   (functie2)  {t};
+    \node [inpt, right=of functie2] (output) {Output $t(f(x))$ };  
+    \draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
+\end{tikzpicture}
+\end{center}
+
+Voor enkele speciale types van transformatiefuncties $t$ kan de grafiek van $f\circ t$ en $t\circ f$ eenvoudig worden bepaald op basis van de grafiek van $f$.
+\\
+
+In het eerste geval, $f(t(x))$ passen we de transformatie toe \textit{binnen} de functie $f$, dus op de \textit{onafhankelijke} variable $x$. De transformatie  $t$ werkt dus \textbf{op de $x$-as} van de grafiek.
+\\
+
+In het tweede geval, $t(f(x))$ passen we de transformatie toe \textit{buiten} de functie $f$, dus op de \textit{afhankelijke} variable $y$ (want $y=f(x)$, en dus moeten we  $t(f(x)$, dus $t(y)$ berekenen. De transformatie $t$ werkt dus \textbf{op de $y$-as} van de grafiek.
+
+\subsection{Voorbeelden}
+
+
+\end{document}
