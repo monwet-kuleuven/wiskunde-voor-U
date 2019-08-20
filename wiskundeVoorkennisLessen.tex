@@ -15,101 +15,6 @@
 
 \pdfOnly{\usepackage{printStyles/voorkennis}}
 
-% Tijdelijke hack om zomercursus 'hoofding' te krijgen; TO BE REMOVED
-\pdfOnly{
- %bladschikking
- \voffset=-1in
- \topmargin=1.5 cm
- \headheight=2cm
- \headsep=1cm
- \textheight=22cm
- \footskip=1.2cm
- \hoffset=-1in
- \oddsidemargin=2.5cm
- \evensidemargin=2.5cm
- \textwidth=15.5cm
- \marginparsep=0cm
- \marginparwidth=0cm
- \setlength{\parindent}{0pt}
- \setlength{\parskip}{5 pt}
- 
- \newcounter{module}
- 
- 
- 
- %hoofding +kop- en voettekst
- \usepackage{fancyhdr}
- \pagestyle{fancy}
- \renewcommand{\sectionmark}[1]{\markboth{\small{\textsc{\thesection.\ #1}}}{}}
- \def\hoofding #1#2#3{\newpage
- 	\thispagestyle{empty}
- 	
- 	\hrule
- 	\begin{center}
- 		{\large {\textsc{Zomercursus Wiskunde}}}
- 		
- 		\bigskip
- 		%             \begin{minipage}[c]{2cm}\includegraphics[width=2cm]{./../macros/sedes.jpg}\end{minipage}
- 		
- 		\bigskip
- 		{\textsc{KU Leuven}}\\
- 		{\textsc{Groep Wetenschap \& Technologie}}
- 		
- 		\bigskip
- 		{\textsc{Zomer 2020} }
- 		\bigskip
- 		
-% 		{\large \textsc {Module \arabic{module}\\ \bigskip #1}} \\
- 		(\small{versie \today})
- 		\bigskip
- 		
- 	\end{center}
- 	
- 	\hrule
- 	
- 	\bigskip
- 	#2
- 	
- 	\bigskip
- 	
- 	#3
- 	
- 	
- 	\newpage
- 	\lfoot{\fancyplain{\textsc{\small Zomercursus Wiskunde\\Groep Wetenschap \& Technologie, KU Leuven}}
- 		{\textsc{\small Zomercursus Wiskunde\\Groep Wetenschap \& Technologie, KU Leuven}}}%tekst linksonder
- 	\cfoot{\fancyplain{}{}}
- 	\rfoot{}
- 	{}
- 	
- 	\fancyhead{}
- 	\fancyhead[L]{\small{\textsc{Module \arabic{module}: #1}}}
- 	
- 	\clearpage{\pagestyle{empty}\cleardoublepage}
- 	\tableofcontents
- 	\clearpage{\pagestyle{empty}\cleardoublepage}
- 	\pagestyle{fancy}
- 	\newpage
- 	\setcounter{page}{1}
- 	
- 	
- 	
- 	%\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\small{\leftmark}}}
- 	%\rhead[\fancyplain{}{\small{\textsc{#1}}}]{\fancyplain{}{\thepage}}
- 	
- 	%\fancyhead[LE,RO]{\thepage}
- 	%\fancyhead[LO]{\small{\textsc{Module \arabic{module}\\ #1}}}
- 	%\fancyhead[RE]{\leftmark}
- 	\fancyhead{}
- 	\fancyhead[RO]{\textsc{\arabic{module} - \thepage} \\ \small{\textsc{ Module \arabic{module}: #1}} }
- 	\fancyhead[LE]{\textsc{\arabic{module} - \thepage} \\ \small{\textsc{Module \arabic{module}: #1}}}
- 	
- 	
- 	
-}
-}
-
-
 
 \title{Voorkennislessen wiskunde voor studenten Wetenschappen}
 
@@ -120,11 +25,9 @@
 
 \setcounter{tocdepth}{2}
 
-%\maketitle
+\maketitle
 
-%\hoofding{azerty}{}{}
-
-%\tableofcontents\clearpage 
+\tableofcontents\clearpage 
 
 \sectionstyle
 \activity{notatie.tex}
