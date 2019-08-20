@@ -1,0 +1,3 @@
+[submodule "zomercursus"]
+	path = zomercursus
+	url = git@gitlab.mech.kuleuven.be:u0045050/zomercursus-wiskunde.git
