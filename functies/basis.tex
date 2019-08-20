@@ -19,18 +19,18 @@
 
 \subsection{(Pseudo-)definitie van het begrip functie}
 
-\begin{definition} (Pseudo-definitie van het begrip functie)
+\begin{definition} (Pseudo-definitie van het begrip functie)\label{fctie:def:pseudodef}
     
 Een  \textit{functie} is een wiskundig object dat met een \textit{iets} telkens een \textit{ietsanders} laat overeenkomen. 
-\end{definition}
+
 
 Anders gezegd: \\
-een functie is een machine of black box die voor elke \textit{input} telkens een \textit{output} genereert.
-\\
+Een \textit{functie} is een machine of black box die voor elke \textit{input} telkens een \textit{output} genereert.
+\end{definition}
 
 Een typisch voorbeeld is de functie 'kwadrateer', die met elk getal zijn kwadraat associeert.
 
-Ongeveer alles kan dienen als input en output van wiskundige functies, maar in wat volgt we zullen ons dikwijls concentreren op zogenaamde \textit{reële functies}: dat zijn die functies waar zowel de input als de output reële getallen zijn. In ieder geval hebben we voor dergelijke reële functies allerlei interessante begrippen en eigenschappen die niet zomaar van toepassing zijn op meer algemene functies, zoals nulpunten, minima en maxima, grafieken, afgeleiden, integralen,\ldots.
+Ongeveer alles kan dienen als input en output van wiskundige functies, maar in wat volgt we zullen ons dikwijls concentreren op zogenaamde \textit{reële functies}: dat zijn die functies waar zowel de input als de output reële getallen zijn. Voor dergelijke reële functies zijn er allerlei interessante begrippen en eigenschappen die niet zomaar van toepassing zijn op meer algemene functies: nulpunten, minima en maxima, grafieken, afgeleiden, integralen,\ldots.
 
 \begin{center}
 \begin{tikzpicture}[]
@@ -48,7 +48,9 @@ Ongeveer alles kan dienen als input en output van wiskundige functies, maar in w
 \end{center}
 
 
-Een functie heeft meestal een naam, en als de wiskundigen geen bijzondere inspiratie hebben, geven ze als naam graag gewoon $f$ (van $f$unctie). De \textit{ietsen} duiden ze dikwijls aan met $x$.\footnote{Hiermee is bewezen dat wiskundigen ook grappig kunnen zijn. Ze hebben natuurlijk de letter $x$ gekozen, omdat \textit{ietsen} zo mooi lijkt op \textit{iexen}!} Soms gebruiken ze natuurlijk ook andere letters, en populaire keuzes zijn dan $h,g,f_1, f_2$ voor functies, en $x$, $t$, $n$, $x_1$,$x_2$ of zelfs ook $y$ en $y_1$  voor de \textit{ietsen}. Het resultaat van de actie van de functie $f$ op het ding $x$ noteren ze met meestal met $f(x)$, maar uitzonderlijk ook zonder de haakjes als $fx$. Ze lezen $f(x)$ als 
+Een functie heeft meestal een naam, en als de wiskundigen geen bijzondere inspiratie hebben, geven ze als naam graag gewoon $f$ (van $f$unctie). De \textit{ietsen} duiden ze dikwijls aan met $x$.\footnote{Hiermee is bewezen dat wiskundigen ook grappig kunnen zijn. Ze hebben natuurlijk de letter $x$ gekozen, omdat \textit{ietsen} zo mooi lijkt op \textit{iexen}!} Soms gebruiken ze natuurlijk ook andere letters, en populaire keuzes zijn dan $h,g,f_1, f_2$ voor functies, en $x$, $t$, $n$, $x_1$,$x_2$ of zelfs ook $y$ en $y_1$  voor de \textit{ietsen}. 
+
+Het resultaat van de actie van de functie $f$ op het ding $x$ noteren ze met meestal met $f(x)$, maar uitzonderlijk ook zonder de haakjes als $fx$. Ze lezen $f(x)$ als 
 \begin{itemize}
 \item $f$ van $x$
 \item de \textit{functiewaarde} van $f$ in $x$
@@ -80,16 +82,16 @@ en dus voor deze functie $k$ geldt dat $k(2)=4$ en $k(4)=16$.
 \end{tikzpicture}
 \end{center}
 
-%\begin{remark}
-Merk op:    
+\begin{remark} \ 
+    
  Het is van cruciaal belang dat bij elke inputwaarde één vaste outputwaarde hoort. Dus de constructies met input $\N$ en definitie $f_1: x\mapsto $(de som van $x$ worpen met een dobbelsteen), $f_2: x\mapsto $(een getal $a$ zodat $a^2=x$) en $f_3:x\mapsto 1/x$ zijn geen functies.
  
  In de definitie van functies wordt niets gezegd over formules of grafieken. Inderdaad, reële functies \textit{hebben} dikwijls ---maar niet altijd--- een grafiek en een formule, maar ze \textit{zijn} dat niet. Zie verder.
- 
+\end{remark}
  
 \subsection{Voorbeelden}
 
-Voorbeelden van \textit{reële} functies, dus van en naar (deelverzamelingen van) de reële getallen $\R$:
+\begin{example} (\textit{reële} functies) %, dus van en naar (deelverzamelingen van) de reële getallen $\R$)
 \\
 \begin{tabular}[t]{l l l}
     & De functie 'plus $5$':       & $f(x) = x + 5$ \\
@@ -105,23 +107,25 @@ Voorbeelden van \textit{reële} functies, dus van en naar (deelverzamelingen van
     & Eerstegraadsfuncties:        & $f(x) = ax + b$, met zekere $a,b \in \R$  \\
     & Goniometrische functies:     & $f(x) = \sin(x)$, of ook $f(x)=\cos(ax+b)$, met $a,b \in \R$     \\
 \end{tabular}
-\\
+
 %\footnotetext[2]{in plaats van \textit{bepaald}, kan je hier ook \textit{zeker} of \textit{vast} getal $n$ zeggen. Het betekent dat je voor elk natuurlijk getal $n$, een andere functie hebt, die telkens elke $x$ afbeeldt op $x^n$. Hetzelfde geldt in het volgende voorbeeld: voor elke $a$ en $b$ krijg je een andere eerstegraadsfunctie. Zo zijn de functies 'plus $5$' en 'maal $6$' van hierboven, voorbeelden van eerstegraadsfuncties. Oefening: geef de $a$ en $b$ die bij deze twee laatste voorbeelden horen. }
-\\
-Voorbeelden van andere (wiskundige) functies:
-\\
+\end{example}
+
+\begin{example} (andere 'wiskundige' functies)
+
 \begin{tabular}[t]{l l l}
     & Oppervlaktefunctie $O$:    & $O$(rechthoek met zijden $a$ en $b$) = $a\cdot b$ (dus, de oppervlakte!) \\
     & Coördinaatfunctie $C_x$\footnotemark[3]:     & $C_x($punt $A(x,y) $ in het vlak$) = x$, de $x$-coördinaat van het punt $A$  \\
     & Aantal-elementen-functie \# \footnotemark[4]: & \#(een eindige verzameling $A$) = het aantal elementen in $A$
 \end{tabular}
-\\
+
 \footnotetext[3]{Een erg logische (maar, soms in het begin ook wat verwarrende) naam voor deze coördinaatfunctie is natuurlijk gewoon $x$. We krijgen dan $x(A) = x$, waarbij de eerste $x$ de naam is van de functie, en de tweede $x$ de $x$-coördinaat van het punt $A$.}
 \footnotetext[4]{Deze aantal-element-functies wordt dikwijls genoteerd met het symbool \#, en dan worden de haakjes om aan te geven dat het een functie is ook weggelaten, en krijgen we $\#A$ voor het aantal elementen van een verzameling. Soms wordt ook het symbool $|\cdot|$ gebruikt, en dan is $|A|$ het aantal elementen van $A$. We komen verder nog even terug op deze variaties die er blijkbaar bestaan in het noteren van functies.}
+\end{example}
 
-Voorbeelden van andere (iets minder direct wiskundige) functies:
-\\
-\begin{tabular}{l l p{10cm}}
+\begin{example} (andere iets minder direct wiskundige functies)
+    
+\begin{tabular}{l l p{8cm}}
     & Snelheidsfunctie $v$:     & $v(t)$ = de snelheid van een bepaald voorwerp op tijdstip $t$, in km/u.  \\    
     & Puntenfunctie $P$:        & $P$(leerling) = punten van bepaalde leerling (op een bepaalde toets)  \\
     & Gemiddeldeperleerlingfunctie $\mu_L$: & $\mu_L$(leerling) = gemiddelde (over alle toetsen) van een bepaalde leerling  \\
@@ -129,32 +133,40 @@ Voorbeelden van andere (iets minder direct wiskundige) functies:
     & Grappigheidsfunctie $G_o$  & $G_o$(een grap) = het aantal seconden dat bij een vast proefpubliek  werd gelachen na het horen van de grap \\
     & Verkiezingsfuncties $T$   & $T$(een kandidaat bij een bepaalde verkiezing) =  het aantal stemmen dat die kandidaat behaald heeft \\
 \end{tabular}
-
+\end{example}
 
 \subsection{Domein en codomein}
 
  \begin{definition} (Domein en codomein van een functie)
     
     \begin{enumerate}
-        \item De verzameling van alle mogelijke inputs van een functie $f$ noemen we het \textbf{domein} van $f$, en we noteren Dom$f$.
-        \item De verzameling waarin alle mogelijke outputs van een functie moeten liggen noemen we het \textbf{codomein} van $f$, of ook wel het \textbf{doel} van $f$, en we noteren Codom$f$.
+        \item De verzameling van alle mogelijke inputs van een functie $f$ noemen we het \textbf{domein} van $f$, en we noteren $\dom f$.
+        \item De verzameling waarin alle mogelijke outputs van een functie moeten liggen noemen we het \textbf{codomein} van $f$, of ook wel het \textbf{doel} van $f$, en we noteren $\codom f$.
         \item We schrijven een algemene functie dan ook meer nauwkeurig als volgt (soms op één, soms op twee regels):
         \begin{align*}
-        f: \text{Dom}f &\longrightarrow \text{Codom}f \\
+        f: \dom f &\longrightarrow \codom f \\
         x &\longmapsto f(x)
         \end{align*}
-        Zo schrijven we bijvoorbeeld:
-        \begin{align*}
-        f: \mathbb{R} &\longrightarrow \mathbb{R},         & x \longmapsto x+5  \\
-        f: \mathbb{R} &\longrightarrow \left[-1,1\right],  & x \longmapsto \sin(x) 
-        \end{align*}
+
     \end{enumerate}
 \end{definition}
 
+\begin{example} (voorbeeld notatie functie)
+    
+\begin{align*}
+f: \mathbb{R} &\longrightarrow \mathbb{R},         & x \longmapsto x+5  \\
+f: \mathbb{R} &\longrightarrow \left[-1,1\right],  & x \longmapsto \sin(x) 
+\end{align*}
+\end{example}
+
+\begin{uitweiding}
+    
 (Uitweiding) Om technische redenen hebben wiskundigen beslist dat een functie niet alleen bepaald wordt door wat ze doet, maar ook door haar mogelijke (of 'toegelaten') input en output. Zo is de functie 'kwadrateer-natuurlijke-getallen' strikt gesproken een \textit{andere} functie dan de functie kwadrateer-reële-getallen of de functie kwadrateer-rationale-getallen. Dus, twee functies zijn ---volgens de gangbare wiskundige definities--- gelijk aan elkaar als en slechts als ze dezelfde inputverzameling en outputverzameling hebben, en als ze aan elke inputwaarde dezelfde outputwaarde toekennen.
 
 In symbolen: zelfs als elke functie
 $f_1:\N\to\N$, $f_2:\Z \to\N$, $f_3:\Z\to\Z$, $f_4:\R\to\R^+$ en $f_f:\R\to\R$ telkens elke $x$ afbeeldt op $x^2$, dan zijn het strikt genomen toch nog steeds \textit{verschillende} functies. In vele gevallen zullen we in de praktijk echter toch gewoon spreken over de functie 'kwadrateer', en het onderscheid in domein en codomein negeren.
+
+\end{uitweiding}
 
 Voor reële functies waarvan we geen expliciet domein opgeven, nemen we per conventie als domein de grootst mogelijke deelverzameling van $\R$ waarop de functie logischerwijs kan gedefinieerd worden. Het codomein is dan ---meestal--- gewoon $\R$ 
 
@@ -167,6 +179,7 @@ $$
 
 %om uit te drukken dat, als je aan de functie $f$ een bepaald \textit{iets} $x$ geeft, dat daar dan \textit{ietsanders} uitkomt, namelijk $f(x)$, dat ze ook $y$ noemen. Meestal ---maar zeker niet altijd--- kan je, als je een concrete $x$ geeft, bijvoorbeeld 6, de bijhorende $y$ berekenen. Maar, zelfs als je die niet kan berekenen, moet de bedoelde $y$ wel op één of andere manier uniek vastliggen.  
 %\\
+
 
 
 \end{document}

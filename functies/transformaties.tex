@@ -18,22 +18,30 @@
 \tikzstyle{fctie} = [rectangle, draw, fill=blue!20, node distance=1cm, text width=10em, text centered, rounded corners, minimum height=3em, thick]
 \tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=4em, text centered, minimum height=2em, thick]
 
-% to be moved to own doculent ...?
+% to be moved to own document ...?
 \section{Som, verschil, product en quotiënt van reële functies}
 
 
 \section{Samenstellen van functies}
 
 \subsection{Definitie}
-In de 'een functie is een machine' analogie betekent de 'functies samenstellen' gewoon twee machines achter elkaar plaatsen. 
+In de 'een functie is een machine' (zie \autoref{fctie:def:pseudodef}) analogie betekent de 'functies samenstellen' gewoon twee machines achter elkaar plaatsen. 
+
 
 
 \subsection{(Uitbreiding) Het verschil tussen $f$ en $f(x)$}
 
-Men stelt vast dat er allerlei subtiele subtiliteiten verstopt zitten in het dagdagelijks gebruik van de symbolen $f$ (als naam van een functie) en $f(x)$ (in principe als functiewaarde van $f$ in $x$, maar veelal ook als synoniem voor de functie $f$). Het probleem manifesteert zich erg duidelijk bij de 'functie' $x\mapsto x^2$, die we meestal noteren als '$x^2$', maar ook bij de sinusfunctie, die meestal genoteerd wordt met $\sin x$. We noemen de functie dus $\sin x$, en niet sin. Iedereen kan eenvoudig nagaan dat in erg veel situaties met een symbool van het type $f(x)$ wel degelijk een functie wordt bedoeld, en niet de functiewaarde in één of ander (willekeurig) getal $x$.
+% Mmm, een volledige sectie als 'uitweiding'; willen we dat ???
+\begin{uitweiding}
+
+Men stelt vast dat er allerlei subtiele subtiliteiten verstopt zitten in het dagdagelijks gebruik van de symbolen $f$ (als naam van een functie) en $f(x)$ (in principe als functiewaarde van $f$ in $x$, maar veelal ook als synoniem voor 'de functie $f$'). 
+
+Het probleem manifesteert zich erg duidelijk bij de vierkantswortel $x\mapsto \sqrt{x}$. Deze functie noteren we meestal als '$\sqrt{x}$'. Hetzelfde geldt bij de sinusfunctie, die meestal genoteerd wordt met $\sin x$. We noemen de functie dus $\sqrt{x}$ en niet $\sqrt{}$, of  $\sin x$ en niet sin. Iedereen kan eenvoudig nagaan dat in erg veel situaties met een symbool van het type $f(x)$ wel degelijk een functie wordt bedoeld, en \textit{niet} de functiewaarde in één of ander (willekeurig) getal $x$.
 \\
 
-De dubbelzinnigheid rond de functies kan echter relatief eenvoudig beperkt worden tot een veelal toch al aanwezige dubbelzinnigheid in het gebruik van het symbool $x$. De letter $x$ wordt inderdaad in een wiskundige teksten gebruikt voor in principe erg verschillende concepten. 
+Er is een mooie, maar weinig verspreide manier om deze dubbelzinnigheid rond de notatie van functies relatief eenvoudig op te lossen. dat wil zeggen, ze reduceren tot een toch ook al aanwezige dubbelzinnigheid in het gebruik van het symbool $x$. 
+
+De letter $x$ wordt in een wiskundige teksten gebruikt voor in principe erg verschillende concepten. 
 \\
 
 Zo kan $x$ een 'willekeurig element' zijn van een bepaalde verzameling, bijvoorbeeld in de formulering van een eigenschap: Zij $x\in\R$.
@@ -52,7 +60,9 @@ Tenslotte kan $x$ ook een 'variabele' zijn, bijvoorbeeld in de uitdrukking $f:x\
     x:A \to A,\quad y \mapsto x(y) = y
     $$
 \end{definition}
-Merk op dat hier gekozen is om een willekeurig element van $A$ met de letter $y$ aan te duiden, maar met een klein misbruik van notatie (we gebruiken de letter $x$ in dezelfde formule in twee verschillende betekenissen) kunnen we ook schrijven:
+Merk op dat voor reële functies de notaie $x$ voor de identieke fucntie voor de hand ligt: net zoals $x^2$ een getal afbeeldt op zijn kwadraat, beeld $x$ een getal af op zichzelf.
+
+Merk ook op dat hier gekozen is om een willekeurig element van $A$ met de letter $y$ aan te duiden, maar met een klein misbruik van notatie (we gebruiken de letter $x$ in dezelfde formule in twee verschillende betekenissen) kunnen we ook schrijven:
 $$
     x:A \to A,\quad x \mapsto x(x) = x
 $$
@@ -72,6 +82,7 @@ Bewijs: triviaal.
 
 Als gevolg van deze stelling is het toegelaten om bij het spreken over functies zowel over $f$ als over $f(x)$ te spreken. De dubbelzinnigheid rond het gebruik van de letter $x$ blijft natuurlijk wel bestaan, en de preciese betekenis moet telkens blijken uit de context.
 
+\end{uitweiding}
 
 \section{Inverse functies}
 
@@ -112,6 +123,8 @@ Zij $t:D \subset\R \to C\subset\R$ een reële functie, die we de \textit{transfo
     \node [inpt, right=of functie2] (output) {Output $f(t(x))$ };  
     \draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
 \end{tikzpicture}
+
+
 \begin{tikzpicture}[]
     \node [inpt] (input)  {Input $x$};
     \node[fctie, right=of input, font=\Large\bfseries]     (functie1)  {f};
