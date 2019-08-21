@@ -14,7 +14,7 @@
 
 \begin{document}
 \begin{abstract}
-	Xiwatnuweer?
+	Ximewatisditnuweer?
 \end{abstract}
 \maketitle
 
@@ -24,7 +24,7 @@ De online module voor deze cursus maakt gebruik van Ximera.
 We wijzen u op volgende handige (en soms minder handige) aspecten van dit systeem:
 
 
-TODO: aanvullen
+TODO: uitwerken / aanvullen
 
 
 \begin{itemize}
@@ -38,20 +38,22 @@ TODO: aanvullen
 
 \subsection{(Uitbreiding) Ximera architectuur}
 
+TODO
+
 \subsection{(Uitbreiding) Ximera Showcase}
 
 \pdfOnly{
     \ifhandout
     Je gebruikt de HANDOUT PDF versie van de cursus; 
     
-    Er bestaat ook een 'gewone' PDF die alle antwoorden bevat.
+    Er bestaat ook een 'gewone' PDF die antwoorden en hints  bevat.
     \else
     Je gebruikt de STANDAARD PDF versie van de cursus; 
 
-    Er bestaat ook een HANDOUT PDF zonder de antwoorden!
+    Er bestaat ook een \textit{handout} PDF zonder de antwoorden!
     \fi
     
-    Er bestaat een  online versie heeft extra functionaliteit
+    Er bestaat ook een  online versie met extra functionaliteit
     
 }
 
@@ -93,16 +95,94 @@ TODO: aanvullen
 \end{problem}
 
 \begin{problem}
-    Los volgende erg moeilijke vragen correct op. Paniek is echter niet nodig, want we voorzien uitvoerige hints en feedback!
-    \begin{enumerate}
-        \item $2+2 = $\wordChoice{\choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}}
-        
-        \item $1+1 = $\begin{multipleChoice} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}\end{multipleChoice}
-        
-        \item $1+1 = $\begin{selectAll} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}\choice[correct]{$1+1$}\end{selectAll}
-    \end{enumerate}
+    Los volgende erg moeilijke vragen correct op. 
+    
+    Paniek is echter niet nodig, want we voorzien uitvoerige hints en feedback!
+    
+        \begin{question} % (Gebruik de hint!)
+          $2+2 = $\wordChoice{\choice{$2$}\choice{$3$}\choice[correct]{$4$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}}
+          \begin{hint}
+              Per definitie is $2 = 1+1$, en de optelling associatief.
+           \end{hint}  
+           \begin{hint}
+              Voor $1+1+1+1$ hadden we een kortere notatie ingevoerd ...
+           \end{hint}
+           \begin{feedback}[correct] Proficiat, je kan al erg goed rekenen! Doe zo voort.
+           \end{feedback}          
+        \end{question}
+   
+        \begin{question}
+          $4+4 = \answer[format=integer,id=antw]{8}$
+          \begin{hint}[0]
+              Probeer eerst 7 (want dan krijg je erg nuttige feedback!)
+          \end{hint}
+          \begin{hint}[5]
+            Herinner u het antwoord van de vorige vraag voor de preciese betekenis van het symbool $4$ !
+          \end{hint}
+          \begin{hint}[5]
+            Gewoon optellen ja ....
+          \end{hint}
+      
+          \begin{feedback}[correct]
+              Correct !
+          \end{feedback}
+          \begin{feedback}[antw<>8]
+               Fout !
+           \end{feedback}
+          \begin{feedback}[attempt]
+            De organisatie laat niet na u bij deze vriendelijk te danken voor uw verdienstelijke poging iom deze vraag te beantwoorden.   
+           \end{feedback}
+
+ 
+      
+          \begin{feedback}[antw=7]
+            Wel, je volgt de richtlijnen erg nauwkeurig. Maar ook voor andere foute antwoorden geven we interessante feedback
+          \end{feedback}
+          \begin{feedback}[antw=8]
+          Proficiat. Je heheerst deze module voldoende. Je bent nu voldoende voorbereid omù verder te gaan naar de fascinerende problematiek van \link[HoTT]{https://github.com/HoTT/HoTT}
+          \end{feedback}
+          \begin{feedback}[antw<7]
+              Mmm, dat is wat weinig. Reken alles nog eens naukeurig na.
+            \end{feedback}
+          \begin{feedback}[antw>8]
+               Mmm, dat is wat veel. Reken alles nog eens naukeurig na.
+           \end{feedback}
+       \end{question}
 \end{problem}
 
+\subsubsection{Ken je Sage al?}
+
+In Sage kan je relatief eenvoudig de parametervergelijkingen van een cirkel bestuderen:
+
+\begin{sageCell}
+    var('s t')
+    x(t) = 3*cos(t)
+    y(t) = 3*sin(t)
+    c(t) = (x(t),y(t))
+    circle=parametric_plot(c(t),(t,0,2*pi),color="black")
+    circle
+\end{sageCell}
+
+\pdfOnly{In de onlineversie kan je met deze code experimenteren. 
+    
+    Zie [één of andere ingewikkelde url] of [een qrcode]
+}
+
+\begin{onlineOnly}
+    
+    Pas de code aan, en druk op Evaluate!
+    
+    Nice, zoals ze zeggen ...
+    
+\begin{sageOutput}
+    var('s t')
+    x(t) = 3*cos(t)
+    y(t) = 3*sin(t)
+    c(t) = (x(t),y(t))
+    circle=parametric_plot(c(t),(t,0,2*pi),color="black")
+    circle
+\end{sageOutput}
+\end{onlineOnly}
 
 
 \end{document}
