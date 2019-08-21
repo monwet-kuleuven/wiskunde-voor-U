@@ -25,21 +25,34 @@
 \section{Samenstellen van functies}
 
 \subsection{Definitie}
-In de 'een functie is een machine' (zie \autoref{fctie:def:pseudodef}) analogie betekent de 'functies samenstellen' gewoon twee machines achter elkaar plaatsen. 
+In de 'een functie is een machine' (zie \autoref{fctie:def:pseudodef}) analogie betekent 'functies samenstellen' gewoon 'twee machines achter elkaar plaatsen': de output van de eerste wordt de input van de tweede. 
 
+\begin{center}
+    \begin{tikzpicture}[]
+    \node [inpt] (input)  {Input $x$};
+    \node[fctie, right=of input, font=\Large\bfseries,text width=3em]     (functie1)  {f};
+    \node [inpt, right=of functie1] (output1)  {$f(x)$};
+    \node[fctie, right=of output1,font=\Large\bfseries, text width=3em]   (functie2)  {g};
+    \node [inpt, right=of functie2] (output) {Output $g(f(x))$ };  
+    \draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
+    \end{tikzpicture}
+\end{center}
 
+Merk op dat de $f$ en $g$ van plaats wisselen in de grafische 'machine'-voorstelling en in de symbolische 'functie'-voorstellen: eerst $f$ en dan $g$ toepassen, schrijven we $g(f(x))$ (waar dus de $g$ eerst staat, en dan de $f$). Samengestelde functies worden best 'van binnen uit' gelezen: je vertrekt van de $x$, en kijkt wat er mee gebeurt: eerst $f(x$ nemen, en dan van het resultaat $g$ nemen, dus $g(f(x))$ 
+
+Uitweiding: als $x$ meerdere keren voorkomt in een formule wordt de regel moeilijk toepasbaar: $\frac{x^2\cdot\sin(2x)}{\sqrt{x^2+1}}$ kan je niet direct 'van binnen uit' lezen, maar $\sin(\frac{e^{2x^2+1}}{\pi})$ wel!
+
+TODO: Uitweiding: korte reflectie over postfix notatie $xf$ ipv $fx$
 
 \subsection{(Uitbreiding) Het verschil tussen $f$ en $f(x)$}
 
 % Mmm, een volledige sectie als 'uitweiding'; willen we dat ???
-\begin{uitweiding}
+\begin{uitweiding} Wat is het verschil tussen $f$ en $f(x)$ )
 
-Men stelt vast dat er allerlei subtiele subtiliteiten verstopt zitten in het dagdagelijks gebruik van de symbolen $f$ (als naam van een functie) en $f(x)$ (in principe als functiewaarde van $f$ in $x$, maar veelal ook als synoniem voor 'de functie $f$'). 
+Meestal beweert men dat het antwoord op deze vraag evident is: $f$ is de \textit{functie}, en $f(x)$ is de \textit{functiewaarde} in het element $x$. Een snelle blik in een willekeurig handboek wiskunde leert dat dit antwoord  eigenlijk niet voldoet: erg dikwijls zal men voor de vierkantswortel spreken van de 'functie $\sqrt(x)$ en niet van 'de functie $\sqrt{}$, of van de sinusfunctie $\sin x$, en niet van de functie $\sin$.
 
-Het probleem manifesteert zich erg duidelijk bij de vierkantswortel $x\mapsto \sqrt{x}$. Deze functie noteren we meestal als '$\sqrt{x}$'. Hetzelfde geldt bij de sinusfunctie, die meestal genoteerd wordt met $\sin x$. We noemen de functie dus $\sqrt{x}$ en niet $\sqrt{}$, of  $\sin x$ en niet sin. Iedereen kan eenvoudig nagaan dat in erg veel situaties met een symbool van het type $f(x)$ wel degelijk een functie wordt bedoeld, en \textit{niet} de functiewaarde in één of ander (willekeurig) getal $x$.
-\\
-
-Er is een mooie, maar weinig verspreide manier om deze dubbelzinnigheid rond de notatie van functies relatief eenvoudig op te lossen. dat wil zeggen, ze reduceren tot een toch ook al aanwezige dubbelzinnigheid in het gebruik van het symbool $x$. 
+\begin{expandable}
+Er is een mooie, maar weinig verspreide manier om deze dubbelzinnigheid rond de notatie van functies relatief eenvoudig op te lossen. Dat wil zeggen, ze reduceren tot een toch ook al aanwezige dubbelzinnigheid in het gebruik van het symbool $x$. 
 
 De letter $x$ wordt in een wiskundige teksten gebruikt voor in principe erg verschillende concepten. 
 \\
@@ -80,7 +93,14 @@ Met deze definitie hebben we de volgende merkwaardige stelling:
 \end{proposition}
 Bewijs: triviaal.
 
-Als gevolg van deze stelling is het toegelaten om bij het spreken over functies zowel over $f$ als over $f(x)$ te spreken. De dubbelzinnigheid rond het gebruik van de letter $x$ blijft natuurlijk wel bestaan, en de preciese betekenis moet telkens blijken uit de context.
+Als gevolg van deze stelling is het toegelaten om bij het spreken over functies zowel over $f$ als over $f(x)$ te spreken. De dubbelzinnigheid rond het gebruik van de letter $x$ blijft natuurlijk wel bestaan, en de preciese betekenis moet telkens blijken uit de context. 
+
+De stelling zegt dus \textit{niet} dat $f$ en $f(x)$ \textit{altijd} gelijk zijn, omdat in het symbool $x$ een inherente dubbelzinnigheid zit: soms is $x$ een willekeurig getal, en dan is $f(x)$ ook een getal, dat afhangt van het getal $x$. Maar, soms kan $x$ ook beschouwd worden als een functie, en dan is $f(x)$ ook een functie, namelijk gewoon de functie $f$.
+
+CAVEAT: deze zienswijze is wiskundig correct, maar niet algemeen bekend. Het is dus mogelijk dat in sommige contexten toch \textit{niet} mag worden beweerd dat $f$ en $f(x)$ eigenlijk hetzelfde (kunnen) zijn.
+
+\end{expandable}
+\todo{Uitzoeken/uitleggen dat variabele $x$  eigenlijk functie $x$ is? }
 
 \end{uitweiding}
 
@@ -88,11 +108,13 @@ Als gevolg van deze stelling is het toegelaten om bij het spreken over functies 
 
 Als een functie bijectief is, kunnen we ze ook 'omkeren', of 'ongedaan maken': als we $b=f(a)$ hebben berekend, dan is die $a$ het enige element dat op $b$ wordt afgebeeld, en kunnen we dus een nieuwe functie definiëren, die we noteren met 
 $$f^{-1}: B \rightarrow A$$ 
-die $b$ afbeeldt op $a$, dus $f^{-1}(b) = a$.
+die $b$ afb\todo{Uitzoeken/uitleggen dat variabele $x$  eigenlijk functie $x$ is? }eeldt op $a$, dus $f^{-1}(b) = a$.
 
 Met de functie $f^{-1}$ kunnen we dus de functie $f$ 'ongedaan maken': $f^{-1}(f(a)) = a$.
 
 In de 'een functie is een machine' analogie betekent de 'inverse functie' de machine in de omgekeerde richting doen draaien: van de output (terug) een input maken. Het is duidelijk dat dit voor de meeste machines onmogelijk is, net zoals de meeste functies geen inverse hebben. Maar, als functies een inverse hebben, is dat bijna altijd zeer interessant gegeven dat nadere studie vereist. En, soms kunnen we functies die geen inverse hebben toch wat manipuleren zodat er toch een soort van inverse kan gedefinieerd worden.
+
+\todo{Uitweiding: wiskundig-filosofisch verschil in complexiteit tussen functies en hun inverse (som/verschil, product/quotiënt, kwadraat/wortel, exponentiële/logaritme, sinus/boogsinus, afgeleide/integraal).}
 
 \section{Transformaties van reële functies}
 
@@ -106,20 +128,17 @@ $f(x)$, $f(ax+b)$, $f(1/x)$, $af(x)+b$, $1/f(x)$
 (Hint: gebruik geogebra op http://)
 
 \subsection{(Uitbreiding) Wiskundige formulering}
-
+\todo{Uitzoeken/uitleggen dat variabele $x$  eigenlijk functie $x$ is? }
 Zij $f:A\subset\R\to \R$ een reële functie.
 
 Zij $t:D \subset\R \to C\subset\R$ een reële functie, die we de \textit{transformatiefunctie} zullen noemen.
 
 \begin{center}
-\tikzstyle{fctie} = [rectangle, draw, fill=blue!30, node distance=1cm, text width=3em, text centered, rounded corners, minimum height=3em, thick]
-\tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=3em, text centered, minimum height=2em, thick]
-    
 \begin{tikzpicture}[]
     \node [inpt] (input)  {Input $x$};
-    \node[fctie, right=of input, font=\Large\bfseries,fill=blue!10]     (functie1)  {t};
+    \node[fctie, right=of input, font=\Large\bfseries,text width=3em, fill=blue!10]     (functie1)  {t};
     \node [inpt, right=of functie1] (output1)  {$t(x)$};
-    \node[fctie, right=of output1,font=\Large\bfseries]   (functie2)  {f};
+    \node[fctie, right=of output1,font=\Large\bfseries,text width=3em]   (functie2)  {f};
     \node [inpt, right=of functie2] (output) {Output $f(t(x))$ };  
     \draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
 \end{tikzpicture}
@@ -127,9 +146,9 @@ Zij $t:D \subset\R \to C\subset\R$ een reële functie, die we de \textit{transfo
 
 \begin{tikzpicture}[]
     \node [inpt] (input)  {Input $x$};
-    \node[fctie, right=of input, font=\Large\bfseries]     (functie1)  {f};
+    \node[fctie, right=of input, font=\Large\bfseries,text width=3em]     (functie1)  {f};
     \node [inpt, right=of functie1] (output1)  {$f(x)$};
-    \node[fctie, right=of output1,font=\Large\bfseries,fill=blue!10]   (functie2)  {t};
+    \node[fctie, right=of output1,font=\Large\bfseries,text width=3em,fill=blue!10]   (functie2)  {t};
     \node [inpt, right=of functie2] (output) {Output $t(f(x))$ };  
     \draw[>->]  (input) -- (functie1) -- (output1) --  (functie2)-- (output);
 \end{tikzpicture}
