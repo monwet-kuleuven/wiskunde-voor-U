@@ -1,21 +1,24 @@
-\documentclass{ximera}
+\documentclass[handout]{ximera}
+%\documentclass{ximera}
 
 \input{./preamble.tex}
 
-% Allicht enkel jin online  versie te includen !!!
+% Allicht enkel in online  versie te includen !!!
 
 \author{Wim Obbels}
 \outcome{Elementaire vertrouwdheid met Ximera functionaliteit}
+\outcome{(Uitbreiding) Enig inzicht in Ximera architectuur}
 
 
 \title{Ximera Howto}
 
 \begin{document}
 \begin{abstract}
-	Online cursusgebruik voor dummies.
+	Xiwatnuweer?
 \end{abstract}
 \maketitle
 
+\subsection{Ximera functionaliteit}
 De online module voor deze cursus maakt gebruik van Ximera.
 
 We wijzen u op volgende handige (en soms minder handige) aspecten van dit systeem:
@@ -32,6 +35,73 @@ TODO: aanvullen
 	\item Iets over punten en komma's  (1.2 vs 1,2) ?
 
 \end{itemize}
+
+\subsection{(Uitbreiding) Ximera architectuur}
+
+\subsection{(Uitbreiding) Ximera Showcase}
+
+\pdfOnly{
+    \ifhandout
+    Je gebruikt de HANDOUT PDF versie van de cursus; 
+    
+    Er bestaat ook een 'gewone' PDF die alle antwoorden bevat.
+    \else
+    Je gebruikt de STANDAARD PDF versie van de cursus; 
+
+    Er bestaat ook een HANDOUT PDF zonder de antwoorden!
+    \fi
+    
+    Er bestaat een  online versie heeft extra functionaliteit
+    
+}
+
+\begin{onlineOnly}
+    Je gebruikt de ONLINE versie van de cursus; er bestaan PDF versies.
+\end{onlineOnly}
+
+\begin{prompt}  
+    BEGIN PROMPT
+    
+    Deze tekst staat in een zogenaamde 'prompt' omgeving in \LaTeX. Het is de auteur van deze cursus voorlopig enigszins onduidelijk waarvoor dat precies dient.
+    
+    Volgens de documentatie zou dit 'hidden tekst' moeten zijn.
+    (In de handout-versie wordt het inderdaad niet getoond.)
+    
+    EINDE PROMPT
+\end{prompt}
+
+\begin{problem}
+    
+    Los volgende vragen correct op:
+    \begin{enumerate}
+        \item $1+1 = \answer{2}$
+        \item $1+1 = \answer[given]{2}$   ( Met 'answer[given]')
+        \item $\frac{1}{2} =  \answer{\frac{1}{2}}$  (Gebruik een punt voor decimale getallen...)
+        \item $\frac{1}{2} =  \answer[tolerance=.2]{\frac{1}{2}}$  (Je mag er 0.2 naast zitten)
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+       Los volgende vragen correct op:
+    \begin{enumerate}
+        \item $1+1 = $\wordChoice{\choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}}
+        
+        \item $1+1 = $\begin{multipleChoice} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}\end{multipleChoice}
+        
+        \item $1+1 = $\begin{selectAll} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}\choice[correct]{$1+1$}\end{selectAll}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Los volgende erg moeilijke vragen correct op. Paniek is echter niet nodig, want we voorzien uitvoerige hints en feedback!
+    \begin{enumerate}
+        \item $2+2 = $\wordChoice{\choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}}
+        
+        \item $1+1 = $\begin{multipleChoice} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}\end{multipleChoice}
+        
+        \item $1+1 = $\begin{selectAll} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}\choice[correct]{$1+1$}\end{selectAll}
+    \end{enumerate}
+\end{problem}
 
 
 
