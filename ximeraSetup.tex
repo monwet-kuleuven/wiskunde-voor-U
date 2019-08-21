@@ -1,0 +1,98 @@
+%\documentclass[handout]{ximera}
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+
+\author{Wim Obbels}
+
+\outcome{(Uitbreiding) Enig inzicht in de Ximera architectuur}
+\outcome{(Uitbreiding) Enig inzicht in de Ximera setup voor de Zomercursus}
+
+
+\title{(Uitbreiding) Ximera Setup}
+
+\begin{document}
+\begin{abstract}
+	Howto Ximera?
+\end{abstract}
+\maketitle
+
+
+\subsection{(Uitbreiding) Ximera Architectuur}
+
+\subsubsection{De \LaTeX code}
+
+Ximera is een relatief eenvoudige LaTeX module/uitbreiding, die twee nieuwe documentclasses definieert, en enkele nieuwe commando's en environments.
+
+Het volstaat om twee files op de juiste plaats te copiëren om deze functionaliteit in pdflatex (via miktex, texlive, ...)  te kunnen gebruiken om correcte pdf's te kunnen genereren.
+
+
+\paragraph{Documentclasses ximera en xourse} \ 
+
+Een \verb|\documentclass{ximera}| \textit{bevat} 'activiteiten' of 'modules', dus duidelijk afgelijnde en in princiepe self-contained stukjes leerstof. 
+
+De precieze omvang van één 'ximera-activitiet' is te beslissen (per hoofdstuk/sectie/subsectie; oefening/reeks oefeningen/type oefeningen ...?)
+
+Een \verb|\documentclass{xourse}| \textit{omvat}  activiteiten of opefeningen, en is meestal een eenvoudige lijst van includes van 'ximera-activiteiten'. 
+
+Een mogelijkheid is om één ximera-activiteit te maken per Module van de zomercurtsus, en 2 xourses, namelijk ZomercursusA.tex en ZomercursusB.tex die elk een lijstje van modules bevatten.
+
+
+Info: \link{https://github.com/XimeraProject/ximeraLatex}
+
+\paragraph{Environments} \ 
+
+Ximera definieert een beperkt aantal environments die out-of-the-box een andere layout of functionaliteit bieden in PDF versus online:
+\begin{enumerate}
+    \item theorem, proposition, lemma, example ...: enkel layout wijzigt
+    \item problem,exercise,question,exploration: kunnen optioneel commando's en environments bevatten die online interactieve webpagina's genereren (en in PDF keuzelijstjes/antwoorden/blanco's)
+    \item foldable/expandable
+    \item hint/feedback
+    \item onlineOnly (cfr infra)
+\end{enumerate}
+    
+\paragraph{Commands} \ 
+
+\begin{enumerate}
+    \item \verb|\pdfOnly| en \textbackslash begin\{onlineOnly\}...\textbackslash end\{onlineOnly\}
+    \item \verb|\youtube|, \verb|\geogebra|  en \verb|\desmos|
+    \item \verb|\graph| en \verb|\sageCell|
+\end{enumerate}
+
+
+\subsubsection{De generatie en publicatie van HTML}
+
+In principe werkt make4ht om html's te genereren. DIT ZIJN NIET DE HTLML's DIE VERDER DOOR XIMERA WORDEN GEBRUIKT, MAAR KUNNEN WEL DIENEN ALS EERSTE TEST.
+
+
+TODO: installatie xake   (build-tool voor ximera) en/of integratie met git hooks en/of docker
+
+TODO: publicatie via xake en/of docker en/of git(-hooks)
+
+
+Info: \link{https://github.com/XimeraProject/xake}
+
+\subsubsection{Ximera webhosting}
+
+De html-website kan worden gehost op ximera.osu.edu  (voorbeeld: \link{https://ximera.osu.edu/wvu}) . 
+
+\begin{verbatim}
+Voordelen:
+
+    Zero setup en onderhoud.
+
+Nadelen:
+
+    Dependency op osu.edu (upgrades/downtime/...)
+    Is dit toegelaten?
+    Zichtbaarheid (liever kuleuven.be url)
+
+\end{verbatim}
+
+De installatie van Ximera op eehn LINUX server is tamelijk eenvoudig. Kan in principe zowel Extern / Monitoraat / Faculteit Wetenschappen en/of ICTS ...? To be investigated....
+    
+Info: \link{https://github.com/XimeraProject/server}
+
+
+\end{document}
