@@ -1,5 +1,5 @@
-\documentclass[handout]{ximera}
-%\documentclass{ximera}
+%\documentclass[handout]{ximera}
+\documentclass{ximera}
 
 \input{./preamble.tex}
 
@@ -38,7 +38,78 @@ TODO: uitwerken / aanvullen
 
 \subsection{(Uitbreiding) Ximera architectuur}
 
-TODO
+\subsubsection{De \LaTeX code}
+
+Ximera is een relatief eenvoudige LaTeX module/uitbreiding, die twee nieuwe documentclasses definieert, en enkele nieuwe commando's en environments.
+
+Het volstaat om twee files op de juiste plaats te copiëren om deze functionaliteit in pdflatex (via miktex, texlive, ...)  te kunnen gebruiken om correcte pdf's te kunnen genereren.
+
+
+\paragraph{Documentclasses ximera en xourse} \ 
+
+Een \verb|\documentclass{ximera}| \textit{bevat} 'activiteiten' of 'modules', dus duidelijk afgelijnde en in princiepe self-contained stukjes leerstof. 
+
+De precieze omvang van één 'ximera-activitiet' is te beslissen (per hoofdstuk/sectie/subsectie; oefening/reeks oefeningen/type oefeningen ...?)
+
+Een \verb|\documentclass{xourse}| \textit{omvat}  activiteiten of opefeningen, en is meestal een eenvoudige lijst van includes van 'ximera-activiteiten'. 
+
+Een mogelijkheid is om één ximera-activiteit te maken per Module van de zomercurtsus, en 2 xourses, namelijk ZomercursusA.tex en ZomercursusB.tex die elk een lijstje van modules bevatten.
+
+
+Info: \link{https://github.com/XimeraProject/ximeraLatex}
+
+\paragraph{Environments} \ 
+
+Ximera definieert een beperkt aantal environments die out-of-the-box een andere layout of functionaliteit bieden in PDF versus online:
+\begin{enumerate}
+    \item theorem, proposition, lemma, example ...: enkel layout wijzigt
+    \item problem,exercise,question,exploration: kunnen optioneel commando's en environments bevatten die online interactieve webpagina's genereren (en in PDF keuzelijstjes/antwoorden/blanco's)
+    \item foldable/expandable
+    \item hint/feedback
+    \item onlineOnly (cfr infra)
+\end{enumerate}
+    
+\paragraph{Commands} \ 
+
+\begin{enumerate}
+    \item \verb|\pdfOnly| en \verb|\begin{onlineOnly}...\end{onlineOnly}|
+    \item \verb|\youtube|, \verb|\geogebra|  en \verb|\desmos|
+    \item \verb|\graph| en \verb|\sageCell|
+\end{enumerate}
+
+
+\subsubsection{De generatie en publicatie van HTML}
+
+In principe werkt make4ht om html's te genereren. DIT ZIJN NIET DE HTLML's DIE VERDER DOOR XIMERA WORDEN GEBRUIKT, MAAR KUNNEN WEL DIENEN ALS EERSTE TEST.
+
+
+TODO: installatie xake   (build-tool voor ximera) en/of integratie met git hooks en/of docker
+
+TODO: publicatie via xake en/of docker en/of git(-hooks)
+
+
+Info: \link{https://github.com/XimeraProject/xake}
+
+\subsubsection{Ximera webhosting}
+
+De html-website kan worden gehost op ximera.osu.edu  (voorbeeld: \link{https://ximera.osu.edu/wvu}) . 
+
+\begin{verbatim}
+Voordelen:
+
+    Zero setup en onderhoud.
+
+Nadelen:
+
+    Dependency op osu.edu (upgrades/downtime/...)
+    Is dit toegelaten?
+    Zichtbaarheid (liever kuleuven.be url)
+
+\end{verbatim}
+
+De installatie van Ximera op eehn LINUX server is tamelijk eenvoudig. Kan in principe zowel Extern / Monitoraat / Faculteit Wetenschappen en/of ICTS ...? To be investigated....
+    
+Info: \link{https://github.com/XimeraProject/server}
 
 \subsection{(Uitbreiding) Ximera Showcase}
 
@@ -79,18 +150,18 @@ TODO
         \item $1+1 = \answer{2}$
         \item $1+1 = \answer[given]{2}$   ( Met 'answer[given]')
         \item $\frac{1}{2} =  \answer{\frac{1}{2}}$  (Gebruik een punt voor decimale getallen...)
-        \item $\frac{1}{2} =  \answer[tolerance=.2]{\frac{1}{2}}$  (Je mag er 0.2 naast zitten)
+        \item $\frac{1}{2} =  \answer[tolerance=.2]{\frac{1}{2}}$  (Je mag er 0.2 naast zitten)Probeer eerst 
     \end{enumerate}
 \end{problem}
 
 \begin{problem}
        Los volgende vragen correct op:
     \begin{enumerate}
-        \item $1+1 = $\wordChoice{\choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}}
+        \item $1+1 = $\wordChoice{\choice[correct]{$2$}\choice{$3$}\choice{geen van de eerste twee opties}\choice{de derde optie}}
         
-        \item $1+1 = $\begin{multipleChoice} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}\end{multipleChoice}
+        \item $1+1 = $\begin{multipleChoice} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het bovenstaande antwoord}\end{multipleChoice}
         
-        \item $1+1 = $\begin{selectAll} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het vorige antwoord}\choice[correct]{$1+1$}\end{selectAll}
+        \item $1+1 = $\begin{selectAll} \choice[correct]{$2$}\choice{$3$}\choice{geen van de vorige antwoorden}\choice{het bovenstaande antwoord}\choice[correct]{$1+1$}\end{selectAll}
     \end{enumerate}
 \end{problem}
 
@@ -112,14 +183,14 @@ TODO
         \end{question}
    
         \begin{question}
-          $4+4 $ $y = \answer[format=integer,id=y]{8}$
+          Als $y=4+4$ dan is $y = \answer[format=integer,id=y]{8}$ (Geef een geheel getal, en probeer eerst een fout getal, bv 7.)
           \begin{hint}[0]
-              Probeer eerst 7 (want dan krijg je erg nuttige feedback!)
+              Heb je 7 al geprobeerd (want dan krijg je erg nuttige feedback!)
           \end{hint}
-          \begin{hint}[5]
+          \begin{hint}
             Herinner u het antwoord van de vorige vraag voor de preciese betekenis van het symbool $4$ !
           \end{hint}
-          \begin{hint}[5]
+          \begin{hint}[3]
             Gewoon optellen ja ....
           \end{hint}
       
@@ -139,17 +210,18 @@ TODO
             Wel, je volgt de richtlijnen erg nauwkeurig. Maar ook voor andere foute antwoorden geven we interessante feedback
           \end{feedback}
           \begin{feedback}[y==8]
-          Proficiat. Je heheerst deze module voldoende. Je bent nu voldoende voorbereid omù verder te gaan naar de fascinerende problematiek van \link[HoTT]{https://github.com/HoTT/HoTT}
+          Proficiat. Je heheerst deze module voldoende. Je bent nu voldoende voorbereid om verder te gaan naar de fascinerende problematiek van \link[HoTT]{https://github.com/HoTT/HoTT}
           \end{feedback}
           \begin{feedback}[y<7]
-              Mmm, dat is wat weinig. Reken alles nog eens naukeurig na.
+              Mmm, dat is wat weinig. Reken alles nog eens nauwkeurig na.
             \end{feedback}
           \begin{feedback}[y>8]
-               Mmm, dat is wat veel. Reken alles nog eens naukeurig na.
+               Mmm, dat is wat veel. Reken alles nog eens nauwkeurig na.
            \end{feedback}
        \end{question}
 \end{problem}
 
+\begin{comment}
 \subsubsection{Ken je Sage al?}
 
 In Sage kan je relatief eenvoudig de parametervergelijkingen van een cirkel bestuderen:
@@ -183,6 +255,6 @@ In Sage kan je relatief eenvoudig de parametervergelijkingen van een cirkel best
     circle
 \end{sageOutput}
 \end{onlineOnly}
-
+\end{comment}
 
 \end{document}
