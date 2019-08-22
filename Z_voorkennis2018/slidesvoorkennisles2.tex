@@ -1,0 +1,527 @@
+%Latex->ps->pdf
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Nnul}{\ensuremath{\mathbb{N}_0}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\perdef}{\overset{\mathrm{def}}{=}}
+
+\usepackage{amsmath,amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{epic,overpic}
+
+\usepackage{etex}
+\usepackage[dutch]{babel}
+\usepackage{hyphenat}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\usepackage{color}
+%\usepackage[thmmarks,framed,amsmath]{ntheorem}
+\usepackage{answers}
+
+\usepackage{framed}
+
+\usepackage{pst-all}
+\usepackage{epic}
+\usepackage{eepic}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{color}
+
+
+\title{Voorkennisles 2}
+
+\author{Annouk Van Vlierden}
+\date{2018-2019}
+%\usetheme{Montpellier}
+\usetheme{CambridgeUS}
+\usecolortheme{seahorse}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+\section{Limieten}
+%\section{Inleiding}
+
+\begin{frame}{Idee: Waar gaat $f(x)$ naar toe als $x$ naar $a$ gaat?}
+\begin{exampleblock}{Voorbeeld}
+Waar gaat $f(x)=\frac{1}{x}$ naar toe als $x$ naar $a=2$ gaat?
+\begin{itemize}
+	\item naar $\ds \frac{1}{2}$
+	\item notatie:   $\displaystyle{\lim_{x \rightarrow 2}} \frac{1}{x} = \frac{1}{2} $
+\end{itemize}
+
+
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Linker- en rechterlimiet}
+\begin{exampleblock}{Voorbeeld}
+$$\lim_{x \to 7} (-2 + \sqrt{x-7})$$ bestaat niet omdat $x$ alleen langs rechts $(x>7)$ naar 7 kan gaan.
+
+De RECHTERlimiet $$\displaystyle \lim_{x  \to 7^+} (-2 + \sqrt{x-7}) $$ bestaat wel.  
+$$\displaystyle \lim_{x  \to 7^+} (-2 + \sqrt{x-7})=-2 $$
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Let op notatie limiet}
+
+\begin{itemize}
+\item $\displaystyle{\lim_{x \rightarrow a}} f(x) = L $ betekent: 
+\begin{itemize}
+	\item[] Als $x$
+naar $a$ gaat, dan gaat de functiewaarde $f(x)$ naar $L$.
+\end{itemize}
+
+\item $\displaystyle{\lim_{x  \rightarrow a^+}} f(x) = L $ betekent: 
+\begin{itemize}
+	\item[] Als $x$ langs rechts
+naar $a$ gaat ($x>a$), dan gaat de functiewaarde $f(x)$ naar $L$.
+\item[] rechterlimiet
+\end{itemize}
+
+\item $\displaystyle{\lim_{x  \rightarrow a^-}} f(x) = L $ betekent:
+\begin{itemize}
+	\item[] Als $x$ langs links
+naar $a$ gaat ($x<a$), dan gaat de functiewaarde $f(x)$ naar $L$.
+\item[] linkerlimiet
+\end{itemize}
+ 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+
+$$\displaystyle{\lim_{x \rightarrow 2}} \frac{1}{x} = \frac12 = f(2) $$
+want $f(x)= \frac{1}{x}$ is continue functie in 2. 
+
+Zo eenvoudig is het niet altijd.
+
+
+We bestuderen verder enkel limieten 
+\begin{itemize}
+	\item in $a = \pm \infty$
+	\item in nulpunten van de noemer
+\end{itemize}
+en nemen als inleidend voorbeeld de rationale functie $f : x \mapsto \frac 1x$
+\end{frame}
+
+\begin{frame}{Waar gaat $f(x)=\frac{1}{x}$ naar toe als $x$ naar $0$ gaat?}
+
+\begin{tabular}{r|llcl}
+x & $\frac{1}{2}$ & $\frac{1}{3}$ & \dots & $ \to  0$\\
+\hline \\
+f(x) & 2&3& \dots & $\rightarrow + \infty$
+\end{tabular}
+\centerline{\scalebox{.4}{\input{Afbeeldingen/18.pst}}}
+\end{frame}
+\begin{frame}{Waar gaat $f(x)=\frac{1}{x}$ naar toe als $x$ naar $0$ gaat?}
+
+\[\begin{array}{cccccc}
+ \text{ als } &  x \to  0^+ & \text{ dan } & \frac1x \rightarrow + \infty &
+ \text{ notatie: } & \displaystyle{\lim_{x \to  0^+} \frac1x = +
+\infty} \\
+ \\
+ \text { als } & x \to
+ 0^- & \text{ dan } & \frac 1 x \rightarrow -\infty &
+ \text{ notatie: } & \displaystyle{\lim_{x \to  0^-} \frac 1x = - \infty}\\
+\end{array}
+\]
+
+De rechte $x = 0$ (de Y-as) noemen we een \textit{ verticale
+asymptoot} van (de grafiek van) $f$.
+
+\begin{alertblock}{Opsplitsen in linker- en rechterlimiet}
+Merk op dat $\displaystyle{\lim_{x \to  0}} \frac 1x$ niet bestaat
+omdat de linker- en rechterlimiet verschillend zijn.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Waar gaat $f(x)=\frac{1}{x}$ naar toe als $x$ naar $+ \infty$ of $- \infty$ gaat?}
+\[\begin{array}{cccccc}
+ \text{ als } &  x \rightarrow + \infty & \text{ dan } & \frac1x \rightarrow 0 &
+ \text{ notatie: } & \displaystyle{\lim_{x \rightarrow + \infty} \frac1x = 0} \\
+ \\
+ \text { als } & x \rightarrow - \infty & \text{ dan } & \frac 1 x \rightarrow 0 &
+ \text{ notatie: } & \displaystyle{\lim_{x \rightarrow - \infty} \frac 1x = 0}\\
+\end{array}
+\]
+\\
+De rechte $y=0$ (de $X$-as) noemen we een \textit{ horizontale
+asymptoot} van (de grafiek van) $f$.
+\centerline{\scalebox{.3}{\input{Afbeeldingen/18.pst}}}
+
+\end{frame}
+
+\begin{frame}
+Ook voor de exponenti\"{e}le en de logaritmische functie kunnen we de
+limieten aflezen op de grafiek:
+\begin{center}
+\scalebox{0.5}{\includegraphics{Afbeeldingen/Logaritme.eps}}
+\end{center}
+\end{frame}
+
+\begin{frame}{Oefening}
+Vind de limieten met de hulp van voorgaande grafieken:
+\begin{itemize}
+
+\item $\ds \lim_{x \rightarrow + \infty} e^x = \pause + \infty$
+\item $\ds \lim_{x \rightarrow - \infty} e^x = \pause 0$
+
+\item $\displaystyle{\lim_{x \to  0^+}} (e^{\frac 1x}) = \pause +\infty$
+\item $\displaystyle{\lim_{x  \to  0^-}} (e^{\frac 1x}) = \pause 0$
+\item $\ds \lim_{x \rightarrow + \infty} \ln x = \pause +\infty$
+\item $\displaystyle{\lim_{x \to  0^+}} \ln x = \pause -\infty$
+\item $\ds \lim_{x \rightarrow - \infty} \ln x = \pause \mbox{bestaat niet}$
+\item $\ds \lim_{x \rightarrow + \infty} \ln(1+ \frac 1x) = \pause \ln 1 = 0$
+\end{itemize}
+
+\end{frame}
+
+
+
+\section{Rekenregels voor limieten }
+\begin{frame}{Rekenregels voor limieten}
+
+
+\begin{itemize}
+	\item De limiet
+van een som is de som van de limieten
+\item De limiet van een product is
+het product van de limieten
+\item De limiet van een quoti\"ent is het
+quoti\"ent van de limieten
+\end{itemize}
+TENZIJ je daardoor een onbepaalde vorm
+krijgt.
+
+Deze rekenregels gelden voor $x \rightarrow a \text{ met } {a \in
+\mathbb{R} \text{ of } a = \pm \infty}$.
+\end{frame}
+
+\begin{frame}{Voorbeeld rekenregels zonder onbepaalde vormen}
+\begin{itemize}
+\item $\ds \lim_{x \rightarrow - \infty} 3 x^2 = \pause 3(- \infty)(- \infty) = + \infty$
+\item $\ds \lim_{x \rightarrow + \infty} (-4x)= \pause (-4)(+ \infty)= - \infty$
+\item $\ds \lim_{x \rightarrow + \infty} \frac{-4}{x} = \pause \frac{-4}{+ \infty}=0$
+\item $\ds \lim_{x \rightarrow + \infty} e^{-x} = \pause \lim_{x \rightarrow + \infty} \frac{1}{e^x} = \frac{1}{+ \infty} = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rekenregels ZONDER onbepaalde vormen}
+\begin{itemize}
+\item voor de som
+\[\aligned
+& (+ \infty) + (+ \infty) = + \infty \\
+& (- \infty) + (-\infty) = - \infty \\
+& a + (+ \infty) = (+ \infty) + a = + \infty \quad \text { voor elke
+} \quad a
+\in \mathbb{R} \\
+& a + (- \infty) = (-\infty) + a = - \infty \quad \text { voor elke } \quad a
+\in \mathbb{R} \\
+\endaligned
+\]
+\end{itemize}
+\end{frame}
+\begin{frame}{Overzicht rekenregels ZONDER onbepaalde vormen}
+\begin{itemize}
+\item voor het product
+\[\aligned
+& (+ \infty) \cdot (+ \infty) = + \infty\\
+& (+ \infty) \cdot (-\infty) = (-\infty) \cdot (+ \infty) = - \infty \\
+& (-\infty) \cdot (-\infty) = + \infty   \\
+& a \cdot (+ \infty) = (+ \infty) \cdot a = + \infty \quad \text {
+als } \quad a
+> 0 \\
+& a \cdot (+ \infty) = (+ \infty) \cdot a = - \infty \quad \text { als } \quad a
+< 0 \\
+& a \cdot (- \infty) = (- \infty) \cdot a = - \infty \quad \text { als } \quad a
+> 0 \\
+& a \cdot (- \infty) = (- \infty) \cdot a = + \infty \quad \text { als } \quad a
+< 0 \\
+\endaligned
+\]
+
+\end{itemize}
+\end{frame}
+\begin{frame}{Overzicht rekenregels ZONDER onbepaalde vormen}
+\begin{itemize}
+	\item voor het quoti\"ent
+	$$\frac{a}{+ \infty} = \frac{a}{-\infty} = 0 \quad \text { voor elke
+} \quad a \in \mathbb{R}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{alertblock}{ONBEPAALDE VORMEN}
+\begin{itemize}
+	\item voor de som
+	\[\aligned
+	& (+ \infty) + (-\infty) \\
+& (- \infty) + (+ \infty) \\
+\endaligned
+\]
+\item voor het product
+\[\aligned
+& 0 \cdot (+ \infty) \quad \text { en } \quad (+ \infty) \cdot 0 \\
+& 0 \cdot (- \infty) \quad \text { en } \quad (- \infty) \cdot 0
+\\
+\endaligned
+\]
+\item voor het quoti\"ent
+\[\aligned
+& \frac{0}{0} \quad \text { en} \quad \frac{\infty}{\infty}
+\endaligned
+\]
+
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Vanwaar de naam ONBEPAALDE VORM?}
+\begin{exampleblock}{We nemen als voorbeeld de onbepaalde vorm $0 \cdot (+
+\infty)$ }
+\begin{itemize}
+\item[(a)]
+$\displaystyle{\lim_{x \to 0^+}} (x^2 \cdot \frac{1}{x}) =
+\displaystyle{\lim_{x \to 0^+}} x = 0$ 
+\item[(b)]
+$\displaystyle{\lim_{x \to 0^+}} (x \cdot \frac{1}{x})=
+\displaystyle{\lim_{x \to 0^+}} 1 = 1$ 
+\item[(c)]
+$\displaystyle{\lim_{x \to 0^+}} (x \cdot \frac{1}{x^2}) =
+\displaystyle{\lim_{x \to 0^+}} \frac{1}{x} = + \infty$
+
+
+
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+Bij een onbepaalde vorm kan de rekenregel
+\begin{itemize}
+	\item De limiet
+van een som is de som van de limieten
+\item De limiet van een product is
+het product van de limieten
+\item De limiet van een quoti\"ent is het
+quoti\"ent van de limieten
+\end{itemize}
+NIET gebruikt worden.
+
+\end{frame}
+\section{Limiet in $a = \pm \infty$}
+\begin{frame}{Limiet in $a = \pm \infty$}
+Hoe berekenen we
+$$\lim_{x \rightarrow + \infty} (3x^2 - 4x + 2) ?$$
+\begin{block}{FOUT}
+$$\lim_{x \rightarrow + \infty} (3x^2 - 4x + 2) = \lim_{x \rightarrow + \infty}
+3x^2 + \lim_{x \rightarrow + \infty} (-4x) + \lim_{x \rightarrow +
+\infty} 2$$
+want dan  onbepaalde vorm $(+ \infty) + (-\infty)$.
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{JUIST}
+
+\[\aligned
+\lim_{x \rightarrow + \infty} (3x^2 - 4x + 2) & = \lim_{x
+\rightarrow + \infty}
+[x^2 (3 - \frac{4}{x} + \frac{2}{x^2})] \\
+& = \lim_{x \rightarrow + \infty} x^2 \cdot \lim_{x \rightarrow +
+\infty} (3 -
+\frac{4}{x} + \frac {2}{x^2}) \\
+& = (+ \infty) \cdot 3 \\
+& = + \infty
+\endaligned
+\]
+\end{block}
+
+\end{frame}
+\begin{frame}{Voorbeelden}
+De hoogste macht van $x$ buiten haken zetten om van een som over te gaan op een product.
+\begin{exampleblock}{Veelterm (oef 4(a))}
+$\displaystyle{\lim_{x \rightarrow + \infty}} (2x^3 - 5x^2)= \pause \displaystyle{\lim_{x \rightarrow + \infty}} x^3 (2 - \frac{5}{x})= \pause (+ \infty) . 2 = \pause + \infty$
+\end{exampleblock}
+\pause
+\begin{exampleblock}{Veeltermbreuk}
+$\displaystyle{\lim_{x \rightarrow - \infty}} \frac{3x^2 - 6x
++ 1}{2x^2 + 11x - 8}
+= \displaystyle{\lim_{x \rightarrow - \infty}} \frac{x^2 (3- \frac{6}{x}
++ \frac{1}{x^2})}{x^2 (2 + \frac{11}{x} - \frac{8}{x^2})}
+= \displaystyle{\lim_{x \rightarrow - \infty}} \frac{3- \frac{6}{x}
++ \frac{1}{x^2}}{2 + \frac{11}{x} - \frac{8}{x^2}}
+=\frac{3}{2}$
+
+\end{exampleblock}
+\end{frame}
+\begin{frame}
+\begin{exampleblock}{Irrationale functies (oef 4(c))}
+$\displaystyle{\lim_{x \rightarrow - \infty}} (\sqrt{4x^2+7x} + 3x)= \pause \displaystyle{\lim_{x \rightarrow - \infty}} (\sqrt{x^2(4 + \frac{7}{x})} + 3x)= \pause \displaystyle{\lim_{x \rightarrow - \infty}} (|x| \sqrt{4 + \frac{7}{x}} + 3x)= \pause \displaystyle{\lim_{x \rightarrow - \infty}} (-x \sqrt{4 + \frac{7}{x}} + 3x)= \pause \displaystyle{\lim_{x \rightarrow - \infty}} x (-\sqrt{4 + \frac{7}{x}} + 3)= \pause (- \infty). (- \sqrt4 + 3) = \pause - \infty$ \pause
+
+\end{exampleblock}
+\begin{alertblock}{Let op}
+ 
+\begin{itemize}
+	\item $\ds \lim_{x \rightarrow + \infty} \sqrt{x^2} = \lim_{x \rightarrow + \infty} x$
+	\item $\ds \lim_{x \rightarrow - \infty} \sqrt{x^2} = \lim_{x \rightarrow - \infty} -x$
+\end{itemize}
+want $\sqrt{x^2} = |x| = -x$ in het geval dat $x<0$
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\begin{alertblock}{De worteltruc (oef 4(d))}
+Voor $\displaystyle{\lim_{x \rightarrow - \infty}} (\sqrt{4x^2+7x} + 2x)$ werkt voorgaande methode niet, hier gebruiken we de worteltruc: 
+$$\lim_{x \rightarrow - \infty} (\sqrt{4x^2+7x} + 2x)= \lim_{x \rightarrow - \infty} \frac{(\sqrt{4x^2+7x} + 2x)(\sqrt{4x^2+7x} - 2x)}{(\sqrt{4x^2+7x} - 2x)}$$
+\end{alertblock}
+\pause
+\begin{exampleblock}{Met een parameter}
+$\displaystyle{\lim_{x \rightarrow + \infty}} \frac{\sqrt{x^2+1} + ax}{\sqrt{x^2+2}}
+=\displaystyle{\lim_{x \rightarrow + \infty}} \frac{|x| \sqrt{1+\frac{1}{x^2}} + ax}{|x| \sqrt{1+ \frac{2}{x^2}}}
+=\displaystyle{\lim_{x \rightarrow + \infty}} \frac{x \sqrt{1+\frac{1}{x^2}} + ax}{x \sqrt{1+ \frac{2}{x^2}}}
+=\displaystyle{\lim_{x \rightarrow + \infty}} \frac{ \sqrt{1+\frac{1}{x^2}} + a}{ \sqrt{1+ \frac{2}{x^2}}}
+=\displaystyle{\lim_{x \rightarrow + \infty}} \frac{1+a}{1} = 1+a$
+\end{exampleblock}
+\end{frame}
+
+\section{Limiet in een nulpunt van de noemer}
+\begin{frame}{Limiet in een nulpunt van de noemer}
+\begin{block}{Herhaling  inleidend voorbeeld}
+\begin{itemize}
+	\item $\displaystyle{\lim_{x  \to  0^+}} \frac 1x = +
+\infty$
+\item $\displaystyle{\lim_{x  \to  0^-}} \frac 1x = -
+\infty$
+\item $\displaystyle{\lim_{x \to  0}} \frac 1x$ bestaat niet
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}{Geval $\displaystyle{\lim_{x \rightarrow a}} \frac{1}{f(x)}$
+met $f(a) = 0$, $a \in \mathbb{R}$}
+
+
+Steeds $+ \infty$ of $- \infty$, 
+
+tenzij
+linker- en rechterlimiet verschillen, dan bestaat
+$\displaystyle{\lim_{x \rightarrow a}} \frac 1{f(x)}$ niet.
+
+Om te weten of het $+ \infty$ of $- \infty$ is moeten we het tekenverloop van
+$f(x)$ kennen in buurt van $a$.
+\end{frame}
+
+\begin{frame}
+\begin{exampleblock}{Voorbeeld (oef 2(a))}
+$$\displaystyle{\lim_{x \rightarrow 1}} \frac {1}{(x-1)^2}= \pause + \infty$$
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Geval: $\displaystyle{\lim_{x \rightarrow a}}
+\frac{g(x)}{f(x)}$ met $f(a) = 0$, $a \in \mathbb{R}$}
+We onderscheiden we 2 gevallen:
+\begin{itemize}
+\item $a$ is geen nulpunt van de teller
+\item $a$ is een nulpunt van teller en noemer
+\end{itemize}
+\begin{block}{$a$ is geen nulpunt van de teller}
+We schrijven $\displaystyle{\lim_{x \rightarrow a}}
+\frac{g(x)}{f(x)}$ als $\displaystyle{\lim_{x \rightarrow a}} g(x) .
+\displaystyle{\lim_{x \rightarrow a}} \frac{1}{f(x)} = g(a) .
+\displaystyle{\lim_{x \rightarrow a}} \frac{1}{f(x)}$.
+\\Dit is geen onbepaalde vorm vermits $g(a) \neq 0$.
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{exampleblock}{Voorbeeld (oef2(b))}
+
+$$\aligned & \lim_{x  \to 1^+} \frac{x^2 + x - 1}{x-1} \\ & = \lim_{x  \to 1^+} (x^2+x-1) . \lim_{x  \to 1^+} \frac{1}{x-1} \\ & = ((1^2+1-1). (+ \infty) = + \infty \endaligned $$
+
+\begin{center}
+\begin{tabular}{r||c|c|c}$x$& &$ 1$& \\ \hline $x-1$ &
+ $-$&$0$ &  $+$
+\end{tabular}\end{center}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+\begin{block}{$a$ is een nulpunt van teller en noemer}
+We krijgen dan de
+onbepaalde vorm $\frac{0}{0}$.
+\begin{itemize}
+
+
+\item Bij rationale functies: teller en noemer
+ontbinden in factoren en de factor $x-a$ wegdelen in teller en
+noemer. 
+
+\item Bij irrationale functies: worteltruc
+\end{itemize}
+
+
+\end{block}
+\begin{alertblock}{Opmerking}
+Limieten die de onbepaalde vorm $\frac{0}{0}$ geven kunnen ook berekend kunnen worden met de regels van de l'H\^{o}pital. 
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\begin{exampleblock}{Voorbeelden}
+\begin{itemize}
+	\item 
+$\displaystyle{\lim_{x \to 2}} \frac{x^2 - 4 }{x-2}
+= \pause \displaystyle{\lim_{x \to 2}} \frac{(x - 2)(x + 2) }{x-2} = \pause
+\displaystyle{\lim_{x \to 2}} (x + 2) = 4 $ (oef 3(a))
+\item 
+$\ds \lim_{x \rightarrow 2} \frac {\sqrt{x+2} -2}{x-2} = \pause \lim_{x \rightarrow 2} \frac {(\sqrt{x+2} -2)(\sqrt{x+2} +2)}{(x-2)(\sqrt{x+2} +2)}= \lim_{x \rightarrow 2} \frac {x+2-4}{(x-2)(\sqrt{x+2} +2)}= \pause\lim_{x \rightarrow 2} \frac {1}{\sqrt{x+2} +2}=\frac14$
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Overzicht limieten in nulpunten van de noemer}
+\begin{itemize}
+	\item Geval $\displaystyle{\lim_{x \rightarrow a}} \frac{1}{f(x)}$
+met $f(a) = 0$: 
+\begin{itemize}
+	\item[] $+ \infty$ of $- \infty$, tekenverloop van noemer in de buurt van $a$. 
+\end{itemize}
+\item Geval: $\displaystyle{\lim_{x \rightarrow a}}:
+\frac{g(x)}{f(x)}$ met $f(a) = 0$
+\begin{itemize}
+	\item $a$ is geen nulpunt van de teller
+	
+	$\displaystyle{\lim_{x \rightarrow a}}
+\frac{g(x)}{f(x)}$ = $\displaystyle{\lim_{x \rightarrow a}} g(x) .
+\displaystyle{\lim_{x \rightarrow a}} \frac{1}{f(x)} = g(a) .
+\displaystyle{\lim_{x \rightarrow a}} \frac{1}{f(x)}$.
+\item $a$ is een nulpunt van teller en noemer: $\ds \frac00$
+
+	 l'H\^{o}pital
+	 OF 
+	
+	\begin{itemize}
+		\item Bij rationale functies: teller en noemer
+ontbinden in factoren en de factor $x-a$ wegdelen in teller en
+noemer.
+\item Bij irrationale functies: worteltruc
+	
+\end{itemize}
+	
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\end{document} 
