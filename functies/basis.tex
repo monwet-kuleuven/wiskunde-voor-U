@@ -14,6 +14,7 @@
 \end{abstract}
 \maketitle  
 
+% to be put in preamble ...?!
 \tikzstyle{fctie} = [rectangle, draw, fill=blue!20, node distance=1cm, text width=10em, text centered, rounded corners, minimum height=3em, thick]
 \tikzstyle{inpt} = [ellipse, draw, node distance=1cm, text width=4em, text centered, minimum height=2em, thick]
 
@@ -29,6 +30,8 @@ Een \textit{functie} is een machine of black box die voor elke \textit{input} te
 \end{definition}
 
 Een typisch voorbeeld is de functie 'kwadrateer', die met elk getal zijn kwadraat associeert.
+
+\todo{ook verwijzen naar onafhankelijke/afhankelijke variabele...?}
 
 Ongeveer alles kan dienen als input en output van wiskundige functies, maar in wat volgt we zullen ons dikwijls concentreren op zogenaamde \textit{reële functies}: dat zijn die functies waar zowel de input als de output reële getallen zijn. Voor dergelijke reële functies zijn er allerlei interessante begrippen en eigenschappen die niet zomaar van toepassing zijn op meer algemene functies: nulpunten, minima en maxima, grafieken, afgeleiden, integralen,\ldots.
 
@@ -47,25 +50,26 @@ Ongeveer alles kan dienen als input en output van wiskundige functies, maar in w
 \end{tikzpicture}
 \end{center}
 
+Een functie heeft meestal een naam, dikwijls gebruiken we gewoon $f$ van $f$unctie. De \textit{ietsen} noemen we dikwijls $x$.\footnote{Hiermee is bewezen dat wiskundigen ook grappig kunnen zijn. Ze hebben natuurlijk de letter $x$ gekozen, omdat \textit{ietsen} zo mooi lijkt op \textit{iexen}!} Soms gebruiken we natuurlijk ook andere letters, en populaire keuzes zijn dan $h,g,f_1, f_2$ voor functies, en $x$, $t$, $n$, $x_1$,$x_2$ of zelfs ook $y$ en $y_1$  voor de \textit{ietsen}. Sommige functies hebben vaste standaardnamen en/of symmbolen, zoals de vierkantswortel, sinus, logaritme, \ldots
 
-Een functie heeft meestal een naam, en als de wiskundigen geen bijzondere inspiratie hebben, geven ze als naam graag gewoon $f$ (van $f$unctie). De \textit{ietsen} duiden ze dikwijls aan met $x$.\footnote{Hiermee is bewezen dat wiskundigen ook grappig kunnen zijn. Ze hebben natuurlijk de letter $x$ gekozen, omdat \textit{ietsen} zo mooi lijkt op \textit{iexen}!} Soms gebruiken ze natuurlijk ook andere letters, en populaire keuzes zijn dan $h,g,f_1, f_2$ voor functies, en $x$, $t$, $n$, $x_1$,$x_2$ of zelfs ook $y$ en $y_1$  voor de \textit{ietsen}. 
-
-Het resultaat van de actie van de functie $f$ op het ding $x$ noteren ze met meestal met $f(x)$, maar uitzonderlijk ook zonder de haakjes als $fx$. Ze lezen $f(x)$ als 
+Het resultaat van de actie van de functie $f$ op het ding $x$ noteren we met meestal met $f(x)$, maar uitzonderlijk ook zonder de haakjes als $fx$. We lezen $f(x)$ als 
 \begin{itemize}
 \item $f$ van $x$
-\item de \textit{functiewaarde} van $f$ in $x$
+\item de \textit{functiewaarde} van $f$ \textit{in} $x$
 \item het \textit{beeld} van $f$ \textit{in} $x$
 \item het \textit{beeld} van $x$ \textit{onder} $f$ (of \textit{door} $f$)
 \end{itemize}
-Ze zeggen ook dat $f$ het element $x$ \textit{afbeeldt} op $f(x)$, of dat '$f$ toepassen op $x$' het element $f(x)$ oplevert. In het algemeen noteren ze::
+We zeggen ook dat $f$ het element $x$ \textit{afbeeldt} op $f(x)$, of dat '$f$ toepassen op $x$' het element $f(x)$ oplevert, en noteren:
 $$
 f: x \mapsto f(x) 
 $$
-en als ze dus ook de 'kwadrateer'-functie $k$ noemen wordt dat:
+en als we dus de 'kwadrateer'-functie $k$ noemen wordt dat:
 $$
 k: x \mapsto x^2 \text{ \qquad of \qquad }  k: x \mapsto k(x) = x^2
 $$
-en dus voor deze functie $k$ geldt dat $k(2)=4$ en $k(4)=16$.
+en dus voor deze functie $k$ geldt dat $k(2)=2^2=4$ en $k(4)=4^2=16$. 
+
+Voor $f:x\mapsto x^2+3$ is $f(0)=0^2+3=3$, $f(5)=5^2+3=28$ en $f(-5)=(-5)^2+3=28\;(=f(5))$.
 
 \begin{center}
 \begin{tikzpicture}[]
@@ -74,10 +78,15 @@ en dus voor deze functie $k$ geldt dat $k(2)=4$ en $k(4)=16$.
 \node [inpt,right=of functief] (outputf) {$f(x)$};  
 \draw[>->]  (inputf) -- (functief) -- (outputf);
 
-\node[fctie,font=\Large\bfseries, below of= functief, node distance=2cm]     (functiek)  {Functie $x^2$};
-\node [inpt, left=of functiek] (inputk)  {$x$};
-\node [inpt,right=of functiek] (outputk) {$x^2$};  
+\node[fctie,font=\Large\bfseries, below of= functief, node distance=2cm, text width=13em]     (functiek)  {Functie $f(x)=x^2$};
+\node [inpt, left=of functiek] (inputk)  {$5$};
+\node [inpt,right=of functiek,text width=8em] (outputk) {$f(5)=5^2+3=28$};  
 \draw[>->]  (inputk) -- (functiek) -- (outputk);
+
+\node[fctie,font=\Large\bfseries, below of= functiek, node distance=2cm, text width=13em]     (functieka)  {Functie $f(x)=x^2$};
+\node [inpt, left=of functieka] (inputka)  {$a$};
+\node [inpt,right=of functieka,text width=6em] (outputka) {$f(a)=a^2+3$};  
+\draw[>->]  (inputka) -- (functieka) -- (outputka);
 
 \end{tikzpicture}
 \end{center}
@@ -85,6 +94,8 @@ en dus voor deze functie $k$ geldt dat $k(2)=4$ en $k(4)=16$.
 \begin{remark} \ 
     
  Het is van cruciaal belang dat bij elke inputwaarde één vaste outputwaarde hoort. Dus de constructies met input $\N$ en definitie $f_1: x\mapsto $(de som van $x$ worpen met een dobbelsteen), $f_2: x\mapsto $(een getal $a$ zodat $a^2=x$) en $f_3:x\mapsto 1/x$ zijn geen functies.
+ 
+ \todo{uitleg waarom dat geen functies zijn}
  
  In de definitie van functies wordt niets gezegd over formules of grafieken. Inderdaad, reële functies \textit{hebben} dikwijls ---maar niet altijd--- een grafiek en een formule, maar ze \textit{zijn} dat niet. Zie verder.
 \end{remark}
@@ -127,11 +138,11 @@ en dus voor deze functie $k$ geldt dat $k(2)=4$ en $k(4)=16$.
     
 \begin{tabular}{l l p{8cm}}
     & Snelheidsfunctie $v$:     & $v(t)$ = de snelheid van een bepaald voorwerp op tijdstip $t$, in km/u.  \\    
-    & Puntenfunctie $P$:        & $P$(leerling) = punten van bepaalde leerling (op een bepaalde toets)  \\
-    & Gemiddeldeperleerlingfunctie $\mu_L$: & $\mu_L$(leerling) = gemiddelde (over alle toetsen) van een bepaalde leerling  \\
-    & Gemiddeldepertoetsfunctie $\mu_T$ & $\mu_T$(toets) = gemiddelde (over alle leerlingen) op een bepaalde toets \\
-    & Grappigheidsfunctie $G_o$  & $G_o$(een grap) = het aantal seconden dat bij een vast proefpubliek  werd gelachen na het horen van de grap \\
-    & Verkiezingsfuncties $T$   & $T$(een kandidaat bij een bepaalde verkiezing) =  het aantal stemmen dat die kandidaat behaald heeft \\
+    & Puntenfunctie $P$:        & $P$(\textit{leerling}) = punten van bepaalde \textit{leerling} (op een bepaalde toets).  \\
+    & Leerlinggemiddeldefunctie $\mu_L$: & $\mu_L$(\textit{leerling}) = gemiddelde (over alle toetsen) van een bepaalde \textit{leerling}.  \\
+    & Toetsgemiddeldefunctie $\mu_T$ & $\mu_T$(\textit{toets}) = gemiddelde (over alle leerlingen) op een bepaalde \textit{toets}. \\
+    & Grappigheidsfunctie $G_o$  & $G_o$(\textit{grap}) = het aantal seconden dat bij een vast proefpubliek  werd gelachen na het horen van een \textit{grap}. \\
+    & Verkiezingsfuncties $T$   & $T$(\textit{kandidaat}) =  het aantal stemmen dat een \textit{kandidaat} behaalde bij een bepaalde verkiezing. \\
 \end{tabular}
 \end{example}
 
@@ -142,21 +153,44 @@ en dus voor deze functie $k$ geldt dat $k(2)=4$ en $k(4)=16$.
     \begin{enumerate}
         \item De verzameling van alle mogelijke inputs van een functie $f$ noemen we het \textbf{domein} van $f$, en we noteren $\dom f$.
         \item De verzameling waarin alle mogelijke outputs van een functie moeten liggen noemen we het \textbf{codomein} van $f$, of ook wel het \textbf{doel} van $f$, en we noteren $\codom f$.
-        \item We schrijven een algemene functie dan ook meer nauwkeurig als volgt (soms op één, soms op twee regels):
+        \item We noteren een algemene functie dan ook meer nauwkeurig (op één of op twee regels):
         \begin{align*}
-        f: \dom f &\longrightarrow \codom f \\
-        x &\longmapsto f(x)
+        f: \dom f \longrightarrow \codom f, x \longmapsto f(x) && \text{ of } && f: \dom f &\longrightarrow \codom f \\
+         &&  &&   x &\longmapsto f(x)
         \end{align*}
-
     \end{enumerate}
 \end{definition}
+\todo{ook definitie beeld ...?}
 
-\begin{example} (voorbeeld notatie functie)
-    
-\begin{align*}
-f: \mathbb{R} &\longrightarrow \mathbb{R},         & x \longmapsto x+5  \\
-f: \mathbb{R} &\longrightarrow \left[-1,1\right],  & x \longmapsto \sin(x) 
-\end{align*}
+Voor reële functies waarvan we geen expliciet domein opgeven, nemen we per conventie als domein de grootst mogelijke deelverzameling van $\R$ waarop de functie logischerwijs kan gedefinieerd worden. Het codomein is dan ---meestal--- gewoon $\R$.
+We kunnen van elke functie allerlei varianten maken door het domein of codomein aan te passen:
+
+% Dus: als we spreken over de functie $1/x$, dan bedoelen we meestal onderstaande functie $g$
+
+\begin{example} (voorbeelden notatie functie)
+$$  
+\begin{array}{rcccll}    
+f:   & \R        &\longrightarrow& \R,         &x  \longmapsto & x-5  \\
+g:   & \Rnul      &\longrightarrow& \R,         &x  \longmapsto & 1/x \\
+\sin:& \R        &\longrightarrow& \R,  &x \longmapsto & \sin(x) \\
+\sin:& \R        &\longrightarrow& \left[-1,1\right],  &x \longmapsto & \sin(x) \\
+\sin:& [0,2\pi]  &\longrightarrow& \left[-1,1\right],  &x \longmapsto & \sin(x) \\
+\sin:& [-\pi,\pi] &\longrightarrow& \left[-1,1\right],  &x \longmapsto & \sin(x) 
+\end{array}
+$$
+\end{example}
+
+\begin{example} (niet-voorbeelden notatie functie)
+$$  
+\xcancel{
+	\begin{array}{rcccll}    
+	f:   & \Rplus        &\longrightarrow& \Rplus,         &x  \longmapsto & x-5  \\
+	g:   & \R      &\longrightarrow& \R,         &x  \longmapsto & 1/x \\
+	\sin:& \R        &\longrightarrow& \Rnul,  &x \longmapsto & \sin(x) \\
+	\sin:& \R        &\longrightarrow& \left[0,1\right],  &x \longmapsto & \sin(x) 
+	\end{array}
+}
+	$$
 \end{example}
 
 \begin{uitweiding}
@@ -164,22 +198,12 @@ f: \mathbb{R} &\longrightarrow \left[-1,1\right],  & x \longmapsto \sin(x)
 (Uitweiding) Om technische redenen hebben wiskundigen beslist dat een functie niet alleen bepaald wordt door wat ze doet, maar ook door haar mogelijke (of 'toegelaten') input en output. Zo is de functie 'kwadrateer-natuurlijke-getallen' strikt gesproken een \textit{andere} functie dan de functie kwadrateer-reële-getallen of de functie kwadrateer-rationale-getallen. Dus, twee functies zijn ---volgens de gangbare wiskundige definities--- gelijk aan elkaar als en slechts als ze dezelfde inputverzameling en outputverzameling hebben, en als ze aan elke inputwaarde dezelfde outputwaarde toekennen.
 
 In symbolen: zelfs als elke functie
-$f_1:\N\to\N$, $f_2:\Z \to\N$, $f_3:\Z\to\Z$, $f_4:\R\to\R^+$ en $f_f:\R\to\R$ telkens elke $x$ afbeeldt op $x^2$, dan zijn het strikt genomen toch nog steeds \textit{verschillende} functies. In vele gevallen zullen we in de praktijk echter toch gewoon spreken over de functie 'kwadrateer', en het onderscheid in domein en codomein negeren.
+$f_1:\N\to\N$, $f_2:\Z \to\N$, $f_3:\Z\to\Z$, $f_4:\R\to\R^+$ en $f_5:\R\to\R$ telkens elke $x$ afbeeldt op $x^2$, dan zijn het strikt genomen toch nog steeds \textit{verschillende} functies. In vele gevallen zullen we in de praktijk echter toch gewoon spreken over de functie 'kwadrateer', en het onderscheid in domein en codomein negeren.
+
+In bovenstaand voorbeeld zijn dus in principe alle sinusfuncties \textit{verschillende} functies, en we hadden ze dus eigenlijk verschillende namen moeten geven. 
 
 \end{uitweiding}
 
-Voor reële functies waarvan we geen expliciet domein opgeven, nemen we per conventie als domein de grootst mogelijke deelverzameling van $\R$ waarop de functie logischerwijs kan gedefinieerd worden. Het codomein is dan ---meestal--- gewoon $\R$ 
-
-Voorbeeld: als we spreken over de functie $1/x$, dan bedoelen we meestal de functie
-$$
-f: \R_o \to \R: x\mapsto 1/x
-$$
-
-%\end{remark}
-
 %om uit te drukken dat, als je aan de functie $f$ een bepaald \textit{iets} $x$ geeft, dat daar dan \textit{ietsanders} uitkomt, namelijk $f(x)$, dat ze ook $y$ noemen. Meestal ---maar zeker niet altijd--- kan je, als je een concrete $x$ geeft, bijvoorbeeld 6, de bijhorende $y$ berekenen. Maar, zelfs als je die niet kan berekenen, moet de bedoelde $y$ wel op één of andere manier uniek vastliggen.  
 %\\
-
-
-
 \end{document}
