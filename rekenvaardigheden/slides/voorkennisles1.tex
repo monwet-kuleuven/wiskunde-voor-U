@@ -1,0 +1,252 @@
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+
+\input{../../preamble}
+
+\usepackage{pgfplots}
+
+%\newcommand{\ds}{\displaystyle}
+%\newcommand{\N}{\ensuremath{\mathbb{N}}}
+%\newcommand{\Nnul}{\ensuremath{\mathbb{N}_0}}
+%\newcommand{\RR}{\ensuremath{\mathbb{R}}}
+%\newcommand{\perdef}{\overset{\mathrm{def}}{=}}
+%\usepackage{amsmath,amssymb}
+%%\usepackage[latin1]{inputenc}
+%\usepackage{fancybox}
+%\usepackage{epic,overpic}
+%
+%\usepackage{etex}
+%\usepackage[dutch]{babel}
+%\usepackage{hyphenat}
+%\usepackage{amsmath}
+%\usepackage{amssymb}Voorbeelden: $|5|=5,\; |-\pi|=\pi$ en $|1-\sqrt{2}|=\sqrt{2}-1$
+%\usepackage{amsfonts}
+%\usepackage{graphicx}
+%
+%\usepackage{color}
+%%\usepackage[thmmarks,framed,amsmath]{ntheorem}
+%\usepackage{answers}
+%
+%\usepackage{framed}
+%
+%\usepackage{pst-all}
+%\usepackage{epic}
+%\usepackage{eepic}
+%\usepackage{array}
+%\usepackage{booktabs}
+%\usepackage{multirow}
+%\usepackage{color}
+%
+%
+%
+%%\usepackage{color}
+%%\usepackage[thmmarks,framed,amsmath]{ntheorem}
+
+
+\title{Voorkennisles 1: Goniometrie en Rekenvaardigheden}
+
+\author{Annouk Van Vlierden \& Wim Obbels}
+\date{2019-2020}
+\usetheme{Madrid}
+%\usetheme{Montpellier}
+%\usetheme{CambridgeUS}
+%\usecolortheme{seahorse}
+
+\usepackage{cancel}
+\providecommand{\p}{\pause}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Absolute waarde: definitie}
+\p
+\begin{definition}
+Voor een reëel getal $a\in \R$ definiëren we de \emph{absolute waarde} van $a$ als 
+$$
+|a|\perdef \left\{
+\begin{array}{rll  } 
+   a & \mbox{als}  & a \geqslant 0, \\
+  -a & \mbox{als}  & a<0.\\
+\end{array}\right.
+$$
+\end{definition}
+\vfill\p
+
+
+Voorbeelden: $|5|=5,\; |-\pi|=\pi$ en $|1-\sqrt{2}|=\sqrt{2}-1$
+\vfill\p
+
+Pas op voor $\cancel{|-a| = a}$ want dat is fout voor $a=-7$ \\
+Inderdaad:  $|-a| = |-(-7)| = 7 \neq a $  ( want $a= -7$ !) 
+\end{frame}
+
+\begin{frame}{Absolute waarde: eigenschappen}  
+\p
+\begin{proposition}
+     Als $x \in \R$ en $r>0 $, dan geldt: 
+     \begin{align}
+        |x|<r\; & \Leftrightarrow \; -r<x<r \\
+        |x-y|<r\; & \Leftrightarrow \; -r<x-y<r \\
+                  & \Leftrightarrow \; \text{de afstand tussen $x$ en $y$ is kleiner dan $r$}
+      \end{align}
+      
+     
+\end{proposition}
+\p
+Voorbeeld: $|x| < 7 \iff -7 < x < 7$
+\end{frame}
+
+\begin{frame}{Abolute waarde: oefeningen}
+
+
+    Onderzoek welke $x\in \R$ voldoen aan $|3x-2| < 6$.
+        
+        \begin{enumerate} 
+        \p\item Oplossing 1: \p 
+$$
+        \begin{array}{cccc}
+        |3x - 2| < 6 & \iff& 6   < 3x - 2 < 6 \\
+                  \p & \iff& -6+2<3x<6+2 \\
+                  \p & \iff& -4  <3x<8 \\
+                  \p & \iff& \frac{-4}{3}<x<\frac{8}{3}
+        \end{array}
+$$        
+        \p\item Oplossing 2: \p 
+        
+        De afstand tussen $3x$ en $2$ moet kleiner zijn dan $6$
+        
+        \p Dus moet de afstand tussen $x$ en $\frac{2}{3}$ kleiner zijn  dan $2$.
+        
+        \p Dus moet 
+        $$ 
+             - 2 < x- \frac{2}{3} < +2 \text{ of }
+        $$
+        
+        $$
+            \frac{-4}{3}<x<\frac{8}{3}
+        $$
+        
+ %       \item TODO: grafische voorstelling
+\end{enumerate}
+
+UOVT (Uitstekende Oefening Voor Thuis):  idem voor $|3-2x| < 1$ 
+
+\end{frame}
+
+\begin{frame}{Ongelijkheden: eigenschappen}
+\begin{proposition}
+    
+Voor elke $x,y,r \in\R $ geldt
+\begin{align}
+ x< y                  & \iff \;x+r< y+r \\
+(r>0 \text{ en }  x<y) & \implies \; r\cdot x< r\cdot y \\
+(r<0 \text{ en } x<y)  & \implies \; r\cdot x> r\cdot y \text{ (of ook } r\cdot y < r\cdot x)
+\end{align}
+
+\end{proposition}
+
+\vfill
+\p Dus: vermenigvuldigen met een \textit{negatief} getal \textit{keert de ongelijkheid om}.
+
+\vfill
+\p PAS OP: \textit{iedereen} laat zich daar wel eens aan vangen. 
+
+\p {\color{red}U bent gewaarschuwd: \textit{iedereen}, dus ook \textit{u}.\p{ Jawel: ook \textit{U} daar}}. 
+
+
+\end{frame}
+
+\begin{frame}{Ongelijkheden: oefeningen}
+       
+           Onderzoek welke $x\in \R$ voldoen aan
+        
+\begin{enumerate}      
+\item $|\sqrt{x}+3|<9$
+\item $\ds \left|  \frac{9 - \sqrt{1+20x}}{10} \right| < 1$
+\item (UOVT) $\ds \left|5-\frac{2}{x}\right|>1$
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Een functie toepassen op beide leden van een ongelijkheid}
+
+Zij $x,y\in\R$ en $f$ een reële functie.
+
+\begin{problem}
+    Probleem: als $x<y$, kunnen we dan iets zeggen over $f(x)$ en $f(y)$?
+\end{problem}
+
+\p
+In De Ideale Wereld: als $x<y$, dan \p $f(x)\overset{?}{<}f(y)$.
+
+\p
+Met kwadrateren: als $\phantom{-}x<\phantom{-}y$, dan  $x^2\overset{?}{<}y^2$ ? 
+\\
+\p\ \phantom{Met kwadrateren: }als $\phantom{-}2<\phantom{-}4$, dan $2^2\overset{?}{<}4^2$ ? 
+\\
+\p\ \phantom{Met kwadrateren: }als $-4<-2$, dan $(-4)^2\overset{?}{<}(-2)^2$ ? 
+\\
+\p\ \phantom{Met kwadrateren: }als $-4<\phantom{-}2$, dan $(-4)^2\overset{?}{<}(2)^2$ ? 
+
+
+\begin{proposition}
+\setlength{\abovedisplayskip}{-5pt}
+\begin{align}
+ 0\leq x<y \implies x^2<y^2 \\
+ x<y\leq 0 \implies x^2>y^2 %\\
+%\mbox{als } a<0<b  &\mbox{ dan kan je niet weten of }\;& a^2<b^2 \; \mbox{of} \;a^2>b^2 
+\end{align}
+\end{proposition}
+\end{frame}
+
+
+\begin{frame}{Ongelijkheden en kwadraten}
+
+\begin{figure}[H]
+	\begin{tikzpicture}[scale=1]
+\begin{axis}
+[
+%xtick={-4,-3,-2-1,0,1,2,3,4},
+%xticklabels = {$4,},
+ytick={4,9,16},
+yticklabels = {$4$, $9$, $16$},
+%axis equal,
+ymax=20, %ymin=-5,
+%samples=200,
+axis lines=center,
+%extra y ticks={0},
+%restrict y to domain=-10:10,
+%legend style={legend pos=south west,font=\tiny},
+]
+\addplot[domain=-5:5,color=blue] {x^2};
+\node at (axis cs:-2,4) [circle, scale=0.3, draw=black!80,fill=black!80] {};
+\end{axis}
+\end{tikzpicture}	
+\end{figure}
+\end{frame}
+
+\begin{frame} {Ontbinden in factoren}
+\begin{problem}
+Ontbind een derdegraadsveelterm $f(x) = b x^3+ c x^2+ d x+ e$ in
+factoren.% van zo laag mogelijke graad: 
+\end{problem}
+\begin{itemize} 
+    \item Stap 1: Zoek een nulpunt $a$ van $f(x)$. Dan kunnen we $f(x)$ schrijven als
+$f(x) = (x-a) Q(x)$ met $Q(x)$ een tweedegraadsveelterm.
+    \item Stap 2: Bereken $\ds Q(x) = \frac{f(x)}{x-a}$
+    \item Stap 3: Ontbind $Q(x)$ verder in factoren indien mogelijk
+\end{itemize}
+Eig:  
+
+Als $b x^3+ c x^2+ d x+ e$, met $b$,$c$, $d$, $e$ gehele
+getallen, deelbaar is door $(x-a)$, met $a$ geheel, dan moet $a$ een
+deler zijn van de constante term $e$. 
+
+Indien $f(x)$ geen enkel geheel nulpunt heeft dan moeten we een benaderingsmethode gebruiken 
+
+(Cursus Hoofdstuk 5).
+\end{frame}
+
+
+\end{document}
+
