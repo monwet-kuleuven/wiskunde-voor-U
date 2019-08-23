@@ -1,0 +1,53 @@
+\documentclass{ximera}
+
+\input{../../preamble.tex}
+
+\author{Wim Obbels}
+\license{Creative Commons 3.0 By-bC}
+
+
+\outcome{}
+
+
+\begin{document}
+\begin{exercise} Bepaal de gevraagde limieten:
+
+
+    % probeersel om gemakkelijk oefeningen te kunnen maken; to be done properly, want dit is (nog) geknoei ... !
+	\def\isA{}
+	\def\isB{}
+	\def\isC{}
+	\def\isD{}
+	\def\isE{}
+	\def\isF{}
+
+	\newcommand{\localoefoptions}{\hfill\wordChoice{\choice[\isA]{$+\infty$}\choice[\isB]{$-\infty$}\choice[\isC]{0}\choice[\isD]{1}\choice[\isE]{bestaat niet}\choice[\isF]{andere oplossing}}}
+		
+		\begin{question} \def\isA{correct}   $\limx    \frac{x}{x^3}= \;$   \localoefoptions 
+
+			\begin{feedback}[attempt]Vereenvoudig $\frac{x}{x^3}$!
+            \end{feedback}
+			\begin{feedback}[correct]Inderdaad, $\limx\frac{x}{x^3}=\limx\frac{1}{x^2}=+\infty$
+			\end{feedback}	
+		\end{question}
+		\begin{question} \def\isE{correct}   $\limx    \frac{x}{x^2}= \;$   \localoefoptions 
+            \begin{feedback}[attempt]Vereenvoudig $\frac{x}{x^2}$!
+            \end{feedback}
+            \begin{feedback}[correct]Inderdaad, $\limx\frac{x}{x^2}=\limx\frac{1}{x}$ en die limiet bestaat niet.
+            \end{feedback}	
+        \end{question}
+		\begin{question} \def\isF{correct}   $\limxg{2}    \frac{x^2 - 4}{x-2}= \;$   \localoefoptions 
+            \begin{feedback}[attempt]Vereenvoudig $\frac{x^2 - 4}{x-2}$!
+            \end{feedback}          
+			\begin{feedback}[correct]Inderdaad, $\limxg{2}\frac{x^2 - 4}{x-2}=\limxg{2} x+2 = 4$
+			\end{feedback}	
+		\end{question}
+		\begin{question} \def\isE{correct}   $\limxg{3}    \dfrac{\sqrt{2x+3}-3}{x^2 - 9}= \;$         \localoefoptions 
+               \begin{feedback}[attempt]Sorry, we moeten zelf de limiet nog uitrekenen!
+               \end{feedback}    
+    \end{question}
+        
+				
+\end{exercise}
+
+\end{document}

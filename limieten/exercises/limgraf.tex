@@ -9,9 +9,13 @@
 \outcome{}
 
 
+
+
 \begin{document}
-\begin{exercise} \ 
-	Bepaal de gevraagde limieten op basis van een grafiek.
+
+\textbf{Bepaal de gevraagde limieten op basis van deze basisgrafieken.}
+
+%\begin{exercise} \ 
 
 % todo: find out how image is (supposed to be) working
 \begin{image}[\textwidth]
@@ -78,29 +82,42 @@
 	% todo: limiet van sin x: bestaat niet
 	% todo: limiet van sin(1/x): bestaat ook niet
 
-
-		Deze oefeningen zouden zeer eenvoudig moeten zijn:
+\begin{exercise} Bereken deze eenvoudige basislimieten:
 		
-		\begin{question} 
-			\def\isC{correct}   $\limxi    \frac{1}{x^2}= \;$   \localoefoptions 
+		\begin{question} \def\isC{correct}   $\limxi    \frac{1}{x^2}= \;$   \localoefoptions 
+			\begin{feedback}[attempt]Wat gebeurt er met $1/x^2$ als $x$ groot wordt? We zoeken de limiet in $+\infty$!
+            \end{feedback}
 			\begin{feedback}[correct]Inderdaad, voor grote $x$  gaat $1/x^2$ naar $0$
 			\end{feedback}	
-			\begin{feedback}[false]Mmm, wat gebeurt er met $1/x^2$ als $x$ groot wordt? We zoeken de limiet in $+\infty$!
-			\end{feedback}
 		\end{question}
+    
 		\begin{question} \def\isA{correct}   $\limx     \frac{1}{x^2}= \;$   \localoefoptions 
+            \begin{feedback}[attempt]Wat gebeurt er met $1/x^2$ als $x$ klein wordt? We zoeken de limiet in $0$!
+            \end{feedback}
 			\begin{feedback}[correct]Inderdaad, voor (zowel positieve als negatieve!) kleine $x$ wordt $1/x^2$ groot 
-			\end{feedback}	
-			\begin{feedback}[1>0]Mmm, wat gebeurt er met $1/x^2$ als $x$ klein wordt? We zoeken de limiet in $0$!
-			\end{feedback}
+			\end{feedback}		
 		\end{question}
 
-		\begin{question} \def\isA{correct}   $\limxi    e^x = \;$            \localoefoptions \end{question}
-		\begin{question} \def\isB{correct}   $\limxmi   e^x = \;$            \localoefoptions \end{question}
-		\begin{question} \def\isB{correct}   $\rlimx    \ln x = \;$          \localoefoptions \end{question}
-		\begin{question} \def\isE{correct}   $\llimx    \ln x = \;$          \localoefoptions \end{question}
-		\begin{question} \def\isE{correct}   $\limx    \ln x = \;$          \localoefoptions \end{question}
+		\begin{question} \def\isA{correct}   $\limxi    e^x = \;$            \localoefoptions 
+        \end{question}
+
+		\begin{question} \def\isB{correct}   $\limxmi   e^x = \;$            \localoefoptions 
+        \end{question}
+
+		\begin{question} \def\isB{correct}   $\rlimx    \ln x = \;$          \localoefoptions 
+        \end{question}
+
+		\begin{question} \def\isE{correct}   $\llimx    \ln x = \;$          \localoefoptions 
+        \end{question}
+
+		\begin{question} \def\isE{correct}   $\limx    \ln x = \;$          \localoefoptions 
+        \end{question}
+
+\end{exercise}
+\begin{exercise} Bereken deze eenvoudige variaties op basislimieten:
+
 		De volgende oefeningen vragen net iets meer nadenken, maar het zou toch niet al te moeilijk moeten zijn om het gedrag van bijvoorbeeld $e^{\frac1x}$ voor $x\to\infty$ te vinden als je het gedrag van de functies $e^x$ en $\frac1x$ kent.				
+
 		\begin{question} \def\isD{correct}   $\limxi    e^{\frac 1x} = \;$   \localoefoptions \end{question}
 		\begin{question} \def\isC{correct}   $\limxmi   e^{\frac 1x} = \;$   \localoefoptions \end{question}
 		\begin{question} \def\isE{correct}   $\limx     e^{\frac 1x} = \;$   \localoefoptions \end{question}
@@ -108,6 +125,7 @@
 		\begin{question} \def\isC{correct}   $\llimx    e^{\frac 1x} = \;$   \localoefoptions \end{question}
 		\begin{question} \def\isC{correct}   $\limxi    \ln(1+ \frac 1x) = \;$ \localoefoptions \end{question}
 		
+
 \end{exercise}
 
 \end{document}
