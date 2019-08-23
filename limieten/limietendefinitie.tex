@@ -20,7 +20,7 @@
 
 \begin{document}
 \begin{abstract}
-	\cancel{The sky }$\infty$ is the limit
+	\sout{The sky }$\infty$ is the limit
 \end{abstract}
 \todo{Mmm, \\cancel werkt niet in abstract-online ...?}
 
@@ -35,13 +35,13 @@
 
 In dit deel bestuderen we \textit{limieten} en leren we rekenen met het symbool $\infty$ ('\textit{oneindig}').
 
-\todo[inline]{layout/functionaliteit 'uitwijding' (dus: expandable aanpassen/vervangen; voorlopig adhoc tcolorbox) }
+\todo[inline]{layout/functionaliteit 'uitweiding' (dus: expandable aanpassen/vervangen; voorlopig adhoc tcolorbox) }
 \todo[inline]{Uitzoeken: hoe werkt expandable precies}
 \todo[inline] {limieten: goed voorbeeldje vinden 'interesse net op de rand'}
 
 
 \begin{expandable}
-Voor wie (nog) niet overtuigd is dat dit een mogelijk nuttige bezigheid is, hebben we volgende% een uitwijding over het wat en waarom van limieten.
+Voor wie (nog) niet overtuigd is dat dit een mogelijk nuttige bezigheid is, hebben we volgende
 
 
 \begin{uitweiding}[Wat en waarom van limieten] \ 
@@ -111,7 +111,9 @@ We geven enkele voorbeelden en een intuïtieve definitie van limieten van functi
 
 \begin{example} (Limieten van $\frac{\sin x}{x}$ ( of dus $\frac 1x \cdot\sin x$))
 	
-Beschouw de functie $f:x\mapsto \dfrac{\sin x}{x}$. Dat is de gekende sinusfunctie die we delen door $x$. Voor grote $x$ zal die functie zeker erg dicht bij $0$ komen te liggen (want we delen de $\sin x$, wat tussen $-1$ en $1$ ligt, door een grote $x$, dus het resultaat wordt erg klein. 
+Beschouw de functie $f:x\mapsto \dfrac{\sin x}{x}$. Dat is de gekende sinusfunctie die we delen door $x$.
+
+Voor grote $x$ komen de functiewaarden $f(x)$ erg dicht bij $0$ te liggen (want we delen de $\sin x$, wat tussen $-1$ en $1$ ligt, door een grote $x$, dus het resultaat wordt erg klein. 
 
 De situatie is wat moeilijker direct te begrijpen voor erg kleine $x$: als we delen door kleine $x$, wordt het resultaat in principe steeds groter, maar hier wordt tegelijk ook de $\sin x$ in de teller kleiner. We delen dus iets kleins door iets kleins, en dat is niet noodzakelijk altijd klein (de meeste mensen vinden bijvoorbeeld $10^{-90}$ klein, maar $10^{-90}/10^{-100} = 10^{10}$ eerder groot ...!). 
 
@@ -122,9 +124,9 @@ Een rekenmachine leert ons dat voor $x=0,1$ de functiewaarde gelijk is aan $\fra
 
 Ook uit de grafiek van de functie  $\dfrac{\sin x}{x}$ blijkt trouwens dat voor $x$ dicht bij $0$ de waarde van $\dfrac{\sin x}{x}$ erg dicht ligt bij $1$. 
 
-We zeggen dan ook dat de functie (of de uitdrukking) $\dfrac{\sin x}{x}$ gelijk is (of ook gelijk \textit{wordt}) aan $1$ \textit{als $x$ naar $0$ gaat}, en we schrijven $\limx \dfrac{\sin x}{x} = 1$.
+We zeggen dan ook dat de functiewaarden $\dfrac{\sin x}{x}$ \textit{naar $1$ gaan}  als $x$ \textit{naar $0$ gaat}, en we noteren dat als $\limx \dfrac{\sin x}{x} = 1$.
 
-Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt aan $0$ \textit{als $x$ naar oneindig gaat}, en we schrijven  $\limxi \dfrac{\sin x}{x} = 0$. 
+Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  naar $0$ gaat \textit{als $x$ naar oneindig gaat}, en we schrijven  $\limxi \dfrac{\sin x}{x} = 0$. 
 
 \todo{ legende nog niet goed geformateerd ...}
 \todo{ Uitzoeken: functionaliteit van width in image environment (online vs pdf)}
@@ -180,13 +182,13 @@ Over het gedrag voor grote $x$ zeggen we dat $\dfrac{\sin x}{x}$  gelijk wordt a
 		\addplot[domain=-6:6,color=blue] {1/x};
 		\addlegendentry{$y=\frac1x$};	 
 		\node[anchor=west, color=red, font=\small] at  (axis cs: 0.2,-0.4) {$0\leftarrow x$};
-		\node[anchor=west, color=red, font=\small] at  (axis cs: 0.2,4.4) {$1/x\rightarrow +\infty$};
+		\node[anchor=west, color=blue, font=\small] at  (axis cs: 0.2,4.4) {$1/x\rightarrow +\infty$};
 
 		\node[anchor=west, color=red, font=\small] at  (axis cs: -6,0.2) {$-\infty\leftarrow x$};
-		\node[anchor=west, color=red, font=\small] at  (axis cs: -6,-0.8) {$1/x\rightarrow 0$};
+		\node[anchor=west, color=blue, font=\small] at  (axis cs: -6,-0.8) {$1/x\rightarrow 0$};
 
 		\node[anchor=east, color=red, font=\small] at  (axis cs: 6,-0.4) {$x\rightarrow +\infty$};
-		\node[anchor=east, color=red, font=\small] at  (axis cs: 6,0.8) {$1/x\rightarrow 0$};
+		\node[anchor=east, color=blue, font=\small] at  (axis cs: 6,0.8) {$1/x\rightarrow 0$};
 
 %		\node[anchor=east, font=\small] at  (axis cs: -0.2,4.4) {$\rlimx \frac1x =+\infty$};
 %		\node[anchor=west] at  (axis cs: 0.2,-4) {$\llimx \frac1x =-\infty$};
@@ -208,7 +210,7 @@ We gaan zoals vermeld in deze module niet in op de exacte wiskundige definitie v
 
 \begin{definition} (Intuïtieve pseudo-definitie van limiet)
 	
-	Zij $f$ een continue functie, en $a$ en $c$ telkens ofwel een reëel getal, ofwel één van de symbolen $+\infty$ of $-\infty$. 
+	Zij $f$ een reële functie, en $a$ en $c$ telkens ofwel een reëel getal, ofwel één van de symbolen $+\infty$ of $-\infty$. 
 	Dan zeggen en schrijven we dat 
 
 \begin{align*}
@@ -217,11 +219,11 @@ We gaan zoals vermeld in deze module niet in op de exacte wiskundige definitie v
 	                   \\
 	\llimxc f(x) = a & \quad\iff\quad \text{de linkerlimiet van $f$ als $x$ naar $c$ gaat is (gelijk aan) $a$} \\
 	                   & \quad\iff\quad \text{de limiet van $f$ als $x$ langs links naar $c$ gaat is (gelijk aan) $a$} \\
-	                   & \quad\iff\quad \text{als }x\to c\text{\textbf{ langs links} (dus $x<c$), dan } f(x) \to a \\
+	                   & \quad\iff\quad \text{als }x\to c\textbf{ langs links} \text{ (dus $x<c$), dan } f(x) \to a \\
 	                   \\
 	\rlimxc f(x) = a & \quad\iff\quad \text{de rechterlimiet van $f$ als $x$ naar $c$ gaat is (gelijk aan) $a$} \\
 					   & \quad\iff\quad \text{de limiet van $f$ als $x$ langs rechts naar $c$ gaat is (gelijk aan) $a$} \\
-					   & \quad\iff\quad \text{als }x\to c\text{\textbf{ langs rechts} (dus $x>c$), dan }f(x) \to a 
+					   & \quad\iff\quad \text{als }x\to c\textbf{ langs rechts} \text{ (dus $x>c$), dan }f(x) \to a 
 \end{align*}
 
 \end{definition}
@@ -240,7 +242,7 @@ $$
 
 \item De uitdrukking 'de limiet $\limxc f(x)$ bestaat' wordt in de literatuur in twee mogelijke betekenissen gebruikt: soms bedoelt men 'de limiet bestaat en is eindig', maar soms bedoelt men ook 'de limiet bestaat maar is eventueel $\pm\infty$'. In deze cursus gebruiken we optie 2! \todo{Klopt dit?}
 
-\item Uitweiding: De pseudo-definitie is bewust enigszins vaag over welke waarden $c$ precies mag aannemen. In deze cursus beperken we ons tot 'punten of randpunten van het domein van $f$. Dus, we kunnen spreken van de limiet van $f(x)=\sqrt{x}$ in de punten $1$ en $\pi$ en $81$ (punten van het domein), of in $0$ of $+\infty$ (punten 'op de rand van het domein'), maar de limiet in de punten $-1$, $-314$ en $-\infty$ heeft \textit{geen} betekenis. Merk ook op dat de waarde van $f(c)$ (als die bestaat) geen belang heeft bij het bepalen van $\limxg{c}f(x)$: enkel de waarden van $f$ \textit{in de buurt van} $c$ bepalen de limiet! Het is een eigenschap (of zelfs een definitie!) van continue functies dat hun functiewaarden overal gelijk zijn aan hunn limieten.
+\item Uitweiding: De pseudo-definitie is bewust enigszins vaag over welke waarden $c$ precies mag aannemen. In deze cursus beperken we ons tot 'punten of randpunten van het domein van $f$. Dus, we kunnen spreken van de limiet van $f(x)=\sqrt{x}$ in de punten $1$ en $\pi$ en $81$ (punten van het domein), of in $0$ of $+\infty$ (punten 'op de rand van het domein'), maar de limiet in de punten $-1$, $-314$ en $-\infty$ heeft \textit{geen} betekenis. Merk ook op dat de waarde van $f(c)$ (als die bestaat) geen belang heeft bij het bepalen van $\limxg{c}f(x)$: enkel de waarden van $f$ \textit{in de buurt van} $c$ bepalen de limiet! Het is een eigenschap (of zelfs een definitie!) van continue functies dat hun functiewaarden overal gelijk zijn aan hun limieten.
 
 \item Uitbreiding: in de vlakke meetkunde gebruiken we ook het symbool $\infty$, maar daar maken we typisch geen onderscheid tussen $+\infty$ en $-\infty$. Zie aldaar voor een bijzonder fascinerende uitleg daarover.
 
@@ -248,6 +250,7 @@ $$
 
 \end{remark}
 
+\todo{Voorbeeld grafiek linkerlimiet <> rechterlimiet}
 %(overbodig) Merk op: hierbij staan zowel de letters $a$ als $c$ dus voor reële getallen \textit{of} voor één van de symbolen $+\infty$ of $-\infty$. Zie verder voor de rekenregels voor $\pm\infty$.
 
 %Deze definitie zegt dus \textit{niet} (wiskundig) nauwkeurig wat een limiet \textit{precies is}. Het volstaat -voor deze module- om op basis van dit soort definitie een intuïtief begrip op te bouwen over wat limieten zijn, en hoe ze kunnen worden berekend. Met dit soort van intuïtieve definities kunnen van limieten natuurlijk geen eigenschappen worden \textit{bewezen}, of echte berekeningen worden gemaakt. 
@@ -397,10 +400,10 @@ Bepaal nu zelf volgende limieten op basis van deze grafieken:
 \newcommand{\localoefoptions}{\wordChoice{\choice[\isA]{$+\infty$}\choice[\isB]{$-\infty$}\choice[\isC]{0}\choice[\isD]{1}\choice[\isE]{bestaat niet}\choice[\isF]{andere oplossing}}}
 
 
-\begin{exercise} \def\isC{correct} $\limx x\sin x = $ \localoefoptions \end{exercise}
-\begin{exercise} \def\isD{correct} $\limx \frac{\sin x}{x} = $ \localoefoptions \end{exercise}
-\begin{exercise} \def\isC{correct} $\limxi \frac{\sin x}{x} = $ \localoefoptions \end{exercise}
-\begin{exercise} \def\isE{correct} $\limxi x\sin x = $ \localoefoptions \end{exercise}
+\begin{question} \def\isC{correct} $\limx x\sin x = $ \localoefoptions \end{question}
+\begin{question} \def\isD{correct} $\limx \frac{\sin x}{x} = $ \localoefoptions \end{question}
+\begin{question} \def\isC{correct} $\limxi \frac{\sin x}{x} = $ \localoefoptions \end{question}
+\begin{question} \def\isE{correct} $\limxi x\sin x = $ \localoefoptions \end{question}
 
 
 
