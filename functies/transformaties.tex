@@ -38,18 +38,18 @@ In de 'een functie is een machine' (zie \autoref{fctie:def:pseudodef}) analogie 
     \end{tikzpicture}
 \end{center}
 
-Merk op dat de $f$ en $g$ van plaats wisselen in de grafische 'machine'-voorstelling en in de symbolische 'functie'-voorstellen: eerst $f$ en dan $g$ toepassen, schrijven we $g(f(x))$ (waar dus de $g$ eerst staat, en dan de $f$). Samengestelde functies worden best 'van binnen uit' gelezen: je vertrekt van de $x$, en kijkt wat er mee gebeurt: eerst $f(x$ nemen, en dan van het resultaat $g$ nemen, dus $g(f(x))$ 
+Merk op dat de $f$ en $g$ van plaats wisselen in de grafische 'machine'-voorstelling en in de symbolische 'functie'-voorstellen: eerst $f$ en dan $g$ toepassen, schrijven we $g(f(x))$ (waar dus de $g$ eerst staat, en dan de $f$). Samengestelde functies worden best 'van binnen naar buiten' gelezen: je vertrekt van de $x$, en kijkt wat er mee gebeurt: eerst $f(x)$ nemen, en dan van het resultaat $g$ nemen, dus $g(f(x))$ 
 
-Uitweiding: als $x$ meerdere keren voorkomt in een formule wordt de regel moeilijk toepasbaar: $\frac{x^2\cdot\sin(2x)}{\sqrt{x^2+1}}$ kan je niet direct 'van binnen uit' lezen, maar $\sin(\frac{e^{2x^2+1}}{\pi})$ wel!
+Uitweiding: als $x$ meerdere keren voorkomt in een formule wordt de regel moeilijk toepasbaar: $\displaystyle\frac{x^2\cdot\sin(2x)}{\sqrt{x^2+1}}$ kan je niet direct 'van binnen uit' lezen, maar $\displaystyle\sin(\frac{e^{2x^2+1}}{\pi})$ bijvoorbeeld wel!
 
 TODO: Uitweiding: korte reflectie over postfix notatie $xf$ ipv $fx$
 
 \subsection{(Uitbreiding) Het verschil tussen $f$ en $f(x)$}
 
 % Mmm, een volledige sectie als 'uitweiding'; willen we dat ???
-\begin{uitweiding} Wat is het verschil tussen $f$ en $f(x)$ )
+\begin{uitweiding} Wat is het verschil tussen $f$ en $f(x)$ ?
 
-Meestal beweert men dat het antwoord op deze vraag evident is: $f$ is de \textit{functie}, en $f(x)$ is de \textit{functiewaarde} in het element $x$. Een snelle blik in een willekeurig handboek wiskunde leert dat dit antwoord  eigenlijk niet voldoet: erg dikwijls zal men voor de vierkantswortel spreken van de 'functie $\sqrt(x)$ en niet van 'de functie $\sqrt{}$, of van de sinusfunctie $\sin x$, en niet van de functie $\sin$.
+Meestal beweert men dat het antwoord op deze vraag evident is: $f$ is de \textit{functie}, en $f(x)$ is de \textit{functiewaarde} in het element $x$. Een snelle blik in een willekeurig handboek wiskunde leert dat dit antwoord  eigenlijk niet voldoet: erg dikwijls zal men voor de vierkantswortel spreken van de 'functie $\sqrt{x}$ en niet van 'de functie $\sqrt{\ }$, of van de sinusfunctie $\sin x$, en niet van de sinusfunctie $\sin$.
 
 \begin{expandable}
 Er is een mooie, maar weinig verspreide manier om deze dubbelzinnigheid rond de notatie van functies relatief eenvoudig op te lossen. Dat wil zeggen, ze reduceren tot een toch ook al aanwezige dubbelzinnigheid in het gebruik van het symbool $x$. 
@@ -73,7 +73,7 @@ Tenslotte kan $x$ ook een 'variabele' zijn, bijvoorbeeld in de uitdrukking $f:x\
     x:A \to A,\quad y \mapsto x(y) = y
     $$
 \end{definition}
-Merk op dat voor reële functies de notaie $x$ voor de identieke fucntie voor de hand ligt: net zoals $x^2$ een getal afbeeldt op zijn kwadraat, beeld $x$ een getal af op zichzelf.
+Merk op dat voor reële functies de notatie $x$ voor de identieke fucntie voor de hand ligt: net zoals $x^2$ een getal afbeeldt op zijn kwadraat, beeldt $x$ een getal af op zichzelf.
 
 Merk ook op dat hier gekozen is om een willekeurig element van $A$ met de letter $y$ aan te duiden, maar met een klein misbruik van notatie (we gebruiken de letter $x$ in dezelfde formule in twee verschillende betekenissen) kunnen we ook schrijven:
 $$
@@ -95,9 +95,9 @@ Bewijs: triviaal.
 
 Als gevolg van deze stelling is het toegelaten om bij het spreken over functies zowel over $f$ als over $f(x)$ te spreken. De dubbelzinnigheid rond het gebruik van de letter $x$ blijft natuurlijk wel bestaan, en de preciese betekenis moet telkens blijken uit de context. 
 
-De stelling zegt dus \textit{niet} dat $f$ en $f(x)$ \textit{altijd} gelijk zijn, omdat in het symbool $x$ een inherente dubbelzinnigheid zit: soms is $x$ een willekeurig getal, en dan is $f(x)$ ook een getal, dat afhangt van het getal $x$. Maar, soms kan $x$ ook beschouwd worden als een functie, en dan is $f(x)$ ook een functie, namelijk gewoon de functie $f$.
+De stelling zegt dus \textit{niet} dat $f$ en $f(x)$ \textit{altijd} gelijk zijn, omdat in het symbool $x$ een inherente dubbelzinnigheid zit: soms is $x$ een willekeurig getal, en dan is $f(x)$ ook een getal, dat afhangt van het getal $x$. Maar, soms kan $x$ ook beschouwd worden als een functie (of een variable), en dan is $f(x)$ ook een functie (of een variabele), namelijk gewoon de functie $f$.
 
-CAVEAT: deze zienswijze is wiskundig correct, maar niet algemeen bekend. Het is dus mogelijk dat in sommige contexten toch \textit{niet} mag worden beweerd dat $f$ en $f(x)$ eigenlijk hetzelfde (kunnen) zijn.
+CAVEAT: deze zienswijze is wiskundig correct, maar niet algemeen bekend. Het is dus mogelijk dat in sommige contexten (mogelijk zelfs examencontexten!) toch \textit{niet} mag worden beweerd dat $f$ en $f(x)$ eigenlijk hetzelfde (kunnen) zijn.
 
 \end{expandable}
 \todo{Uitzoeken/uitleggen dat variabele $x$  eigenlijk functie $x$ is? }
