@@ -1,0 +1,379 @@
+%
+% TIJDELIJKE VERSIE VOOR BEAMER : TO BE REMOVED
+%
+
+% 201908: PAS OP: babel lijkt problemen te veroorzaken met online math
+% (wegens syntax error met toegevoegde \newcommands ...)
+%\usepackage[dutch]{babel}
+
+%\usepackage[a4paper]{geometry}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{morewrites}   % nav zomercursus (answer...?)
+
+\usepackage{multicol}
+\usepackage{tikzsymbols}
+\usepackage{ifthen}
+\usepackage{animate}
+
+\usepackage{ulem} % \sout voor strike-out
+
+
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
+\usetikzlibrary{decorations.markings}
+
+% Met "\newcommand\showtodonotes{}" kan je todonotes tonen (in pdf/online)
+% 201908: online werkt het niet (goed)
+\providecommand\showtodonotes{disable}
+\usepackage[\showtodonotes]{todonotes}
+%\usepackage{todonotes}
+
+\graphicspath{
+    {./}
+    {goniometrie/}
+    {limieten/}
+    {zomercursus/M09/}
+}
+
+
+% we willen (bijna) altijd \geqslant ipv \geq ...!
+\newcommand{\geqnoslant}{\geq}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\leqnoslant}{\leq}
+\renewcommand{\leq}{\leqslant}
+
+% Shortcuts voor limieten
+% MERK OP: hier kan dus ook de notatie voor linker/rechterlimiet worden gekozen !!!
+% Usage: \limx geeft lim voor x-> 0;  \limx[a^2]  geeft lim voor x-> a^2 en \limxi geeft lim voor x -> \infy \limxmi -> -\infty 
+
+% Mmm, zonder de \ifblank lijkt het niet te werken in htlatex ...?
+%\newcommand{\limx}[1][]{\lim_{x \rightarrow \ifblank{#1}{0}{#1}}}
+
+\newcommand{\limxg}[1]{\lim_{x \rightarrow #1}}    % g  voor Generic ...
+\newcommand{\llimxg}[1]{\lim_{x \rightarrow {#1}^-}}
+\newcommand{\rlimxg}[1]{\lim_{x \rightarrow {#1}^+}}
+%\newcommand{\llimxc}{\lim_{x \underset < \rightarrow c}}  % werkt niet in html?
+%\newcommand{\rlimxc}{\lim_{x \underset > \rightarrow c}}  % werkt niet in html?
+% < gave illegal macro definition
+%\text{\textless} showed "\textless" in html
+%\DeclareUnicodeCharacter{227A}{\xgt}
+%\DeclareUnicodeCharacter{227B}{\xlt}
+%\newcommand{\llimx}{\lim_{x \underset{\char8826} \rightarrow 0}}
+%\newcommand{\rlimx}{\lim_{x \underset{\char8826} \rightarrow 0}}
+
+\newcommand{\limx}{\limxg{0}}     % limieten naar 0
+\newcommand{\llimx}{\llimxg{0}}
+\newcommand{\rlimx}{\rlimxg{0}}
+
+\newcommand{\limxi}{\limxg{+\infty}}  % I voor \Infty
+\newcommand{\limxmi}{\limxg{-\infty}} % MI voor Min \Infty
+\newcommand{\limxc}{\limxg{c}}     % is/was handig in de module over limieten ...
+\newcommand{\llimxc}{\llimxg{c}}
+\newcommand{\rlimxc}{\rlimxg{c}}
+
+%werkt in math en text mode om MATH met grijze achtergond te tonen (ook \important{\text{blabla}} lijkt te werken)
+\newcommand{\important}[1]{\ensuremath{\colorbox{lightgray}{$#1$}}}
+
+
+%
+% Poging tot aanpassen layout
+%
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+
+\ifdefined\nouitweiding  
+	\excludecomment{uitweiding}
+\else
+	\theoremstyle{definition}
+	\newmdtheoremenv[backgroundcolor=lightgray]{uitweiding}{Uitweiding}
+	\AtBeginEnvironment{uitweiding}{\small}
+\fi
+
+% genante fout ...! (to be removed zodra niet meer gebruikt) 
+\newmdtheoremenv[backgroundcolor=lightgray]{uitwijding}{Uitwijding}
+\AtBeginEnvironment{uitwijding}{\small}
+
+\newcommand{\grapje}[1]{{\small#1{\reversemarginpar\marginpar{\Smiley}}}}
+%\newcommand{\grapje}[1]{}
+
+%\theoremstyle{definition}
+%\newmdtheoremenv[backgroundcolor=lightgray]{grapje}{}
+%\AtBeginEnvironment{uitwijding}{\small\Smiley}
+
+% Herdefinieer enkele omgevingen (PAS OP: enkel voor PDF, voor html: zie css..!!!)
+% remove italics def
+\makeatletter   % because of the @ below: make @ a (normal) letter!!
+\let\definition\relax
+\let\c@definition\relax
+\let\enddefinition\relax
+\theoremstyle{definition}
+\newtheorem{definition}{Definitie}
+%\newmdtheoremenv{definition}{Definitie}
+%\newtcbtheorem[number within=section]{definition}{Definitie}{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+%\newtcbtheorem{definition}{Definitie}{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+
+
+
+% remove italics def
+\let\example\relax
+\let\c@example\relax
+\let\endexample\relax
+\theoremstyle{definition}
+\newtheorem{example}{Voorbeeld}
+
+% remove italics def
+\let\explanation\relax
+\let\c@explanation\relax
+\let\endexplanation\relax
+\theoremstyle{definition}
+\newtheorem*{explanation}{Uitleg}
+
+% remove italics defprovidecommand
+\let\remark\relax
+\let\c@remark\relax
+\let\endremark\relax
+\theoremstyle{definition}
+\newtheorem{remark}{Opmerking}
+
+% remove italics def
+\let\proposition\relax
+\let\c@proposition\relax
+\let\endproposition\relax
+%\theoremstyle{proposition}
+%\newmdtheoremenv{proposition}{Eigenschap}
+\newtheorem{proposition}{Eigenschap}
+
+% remove italics def
+\let\problem\relax
+\let\c@problem\relax
+\let\endproblem\relax
+%\theoremstyle{problem}
+\newtheorem{problem}{Probleem}
+
+% remove italics def
+\let\exercise\relax
+\let\c@exercise\relax
+\let\endexercise\relax
+%\theoremstyle{problem}
+\newtheorem{exercise}{Oefening}
+
+% remove italics def
+\let\question\relax
+\let\c@question\relax
+\let\endquestion\relax
+%\theoremstyle{problem}
+\newtheorem{question}{Vraag}
+
+% remove italics def
+\let\notation\relax
+\let\c@notation\relax
+\let\endnotation\relax
+%\theoremstyle{problem}
+\newmdtheoremenv{notation}{Notatie}
+
+%% cfr infra %%%\newtheorem*{oplossing}{Oplossing}
+\makeatother
+
+%
+% Zomercursus
+%
+\newcounter{module}
+
+%
+% Zomercursus environments
+%
+\newcommand\newframedtheorem\newtheorem
+%
+\newtheorem{oefening}{Oefening}[section]
+\newtheorem{oefening2}{Oefening}
+\newtheorem{soefening}{Samengestelde oefening}
+\newtheorem{vraag}[oefening2] {Vraag}
+\newtheorem{oefeningen}[oefening]{Oefeningen}
+\newtheorem{taak}{Taak}
+\newtheorem{definitie}{Definitie}[section]
+\newtheorem{voorbeeld}[definitie]{Voorbeeld}
+
+\newtheorem{toepassing}[definitie]{Toepassing}
+\newtheorem{opmerking}[definitie]{Opmerking}
+\newtheorem{notatie}[definitie]{Notatie}
+\newtheorem{voorbeelden}[definitie]{Voorbeelden}
+\newtheorem{toepassingen}[definitie]{Toepassingen}
+\newtheorem{opmerkingen}[definitie]{Opmerkingen}
+\newtheorem{notaties}[definitie]{Notaties}
+\newtheorem{voorbeeldoefening}[definitie]{Voorbeeldoefening}
+\newtheorem{voorbeeldoefeningen}[definitie]{Voorbeeldoefeningen}
+\newtheorem{opdrn}[definitie]{Opdrachten}
+
+\newframedtheorem{kaderdefinitie}[definitie]{Definitie}
+\newframedtheorem{kadernotatie}[definitie]{Notatie}
+\newframedtheorem{kadernotaties}[definitie]{Notaties}
+
+
+%\theorembodyfont{\itshape}
+\newtheorem{stelling}[definitie]{Stelling}
+\newtheorem{eigenschap}[definitie]{Eigenschap}
+\newtheorem{resultaat}[definitie]{Resultaat}
+%\newtheorem{lemma}[definitie]{Lemma}
+\newtheorem{propositie}[definitie]{Propositie}
+\newtheorem{rekenregel}[definitie]{Rekenregel}
+\newtheorem{bijzondergeval}[definitie]{Bijzonder geval}
+\newtheorem{eigenschappen}[definitie]{Eigenschappen}
+\newtheorem{rekenregels}[definitie]{Rekenregels}
+\newtheorem{bijzonderegevallen}[definitie]{Bijzondere gevallen}
+\newframedtheorem{kaderstelling}[definitie]{Stelling}
+\newframedtheorem{kaderbijzonderegevallen}[definitie]{Bijzondere gevallen}
+\newframedtheorem{kadereigenschap}[definitie]{Eigenschap}
+\newframedtheorem{kaderresultaat}[definitie]{Resultaat}
+\newframedtheorem{kaderlemma}[definitie]{Lemma}
+\newframedtheorem{kaderpropositie}[definitie]{Propositie}
+\newframedtheorem{kaderrekenregel}[definitie]{Rekenregel}
+\newframedtheorem{kaderbijzondergeval}[definitie]{Bijzonder geval}
+\newframedtheorem{kadereigenschappen}[definitie]{Eigenschappen}
+\newframedtheorem{kaderrekenregels}[definitie]{Rekenregels}
+
+%\theoremstyle{nonumberbreak}
+%\theorembodyfont{\upshape}
+%\theoremindent\parindent
+\newtheorem{oplossing}{Oplossing}
+\newtheorem{uitwerking}{Uitwerking}
+\newtheorem{werkwijze}{Werkwijze}
+%\theoremsymbol{\ensuremath{_\blacksquare}}
+\newtheorem{bewijs}{Bewijs}
+%\theoremindent0cm
+%\theoremsymbol{}
+\newtheorem{oplossingen}[definitie]{Oplossingen}
+
+%\theoremstyle{nonumberplain}
+%\theorembodyfont{\normalfont}
+%\theoremseparator{\hspace{-1ex}}
+\newframedtheorem{kader}{}
+%\newshadedtheorem{grijs}{} 
+
+
+%
+% Special packages with setup
+%
+\usepackage{answers}
+
+%definities nieuwe omgevingen
+\Newassociation{opl}{Oplossing}{ans}
+\Newassociation{numopl}{NumOplossing}{numans}
+%\theoremstyle{break}
+%\theoremheaderfont{\normalfont\bfseries}
+%\theoremsymbol{}
+
+
+%definities nieuwe commando's - afkortingen veel gebruikte symbolen
+\newcommand{\ds}{\displaystyle}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Rnul}{\ensuremath{\mathbb{R}_0}}
+\newcommand{\Reen}{\ensuremath{\mathbb{R}\setminus\{1\}}}
+\newcommand{\Rnuleen}{\ensuremath{\mathbb{R}\setminus\{0,1\}}}
+\newcommand{\Rplus}{\ensuremath{\mathbb{R}^+}}
+\newcommand{\Rmin}{\ensuremath{\mathbb{R}^-}}
+\newcommand{\Rnulplus}{\ensuremath{\mathbb{R}_0^+}}
+\newcommand{\Rnulmin}{\ensuremath{\mathbb{R}_0^-}}
+\newcommand{\Rnuleenplus}{\ensuremath{\mathbb{R}^+\setminus\{0,1\}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Nnul}{\ensuremath{\mathbb{N}_0}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Znul}{\ensuremath{\mathbb{Z}_0}}
+\newcommand{\Zplus}{\ensuremath{\mathbb{Z}^+}}
+\newcommand{\Zmin}{\ensuremath{\mathbb{Z}^-}}
+\newcommand{\Znulplus}{\ensuremath{\mathbb{Z}_0^+}}
+\newcommand{\Znulmin}{\ensuremath{\mathbb{Z}_0^-}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\Cnul}{\ensuremath{\mathbb{C}_0}}
+\newcommand{\Cplus}{\ensuremath{\mathbb{C}^+}}
+\newcommand{\Cmin}{\ensuremath{\mathbb{C}^-}}
+\newcommand{\Cnulplus}{\ensuremath{\mathbb{C}_0^+}}
+\newcommand{\Cnulmin}{\ensuremath{\mathbb{C}_0^-}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Qnul}{\ensuremath{\mathbb{Q}_0}}
+\newcommand{\Qplus}{\ensuremath{\mathbb{Q}^+}}
+\newcommand{\Qmin}{\ensuremath{\mathbb{Q}^-}}
+\newcommand{\Qnulplus}{\ensuremath{\mathbb{Q}_0^+}}
+\newcommand{\Qnulmin}{\ensuremath{\mathbb{Q}_0^-}}
+\newcommand{\perdef}{\overset{\mathrm{def}}{=}}
+\newcommand{\pernot}{\overset{\mathrm{not}}{=}}
+\newcommand\perinderdaad{\overset{!}{=}}     % voorlopig gebruikt in limietenrekenregels
+\newcommand\perhaps{\overset{?}{=}}          % voorlopig gebruikt in limietenrekenregels
+\newcommand{\bgsin}{\mathrm{bgsin}\,}
+\newcommand{\bgcos}{\mathrm{bgcos}\,}
+\newcommand{\bgtan}{\mathrm{bgtan}\,}
+\newcommand{\bgcot}{\mathrm{bgcot}\,}
+\newcommand{\bgsinh}{\mathrm{bgsinh}\,}
+\newcommand{\bgcosh}{\mathrm{bgcosh}\,}
+\newcommand{\bgtanh}{\mathrm{bgtanh}\,}
+\newcommand{\bgcoth}{\mathrm{bgcoth}\,}
+\newcommand{\Bgsin}{\mathrm{Bgsin}\,}
+\newcommand{\Bgcos}{\mathrm{Bgcos}\,}
+\newcommand{\Bgtan}{\mathrm{Bgtan}\,}
+\newcommand{\Bgcot}{\mathrm{Bgcot}\,}
+\newcommand{\Bgsinh}{\mathrm{Bgsinh}\,}
+\newcommand{\Bgcosh}{\mathrm{Bgcosh}\,}
+\newcommand{\Bgtanh}{\mathrm{Bgtanh}\,}
+\newcommand{\Bgcoth}{\mathrm{Bgcoth}\,}
+\newcommand{\cosec}{\mathrm{cosec}\,}
+\newcommand{\dom}{\mathrm{dom}\,}
+\newcommand{\codom}{\mathrm{codom}\,}
+\newcommand{\bld}{\mathrm{bld}\,}
+\newcommand{\graf}{\mathrm{graf}\,}
+\newcommand{\rc}{\mathrm{rc}\,}
+\newcommand{\co}{\mathrm{co}\,}
+\newcommand{\oefverwijzing}[1]{\ensuremath{\hookrightarrow}\ \textsl{#1}}
+\newcommand{\startletternummering}{\renewcommand{\labelenumi}{(\alph{enumi})}}
+\newcommand{\eindeletternummering}{\renewcommand{\labelenumi}{\arabic{enumi}.}}
+\newcommand{\bron}[1]{\begin{scriptsize} \emph{#1} \end{scriptsize}} 
+
+%
+% Uit zcdef.tex; willen we dit wel ...????
+%
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\lba}{\left[\begin{array}}
+\newcommand{\ear}{\end{array}\right]}
+
+%
+% commando's voor QR codes
+%
+\newcommand{\qrslidesA}[1]{Lesmateriaal gebruikt in het A-programma: \vspace{3mm}\\  \qrcode{#1} \href{#1}{\tiny{#1}}\\\vspace{3mm}}
+\newcommand{\qrslidesB}[1]{Lesmateriaal gebruikt in het B-programma: \vspace{3mm}\\  \qrcode{#1} \href{#1}{\tiny{#1}}\\\vspace{3mm}}
+\newcommand{\qrclip}[1]{\qrcode{#1} clip: \href{#1}{\tiny{#1}}}
+\newcommand{\qrapplet}[1]{\qrcode{#1} applet: \href{#1}{\tiny{#1}}}
+
+%%
+%% bladschikking
+%%
+%\voffset=-1in
+%\topmargin=1.5 cm
+%\headheight=2cm
+%\headsep=1cm
+%\textheight=22cm
+%\footskip=1.2cm
+%\hoffset=-1in
+%\oddsidemargin=2.5cm
+%\evensidemargin=2.5cm
+%\textwidth=15.5cm
+%\marginparsep=0cm
+%\marginparwidth=0cm
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{5 pt}
+%
+%\def\hoofding #1#2#3{\maketitle}
+%
+
+%
+%   Gecopieerd calculus preamble
+%
+%%This is to help with formatting on future title pages.
+\newenvironment{sectionOutcomes}{}{}
+
+ 
