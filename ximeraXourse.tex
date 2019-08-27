@@ -1,22 +1,22 @@
-\documentclass[handout,numbers,noauthor,nooutcomes,wordchoicegiven]{xourse}
+\documentclass[handout,numbers,noauthor,nooutcomes]{xourse}
 %\documentclass[10pt,handout,wordchoicegiven]{xourse}
 %\documentclass[handout]{xourse}
 %\documentclass[numbers]\providecommand\showtodonotes{}{xourse}
 
-\makeatletter
-\newcommand{\exerciseCollection}[2]{
-	\def\input@path{{#1}}
-	\activity{#1#2}}
-\makeatother
 
 %\pdfOnly{\providecommand\showtodonotes{}}
+
+%\usepackage[screen]{geometry}
+
+%\usepackage[nobottomtitles*]{titlesec}
+\renewcommand{\bottomtitlespace}{0.25\textheight}
 
 \input{preamble.tex}
 
 \pdfOnly{\usepackage{printStyles/voorkennis}}
 
 
-\title{Overleg Keuze Platform (online-) Zomercursus}
+\title{Overleg Keuze Platform \\\ \\ (online-) Zomercursus}
 
 \begin{document}
 \begin{abstract}
@@ -27,11 +27,15 @@
 
 \maketitle
 
-\tableofcontents\clearpage 
+%\tableofcontents\clearpage 
 
 \chapterstyle
-\activity{ximeraInleiding.tex}
+\activity{overleg0828Inleiding.tex}
+
+\activity{ximeraShowcase.tex}
+
+%\begin{onlineOnly}
 \activity{ximeraSetup.tex}
-\activity{ximeraShowcase.tex}   % to be removed
+%\end{onlineOnly}
 
 \end{document}

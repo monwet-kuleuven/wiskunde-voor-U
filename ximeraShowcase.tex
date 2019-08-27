@@ -6,11 +6,11 @@
 % Allicht enkel in online  versie te includen !!!
 
 \author{Wim Obbels}
-\outcome{Elementaire vertrouwdheid met Ximera functionaliteit}
-\outcome{(Uitbreiding) Enig inzicht in Ximera architectuur}
+\outcome{Overzicht van Ximera functionaliteit}
+%\outcome{(Uitbreiding) Enig inzicht in Ximera architectuur}
 
 
-\title{(Uitbreiding) Ximera Showcase}
+\title{Ximera Showcase}
 
 \begin{document}
 \begin{abstract}
@@ -67,12 +67,13 @@
 
 \begin{problem}
     
-    Los volgende vragen correct op:
+    Los volgende vragen correct op (en vergelijk met de \LaTeX code voor de verschillen):
     \begin{enumerate}
         \item $1+1 = \answer{2}$
         \item $1+1 = \answer[given]{2}$   ( Met 'answer[given]')
-        \item $\frac{1}{2} =  \answer{\frac{1}{2}}$  (Gebruik een punt voor decimale getallen...)
-        \item $\frac{1}{2} =  \answer[tolerance=.2]{\frac{1}{2}}$  (Je mag er 0.2 naast zitten)
+        \item $\frac{1}{2} =  \answer{\frac{1}{2}}$  (Gebruik een punt voor decimale getallen...) 
+        \item $\frac{1}{2} =  \answer{0.5}$  (Gebruik een punt voor decimale getallen...)
+        \item $\frac{1}{2} =  \answer[tolerance=.2]{0.5}$  (Je mag er 0.2 naast zitten)
     \end{enumerate}
 \end{problem}
 
@@ -105,7 +106,7 @@
         \end{question}
    
         \begin{question}
-          Als $y=4+4$ dan is $y = \answer[format=integer,id=y]{8}$ (Geef een geheel getal, en probeer eerst een fout getal, bv 7.)
+          Als $y=4+4$ dan is $y = \answer[format=integer,id=y]{8}$ (Geef een geheel getal; probeer eerst een fout getal, bv 7.)
           \begin{hint}[0]
               Heb je 7 al geprobeerd (want dan krijg je erg nuttige feedback!)
           \end{hint}
@@ -149,13 +150,13 @@
 
 Luister eerst aandachtig naar volgende fascinerende inleiding tot de goniometrie:
 \begin{center}
- \youtube{2jGHOcxB8sI}
+ \youtube{2jGHOcxB8sI}{640}{400}
 \end{center}
 
 Bekijk dan de grafiek van de cosinus:
 
 \[  
-\graph[xmin=-5,xmax=20,ymin=-1,ymax=1]{y=sin(x)}  
+\graph[xmin=-5,xmax=20,ymin=-1,ymax=1]{y=cos(x)}  
 \] 
 
 \pdfOnly{
