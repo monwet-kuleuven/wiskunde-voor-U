@@ -1,0 +1,55 @@
+%\documentclass[handout]{ximera}
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+
+\author{Wim Obbels}
+\outcome{Ximera en Sage}
+
+
+\title{Ximera Sage Showcase}
+
+\begin{document}
+\begin{abstract}
+	Seg, wat is Sage?
+\end{abstract}
+\maketitle
+
+
+%\subsubsection{Ken je Sage al?}
+
+In Sage kan je relatief eenvoudig de parametervergelijkingen van een cirkel bestuderen:
+
+\begin{sageCell}
+    var('s t')
+    x(t) = 3*cos(t)
+    y(t) = 3*sin(t)
+    c(t) = (x(t),y(t))
+    circle=parametric_plot(c(t),(t,0,2*pi),color="black")
+    circle
+\end{sageCell}
+
+\pdfOnly{In de onlineversie kan je met deze code experimenteren. 
+    
+    Zie [één of andere ingewikkelde url] of [een qrcode]
+}
+
+\begin{onlineOnly}
+    
+    Pas de code aan, en druk op Evaluate!
+    
+    Nice, zoals ze zeggen ...
+    
+\begin{sageOutput}
+    var('s t')
+    x(t) = 3*cos(t)
+    y(t) = 3*sin(t)
+    c(t) = (x(t),y(t))
+    circle=parametric_plot(c(t),(t,0,2*pi),color="black")
+    circle
+\end{sageOutput}
+\end{onlineOnly}
+
+
+\end{document}
