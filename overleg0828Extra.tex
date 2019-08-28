@@ -1,0 +1,88 @@
+%\documentclass[handout]{ximera}
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\renewcommand{\link}{\url}
+%\author{Wim Obbels}
+\outcome{}
+
+
+
+\title{Extra}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\subsection{Mogelijke uitgangspunten}
+
+\begin{itemize}
+	\item Een cursus wetenschappen zal in LaTeX geschreven zijn of zal niet zijn
+	
+	 Allicht FOUT uitgangspunt (want eenvoudiger en duidelijke datamodel nodig!)
+	
+	Maar: wat zijn alternatieven …?
+	\item Een cursus voor zelfstudie zal zowel online als in geprinte pdf beschikbaar zijn of zal niet zijn (?)
+	\item Een cursus zal open source zijn of zal niet zijn (?)
+	\item Een cursus zal onder versiebeheer zitten, of zal niet zijn (!)
+	\item Een cursus zal optioneel betalend zijn of zal niet zijn (voor begeleiding/chat/hands-on sessies …)
+	\item Een 'zomercursus' zal potentieel bruikbaar zijn in het middelbaar of zal niet zijn …? 
+
+\end{itemize}
+\newpage
+	
+\subsection{Onderzochte alternatieven}
+
+\begin{verbatim}
+
+    • DocOnce: https://github.com/hplgit/doconce
+    • Voordelen:
+    § Duidelijke structuur, veel mogelijkheden
+    • Nadelen
+    § Leercurve 
+    § lock-in
+    § (ontwikkelaar overleden; wordt wel actief verder onderhouden)
+    
+    • PreTextBook: https://pretextbook.org/
+    - Voordelen:
+    § Zowel pdf als html, vanaf één bron
+    § (converteert naar) LaTeX
+    § Open source, actieve ontwikkeling
+    - Nadelen:
+    § In XML …!
+    § Leercurve (bewering: goede xml-editor helpt !?)
+    § Leercurve / lock)in
+    \end{verbatim}
+    
+    \newpage
+    \begin{verbatim}
+    • edX : https://studio.edx.org/home/
+    - Voordelen:
+    § Volledige 'cursusomgeving' (met opvolging/examens/feedback/inschrijving etc; maar het merendeel van de functionaliteit lijkt hier niet echt nodig…!)
+    § Ondersteuning voor oefeningen en testen
+    § Visibiliteit (MOOC…)
+    - Nadelen:
+    § Geen print-to-pdf …!?
+    § Geen (goede) versiecontrole ?
+    § Geen LaTeX (ttz: enkel voor formules?); iig geen 'pdflatex mijncursus.tex'
+    
+    - Mogelijkheden: LaTeX2edX: https://github.com/mitocw/latex2edx
+    § Ontwikkeling lijkt stilgevallen …?
+    § Precieze workflow na te kijken!
+    
+    • Ximera   (https://ximera.osu.edu)
+    - LaTeX-addon om zowel pdf als html te genereren (gebaseerd op htlatex)
+    - Voordelen
+    § Zowel pdf als online
+    § Link met grading software mogelijk (BB…??)
+    - Nadelen:
+    § (minimale) addon om lokaal een pdf te kunnen genereren
+    § Server-side setup om html te serven (en te testen…,)
+    - Opmerkingen
+    § NSF grant 201x, recent blijkbaar minder actief
+    § Gecloned door Uflorida (https://…); wel actief
+    Voorbeelden: <>
+\end{verbatim}
+\end{document}
