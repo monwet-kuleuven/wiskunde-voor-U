@@ -3,7 +3,7 @@
 %\usepackage[dutch]{babel}
 
 %\usepackage[a4paper]{geometry}
-\usepackage{geometry}
+%\usepackage{geometry}   % probleem met .sty files 
 
 
 \usepackage[utf8]{inputenc}
@@ -27,6 +27,38 @@
 \usepackage[\showtodonotes]{todonotes}
 %\usepackage{todonotes}
 
+%
+% \xmxxx commands: Extra functionaliteit van, boven of naast Ximera
+%
+% (Met een minimale ximera.cls en preamble.tex zou een bruikbare .pdf moeten kunnen worden gemaakt van eender welke ximera)
+%
+%
+% Usage: \xmtitle[Mijn korte abstract]{Mijn titel}{Mijn abstract}
+% Eerste command na \begin{document}:
+%  -> definieert de \title
+%  -> definieert de abstract
+%  -> doet \maketitle ( dus: print de hoofding als 'chapter' of 'sectie')
+% Optionele parameter geeft eenn kort abstract (die met de globale setting \xmshortabstract{} al dan niet kan worden geprint.
+% De optionele korte abstract kan worden gebruikt voor pseudo-grappige abtsarts, dus dus globaal al dan niet kunnen worden gebuikt...
+% Globale settings:
+%  de (optionele) 'korte abstract' wordt enkele getoond als \xmshortabstract is gezet
+\providecommand\xmshortabstract{} % default: print (only!) short abstract if present
+\newcommand{\xmtitle}[3][]{
+\title{#2}
+\begin{abstract}
+\ifdefined\xmshortabstract
+\ifstrempty{#1}{%
+#3
+}{%
+#1
+}%
+\else
+#3
+\fi
+\end{abstract}
+\maketitle
+}
+    
 \graphicspath{
     {./}
     {goniometrie/}
@@ -51,7 +83,7 @@
 \newcommand{\limxg}[1]{\lim_{x \rightarrow #1}}    % g  voor Generic ...
 \newcommand{\llimxg}[1]{\lim_{x \rightarrow {#1}^-}}
 \newcommand{\rlimxg}[1]{\lim_{x \rightarrow {#1}^+}}
-%\newcommand{\llimxc}{\lim_{x \underset < \rightarrow c}}  % werkt niet in html?
+%\newcommand{\llimxg}[1]{\lim_{x \underset{<}{\rightarrow} {#1}}}  % werkt niet in html?
 %\newcommand{\rlimxc}{\lim_{x \underset > \rightarrow c}}  % werkt niet in html?
 % < gave illegal macro definition
 %\text{\textless} showed "\textless" in html
@@ -77,7 +109,9 @@
 %
 % Poging tot aanpassen layout
 %
-\usepackage{mdframed}
+%%%%%%%\usepackage{mdframed}  % error incompatible options
+\usepackage[framemethod=TikZ]{mdframed}
+
 \usepackage{tcolorbox}
 \tcbuselibrary{theorems}
 
@@ -90,12 +124,20 @@
 	\AtBeginEnvironment{uitweiding}{\small}
 \fi
 
-% genante fout ...! (to be removed zodra niet meer gebruikt) 
-\newmdtheoremenv[backgroundcolor=lightgray]{uitwijding}{Uitwijding}
-\AtBeginEnvironment{uitwijding}{\small}
+\ifdefined\xmnouitweiding  
+\excludecomment{xmuitweiding}
+\else
+\theoremstyle{definition}
+\newmdtheoremenv[backgroundcolor=lightgray]{xmuitweiding}{Uitweiding}
+\AtBeginEnvironment{xmuitweiding}{\small\begin{expandable}}
+\AtEndEnvironment{xmuitweiding}{\small\end{expandable}}    
+\fi
 
-\newcommand{\grapje}[1]{{\small#1{\reversemarginpar\marginpar{\Smiley}}}}
-%\newcommand{\grapje}[1]{}
+\newcommand{\xmgrapje}[1]{{\small#1{\reversemarginpar\marginpar{\Smiley}}}}
+%\newcommand{\xmgrapje}[1]{}
+\newcommand{\grapje}[1]{\xmgrapje{#1}}    % obsolete: use \xmgrapje
+
+
 
 %\theoremstyle{definition}
 %\newmdtheoremenv[backgroundcolor=lightgray]{grapje}{}
@@ -148,7 +190,7 @@
 \let\c@problem\relax
 \let\endproblem\relax
 %\theoremstyle{problem}
-\newtheorem{problem}{Voorbeeld oefening}
+\newtheorem{problem}{Probleem}
 
 % remove italics def
 \let\exercise\relax
@@ -349,6 +391,7 @@
 %
 % bladschikking
 %
+\pdfOnly{ %%% Mmm, werkt niet; issue if used in beamer !
 \voffset=-1in
 \topmargin=1.5 cm
 \headheight=2cm
@@ -365,12 +408,42 @@
 \setlength{\parskip}{5 pt}
 
 \def\hoofding #1#2#3{\maketitle}
-
+}
 
 %
 %   Gecopieerd calculus preamble
 %
 %%This is to help with formatting on future title pages.
 \newenvironment{sectionOutcomes}{}{}
+
+%
+% Aangepast van ximera.cls
+%
+%  (hoort allicht in een .sty thuis !!!)
+%
+% Toon feedback zonder label in PDF's
+% 
+\ifhandout% toon niets
+\renewenvironment{feedback}
+{%
+    \setbox0\vbox\bgroup
+}
+{%
+    \egroup
+}
+\else  % toon zonder meer (dus zonder 'Feedback(optie) zoals is  ximera.cls
+\renewenvironment{feedback}[1][]{
+    
+%    \def\PH@Command{#1}% Use PH@Command to hold the content and be a target for "\expandafter" to expand once.
+    
+%    \begin{trivlist}% Begin the trivlist to use formating of the "Feedback" label.
+%        \item[\hskip \labelsep\small\slshape\bfseries Feedback% Format the "Feedback" label. Don't forget the space.
+%        (\texttt{\detokenize\expandafter{\PH@Command}}):% Format (and detokenize) the condition for feedback to trigger
+%        \hspace{2ex}]\small\slshape% Insert some space before the actual feedback given.
+    }{
+%    \end{trivlist}
+}
+
+\fi
 
  
