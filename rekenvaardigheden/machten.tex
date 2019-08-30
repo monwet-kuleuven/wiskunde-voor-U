@@ -1,20 +1,23 @@
+%
+% ximera activiteit
+% Copyrigth
+%
 \documentclass{ximera}
-%\documentclass[wordchoicegiven]{ximera}
+%
+% Opties (enkel te gebruiken voor lokale testen; NOOIT committen met opties)
+%
+%\pdfOnly{\providecommand\showtodonotes{}}
+%\newcommand\xmnouitweiding{}
+
 
 \input{../preamble.tex}
 
-\author{Zomercursus KU Leuven}
-\outcome{Algebraïsch kunnen rekenen met machten.}
-
-
-\title[Rekenvaardigheden:]{Machten}
-
 \begin{document}
-\begin{abstract}
-	$(M8)^2 = \sqrt{666}$
-	% Macht in het kwadraat is de wortel van het kwaad ...; needs some explanation !
-\end{abstract}
-\maketitle
+    % Start specifieke settings:    
+    \author{Zomercursus KU Leuven}
+    \outcome{Algebraïsch kunnen rekenen met machten.}
+    \xmtitle[$(M8)^2 = \sqrt{666}$.]{Machten}{Definitie en eigenschappen van machten.}
+    % Start inhoud ximera 
 
 \subsection{Machten met een re\"eel grondtal en een gehele exponent}
 
@@ -24,7 +27,7 @@ Op dezelfde manier geldt: 'machtsverheffen is herhaald vermenigvuldigen': $2^3 \
 
 Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten. 
 
-\begin{definition}(Machtsverheffing met re\"eel grondtal en gehele exponent) \ 
+\begin{definition}(Machtsverheffing met re\"eel grondtal en gehele exponent) \label{def:machten met gehele exponent}\ 
 	
 	Zij $a\in\Rnul$ en $n\in\N$. 
 	
@@ -69,7 +72,7 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 \end{enumerate} 
 \end{remark}
 
-\begin{proposition}
+\begin{proposition} \label{eig:rekenregels machten}
 	Zij $x,y\in\R$ en $m,n\in\N$. Er geldt:
 {
 	\savebox\strutbox{$\vphantom{\dfrac11^n}$}   % hack; doesn't work in html
@@ -116,12 +119,12 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 
 \begin{example} 
 	$\left(\left(\frac{1}{2}\right)^{2}\right)^{-3}=\answer[given]{64}$
-	\begin{feedback} (want $\left(\left(\frac{1}{2}\right)^{2}\right)^{-3} = \left(\left(2^{-1}\right)^{2}\right)^{-3} = 2^{(-1)\cdot2\cdot6} = 2^6 = 64$ )
+	\begin{feedback} Oplossing: $\left(\left(\frac{1}{2}\right)^{2}\right)^{-3} = \left(\left(2^{-1}\right)^{2}\right)^{-3} = 2^{(-1)\cdot2\cdot6} = 2^6 = 64$ 
 	\end{feedback}
 \end{example}	
 \begin{example} $\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)^{2}= \answer[given]{\frac{9}{4}}$
 	\begin{feedback}
-     (want $\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)^{2} = \frac{\left(2^{-1}\right)^{2}}{\left(3^{-1}\right)^{2}}= 2^{-2}\cdot3^2= \frac{9}{4}$)
+     Oplossing: $\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)^{2} = \frac{\left(2^{-1}\right)^{2}}{\left(3^{-1}\right)^{2}}= 2^{-2}\cdot3^2= \frac{9}{4}$
 	\end{feedback}
 \end{example}	
 
@@ -130,7 +133,7 @@ Het blijkt handig om dit begrip direct uit te breiden tot negatieve exponenten.
 Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing tamelijk eenvoudig nog verder veralgemenen: we definiëren eerst $a^{\frac1n}$, dan $a^{\frac mn} = a^q, q\in\Q$, en tenslotte zelfs $a^r, r\in\R$.
  
 
-\begin{definition}(Machtsverheffing met grondtal in \Rplus\ en exponent in \Q)
+\begin{definition}(Machtsverheffing met grondtal in \Rplus\ en exponent in \Q) \label{def:machten met rationale exponent}
 	
 	Zij $a,b\in\Rplus$ en $n\in\Nnul$, $m\in\Z$. 
 	
@@ -183,52 +186,53 @@ Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing tam
 \begin{example} Bereken
  $\frac{4}{\sqrt{8}}= \answer[given]{\sqrt{2}}$
  	\begin{feedback}
- 		(want $\frac{2^{2}}{8^{\frac{1}{2}}}=2^{2}(2^{-3})^{\frac{1}{2}}=2^{2-\frac{3}{2}}=
-	2^{\frac{1}{2}}=\sqrt{2}$)
+ 		Oplossing: $\frac{2^{2}}{8^{\frac{1}{2}}}=2^{2}(2^{-3})^{\frac{1}{2}}=2^{2-\frac{3}{2}}=
+	2^{\frac{1}{2}}=\sqrt{2}$
 \end{feedback}
 \end{example}
 \begin{example} Bereken $\sqrt[3]{8} \cdot \sqrt{64}= \answer[given]{16}$
-	\begin{feedback}	(want $\sqrt[3]{8} \cdot \sqrt{64} = 8^{\frac{1}{3}}\cdot \sqrt{8^{2}}=8^{\frac{1}{3}}\cdot8=8^{\frac{1}{3}+1}=8^{\frac{4}{3}}=(\sqrt[3]{8})^4=2^4=16$)
+	\begin{feedback}	Oplossing: $\sqrt[3]{8} \cdot \sqrt{64} = 8^{\frac{1}{3}}\cdot \sqrt{8^{2}}=8^{\frac{1}{3}}\cdot8=8^{\frac{1}{3}+1}=8^{\frac{4}{3}}=(\sqrt[3]{8})^4=2^4=16$
 	\end{feedback}
 \end{example}
 %	Stel $x,y \in \Rnul$ dan geldt:
 
 \begin{example} Bereken 
 	$\frac{\sqrt[4]{x^{3}}}{x}=\answer[given]{x^{-\frac14}}$
-	\begin{feedback} ( want $\frac{\sqrt[4]{x^{3}}}{x} = x^{\frac{3}{4}-1}=x^{\frac{-1}{4}}=\frac{1}{\sqrt[4]{x}}$ )
+	\begin{feedback} Oplossing: $\frac{\sqrt[4]{x^{3}}}{x} = x^{\frac{3}{4}-1}=x^{\frac{-1}{4}}=\frac{1}{\sqrt[4]{x}}$ 
 	\end{feedback}
 \end{example}
 \begin{example} Bereken 
 	$\left(x^{3}\cdot \sqrt[4]{x}\right)^{2}= \answer[given]{\sqrt{x^13}}$
-	\begin{feedback} ( want $\left(x^{3}\cdot \sqrt[4]{x}\right)^{2} = x^{6}\cdot \left(\sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(x^{\frac{1}{4}}\right)^{2}=x^{6}\cdot x^{\frac{2}{4}}=
-		x^{6+\frac{1}{2}}=x^{\frac{13}{2}}=\sqrt{x^{13}}$ )
+	\begin{feedback} Oplossing: $\left(x^{3}\cdot \sqrt[4]{x}\right)^{2} = x^{6}\cdot \left(\sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(x^{\frac{1}{4}}\right)^{2}=x^{6}\cdot x^{\frac{2}{4}}=
+		x^{6+\frac{1}{2}}=x^{\frac{13}{2}}=\sqrt{x^{13}}$
 	\end{feedback}
 \end{example}
 \begin{example} Bereken 
-	$y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4}=\answer[given]{1}$ \begin{feedback} (want $y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4} = y^{2} \cdot \frac{\left(x^{2}y\right)^{\frac{4}{2}}}{x^{4}y^{4}}=y^{2}\cdot \frac{x^{4}y^{2}}{x^{4}y^{4}}
-		=y^{2} \cdot \frac{1}{y^{2}}=1$ )
+	$y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4}=\answer[given]{1}$ 
+    \begin{feedback} Oplossing: $y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4} = y^{2} \cdot \frac{\left(x^{2}y\right)^{\frac{4}{2}}}{x^{4}y^{4}}=y^{2}\cdot \frac{x^{4}y^{2}}{x^{4}y^{4}}
+		=y^{2} \cdot \frac{1}{y^{2}}=1$ 
 	\end{feedback}
 	\end{example}
 \begin{example} Bereken
 	$\sqrt{48 x^{9}y^{4}}= \answer[given]{4 x^{4}y^{2}\sqrt{3x}}$
-		\begin{feedback} (want $\sqrt{48 x^{9}y^{4}} = 
+		\begin{feedback} Oplossing: $\sqrt{48 x^{9}y^{4}} = 
 		\sqrt{(16 \cdot 3)(x^{8} \cdot
 			x)y^{4}}=\sqrt{16 \cdot 3\cdot (x^{4})^{2}\cdot x\cdot
-			(y^{2})^{2}}=4 x^{4}y^{2}\sqrt{3x}$ )
+			(y^{2})^{2}}=4 x^{4}y^{2}\sqrt{3x}$ 
 		\end{feedback}
 \end{example}
 \todo{Voorbeeld enigszins dubieus zonder verdere uitleg?}
 
-\subsection*{Machten met een strikt positief re\"eel grondtal en een re\"ele exponent}\label{machten-r}
+% \subsection*{Machten met een strikt positief re\"eel grondtal en een re\"ele exponent}\label{machten-r}
 Men kan ook $a^r$ definiëren met $a\in\Rnulplus$
 en $r\in\R$ (dus uitdrukkingen zoals $2^{\sqrt{3}}$, $\pi^{\sqrt{5}}$ en $\sqrt{7}^{\sqrt{\pi}}$). Dit is technisch enigszins subtiel en we zullen de definitie hier
 ook niet in detail geven. 
 
-Wie toch nieuwsgierig is kan volgende uitweiding lezen:
+Ook voor machten met rationale en re\"ele exponenten blijven de gebruikelijke
+rekenregels gelden.
 
 
-\begin{uitweiding}
-	\begin{expandable}
+\begin{xmuitweiding} (Definitie machten met reële exponenten)
 Details vind je in wat meer gevorderde cursussen wiskunde, maar hier schetsen we kort \'{e}\'{e}n mogelijke manier om een precieze betekenis te geven
 aan de uitdrukking $a^r$ met $a\in\Rnulplus$ en $r\in\R$.
 
@@ -255,29 +259,12 @@ limiet niet afhangt van de keuze van de rij $q_1,q_2,q_3,\ldots$
 die we gebruikt hebben  om $r$ te benaderen. Dit laat ons dan toe
 om de macht $a^r$ te defini\"eren als dat getal $s$ dat je op die
 manier bekomt en dat enkel afhangt van $a$ en $r$.
-\end{expandable}
-\end{uitweiding}
-
-Ook voor machten met re\"ele exponenten (en dus i.h.b.~voor
-machten met rationale exponenten) blijven de gebruikelijke
-rekenregels  gelden:
-
-\begin{proposition}
-	Zij $x,y\in\Rnulplus$ en $r,s\in\R$. Er geldt:
-	\[
-	\arraycolsep=1.4pt\def\arraystretch{2.2}
-	\begin{array}{r@{\ =\ }l}
-	\ds{x^{r}x^{s}}&\ds{x^{r+s}}\\
-	\ds{(xy)^r}&\ds{x^ry^r}\\
-	\ds{\left(x^{r}\right)^{s}}&\ds{x^{rs}}\\
-	x^{-r} & \frac{1}{x^r} \\
-	\end{array}
-	\]
-\end{proposition}
+\end{xmuitweiding}
 
 
 
-\subsection{Herhaling / Onthoud }\label{machtenrekenregels}
+
+\subsection{Herhaling / Onthoud }\label{samenvatting:rekenregels machten}
 
 \begin{proposition}
 Zij $x,y>0$ en $m,n\in\R$. Dan geldt:
