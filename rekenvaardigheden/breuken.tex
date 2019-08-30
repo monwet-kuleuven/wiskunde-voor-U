@@ -1,33 +1,28 @@
-\documentclass[numbers]{ximera}
-
+%
+% ximera activiteit
+% Copyrigth
+%
+\documentclass{ximera}
 %
 % Opties (enkel te gebruiken voor lokale testen; NOOIT committen met opties)
 %
 %\pdfOnly{\providecommand\showtodonotes{}}
-%\newcommand\nouitweiding{}
+%\newcommand\xmnouitweiding{}
 
-%
-% preamble: ALLE usepackage moeten daarin !
-%
+
 \input{../preamble.tex}
 
-
-% Specifieke settings voor dit deel:
+\begin{document}
+% Start specifieke settings:    
 \author{Zomercursus KU Leuven}
 \outcome{Algebraïsch kunnen rekenen met breuken.}
-\title[Rekenvaardigheden:]{Breuken}
+\xmtitle[Gebroken verhoudingen.]{Breuken}{Definitie en eigenschappen van breuken.}
+% Start inhoud ximera 
 
-%
-% Begin document
-%
-\begin{document}
-\begin{abstract}
-	Gebroken verhoudingen.
-\end{abstract}
-\maketitle
 
-In dit deel herhalen we heel bondig de definities en rekenregels voor
-breuken. Deze zijn heel eenvoudig, maar de uitdaging is deze rekenregels automatisch, dus zonder nadenken te kunnen toepassen in eenvoudige situaties. In complexere situaties moet je dat kunnen met een minimale inspanning, en in alle gevallen zonder fouten (of toch in \textit{bijna} alle gevallen \Smiley).
+In dit deel herhalen we heel bondig de definities en rekenregels voor breuken. 
+Deze zijn heel eenvoudig, maar de uitdaging is deze rekenregels automatisch, dus zonder nadenken te kunnen toepassen in eenvoudige situaties. 
+In complexere situaties moet je dat kunnen met een minimale inspanning, en in alle gevallen zonder fouten (of toch in \textit{bijna} alle gevallen \Smiley).
 
 \subsection{Definities en rekenregels voor breuken}
 We definiëren een \textit{breuk} als een uitdrukking van de vorm $\frac{a}{b}$ met $a,b\in\R$, met $b\neq0$. 
@@ -36,7 +31,7 @@ We definiëren een \textit{breuk} als een uitdrukking van de vorm $\frac{a}{b}$ 
 
 Merk op dat uitdrukkingen van de vorm $\frac a0$ niet gedefinieerd zijn (en dus \textit{niet bestaan}).  
 
-Met elke breuk $\frac ab$ associëren we een getal, namelijk het resultaat van de deling van $a$ door $b$.
+Met elke breuk $\frac ab$ associëren we een getal, namelijk het resultaat van de deling van $a$ door $b$. We noteren ook het 
 
 Bijvoorbeeld: $\frac42=\frac21=2$; \quad $\frac12=0,5$; \quad $\frac13=0,33\dots$ en $\frac{\pi}{2}=1,57\dots$. 
 
@@ -55,44 +50,45 @@ Zodra de noemers verschillend zijn van $0$, geldt:
 
 \begin{align*}
 		\important{\frac{a}{b} = \frac{c}{d}}  &\iff \important{ad = bc} 
-			& \textrm{gelijkheid van breuken} \\ \\
+			& \tag{\label{def: gelijkheid breuken}gelijkheid van breuken}\\ \\
 		\frac{a}{b}+\frac{c}{d} &\perdef \frac{ad+cb}{bd} 
-			& \textrm{ optelling (op gelijke noemer brengen)} \\ \\
+			& \tag{\label{def:optelling breuken} optelling (op gelijke noemer brengen)} \\ \\
 		\frac{a}{b} \cdot \frac{c}{d} &\perdef \frac{a\cdot c}{b\cdot d} 
-			& \textrm{vermenigvuldiging (teller $\times$ teller, noemer $\times$ noemer) } \\ \\%(product tellers $/$ product noemers)} \\
+			& \tag{\label{def: vermenigvuldiging breuken}vermenigvuldiging (teller $\times$ teller, noemer $\times$ noemer) } \\ \\
 		\frac{a}{b} : \frac{c}{d} &\perdef \frac ab \cdot \frac dc = \frac{a\cdot d}{b\cdot c} 
-		& \textrm{deling (maal omgekeerde)} \\
+		& \tag{\label {def: deling breuken}deling (maal omgekeerde)}  \\
 \end{align*}
 
 \end{definition}
 
-\begin{uitweiding} (Subtiele subtiliteiten over breuken)
+\begin{xmuitweiding} (Subtiele subtiliteiten over breuken) \label{begrip:misbruik van notatie}  %misschien beter ergens anders uitleggen, en er hier naar verwijzen?
 \begin{expandable}
 
-		In deze definitie van breuken zitten allerlei subtiliteiten verstopt, die in vele cursussen terecht of ten onrechte worden genegeerd. 
+		In de definitie van breuken zitten allerlei subtiliteiten verstopt, die in vele cursussen terecht of ten onrechte worden genegeerd. 
 		
 		Zo is er een noodzakelijk maar subtiel onderscheid tussen een \textit{breuk} en een \textit{getal}. Inderdaad, als we willen spreken van 'de teller van een breuk', dan moeten noodzakelijk de breuken $\frac 12$ en $\frac 24$ verschillend zijn, want ze hebben verschillende tellers! Wie toch zou durven beweren dat \textit{gelijke} dingen (de 'breuken' $\frac 12$ en $\frac 24$)  \textit{verschillende} eigenschappen kunnen hebben (namelijk de teller van $\frac 12$ is 1 maar de teller van 'dezelfde breuk' $\frac24$ zou 2 zijn) verdrinkt onmiddellijk in een diep filosofisch moeras. Als \textit{getallen} zijn de twee breuken natuurlijk wel gelijk (namelijk gelijk aan het getal $0,5$).
 		
-		In bovenstaande definitie zit dus een onnauwkeurigheid: de \textit{breuken} $\frac ab$ en $\frac cd$ zijn eigenlijk verschillend van zodra $a\neq c$ of $b\neq d$, maar de \textit{getallen} die overeenkomen met de twee breuken zijn gelijk van zodra $ad = bc$.
-		
-		Dit is een voorbeeld van een typisch wiskundige situatie: als iets wordt gedefinieerd is het van cruciaal belang om niet alleen vast te leggen wat dat iets precies is, maar ook wanneer twee van die 'ietsen' aan elkaar gelijk zijn. En als men het begrip 'de teller van een breuk' een goede betekenis wil geven, dan \textit{moet} men onderscheid maken tussen $\frac 12$ en $\frac 24$, en dan kunnen ze dus \textit{niet} aan elkaar gelijk zijn. 
-		
-		De oplossing van dergelijke subtiliteiten is meestal dat we via 'misbruik van notatie' geen onderscheid meer maken tussen de breuk $\frac 12$ en het (unieke) getal $\frac 12 = 0.5$ dat met deze breuk overeenkomt. En natuurlijk levert dat in de praktijk (bijna...) nooit problemen op. Integendeel, telkens wel het onderscheid maken zou de zaken erg compliceren. 
+		In bovenstaande definitie zit dus een onnauwkeurigheid: de \textit{breuken} $\frac ab$ en $\frac cd$ zijn eigenlijk verschillend van zodra $a\neq c$ of $b\neq d$, maar de \textit{getallen} die overeenkomen met de twee breuken zijn gelijk van zodra $ad = bc$. We hadden dus beter gesproken van 'gelijkwaardigheid' van breuken. 
+			
+		Dit soort subtiliteiten worden meestal opgelost door 'misbruik van notatie': we spreken af verder \textit{geen} onderscheid meer maken tussen twee dingen die structo senso toch verschillende zijn, bijvoorbeeld de breuk $\frac 12$ en het (unieke) getal $\frac 12 = 0.5$ dat met deze breuk overeenkomt. En natuurlijk levert dat in de praktijk (bijna...) nooit problemen op. Integendeel, telkens wel het onderscheid maken zou de zaken erg compliceren. 
 		
 		Filosofische conclusie: misschien zijn sommige wiskundige definities en eigenschappen eigenlijk enkel begrijpbaar voor twee soorten mensen: enerzijds diegenen die er (dikwijls terecht!) snel overlezen, inzien waarover het gaat en zich geen verdere vragen stellen. Anderzijds heb je diegenen die alles in uiterste detail willen begrijpen, en na verloop van tijd alle subtiliteiten doorhebben. Maar misschien vallen vele studerenden in de tussencategorie: ze proberen de definities zo goed mogelijk te begrijpen maar lopen tegen één of andere moeilijkheid aan: hoe kan het dat $\frac 12$ en $\frac 24$ \textit{hetzelfde} zijn, terwijl ze toch een \textit{verschillende} teller hebben. En, in de handboeken die ze gebruiken worden dat soort moeilijkheden niet uitgelegd...
 \end{expandable}
-\end{uitweiding}
+\end{xmuitweiding}
 
 %\begin{example} (Triviale voorbeelden)
-	
-\begin{example}$\frac23 + \frac13 = \answer[given]{1}$   
-			\begin{feedback} want $\frac23 + \frac13 = \frac{1+2}{3} = \frac33 = 1$ \end{feedback}\end{example}
-\begin{example}$\frac35 + \frac12 = \answer[given]{1.1}$
-			\begin{feedback} want $\frac35 + \frac12 = \frac{3\cdot 2+1\cdot 5}{5\cdot 2} = \frac{11}{10}=1,1$ \end{feedback}\end{example}
-\begin{example}$\frac{1+1}{1} = \answer[given]{2}$
-			\begin{feedback} want $\frac{1+1}{1} = \frac21 = 2, \text{ of ook }  \frac{1+1}{1} = \frac11+\frac11 = 2$ \end{feedback}\end{example}		
-\begin{example}$\frac{1}{1+1} = \answer[given]{0.5}$
-			\begin{feedback} en \textit{niet} $\frac{1}{1+1} = \frac11 + \frac 11 = 1+ 1 = 2$ \end{feedback}\end{example}
+\begin{example}$\frac23 + \frac13 = \answer[format=number]{1}$   
+			\begin{feedback} Oplossing: $\frac23 + \frac13 = \frac{1+2}{3} = \frac33 = 1$ \end{feedback}
+\end{example}
+\begin{example}$\frac35 + \frac12 = \answer[format=number]{1.1}$
+			\begin{feedback} Oplossing: $\frac35 + \frac12 = \frac{3\cdot 2+1\cdot 5}{5\cdot 2} = \frac{11}{10}=1,1$ \end{feedback}
+\end{example}
+\begin{example}$\frac{1+1}{1} = \answer[format=number]{2}$
+			\begin{feedback} Oplossing: $\frac{1+1}{1} = \frac21 = 2, \text{ of ook }  \frac{1+1}{1} = \frac11+\frac11 = 2$ \end{feedback}      
+\end{example}		
+\begin{example}$\frac{1}{1+1} = \answer[format=number]{0.5}$
+			\begin{feedback} Oplossing: $\frac{1}{1+1} = \frac{1}{2}$ en \textit{niet} $\frac{1}{1+1} = \frac11 + \frac 11 = 1+ 1 = 2$ \end{feedback}
+\end{example}
 %\end{example}
 
 
@@ -103,7 +99,7 @@ Zodra de noemers verschillend zijn van $0$, geldt:
 {
 %\savebox\strutbox{$\vphantom{\dfrac{1^2}{1^2}^n}$}   % hack!
 \begin{align*}
-		\frac{a\cdot c}{a\cdot d} &= \frac{c}{d} 
+		\frac{a\cdot c}{a\cdot d} &= 	\frac{\cancel{a}\cdot c}{\cancel{a}\cdot d} = \frac{c}{d} 
 			& \text{breuken vereenvoudigen} \hfill\text{(factor $a$ wegdelen)} \\ \\
 		a\cdot \frac{c}{d}   &= \frac{a\cdot c}{d} 
 			& \text{getal maal breuk}\hfill \text{(maal in teller)} \\ \\
@@ -129,124 +125,94 @@ Al deze eigenschappen zijn eenvoudige gevolgen van de vorige definitie. Het is e
 Het heeft geen zin deze eigenschappen \textit{van buiten} te leren, je moet ze \textit{van binnen} kennen, dus door en door kennen. Dat is allicht al het geval, maar indien niet moet je hierover (erg veel) oefeningen maken.
 
 
-\begin{uitweiding}
-%\begin{example}
+\begin{xmuitweiding} % Bewijs(je) optellen gelijknamige breuken
 	Waarom is $\frac{a}{c}+\frac{b}{c} = \frac{a+b}{c}$ ?
 	\begin{expandable}
 	\begin{explanation} \ 
 		
 		De meest eenvoudige uitleg: het is gewoon het optellen van breuken die dezelfde noemer hebben: dat is makkelijk, waarom moet daar nog verder aandacht aan worden besteed.
+		\todo{ Aanpassen en/of oplossingen voorzien}
+		Deze uitleg volstaat allicht als je al vertrouwd \textit{was} met breuken. Als dit de eerste keer zou zijn geweest dat je het begrip breuk tegenkwam, zou deze uitleg misschien \textit{niet} hebben volstaan. We hebben \hyperref[def:optelling breuken]{boven} gedefinieerd (dus \textit{afgesproken}) wat het betekent uitdrukkingen van de vorm $\frac{a}{b}$ en $\frac{c}{d}$ bij elkaar op te tellen. Nu merken we op dat er dan voor breuken met dezelfde noemer automatisch een eenvoudigere formule geldt. De verklaring (dus het bewijs) van dat feit gaat als volgt: 		
 		
-		Een opmerking over die meest eenvoudige uitleg: dat is een correct, en zeer terecht inzicht. Maar, het is enkel correct en terecht omdat je al vertrouwd \textit{was} met breuken. Als dit de eerste keer zou zijn geweest dat je het begrip breuk was tegengekomen, zou deze uitleg misschien \textit{niet} hebben volstaan.		
-		
-		Als je \textit{enkel} bovenstaande definities kent van breuken, is een meer wiskundig geformuleerd \textit{bewijs} aangewezen. Dat kan als volgt:
-		
-		Per definitie van optelling van breuken geldt dat 
+		per definitie van de \hyperref[def:optelling breuken]{optelling van breuken} geldt dat 
 		$$ \frac{a}{c}+\frac{b}{c} = \frac{ac+bc}{c\cdot c}$$
 		en dat is wegens distributiviteit en de regel over het vereenvoudigen van breuken
 		$$ \frac{ac+bc}{c\cdot c} = \frac{\cancel{c}(a+b)}{\cancel{c} \cdot c} = \frac{a+b}{c}$$
 		Dit bewijst dat, enkel vertrekkend van de bovenstaande definities in verband met breuken, zoals verwacht ook geldt dat $\frac{a}{c}+\frac{b}{c} = \frac{a+b}{c}$.
+        
+        Merk op dat er eigenlijk nog veel andere zaken kunnen of moeten worden nagegaan, bijvoorbeeld dat 'de getalwaarde van de som van twee breuken gelijk is aan de som van de getalwaarden'. Gelukkig kan men al dergelijke uitspraken die redelijkerwijze waar kunnen zijn ook bewijzen. We hoeven dus verder geen tijd meer te verliezen met het \textit{verklaren} van de rekenregels, maar kunnen ons verder concentreren op het \textit{inoefenen} ervan.
 	\end{explanation}
 	
 \end{expandable}
-\end{uitweiding}
-%\end{example}
+\end{xmuitweiding}
+
 
 
 % \begin{example} (Numeriek rekenen met breuken)
 	
 	\begin{example} Bereken: $\frac{120+74}{2}= \answer[given]{97}$   
-		\begin{feedback} (want $\frac{120+74}{2}\underset{(\text{breuk splitsen})}{=}\frac{120}{2}+\frac{74}{2}=60+37=97$ 
-			\\ maar natuurlijk ook $\frac{120+74}{2}=\frac{194}{2}=97$) \end{feedback}
+		\begin{feedback} Oplossing: $\frac{120+74}{2}\underset{(\text{breuk splitsen})}{=}\frac{120}{2}+\frac{74}{2}=60+37=97$\;. 
+			\\ Er geldt natuurlijk ook $\frac{120+74}{2}=\frac{194}{2}=97$ \end{feedback}
 	\end{example}
 
 	\begin{example} Bereken: $\frac{1}{8}+\frac{5}{6}= \answer[given]{23/24}$   
-	\begin{feedback} (want $\frac{1}{8}+\frac{5}{6}\underset{(\text{gelijke noemer})}{=}\frac{1 \cdot 6+5 \cdot 8}{48}=\frac{46}{48} =\frac{23}{24}$) \end{feedback}
+	\begin{feedback} Oplossing: $\frac{1}{8}+\frac{5}{6}\underset{(\text{gelijke noemer})}{=}\frac{1 \cdot 6+5 \cdot 8}{48}=\frac{46}{48} =\frac{23}{24}$ \end{feedback}
 	\end{example}
 
 	\begin{example} Bereken: $\frac{125}{50}= \answer[given]{\frac{5}{2}}$   
-	\begin{feedback} (want $\frac{125}{50}\underset{(\text{ontbinden})}{=}\frac{25 \cdot 5}{25 \cdot 2}\underset{(\text{vereenvoudigen})}{=}\frac{5}{2}$) \end{feedback}
+	\begin{feedback} Oplossing: $\frac{125}{50}\underset{(\text{ontbinden})}{=}\frac{25 \cdot 5}{25 \cdot 2}\underset{(\text{vereenvoudigen})}{=}\frac{5}{2}$ \end{feedback}
 	\end{example}
 	
 	\begin{example} Bereken: $\frac{\frac{80}{2}}{10}= \answer[given]{4}$   
-		\begin{feedback} (want $\frac{\frac{80}{2}}{10}\underset{(\text{dubbele breukstreep})}{=}\frac{80}{2\cdot10}=\frac{80}{20}=4$ 
-			\\ (maar natuurlijk ook $\frac{\frac{80}{2}}{10}=\frac{40}{10} = 4$) \end{feedback}
+		\begin{feedback} Oplossing: $\frac{\frac{80}{2}}{10}\underset{(\text{dubbele breukstreep})}{=}\frac{80}{2\cdot10}=\frac{80}{20}=4$ 
+			\\ Er geldt natuurlijk ook $\frac{\frac{80}{2}}{10}=\frac{40}{10} = 4$) \end{feedback}
 	\end{example}
 
 	
 	
-%	\begin{enumerate}
-%		\item %Breuk splitsen:\ \
-%			$\frac{120+74}{2}\underset{(\text{breuk splitsen})}{=}\frac{120}{2}+\frac{74}{2}=60+37=97$ 
-%		\\ (maar natuurlijk ook $\frac{120+74}{2}=\frac{194}{2}=97$)
-%		\item %Breuken optellen:\ \ 
-%			$\frac{1}{8}+\frac{5}{6}\underset{(\text{gelijke noemer})}{=}\frac{1 \cdot 6+5 \cdot 8}{48}=\frac{46}{48} =\frac{23}{24}$
-%		\item %Breuk vereenvoudigen:\ \ 
-%			$\frac{125}{50}\underset{(\text{ontbinden})}{=}\frac{25 \cdot 5}{25 \cdot 2}\underset{(\text{vereenvoudigen})}{=}\frac{5}{2}$
-%		\item %Rekenen met meerdere breukstrepen:\ \
-%			$\frac{\frac{80}{2}}{10}\underset{(\text{dubbele breukstreep})}{=}\frac{80}{2\cdot10}=\frac{80}{20}=4$ 
-%		\\ (maar natuurlijk ook $\frac{\frac{80}{2}}{10}=\frac{40}{10} = 4$)
-%	\end{enumerate}
-%\end{example}
 
 %\begin{example} (Symbolisch rekenen met breuken)
 
 %	($x,y,p,q\in\R$)  % niet echt nodig: x,y,p,k mogen ook gewoon 'letters' zijn
 %    (hoewel we natuurlijk geen breuken-met-letters gedefinieerd hebben )
-\todo{ Aanpassen en/of oplossingen voorzien}
 
 	 	\begin{example} Vereenvoudig: $\frac{x+y}{\frac{x}{y}}= \answer[given]{\frac{(x+y)y}{x}}$   
-			\begin{feedback} (dubbele breukstreep wegwerken) \end{feedback}\end{example}
+			\begin{feedback} Dubbele breukstreep wegwerken, dus vermenigvuldigen met het omgekeerde van de teller: $(x+y) \cdot \frac{y}{x}$  \end{feedback}\end{example}
 		\begin{example} Vereenvoudig: $\frac{\frac{x+y}{x}}{y}= \answer[given]{\frac{x+y}{xy}}$   
-			\begin{feedback} (dubbele breukstreep wegwerken) \end{feedback}\end{example}
+			\begin{feedback} Dubbele breukstreep wegwerken, dus de teller \textit{naar voor halen}: $\frac{x+y}{x}\cdot\frac{1}{y}$   \end{feedback}\end{example}
 		\begin{example} Vereenvoudig: $\frac{p^{2}-q^{2}}{p-q}= \answer[given]{p+q}$   
-		\begin{feedback} (want $\frac{p^{2}-q^{2}}{p-q}=\frac{(p+q)(p-q)}{p-q}=p+q$) \end{feedback}\end{example}
+		\begin{feedback} Oplossing via ontbinden in factoren en vereenvoudigen: $\frac{p^{2}-q^{2}}{p-q}=\frac{(p+q)(p-q)}{p-q}=p+q$ \end{feedback}\end{example}
 		\begin{example} Vereenvoudig: $\frac{\frac{p+qp}{pq^{2}}}{\frac{p^{2}}{q}}= \answer[given]{\frac{1+q}{qp^{2}}}$   
-	\begin{feedback} (want 
+    	\begin{feedback} Oplossing: 
 		$\frac{\frac{p+qp}{pq^{2}}}{\frac{p^{2}}{q}} =
 			\frac{p(1+q)}{pq^{2}}\cdot \frac{q}{p^{2}} = 
-			\frac{(1+q)}{q}\cdot \frac{1}{p^{2}} = \frac{1+q}{qp^{2}}
-		$) \end{feedback}\end{example}
+			\frac{(1+q)}{q}\cdot \frac{1}{p^{2}} = \frac{1+q}{qp^{2}}$ \end{feedback}\end{example}
 
 
-%		\begin{enumerate}
-%		\item Rekenen met meerdere breukstrepen:\\
-%		Stel $x,y \neq 0$, dan is $\ds{\frac{x+y}{\frac{x}{y}}=\frac{(x+y)y}{x}}$
-%		\item Rekenen met meerdere breukstrepen:\\
-%		Stel $x,y \neq 0$, dan is $\ds{\frac{\frac{x+y}{x}}{\ y\ }=\frac{x+y}{xy}}$
-%		\item Breuk vereenvoudigen --- verschil van twee kwadraten:\\
-%		Stel $p-q \neq 0$, dan is $\ds{\frac{p^{2}-q^{2}}{p-q}=\frac{(p+q)(p-q)}{p-q}=p+q}$
-%		\item Breuk vereenvoudigen, rekenen met meerdere breukstrepen --- factor afzonderen:\\
-%		Stel $p,q \neq 0$, dan is $\ds{\frac{\frac{p+qp}{pq^{2}}}{\frac{p^{2}}{q}}=\frac{\frac{p(1+q)}{pq^{2}}}{\frac{p^{2}}{q}}=
-%			\frac{\frac{1+q}{q^{2}}}{\frac{p^{2}}{q}}=\frac{(1+q)q}{q^{2}p^2}=\frac{1+q}{qp^{2}}}$
-%		\item Breuken splitsen, rekenen met meerdere breukstrepen:\\
-%		Stel $x \neq 0$, dan is $\ds{\frac{-1}{1-\frac{x+1}{x}}=\frac{-1}{1-\left(1+\frac{1}{x}\right)}=\frac{-1}{1-1-\frac{1}{x}}=\frac{-1}{\frac{-1}{x}}=\frac{-1x}{-1}=x}$
-%	\end{enumerate}
-%\end{example}
-
-\begin{exercise} (Basisoefeningen breuken)\ 
-	
-    Oefeningen toe te voegen ...!
-    \todo{Breuken: oefeningen toevoegen}
-\end{exercise}
-
-\begin{exercise} (Uitdagingsoefeningen breuken)\ 
-	
-	Oefeningen toe te voegen ...! (Uitdaging is mss een verkeerd woord...?)
-\end{exercise}
+% -> oefeningen in aparte activity
+%\begin{exercise} (Basisoefeningen breuken)\ 
+%	
+%    Oefeningen toe te voegen ...!
+%    \todo{Breuken: oefeningen toevoegen}
+%\end{exercise}
+%
+%\begin{exercise} (Uitdagingsoefeningen breuken)\ 
+%	
+%	Oefeningen toe te voegen ...! (Uitdaging is mss een verkeerd woord...?)
+%\end{exercise}
 
 
 \subsection{Samenvatting}
 
-\todo{Samenvatting breuken nakijken}
-\begin{proposition}[Samenvatting breuken]\label{breukensamenvatting} \ 
+% Samenvatting nog uit te breiden ?
+\begin{proposition}[Samenvatting breuken]\label{samenvatting:breuken} \ 
 	
-	Zij $a,b,c,d\in \R$. Er geldt:
+	Zij $a,b,c,d\in \R$. Dan geldt van zodra alle noemers verschillend zijn van $0$:
 	\begin{align*}
-		\frac{a}{b}+\frac{c}{d}& =\frac{ad+cb}{bd} & \text{indien } b,d \neq 0 \\ \\
-		\dfrac{\frac{a}{b}}{\ c\ }&=\frac{a}{bc}  & \text{indien }b,c \neq 0 \\ \\
-		\frac{a}{\ \frac{b}{c}\ }&=\frac{ac}{b}  & \text{indien } b,c \neq 0 \\ \\
-		%\item $\ds{\frac{\frac{a}{b}}{\ \frac{c}{d}\ }}=\ds{\frac{ad}{bc}}$ \hspace{3mm}   indien $b,c,d \neq 0$
+		\important{\frac{a}{b} = \frac{c}{d}}  &\iff \important{ad = bc} 
+        & \tag{\label{samenvatting: gelijkheid breuken}gelijkheid van breuken}\\ \\
+\frac{a}{b}+\frac{c}{d} &= \frac{ad+cb}{bd} 
+        & \tag{\label{samenvatting:optelling breuken} optelling (op gelijke noemer brengen)} \\ \\
 	\end{align*}
 \end{proposition}
 
