@@ -50,13 +50,13 @@ Zodra de noemers verschillend zijn van $0$, geldt:
 
 \begin{align*}
 		\important{\frac{a}{b} = \frac{c}{d}}  &\iff \important{ad = bc} 
-			& \tag{\label{def: gelijkheid breuken}gelijkheid van breuken}\\ \\
+			& \tag*{gelijkheid van breuken}\label{def: gelijkheid breuken}\\ \\
 		\frac{a}{b}+\frac{c}{d} &\perdef \frac{ad+cb}{bd} 
-			& \tag{\label{def:optelling breuken} optelling (op gelijke noemer brengen)} \\ \\
+			& \tag*{ optelling (op gelijke noemer brengen)}\label{def:optelling breuken} \\ \\
 		\frac{a}{b} \cdot \frac{c}{d} &\perdef \frac{a\cdot c}{b\cdot d} 
-			& \tag{\label{def: vermenigvuldiging breuken}vermenigvuldiging (teller $\times$ teller, noemer $\times$ noemer) } \\ \\
+			& \tag*{vermenigvuldiging (teller $\times$ teller, noemer $\times$ noemer) }\label{def: vermenigvuldiging breuken} \\ \\
 		\frac{a}{b} : \frac{c}{d} &\perdef \frac ab \cdot \frac dc = \frac{a\cdot d}{b\cdot c} 
-		& \tag{\label {def: deling breuken}deling (maal omgekeerde)}  \\
+		& \tag*{deling (maal omgekeerde)}\label {def: deling breuken}  \\
 \end{align*}
 
 \end{definition}
@@ -92,7 +92,7 @@ Zodra de noemers verschillend zijn van $0$, geldt:
 %\end{example}
 
 
-\begin{proposition} (Eenvoudige maar belangrijke gevolgen)
+\begin{proposition} (Eenvoudige maar belangrijke gevolgen) \label{breuken}
 \nopagebreak[4]    % hack: to be done properly
 	
 	Zij $a,b,c,d\in \R$. Zodra de noemers verschillend zijn van $0$, geldt:
@@ -131,9 +131,13 @@ Het heeft geen zin deze eigenschappen \textit{van buiten} te leren, je moet ze \
 	\begin{explanation} \ 
 		
 		De meest eenvoudige uitleg: het is gewoon het optellen van breuken die dezelfde noemer hebben: dat is makkelijk, waarom moet daar nog verder aandacht aan worden besteed.
-		\todo{ Aanpassen en/of oplossingen voorzien}
+
 		Deze uitleg volstaat allicht als je al vertrouwd \textit{was} met breuken. Als dit de eerste keer zou zijn geweest dat je het begrip breuk tegenkwam, zou deze uitleg misschien \textit{niet} hebben volstaan. We hebben \hyperref[def:optelling breuken]{boven} gedefinieerd (dus \textit{afgesproken}) wat het betekent uitdrukkingen van de vorm $\frac{a}{b}$ en $\frac{c}{d}$ bij elkaar op te tellen. Nu merken we op dat er dan voor breuken met dezelfde noemer automatisch een eenvoudigere formule geldt. De verklaring (dus het bewijs) van dat feit gaat als volgt: 		
 		
+        test: link met hyperref \hyperref[breuken]{mijn breuken}
+        
+        test: link met ref \ref{breuken}
+        
 		per definitie van de \hyperref[def:optelling breuken]{optelling van breuken} geldt dat 
 		$$ \frac{a}{c}+\frac{b}{c} = \frac{ac+bc}{c\cdot c}$$
 		en dat is wegens distributiviteit en de regel over het vereenvoudigen van breuken
