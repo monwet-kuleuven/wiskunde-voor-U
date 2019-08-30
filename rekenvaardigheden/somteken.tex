@@ -1,0 +1,364 @@
+%%
+% ximera activiteit
+% Copyrigth
+%
+\documentclass{ximera}
+%
+% Opties (enkel te gebruiken voor lokale testen; NOOIT committen met opties)
+%
+%\pdfOnly{\providecommand\showtodonotes{}}
+%\newcommand\xmnouitweiding{}
+
+
+\input{../preamble.tex}
+
+\begin{document}
+    % Start specifieke settings:    
+    \author{Zomercursus KU Leuven}
+%    \outcome{}
+    \xmtitle{Het somteken $\sum$}{}
+    % Start inhoud ximera 
+
+
+%\title {Het sommatieteken en de faculteit\\{\large(met als belangrijke toepassing binomiaalco\"effici\"enten)}}
+%{\qrslidesA{https://set.kuleuven.be/zomercursussen/wiskunde/lesmateriaal/slides-sommatieteken-faculteit.pdf}}{}
+
+\section*{Inleiding}
+In deze module zullen we het gebruik van het
+sommatieteken en de faculteitsoperatie herhalen en bespreken
+a.d.h.v.~voorbeeldoefeningen en enkele toepassingen.
+
+Het \emph{sommatieteken} \lq$\sum$\rq\ wordt veel gebruikt in de
+context van rijen en reeksen. Ook in de statistiek, de
+kansrekening en de discrete wiskunde is het sommatieteken niet weg
+te denken. In deze takken van de wiskunde wordt veel gewerkt met
+lange sommen van termen die \lq op een gelijkaardige manier zijn
+opgebouwd\rq\footnote{Dit wordt verder uitgelegd.}\ en is er
+behoefte aan een elegante schrijfwijze voor deze sommen en een
+manier om er gemakkelijk mee te kunnen rekenen. Beschouw
+bijvoorbeeld $100$ re\"ele getallen die we aanduiden met
+$a_1,a_2,\ldots,a_{100}$ en stel dat we de som van deze getallen
+nodig hebben. Deze som kunnen we aanduiden
+met\[a_1+a_2+a_3+\cdots+a_{99}+a_{100},\]maar als we deze som vaak
+nodig hebben en ermee willen rekenen, is dit geen handige notatie.
+Het sommatieteken biedt een uitweg, met behulp van dit
+sommatieteken wordt bovenstaande som verkort geschreven
+als\[a_1+a_2+a_3+\cdots+a_{99}+a_{100}\
+\overset{\textrm{notatie}}{=}\ \sum_{k=1}^{100}a_k.\]We lezen dit
+als \lq de som van de termen $a_k$ waarbij (de index) $k$ loopt
+van $1$ tot $100$\rq. Dit is een korte en duidelijke (zonder de
+vage \lq$\ldots$\rq) schrijfwijze die alle noodzakelijke
+informatie bevat. Bovendien laat deze schrijfwijze toe gemakkelijk
+met de sommen te rekenen. Hiervoor bestaan de nodige rekenregels
+(zie Sectie~\ref{M02_rekenregels}). Een som schrijven m.b.v.~het
+sommatieteken werkt wel enkel als de verschillende termen een
+gemeenschappelijke vorm hebben (in het voorbeeld hierboven zijn
+alle termen van de vorm \lq$a_k$\rq). Deze gemeenschappelijke vorm
+kan van velerlei aard zijn, zoals zal blijken in de voorbeelden en
+oefeningen. De som $5+283-7/3+\pi/2+18-205-11$ kunnen we
+bijvoorbeeld niet korter opschrijven, tenzij natuurlijk dat we de
+termen een naam geven: $a_1=5$, $a_2=283$, $a_3=-7/3$, \ldots
+
+De \emph{faculteitsoperatie} is een operatie op natuurlijke
+getallen die vaak opduikt in telproblemen, kansberekeningen en
+statistiek, maar ook in de analyse (taylorreeksen,
+differentiaal- en integraalrekening). Als inleidend voorbeeld
+bekijken we volgend telprobleem. Stel er wordt een renwedstrijd
+gehouden met twaalf paarden. Bij de \emph{tierc\'{e}} kunnen
+gokkers dan voorspellen in welke volgorde de paarden over de
+eindstreep komen. Hoeveel mogelijke voorspellingen zijn er? Voor
+het winnende paard zijn er precies $12$ mogelijkheden. Eens het
+winnende paard vastligt, blijven er nog $11$ paarden over die als
+tweede kunnen eindigen, er zijn dus nog $11$ mogelijkheden om het
+tweede paard te \lq kiezen\rq. Voor het paard dat als derde over
+de eindmeet zal komen, blijven er dan nog $10$ mogelijkheden over
+enzovoort\ldots\ Het aantal mogelijke pronostieken voor de
+tierc\'e is bijgevolg gelijk aan
+$12\cdot11\cdot10\cdot9\cdot8\cdot7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1=479001600$.
+Veralgemenen we dit concept tot een paardenwedstrijd met $n$
+paarden ($n\in\Nnul$), bekomen we als aantal mogelijke
+pronostieken
+\begin{formula}\label{M02_nfac}
+\[n(n-1)(n-2)(n-3)\cdots3\cdot2\cdot1.\]
+\end{formula}
+Een uitdrukking van de vorm (\ref{M02_nfac}) komt heel vaak voor in de
+wiskunde en i.h.b.~in de hogergenoemde disciplines. Een verkorte
+schrijfwijze is dus aangewezen: het product (\ref{M02_nfac}) noteren
+we met $n!$ (lees: $n$-faculteit).
+
+In de toepassingen bij dit pakket behandelen we  nog \emph{de
+driehoek van Pascal} en het \emph{binomium van Newton}.
+%
+%Voor meer oefenmateriaal kan je ook terecht op
+%\texttt{www.usolv-it.be} bij de topic \textcolor{red}{(?)}. Meer
+%uitleg kan je eveneens vinden in volgende handboeken:
+%\begin{itemize}
+%\item Delta 5/6, Kansrekenen (6/8u)
+%\item Van basis tot limiet 3/4, Statistiek
+%\item Van basis tot limiet 5/6, Combinatoriek en Kansrekenen.
+%\end{itemize}
+
+\section{Het sommatieteken}
+\subsection{Eenvoudige voorbeelden}
+Het sommatieteken \lq$\sum$\rq\ is, zoals in de inleiding reeds
+gezegd, een verkorte notatie voor een (lange) som van termen die
+een gemeenschappelijke vorm hebben. In deze sectie bekijken we
+enkele eenvoudige voorbeelden.
+\begin{example}
+Beschouw de som $x_0+x_1+x_2+x_3+x_4+x_5+x_6$. Dit is de som van
+de termen~$x_k$, waarbij $k$ loopt van $0$ tot en met $6$ en kan
+dus verkort genoteerd worden met
+\[\sum^{6}_{k=0}x_k=x_0+x_1+x_2+x_3+x_4+x_5+x_6.\]
+\end{example}
+\begin{example}
+Beschouw de som $2+3+4+5+6+7+8$. Dit is de som van de termen~$k$, waarbij $k$ loopt van $2$ tot en met
+$8$ en kan dus verkort genoteerd worden met\[\sum^{8}_{k=2}k=
+2+3+4+5+6+7+8=35.\] Deze schrijfwijze is natuurlijk niet uniek,
+men kan dezelfde som ook noteren met bijvoorbeeld
+\begin{eqnarray*}
+   &&\sum^{7}_{k=1}(k+1)=2+3+4+5+6+7+8=35  \\
+   \textrm{of met}&&\sum^{9}_{k=3}(k-1)=
+2+3+4+5+6+7+8=35.
+\end{eqnarray*}
+\end{example}
+\begin{example}
+Beschouw de som $9+16+25+36+49+64+81$. Wat is de
+gemeenschappelijke vorm van deze termen? Het zijn allemaal
+kwadraten. We kunnen elke term dus schrijven als $k^2$, waarbij
+$k$ de waarden $3$ t.e.m.~$9$ aanneemt. De som wordt bijgevolg
+genoteerd met\[\sum^{9}_{k=3}k^2=9+16+25+36+49+64+81=280.\]
+\end{example}
+
+\subsection{Algemene definitie}
+\begin{notation}[sommatieteken]
+Zij $m,n\in\N$ met $m\leqslant n$ en $(a_k)_{k=m}^n$ een eindige
+rij re\"{e}le getallen:
+\begin{align*}
+&a_m,a_{m+1},a_{m+2},\ldots,a_{k-1},a_k,a_{k+1},\ldots,a_{n-1},a_n\\
+&\qquad\qquad\qquad\qquad\qquad\textrm{met}\ a_k\in\R\
+\textrm{voor alle}\ k\in\{m,m+1,m+2,\ldots,n-1,n\}\subset\N.
+\end{align*}
+We voeren volgende notatie in:
+\begin{equation}\label{M02_def}
+\sum_{k=m}^n a_k\ =\ a_m+a_{m+1}+a_{m+2}+\cdots +a_{n-1}+a_n.
+\end{equation}
+Lees: de som van $a_k$ voor $k$ gaande van $m$ t.e.m.~$n$. Men
+noemt $a_k$ de algemene term, $k$ de index, $m$ de ondergrens en
+$n$ de bovengrens van de sommatie. Merk op dat
+$\sum\limits_{k=m}^n a_k$ onafhankelijk is van de sommatie-index
+$k$. De veranderlijke $k$ mag dan ook vervangen worden door eender
+welke andere veranderlijke zonder dat de betekenis van (\ref{M02_def})
+wijzigt.
+\end{notation}
+
+\subsection{Nog meer voorbeelden} We starten met drie voorbeelden
+waarin het de bedoeling is een som, geschreven met een
+sommatieteken, uit te schrijven en indien mogelijk te berekenen.
+\begin{example} \begin{eqnarray*}
+\sum_{i=0}^3\left(\frac{2^i}{3}+5\right)&=&\left(\frac{2^0}{3}+5\right)+\left(\frac{2^1}{3}+5\right)+\left(\frac{2^2}{3}+5\right)+\left(\frac{2^3}{3}+5\right)\\
+&=&\frac{16}{3}+\frac{17}{3}+\frac{19}{3}+\frac{23}{3}=25.
+\end{eqnarray*} \end{example} \begin{example}
+\[\sum_{j=6}^92ju_{2j}^2=2\cdot6u_{2\cdot6}^2+2\cdot7u_{2\cdot7}^2+2\cdot8u_{2\cdot8}^2+2\cdot9u_{2\cdot9}^2=12u_{12}^2+14u_{14}^2+16u_{16}^2+18u_{18}^2.\]
+\end{example} \begin{example}\footnotemark \begin{eqnarray*}
+\sum_{k=0}^2(-1)^k\frac{x^{2k+1}}{(2k+1)!}&=&(-1)^0\frac{x^{2\cdot0+1}}{(2\cdot0+1)!}+(-1)^1\frac{x^{2\cdot1+1}}{(2\cdot1+1)!}+(-1)^2\frac{x^{2\cdot2+1}}{(2\cdot2+1)!}\\
+&=&x-\frac{1}{6}x^3+\frac{1}{120}x^5. \end{eqnarray*}
+\end{example} \footnotetext{Over de faculteitsoperatie \lq$!$\rq\
+verder meer.}
+
+In de volgende voorbeelden trachten we een gegeven som te
+schrijven met behulp van het sommatieteken. Hiervoor moeten we in
+de eerste plaats op zoek gaan naar de gemeenschappelijke vorm van
+de termen, dit resulteert in het formuleren van een algemene term,
+zeg $a_k$. Deze algemene term mag afhangen van een
+zelfgekozen\footnote{Je moet er wel voor zorgen dat de
+veranderlijke die je kiest op die plaats nog geen andere betekenis
+heeft. Bijvoorbeeld,
+$k+k^2+k^3+k^4\neq\sum\limits_{k=1}^4k^k=1^1+2^2+3^3+4^4$, wel
+$k+k^2+k^3+k^4=\sum\limits_{i=1}^4k^i$.}\ veranderlijke, zeg $k$,
+die als sommatie-index zal dienen en dit z\'o dat wanneer $k$
+opeenvolgende natuurlijke getallen doorloopt, de algemene term
+$a_k$ opeenvolgende termen van de som doorloopt. Vervolgens zoek
+je onder- en bovengrens, dit zijn respectievelijk de eerste en de
+laatste waarde die $k$ moet aannemen opdat $a_k$ precies alle
+termen van de som doorloopt.
+\begin{example}
+Beschouw de som\[\sin x+\cos 2x+\sin 3x+\cos 4x+\sin 5x+\cos
+6x+\sin 7x+\cos 8x+\sin 9x+\cos 10x.\] De algemene term is hier
+$a_k=\sin(2k-1)x+\cos2kx$. De ondergrens is in dit geval~$1$ en de
+bovengrens $5$. Bovenstaande som kunnen we dus korter opschrijven
+als\[\sum_{k=1}^5\left(\sin(2k-1)x+\cos2kx\right).\]
+\end{example}
+\begin{example}
+Beschouw de
+som\[\frac{1}{2}x+\frac{\sqrt{2}}{2}x^2+\frac{\sqrt{3}}{2}x^3+x^4+\frac{\sqrt{5}}{2}x^5+\frac{\sqrt{6}}{2}x^6+\frac{\sqrt{7}}{2}x^7+\sqrt{2}x^8+\frac{3}{2}x^9+\frac{\sqrt{10}}{2}x^{10}+\frac{\sqrt{11}}{2}x^{11}+\sqrt{3}x^{12}.\]
+De algemene term is hier $\ds{a_k=\frac{\sqrt{k}}{2}x^k}$. De
+ondergrens is in dat geval~$1$ en de bovengrens $12$. Bovenstaande
+som kunnen we dus korter opschrijven
+als\[\sum_{k=1}^{12}\frac{\sqrt{k}}{2}x^k.\]
+\end{example}
+\begin{example}
+Beschouw de
+som\[u_0-2u_1+3u_2-4u_3+5u_4-6u_5+7u_6-8u_7+\cdots+129u_{128}-130u_{129}.\]
+De algemene term is hier $a_k=(-1)^k(k+1)u_k$. De ondergrens is in
+dit geval~$0$ en de bovengrens $129$. Bovenstaande som kunnen we
+dus korter opschrijven als\[\sum_{k=0}^{129}(-1)^k(k+1)u_k.\]
+\end{example}
+
+\subsection{Rekenregels}\label{M02_rekenregels} \newcounter{rr}
+\setcounter{rr}{1} In deze paragraaf behandelen we enkele
+rekenregels in verband met het sommatieteken. We beginnen echter met
+een opmerking over het bereik van een sommatieteken.
+\begin{remark}[bereik van een sommatieteken] Een sommatieteken
+bindt zoals een product. Hiermee bedoelen we dat\[\sum_{k=m}^n a_k
+b_k=\sum_{k=m}^n \left(a_k b_k\right)\qquad\textrm{en
+dat}\qquad\sum_{k=m}^n a_k+b_k=\left(\sum_{k=m}^n
+a_k\right)+b_k=\sum_{i=m}^n a_i+b_k.\] M.a.w.~in het laatste
+voorbeeld valt $b_k$ buiten het bereik van het sommatieteken, deze
+term wordt dus niet gesommeerd en de $k$ in $b_k$ heeft niets te
+maken met de sommatie-index $k$. Bedoelen we toch $\sum_{k=m}^n
+\left(a_k+b_k\right)$, dan mogen de haakjes niet worden weggelaten.
+\end{remark} \begin{rekenregel}[afzonderen van de eerste of de
+laatste term] \begin{eqnarray*}
+\sum_{k=m}^na_k&=&\sum_{k=m}^{n-1}a_k+a_n\\
+&=&a_m+\sum_{k=m+1}^na_k. \end{eqnarray*} \end{rekenregel}
+\begin{rekenregel}[lineariteit van het sommatieteken] Zij
+$\alpha,\beta\in\R$, dan hebben we\[\sum_{k=m}^n\left(\alpha
+a_k+\beta
+b_k\right)=\alpha\sum_{k=m}^{n}a_k+\beta\sum_{k=m}^{n}b_k.\]
+\end{rekenregel} \begin{proof} \begin{eqnarray*}
+\sum_{k=m}^n\left(\alpha a_k+\beta b_k\right)&=&\left(\alpha
+a_m+\beta b_m\right)+\left(\alpha a_{m+1}+\beta
+b_{m+1}\right)+\cdots+\left(\alpha a_n+\beta b_n\right)\\
+&=&\left(\alpha a_m+\alpha a_{m+1}+\cdots+\alpha
+a_n\right)+\left(\beta b_m+\beta b_{m+1}+\cdots+\beta b_n\right)\\
+&=&\alpha\left(a_m+a_{m+1}+\cdots+a_n\right)+\beta\left(b_m+b_{m+1}+\cdots+b_n\right)\\
+&=&\alpha\sum_{k=m}^{n}a_k+\beta\sum_{k=m}^{n}b_k. \end{eqnarray*}
+\end{proof} \begin{rekenregel}[sommatie van een constante] Zij
+$\alpha,\beta\in\R$, dan hebben
+we\[\sum_{k=m}^n\alpha=\underbrace{\alpha+\alpha+\cdots+\alpha}_{n-m+1\
+\textrm{keer}}=(n-m+1)\alpha\textrm{, i.h.b.
+}\sum_{k=1}^n\alpha=\underbrace{\alpha+\alpha+\cdots+\alpha}_{n\
+\textrm{keer}}=n\alpha.\] Zo ook\[\sum_{k=m}^n\left(\alpha
+a_k+\beta\right)=\alpha\sum_{k=m}^na_k+(n-m+1)\beta.\]
+\end{rekenregel} \begin{rekenregel}[verandering (substitutie) van
+indexveranderlijke{\normalfont\footnotemark}] \footnotetext{Men kan
+deze rekenregel goed vergelijken met de substitutieregel in de
+integraalrekening. Als men in een bepaalde integraal een substitutie
+van de integratieveranderlijke doorvoert, dient men namelijk ook de
+integratiegrenzen van de integraal consequent aan te passen.} We
+kunnen in een som steeds overgaan op een nieuwe indexveranderlijke.
+Zij $r\in\Z$ met $r\geqslant-m$, dan hebben we\[\sum_{k=m}^na_k\
+\overset{j\,\perdef\,k+r}{=} \sum_{j=m+r}^{n+r}a_{j-r} \left(=\
+\sum_{k=m+r}^{n+r}a_{k-r}\right).\] \end{rekenregel} \begin{proof}
+\begin{eqnarray*}
+\sum_{j=m+r}^{n+r}a_{j-r}&=&a_{(m+r)-r}+a_{(m+r+1)-r}+a_{(m+r+2)-r}+\cdots+a_{(n+r-1)-r}+a_{(n+r)-r}\\
+&=&a_m+a_{m+1}+a_{m+2}+\cdots+a_{n-1}+a_n\\ &=&\sum_{k=m}^na_k.
+\end{eqnarray*} \end{proof}
+
+\startletternummering
+\subsection{Voorbeeldoefeningen}
+In deze paragraaf worden enkele voorbeeldoefeningen uitgewerkt om
+te illustreren hoe bovenstaande definitie en rekenregels worden
+toegepast.
+\begin{voorbeeldoefening}
+Reken onderstaande sommen uit.
+\begin{enumerate}
+\item $\ds{\sum^{5}_{k=2}k=2+3+4+5=14}$
+\item $\ds{\sum^{3}_{k=1}10=10+10+10=30}$
+\item $\ds{\sum^{5}_{i=2}(2i+1)^{2}=5^{2}+7^{2}+9^{2}+11^{2}=276}$
+\item $\ds{\sum^{6}_{l=3}4=4+4+4+4=16}$
+\item $\ds{\sum^{4}_{m=2}\frac{20}{m}=\frac{20}{2}+\frac{20}{3}+\frac{20}{4}=\frac{130}{6}}$
+\item $\ds{\sum^{5}_{j=0}2^k=2^k+2^k+2^k+2^k+2^k+2^k=6\cdot2^k}$
+\item
+$\ds{\sum^{21}_{k=17}5+\sqrt[k]{1+k}=\left(\sum^{21}_{k=17}5\right)+\sqrt[k]{1+k}=5+5+5+5+5+\sqrt[k]{1+k}=25+\sqrt[k]{1+k}}$\\[-1ex]
+\mbox{\ }
+\end{enumerate}
+\end{voorbeeldoefening}
+\begin{voorbeeldoefening}
+Beschouw de som
+\begin{equation}\label{M02_somoef}
+\sum_{k=1}^{3}2^{k}=2^{1}+2^{2}+2^{3}=2+4+8=14.
+\end{equation}
+Zonderen we hierin de eerste term af, dan bekomen
+we\[\sum_{k=1}^{3}2^{k}=2+\sum_{k=2}^{3}2^{k},\] de laatste term
+afzonderen geeft\[\sum_{k=1}^{3}2^{k}=\sum_{k=1}^{2}2^{k}+8.\]
+Stel $p=k+6$. Hoe schrijven we (\ref{M02_somoef}) als een som over de
+index $p$ i.p.v.~over de index~$k$?
+\[\sum_{k=1}^{3}2^{k}=\sum_{p=\ldots}^{\ldots}2^{\ldots}\] Als $p=k+6$,
+dan is $k=p-6$. Als $k=1$, is $p=1+6=7$ en als $k=3$, is $p=9$. Zo
+bekomen we
+\[\sum_{k=1}^{3}2^{k}=\sum_{p=7}^{9}2^{p-6}=2^{1}+2^{2}+2^{3}=14.\]
+Wanneer de sommatie over $k$-waarden van $1$ t.e.m.~$3$ vervangen
+wordt door een sommatie met ondergrens $0$ en bovengrens $2$,
+wordt hetzelfde resultaat bekomen, mits de juiste aanpassing in de
+algemene term:
+\[\sum_{k=1}^{3}2^{k}\
+\overset{l\,\perdef\,k-1}{=}\
+\sum_{l=0}^{2}2^{l+1}=\sum_{k=0}^{2}2^{k+1}=2^{1}+2^{2}+2^{3}=14.\]
+\end{voorbeeldoefening}
+\begin{voorbeeldoefening}
+Reken onderstaande sommen uit als je weet dat
+\[\sum^{8}_{m=4}x_{m}=10,\qquad\qquad\quad\sum^{8}_{m=4}y_{m}=15\qquad\ \ \textrm{en}\ \ \qquad x_{3}=2.\]
+\begin{enumerate}
+\item $\ds{\sum^{8}_{m=4}\left(y_{m}+3\right)=\sum^{8}_{m=4}y_m+\sum^{8}_{m=4}3=\sum^{8}_{m=4}y_{m}+5\cdot 3=15+15=30}$
+\item $\ds{\sum^{8}_{m=4}\left(8x_{m}+2\right)=8\sum^{8}_{m=4}x_{m}+5\cdot 2=8\cdot 10+10=90}$
+\item $\ds{\sum^{8}_{m=3}\frac{x_{m}}{4}=\frac{x_{3}}{4}+\sum^{8}_{m=4}\frac{x_{m}}{4}=\frac{2}{4}+\frac{1}{4}\sum^{8}_{m=4}x_{m}=\frac{1}{2}+\frac{10}{4}=3}$
+\item $\ds{\sum^{6}_{k=1}x_{k+2}\overset{m\perdef k+2}{=}\sum^8_{m=3}x_m=x_3+\sum^8_{m=4}x_k=2+10=12}$
+\end{enumerate}
+\end{voorbeeldoefening}
+\begin{voorbeeldoefening}
+Vul aan.
+\begin{enumerate}
+\item $\ds{\sum^{4}_{i=1}3i^{2}=\sum^{\ldots}_{j=5}\ldots}$
+\begin{procedure} Als $i=1$ moet $j=5$. Stel daarom $j=i+4$. Als dan $i=4$, is
+$j=8$. Omdat verder $i=j-4$, bekomen we
+\[\sum^{4}_{i=1}3i^{2}=\sum^{8}_{j=5}3(j-4)^2.\]
+\end{procedure}
+\item $\ds{\sum^{5}_{i=3}\left(2i^2+3\right)=\sum^{4}_{i=3}\left(2i^2+3\right)+\ldots}$
+\begin{procedure} Hier moet de laatste term ($i=5$) worden afgezonderd. Deze
+term is gelijk aan $2\cdot5^2+3=53$, dus volgt
+\[\sum^5_{i=3}\left(2i^2+3\right)=\sum^4_{i=3}\left(2i^2+3\right)+53.\]
+\end{procedure}
+\item $\ds{\sum^{n+1}_{k=1}(k+1)^2=\sum^n_{k=1}(k+1)^2+\ldots}$
+\begin{procedure} Ook hier moet de laatste term worden afgezonderd.
+\[\sum^{n+1}_{k=1}(k+1)^{2}=\sum^n_{k=1}(k+1)^2+\left((n+1)+1\right)^2=\sum^n_{k=1}(k+1)^{2}+(n+2)^2\]
+\end{procedure}~
+\end{enumerate}
+\end{voorbeeldoefening}
+\oefverwijzing{Probeer nu zelf op analoge wijze de Oefeningen 1 en
+2 van Sectie~\ref{M02_oef} op te lossen.}
+\eindeletternummering
+
+\subsection{Toepassing: Gemiddelde en standaardafwijking in de statistiek}
+Laat $x_1, x_2, x_3, \ldots , x_n$ de gemeten waarden zijn voor
+een onbekende grootheid $X$. Een eerste voorbeeld hiervan is de
+meting van geboortegewichten van alle pasgeboren baby's in een
+bepaald regionaal ziekenhuis gedurende \'{e}\'{e}n week. Een
+tweede voorbeeld is een experiment uit de fysica waarin de periode
+van een slinger herhaaldelijk wordt gemeten met behulp van een
+chronometer. Door het vroeg- of laattijdig afdrukken van de
+chronometer zal telkens een andere periode gemeten worden. In dit
+geval zal de re\"{e}le waarde van de te meten periode het best
+benaderd worden door het gemiddelde te nemen van de verschillende
+meetresultaten. Daarbij zal het gemiddelde van 10 metingen
+betrouwbaarder zijn dan het gemiddelde van 3 metingen.
+
+Het \emph{rekenkundig gemiddelde} van al de geboortegewichten of
+van alle gemeten periodes is gedefinieerd als de som van alle
+metingen gedeeld door het aantal meetresultaten. In de statistiek
+wordt dit rekenkundig gemiddelde genoteerd met
+\[\bar{x}\perdef\frac{1}{n}\sum_{i=1}^{n} x_{i}.\]
+
+Een maat voor de spreiding van de metingen (voor hoe ver de
+verschillende meetresultaten uit elkaar liggen) is bijvoorbeeld
+het rekenkundig gemiddelde van de gekwadrateerde afwijkingen van
+de metingen tot hun gemiddelde. Deze spreidingsmaat noemt men de
+\emph{(steekproef)variantie} en wordt genoteerd met
+\[s^2\perdef\frac{1}{n}\sum^{n}_{i=1}(x_i-\bar{x})^2.\]
+Een andere veel gebruikte spreidingsmaat is de
+\emph{standaarddeviatie}, hetgeen eenvoudigweg de vierkantswortel
+is uit de variantie:
+\[s\perdef\sqrt{s^2}=\sqrt{\frac{1}{n}\sum^{n}_{i=1}(x_i-\bar{x})^2}. \]
+
+
+\end{document}

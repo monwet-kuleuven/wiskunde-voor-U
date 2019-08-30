@@ -1,0 +1,492 @@
+%%
+% ximera activiteit
+% Copyrigth
+%
+\documentclass{ximera}
+%
+% Opties (enkel te gebruiken voor lokale testen; NOOIT committen met opties)
+%
+%\pdfOnly{\providecommand\showtodonotes{}}
+%\newcommand\xmnouitweiding{}
+
+
+\input{../preamble.tex}
+
+\begin{document}
+    % Start specifieke settings:    
+    \author{Zomercursus KU Leuven}
+%    \outcome{}
+    \xmtitle{De faculteit}{}
+    % Start inhoud ximera 
+
+
+%\title {Het sommatieteken en de faculteit\\{\large(met als belangrijke toepassing binomiaalco\"effici\"enten)}}
+%{\qrslidesA{https://set.kuleuven.be/zomercursussen/wiskunde/lesmateriaal/slides-sommatieteken-faculteit.pdf}}{}
+
+\section*{Inleiding}
+In deze module zullen we het gebruik van het
+sommatieteken en de faculteitsoperatie herhalen en bespreken
+a.d.h.v.~voorbeeldoefeningen en enkele toepassingen.
+
+Het \emph{sommatieteken} \lq$\sum$\rq\ wordt veel gebruikt in de
+context van rijen en reeksen. Ook in de statistiek, de
+kansrekening en de discrete wiskunde is het sommatieteken niet weg
+te denken. In deze takken van de wiskunde wordt veel gewerkt met
+lange sommen van termen die \lq op een gelijkaardige manier zijn
+opgebouwd\rq\footnote{Dit wordt verder uitgelegd.}\ en is er
+behoefte aan een elegante schrijfwijze voor deze sommen en een
+manier om er gemakkelijk mee te kunnen rekenen. Beschouw
+bijvoorbeeld $100$ re\"ele getallen die we aanduiden met
+$a_1,a_2,\ldots,a_{100}$ en stel dat we de som van deze getallen
+nodig hebben. Deze som kunnen we aanduiden
+met\[a_1+a_2+a_3+\cdots+a_{99}+a_{100},\]maar als we deze som vaak
+nodig hebben en ermee willen rekenen, is dit geen handige notatie.
+Het sommatieteken biedt een uitweg, met behulp van dit
+sommatieteken wordt bovenstaande som verkort geschreven
+als\[a_1+a_2+a_3+\cdots+a_{99}+a_{100}\
+\overset{\textrm{notatie}}{=}\ \sum_{k=1}^{100}a_k.\]We lezen dit
+als \lq de som van de termen $a_k$ waarbij (de index) $k$ loopt
+van $1$ tot $100$\rq. Dit is een korte en duidelijke (zonder de
+vage \lq$\ldots$\rq) schrijfwijze die alle noodzakelijke
+informatie bevat. Bovendien laat deze schrijfwijze toe gemakkelijk
+met de sommen te rekenen. Hiervoor bestaan de nodige rekenregels
+(zie Sectie~\ref{M02_rekenregels}). Een som schrijven m.b.v.~het
+sommatieteken werkt wel enkel als de verschillende termen een
+gemeenschappelijke vorm hebben (in het voorbeeld hierboven zijn
+alle termen van de vorm \lq$a_k$\rq). Deze gemeenschappelijke vorm
+kan van velerlei aard zijn, zoals zal blijken in de voorbeelden en
+oefeningen. De som $5+283-7/3+\pi/2+18-205-11$ kunnen we
+bijvoorbeeld niet korter opschrijven, tenzij natuurlijk dat we de
+termen een naam geven: $a_1=5$, $a_2=283$, $a_3=-7/3$, \ldots
+
+De \emph{faculteitsoperatie} is een operatie op natuurlijke
+getallen die vaak opduikt in telproblemen, kansberekeningen en
+statistiek, maar ook in de analyse (taylorreeksen,
+differentiaal- en integraalrekening). Als inleidend voorbeeld
+bekijken we volgend telprobleem. Stel er wordt een renwedstrijd
+gehouden met twaalf paarden. Bij de \emph{tierc\'{e}} kunnen
+gokkers dan voorspellen in welke volgorde de paarden over de
+eindstreep komen. Hoeveel mogelijke voorspellingen zijn er? Voor
+het winnende paard zijn er precies $12$ mogelijkheden. Eens het
+winnende paard vastligt, blijven er nog $11$ paarden over die als
+tweede kunnen eindigen, er zijn dus nog $11$ mogelijkheden om het
+tweede paard te \lq kiezen\rq. Voor het paard dat als derde over
+de eindmeet zal komen, blijven er dan nog $10$ mogelijkheden over
+enzovoort\ldots\ Het aantal mogelijke pronostieken voor de
+tierc\'e is bijgevolg gelijk aan
+$12\cdot11\cdot10\cdot9\cdot8\cdot7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1=479001600$.
+Veralgemenen we dit concept tot een paardenwedstrijd met $n$
+paarden ($n\in\Nnul$), bekomen we als aantal mogelijke
+pronostieken
+\begin{formula}\label{M02_nfac}
+\[n(n-1)(n-2)(n-3)\cdots3\cdot2\cdot1.\]
+\end{formula}
+Een uitdrukking van de vorm (\ref{M02_nfac}) komt heel vaak voor in de
+wiskunde en i.h.b.~in de hogergenoemde disciplines. Een verkorte
+schrijfwijze is dus aangewezen: het product (\ref{M02_nfac}) noteren
+we met $n!$ (lees: $n$-faculteit).
+
+In de toepassingen bij dit pakket behandelen we  nog \emph{de
+driehoek van Pascal} en het \emph{binomium van Newton}.
+%
+%Voor meer oefenmateriaal kan je ook terecht op
+%\texttt{www.usolv-it.be} bij de topic \textcolor{red}{(?)}. Meer
+%uitleg kan je eveneens vinden in volgende handboeken:
+%\begin{itemize}
+%\item Delta 5/6, Kansrekenen (6/8u)
+%\item Van basis tot limiet 3/4, Statistiek
+%\item Van basis tot limiet 5/6, Combinatoriek en Kansrekenen.
+%\end{itemize}
+
+
+\section{$n$-Faculteit}
+\subsection{Definitie}
+In de inleiding, toen we het hadden over paardenrennen, hebben we
+reeds een definitie gegeven van de faculteitsoperatie \lq$!$\rq,
+dit ging als volgt:
+\begin{definition}[faculteitsoperatie{\normalfont\ ---\ 1$^{\textrm{e}}$ versie}]
+Zij $n\in\Nnul$. We defini\"eren het natuurlijk getal $n!$ (lees:
+$n$-faculteit) als
+\[n!\ \perdef\ n(n-1)(n-2)(n-3)\cdots3\cdot2\cdot1.\]
+\end{definition}
+
+Dit getal, $n!$, kwam overeen met het aantal mogelijke uitslagen
+van een renwedstrijd met $n$ paarden of -- in het algemeen -- het
+aantal mogelijke manieren om $n$ verschillende objecten te
+rangschikken (op een rij te zetten). Bijvoorbeeld, op hoeveel
+manieren kan je $22$ leerlingen van een klas achter elkaar in een
+rij zetten? Antwoord: op $22!=1124000727777607680000$ manieren.
+
+Ook het getal $0!$ is gedefinieerd: $0!\perdef1$. Deze definitie
+van $0$-faculteit is in overeenstemming met de eerder gegeven
+interpretatie van de faculteit als het aantal mogelijke manieren
+om verschillende objecten te rangschikken: op hoeveel manieren kan
+men $0$ objecten rangschikken? Antwoord: er valt niets te
+rangschikken, dit kan op juist $1$ manier.
+
+Meestal echter wordt de faculteitsoperatie niet gedefinieerd zoals
+wij hier net gedaan hebben, maar wel op een zogenaamde
+\emph{recursieve}\footnote{Een definitie heet recursief wanneer
+men in de definitie datgene wat men definieert, reeds gebruikt.
+Dit moet natuurlijk met de nodige omzichtigheid gebeuren, de hier
+gegeven definitie van de faculteitsoperatie is een goed
+voorbeeld.} manier. Dit gaat als volgt:
+\begin{definition}[faculteitsoperatie{\normalfont\ ---\ 2$^{\textrm{e}}$ versie}]
+De faculteitsfunctie $!:\N\to\N:n\mapsto n!$ is de unieke functie
+van \N\ naar \N\ die voldoet aan volgende twee voorwaarden:
+\begin{enumerate}
+\item[(i)] $0!=1$ en
+\item[(ii)] $n!=n\cdot(n-1)!$ voor elke $n\in\Nnul$.
+\end{enumerate}
+\end{definition}
+
+Uit deze definitie halen we dat
+
+\noindent
+\begin{tabular}{cl@{\;}c@{\;}c@{\;}c@{\;}rl}
+(0) & $0!$ & & & $=$ & $1$ & uit (i)\\
+(1) & $1!$ & $=$ & $1\cdot(1-1)!=1\cdot0!=1\cdot1$ & $=$ & $1$ & uit (ii) en (0)\\
+(2) & $2!$ & $=$ & $2\cdot(2-1)!=2\cdot1!=2\cdot1$ & $=$ & $2$ & uit (ii) en (1)\\
+(3) & $3!$ & $=$ & $3\cdot(3-1)!=3\cdot2!=3\cdot2$ & $=$ & $6$ & uit (ii) en (2)\\
+(4) & $4!$ & $=$ & $4\cdot(4-1)!=4\cdot3!=4\cdot6$ & $=$ & $24$ & uit (ii) en (3)\\
+$\vdots$ & & & & & &
+\end{tabular}
+
+In deze definitie staat meteen ook de belangrijkste rekenregel
+voor de faculteitsoperatie:
+\begin{kaderrekenregel}
+\mbox{\ }\hfill
+\begin{tabular}[t]{lr@{\;}c@{\;}ll}
+& $n!$ & $=$ & $n(n-1)!$ & voor alle $n\in\Nnul$ \\
+of nog & $(n+1)!$ & $=$ & $(n+1)n!$ & voor alle $n\in\N$
+\end{tabular}
+\hfill\mbox{\ }
+\end{kaderrekenregel}
+
+\newpage
+\startletternummering
+\subsection{Voorbeeldoefeningen}
+\begin{voorbeeldoefening}
+Vul aan. ($k,l\in\N$, $l\geqslant3$)
+\begin{enumerate}
+\item $\ds{(k+1)!+k!=(\ldots)k!}$
+\begin{oplossing}
+\begin{eqnarray*}
+(k+1)!+k!&=&(k+1)k!+k!\\
+&=&\left((k+1)+1\right)k!\\
+&=&(k+2)k!
+\end{eqnarray*}
+\end{oplossing}
+\item $\ds{3(l-2)!+2(l-3)!=(\ldots)(l-3)!}$
+\begin{oplossing}
+\begin{eqnarray*}
+3(l-2)!+2(l-3)!&=&3(l-2)(l-3)!+2(l-3)!\\
+&=&\left(3(l-2)+2\right)(l-3)!\\
+&=&(3l-4)(l-3)!
+\end{eqnarray*}
+\end{oplossing}~
+\end{enumerate}
+\end{voorbeeldoefening}
+\begin{voorbeeldoefening}
+Vereenvoudig. ($k,n\in\N$, $k+n\geqslant2$)
+\begin{enumerate}
+\item $\ds{\frac{(k+1)!}{k!}=\frac{(k+1)k!}{k!}=k+1}$
+\item $\ds{\frac{(k+3)!}{k!}=\frac{(k+3)(k+2)(k+1)k!}{k!}=(k+3)(k+2)(k+1)}$
+\item $\ds{\frac{(k+n)!}{k+n-1}=\frac{(k+n)(k+n-1)(k+n-2)!}{k+n-1}=(k+n)(k+n-2)!}$
+\end{enumerate}
+\end{voorbeeldoefening}
+\oefverwijzing{Probeer nu zelf op analoge wijze Oefening 3 van
+Sectie~\ref{M02_oef} op te lossen.}
+\eindeletternummering
+
+\subsection{Toepassingen}
+\subsubsection{Telproblemen: variaties}\label{M02_pr}
+We hernemen het voorbeeld van de paardenrennen uit de inleiding.
+We houden een wedstrijd met $12$ paarden. Opnieuw moeten gokkers
+de uitslag van de wedstrijd voorspellen, maar deze keer niet de
+volledige uitslag. Ze moeten enkel een pronostiek maken van welke
+drie paarden eerst zullen eindigen en in welke volgorde. Op
+hoeveel manieren is dit mogelijk? Als we dezelfde redenering
+volgen als in de inleiding, vinden we dat er
+$12\cdot11\cdot10=1320$ verschillende pronostieken mogelijk zijn.
+
+Wiskundig kan men zo'n pronostiek zien als een geordend drietal
+van elementen afkomstig uit een verzameling van $12$ elementen.
+Men spreekt in deze context van een \emph{variatie} van $3$
+elementen uit $12$ elementen. Het aantal mogelijke variaties kan
+men berekenen m.b.v.~de faculteitsoperatie. Zij namelijk
+$p,n\in\N$ met $p\leqslant n$, dan is het aantal variaties van $p$
+elementen uit $n$ elementen gegeven door
+\begin{eqnarray*}
+  V^p_n &\overset{\textrm{notatie}}{=}& \underbrace{n(n-1)(n-2)\cdots(n-p+1)}_{p\
+\textrm{factoren}}\\
+&=&
+\frac{n(n-1)(n-2)\cdots(n-p+1)(n-p)(n-p-1)(n-p-2)\cdots3\cdot2\cdot1}{(n-p)(n-p-1)(n-p-2)\cdots3\cdot2\cdot1}\\
+&=& \frac{n!}{(n-p)!}.
+\end{eqnarray*}
+
+\subsubsection{Combinaties, de driehoek van Pascal,
+het binomium van Newton} We hernemen nogmaals het voorbeeld van de
+paardenrennen uit vorige paragraaf~(\ref{M02_pr}). Ditmaal moeten de
+gokkers voorspellen welke drie paarden op de eerste drie plaatsen
+zullen eindigen, de volgorde heeft geen enkel belang. Wiskundig
+vertaalt zich een dergelijke pronostiek in een deelverzameling van
+$3$ elementen afkomstig uit een verzameling van $12$ elementen (er
+nemen $12$ paarden deel aan de wedstrijd). Als $p,n\in\N$ en
+$p\leqslant n$, noemen we een deelverzameling van $p$ elementen
+uit een verzameling van $n$ elementen een \emph{combinatie} van
+$p$ elementen uit $n$ elementen.
+
+Hoeveel mogelijke pronostieken bestaan er onder deze nieuwe
+voorwaarden, m.a.w.~hoeveel combinaties zijn er van $3$ uit $12$?
+Omdat de volgorde nu geen rol meer speelt, bestaan er in elk geval
+minder combinaties dan variaties. Daar je een verzameling van $3$
+elementen op precies $3!=6$ manieren kan ordenen, bestaan er voor
+elke combinatie $\{a,b,c\}$ van $3$ elementen precies $6$
+verschillende variaties $(a,b,c)$, $(a,c,b)$, $(b,a,c)$,
+$(b,c,a)$, $(c,a,b)$ en $(c,b,a)$, opgebouwd uit diezelfde $3$
+elementen $a$, $b$ en $c$. M.a.w.~er bestaan precies zes keer meer
+variaties van $3$ uit $12$ dan er combinaties bestaan van $3$ uit
+$12$. Algemeen hebben we dan dat voor $p,n\in\N$ met $p\leqslant
+n$ er $p!$ keer meer variaties zijn van $p$ elementen uit $n$
+elementen dan er combinaties zijn van $p$ uit $n$, zodat het
+totaal aantal combinaties van $p$ elementen uit $n$ elementen
+gegeven is door onderstaande formule:
+\[C^p_n\overset{\textrm{notatie }}{=}{n\choose p}\overset{\textrm{notatie}}{=}\frac{V^p_n}{p!}=\frac{n!}{p!(n-p)!}.\]
+\begin{example}\ \vspace{0ex}
+\begin{enumerate}
+\item[(a)] $\ds{C^3_5={5\choose3}=\frac{5!}{3!(5-3)!}=\frac{5!}{3!2!}=\frac{5\cdot4\cdot3\cdot2\cdot1}{(3\cdot2\cdot1)(2\cdot1)}=10}$
+\item[(b)] $\ds{C^2_2={2\choose2}=\frac{2!}{2!0!}=\frac{2\cdot1}{(2\cdot1)\cdot1}=1}$
+\item[(c)] $\ds{C^0_4={4\choose0}=\frac{4!}{0!4!}=\frac{4\cdot3\cdot2\cdot1}{1\cdot(4\cdot3\cdot2\cdot1)}=1}$
+\item[(d)]
+$\ds{C^1_4={4\choose1}=\frac{4!}{1!3!}=\frac{4\cdot3\cdot2\cdot1}{1\cdot(3\cdot2\cdot1)}=4}$.
+\end{enumerate}
+\end{example}
+
+Natuurlijke getallen van de vorm ${n\choose p}$ met $p,n\in\N$ en
+$p\leqslant n$, worden ook wel \emph{binomiaalgetallen} genoemd.
+De herkomst van deze naam wordt verder duidelijk. De
+binomiaalgetallen ${n\choose p}$ worden vaak voorgesteld in een
+driehoekig schema, de zgn.~\emph{driehoek van
+Pascal}\footnotemark\ (zie Figuur~\ref{M02_driehoek}).
+\footnotetext{De Fransman Blaise Pascal was filosoof, theoloog,
+wis- en natuurkundige. Hij werd geboren in 1623 in Clermont
+Ferrand en stierf in Parijs in 1662. Zijn belangrijkste prestaties
+situeren zich in het gebied van de waarschijnlijkheidsrekening, de
+combinatieleer, de projectieve meetkunde, de hydrostatica (de wet
+van Pascal voor de druk in een vloeistof) en de hydrodynamica.}
+
+\begin{figure}
+\addtolength{\parindent}{-1.85cm}
+\begin{tabular}{c|cccccccc}
+$n$ & ${n\choose0}$ & ${n\choose1}$ & ${n\choose2}$ & ${n\choose3}$ & ${n\choose4}$ & ${n\choose5}$ & ${n\choose6}$ & $\cdots$ \\\\[-2.1ex]
+\hline\\[-2.1ex]
+$0$ & $1$ &  &  &  &  & & & \\
+$1$ & $1$ & $1$ &  &  &  &  & &  \\
+$2$ & $1$ & $2$ & $1$ &  &  &  & & \\
+$3$ & $1$ & $3$ & $3$ & $1$ &  &  & & \\
+$4$ & $1$ & $4$ & $6$ & $4$ & $1$ &  & & \\
+$5$ & $1$ & $5$ & $10$ & $10$ & $5$ & $1$ & & \\
+$6$ & $1$ & $6$ & $15$ & $20$ & $15$ & $6$ & $1$ & \\
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$
+\end{tabular}
+\ \ of\ \
+\begin{tabular}{ccccccccccccc}
+&&&&&& $1$ &&&&& \\
+&&&&& $1$ && $1$ &&&&& \\
+&&&& $1$ && $2$ && $1$ &&&& \\
+&&& $1$ && $3$ && $3$ && $1$ &&& \\
+&& $1$ && $4$ && $6$ && $4$ && $1$ && \\
+& $1$ && $5$ && $10$ && $10$ && $5$  && $1$ & \\
+$1$ && $6$ && $15$ && $20$ && $15$ && $6$ && $1$
+\end{tabular}
+\addtolength{\parindent}{+1.85cm} \caption{De driehoek van
+Pascal}\label{M02_driehoek}
+\end{figure}
+
+Over de driehoek van Pascal valt heel veel te vertellen. We zullen
+hier enkele eigenschappen en toepassingen vermelden zonder ze echt
+te verklaren of te bewijzen. Dit zou ons nu te ver
+leiden en vrijwel zeker kom je al deze dingen nog wel tegen in een
+of andere cursus gedurende je opleiding.
+
+Vooreerst is de driehoek van Pascal een driehoek, omdat voor een
+zekere $n\in\N$ het binomiaalgetal ${n\choose p}$ enkel
+gedefinieerd is voor $p\in\N$ met $p\leqslant n$. Ten tweede is de
+driehoek symmetrisch, d.w.z. \[{n\choose p}={n\choose
+n-p}\quad\textrm{voor alle}\ n,p\in\N\ \textrm{met}\ p\leqslant
+n.\] Bovendien begint en eindigt elke rij met een $1$, terwijl het
+tweede en het voorlaatste getal van de $n$-de rij steeds $n$ is,
+in symbolen:
+\[{n\choose 0}={n\choose
+n}=1\quad\textrm{voor alle}\
+n\in\N\qquad\textrm{en}\qquad{n\choose 1}={n\choose
+n-1}=n\quad\textrm{voor alle}\ n\in\Nnul.\] Een andere
+opmerkelijke eigenschap is de volgende. Bekijk de rechtse driehoek
+in bovenstaande figuur, kies een rij en tel twee naburige
+binomiaalgetallen op, je bekomt het binomiaalgetal in het midden
+onder deze twee getallen of nog \[{n\choose p-1}+{n\choose
+p}={n+1\choose p}\quad\textrm{voor alle}\ n,p\in\Nnul\
+\textrm{met}\ p\leqslant n.\] De laatste erg belangrijke
+eigenschap van de driehoek van Pascal die we hier zullen
+vermelden, staat bekend onder \lq \emph{het binomium van
+Newton}\rq\ en is meteen ook de verklaring voor de herkomst van de
+naam \lq binomiaalgetallen\rq. Bekijk aandachtig onderstaande
+lijst uitwerkingen van machten van de tweeterm of \emph{binoom}
+$(a+b)$.
+
+\begin{figure}[h]
+\addtolength{\parindent}{-2.5cm}
+\begin{tabular}{ccccccccccccccc}
+$\ds{(a+b)^{\mathbf{0}}}$&$=$&&&&&&& $\mathbf{1}$ &&&&& \\
+$\ds{(a+b)^{\mathbf{1}}}$&$=$&&&&&& $\mathbf{1}a$ &$+$& $\mathbf{1}b$ &&&&& \\
+$\ds{(a+b)^{\mathbf{2}}}$&$=$&&&&& $\mathbf{1}a^2$ &$+$& $\mathbf{2}ab$ &$+$& $\mathbf{1}b^2$ &&&& \\
+$\ds{(a+b)^{\mathbf{3}}}$&$=$&&&& $\mathbf{1}a^3$ &$+$& $\mathbf{3}a^2b$ &$+$& $\mathbf{3}ab^2$ &$+$& $\mathbf{1}b^3$ &&& \\
+$\ds{(a+b)^{\mathbf{4}}}$&$=$&&& $\mathbf{1}a^4$ &$+$& $\mathbf{4}a^3b$ &$+$& $\mathbf{6}a^2b^2$ &$+$& $\mathbf{4}ab^3$ &$+$& $\mathbf{1}b^4$ && \\
+$\ds{(a+b)^{\mathbf{5}}}$&$=$&& $\mathbf{1}a^5$ &$+$& $\mathbf{5}a^4b$ &$+$& $\mathbf{10}a^3b^2$ &$+$& $\mathbf{10}a^2b^3$ &$+$& $\mathbf{5}ab^4$  &$+$& $\mathbf{1}b^5$ & \\
+$\ds{(a+b)^{\mathbf{6}}}$&$=$&$\mathbf{1}a^6$ &$+$& $\mathbf{6}a^5b$ &$+$& $\mathbf{15}a^4b^2$ &$+$& $\mathbf{20}a^3b^3$ &$+$& $\mathbf{15}a^2b^4$ &$+$& $\mathbf{6}ab^5$ &$+$& $\mathbf{1}b^6$ \\
+$\vdots$&&&&&&&&&&&&&&
+\end{tabular}
+\addtolength{\parindent}{+2.5cm} \caption{Het binomium van
+Newton}\label{M02_figuurbinomium}
+\end{figure}
+
+Wanneer we de uitwerkingen van de machten $(a+b)^n$ verticaal
+rangschikken volgens stijgende $n$ en horizontaal rangschikken
+volgens dalende machten van $a$ (en stijgende machten van $b$),
+vormen de co\"effici\"enten (vet gedrukt) precies de driehoek van
+Pascal. Dit resultaat kunnen we als volgt formuleren:
+\newpage\begin{observation}[binomium van
+Newton]\normalfont\footnotemark Zij $a,b\in\R$ en $n\in\N$, dan
+geldt \[(a+b)^n=\sum^n_{p=0}{n\choose
+p}a^{n-p}b^p=\sum^n_{p=0}{n\choose p}a^{p}b^{n-p}.\]
+\end{observation}\footnotetext{Sir Isaac Newton was een Brits
+natuurkundige, filosoof, wiskundige en alchemist. Hij werd geboren
+in 1642 in Lincolnshire in Engeland en stierf in 1727 in Londen.
+Newton was de leidende figuur in de wetenschappelijke revolutie van
+de 17$^{\textrm{e}}$ eeuw en wordt dan ook algemeen erkend als
+\'{e}\'{e}n der zeer groten in de wetenschap.}
+
+\section{Oefeningen}\label{M02_oef}
+\Opensolutionfile{ans}[ansM02]
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+\begin{oefening2}
+Bereken volgende sommen:
+
+\noindent
+\begin{minipage}[t]{.24\textwidth}
+\begin{enumerate}
+\item $\ds{\sum^4_{k=2}2^k}$
+\item $\ds{\sum^3_{k=1}3}$
+\item $\ds{\sum^5_{a=0}(2a+1)}$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.24\textwidth}
+\begin{enumerate}\setcounter{enumi}{3}
+\item $\ds{\sum^4_{l=1}(5l-1)}$
+\item $\ds{\sum^3_{k=1}k^2}$
+\item $\ds{\sum^{m+5}_{i=m}k}$\\$(m\in\N,\ k\in\R)$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.27\textwidth}
+\begin{enumerate}\setcounter{enumi}{6}
+\item $\ds{\sum^6_{i=1}\frac{60}{i}}$
+\item $\ds{\sum^3_{k=0}\sin^2\left(k\frac{\pi}{2}\right)}$
+\item $\ds{\sum^5_{k=1}(n-k)-7}$\\$(n\in\R)$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.25\textwidth}
+\begin{enumerate}\setcounter{enumi}{9}
+\item $\ds{\sum^8_{p=0}10^{5-p}}$
+\item $\ds{\sum^5_{n=2}\left(\sum^n_{k=1}n\right)}$
+\item $\ds{3\sum^3_{j=0}k+j}$\\$(j,k\in\R)$
+\end{enumerate}
+\end{minipage}
+\begin{opl}%hier volgt de opl van deze oef
+\mbox{ }\newline
+\begin{minipage}[t]{.24\textwidth}
+\begin{enumerate}
+\item 28
+\item 9
+\item 36
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.24\textwidth}
+\begin{enumerate}\setcounter{enumi}{3}
+\item 46
+\item 14
+\item $6k$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.27\textwidth}
+\begin{enumerate}\setcounter{enumi}{6}
+\item 147
+\item 2
+\item $5n-22$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.25\textwidth}
+\begin{enumerate}\setcounter{enumi}{9}
+\item 111111,111
+\item 54
+\item $12k+j$
+\end{enumerate}
+\end{minipage}
+\end{opl}
+
+
+\end{oefening2}
+
+
+\begin{oefening2}
+Vul aan.
+\begin{enumerate}
+\item $\ds{\sum^3_{k=1}k^2=\sum^2_{k=1}k^2+\ldots}$
+\item $\ds{\sum^5_{m=2}4m=\ldots+\sum^5_{m=3}4m}$
+\item $\ds{\sum^3_{k=1}k^2=\sum^{\ldots}_{k=3}\ldots}$
+\item $\ds{\sum^5_{m=2}2^m=\sum^{\ldots}_{p=5}2^{\ldots}}$
+\end{enumerate}
+\end{oefening2}
+
+\begin{oefening2} Bereken of vul aan. ($m,n\in\N$ met $m\neq 0$ en $n<m$)
+\begin{enumerate}
+\item $8!$\quad(Bereken.)
+\item $6\cdot5!\cdot 7$\quad(Schrijf korter en bereken vervolgens.)
+\item $\ds{\frac{10!}{7!}}$\quad(Bereken zo kort mogelijk.)
+\item $\ds{\frac{(m+4)!}{m!}}$\quad(Schrijf zonder faculteiten.)
+\item $\ds{\frac{m!}{(m-1)!}}$\quad(Vereenvoudig.)
+\item $\ds{\frac{(m-n)!}{(m-n-1)(m-n)}}$\quad(Vereenvoudig.)
+\item $\ds{(m+2)!+(m+3)!=(m+2)!(\ldots)}$\quad(Vul aan.)
+\end{enumerate}
+\end{oefening2}
+
+\begin{oefening2}Vul aan. ($m\in\N$)
+\begin{enumerate}
+\item $\ds{\frac{4}{(m+1)!}-\frac{1}{m!}=\frac{\ldots}{(m+1)!}}$
+\item $\ds{\sum^{14}_{k=5}k^2=\sum^{10}_{l=1}\ldots}$
+\end{enumerate}
+\end{oefening2}
+
+\begin{oefening2}Juist of fout? Verklaar!
+\begin{enumerate}
+\item $\ds{\frac{k!}{(k+2)!(k-l-1)!}=\frac{k!(k-l)}{(k+2)!(k-l)!}}$\quad voor alle $k,l\in\N$ met $k>l$.\hfill juist/fout
+\item $\ds{\sum^{n}_{k=1}(2+k)=2n+\sum^{n}_{k=1}k}$\quad voor alle $n\in\Nnul$.\hfill juist/fout
+\item $\ds{{5\choose1}={5\choose4}}$\hfill juist/fout
+\item $\ds{{2\choose0}={2\choose2}}$\hfill juist/fout
+\item $\ds{(p+4)!(p+3)=(p+3)!}$\quad voor alle $p\in\N$.\hfill juist/fout
+\item $\ds{{k\choose l}={k\choose{k-l}}}$\quad voor alle $k,l\in\N$ met $k\geqslant l$.\hfill juist/fout
+\item $\ds{\sum^{n}_{k=1}\left(ak^2+b\right)=a\sum^{n}_{k=1}k^{2}+b}$\quad voor alle $a,b\in\R$ en alle $n\in\Nnul$.\hfill juist/fout
+\item $\ds{\sum^{n+1}_{l=1}(l+1)^{2}=\sum^{n}_{l=1}(l+1)^{2}+(n+1)^{2}}$ \quad voor alle $n\in\Nnul$.\hfill juist/fout
+\item $\ds{\sum^{n}_{k=1}a_k^{2}=\left(\sum^{n}_{k=1}a_k\right)^{2}}$ \quad voor alle $n\in\Nnul$ en alle $a_1,\ldots,a_n\in\R$.\hfill juist/fout
+\end{enumerate}
+\end{oefening2}
+
+
+\Closesolutionfile{ans}
+\section{Oplossingen}
+\setlength{\parskip}{0pt}
+\input{ansM02}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\end{document}
